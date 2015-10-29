@@ -1,0 +1,12 @@
+// ==========================================================================
+// SMACSS - Theme Scss
+// A theme defines colours and images that give your application or site its look and feel. 
+// Separating the theme out into its own set of styles allows for those styles to be easily redefined for alternate themes.
+// https://smacss.com/book/type-theme
+// ==========================================================================
+
+$color-background : white;
+$color-text : #757575;
+$font-family-default : 'Roboto';
+$font-family-display : $font-family-default;
+$color-link : #757575;

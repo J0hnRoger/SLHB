@@ -1,0 +1,48 @@
+// ==========================================================================
+// SMACSS - Base Scss
+// Base rule is applied to an element using an element selector, a descendent selector, or a child selector, along with any pseudo-classes
+// https://smacss.com/book/type-base
+// ==========================================================================
+@viewport { width: device-width; }
+
+html {
+  box-sizing: border-box;
+  height: 100%;
+}
+
+* {
+  &:before,
+  &:after { box-sizing: inherit; }
+}
+
+body {
+  -webkit-font-smoothing: antialiased;
+  color: $color-text;
+  font-family: $font-family-default;
+  min-height: 100%;
+  overflow-x: hidden;
+  text-rendering: optimizeLegibility;
+  background-color: $color-background;
+}
+
+a {
+  background: transparent;
+  color: $color-link;
+  text-decoration: none;
+  transition: color .2s;
+}
+
+img {
+  height: auto;
+  max-width: 100%;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: $font-family-display;
+  font-weight: normal;
+}
