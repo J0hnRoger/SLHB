@@ -1,37 +1,22 @@
-@viewport {
-  width: device-width; }
-
-html {
-  box-sizing: border-box;
-  height: 100%; }
-
-*:before, *:after {
-  box-sizing: inherit; }
-
 body {
-  -webkit-font-smoothing: antialiased;
-  color: #757575;
-  font-family: "Roboto";
-  min-height: 100%;
-  overflow-x: hidden;
-  text-rendering: optimizeLegibility;
-  background-color: white; }
+  font-family: "Roboto"; }
 
-a {
-  background: transparent;
-  color: #757575;
-  text-decoration: none;
-  transition: color .2s; }
+header {
+  background-color: #284c93 !important; }
+  header .mdl-layout__header-row {
+    height: 69px;
+    padding-left: 20px; }
+    header .mdl-layout__header-row .mdl-layout-title > img {
+      max-height: 60px; }
+    header .mdl-layout__header-row nav > .mdl-navigation__link {
+      font-size: 16px;
+      font-weight: 400; }
+      header .mdl-layout__header-row nav > .mdl-navigation__link:hover {
+        text-decoration: underline; }
 
-img {
-  height: auto;
-  max-width: 100%; }
+#banner {
+  height: 245px;
+  background: url("../images/banner.jpg") top/cover; }
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  font-family: "Roboto";
-  font-weight: normal; }
+main#home {
+  margin-left: 35px; }
