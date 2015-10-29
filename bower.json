@@ -1,0 +1,28 @@
+{
+  "name": "my-wp-stack",
+  "description": "MyWPStack NPM Packages",
+  "main": "index.js",
+  "authors": [
+    "J0hnRoger"
+  ],
+  "license": "ISC",
+  "keywords": [
+    "Themosis",
+    "WordPress",
+    "NPM",
+    "Bower",
+    "DevStack"
+  ],
+  "moduleType": [],
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "material-design-lite": "~1.0.5"
+  }
+}

@@ -1,0 +1,22 @@
+{
+    "name": "MyWpStack",
+    "description": "Wordpress Theme inspired by Themosis.",
+    "keywords": ["themosis", "framework", "WordPress", "theme"],
+    "license": "GPL-2.0+",
+    "authors":[
+        {
+            "name": "J0hn Roger",
+            "email": "jonathan.roger4@gmail.com ",
+            "homepage": ""
+        }
+    ],
+    "type": "wordpress-theme",
+    "require": {
+        "php": ">=5.4",
+        "composer/installers" : "~1.0",
+        "symfony/class-loader": "~2.7.5"
+    },
+    "require-dev":{
+        "php": ">=5.4"
+    }
+}
