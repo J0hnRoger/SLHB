@@ -1,6 +1,39 @@
 // ==========================================================================
 // SMACSS - Module Scss
-// Module is a more discrete component of the page. 
-// It is your navigation bars and your carousels and your dialogs and your widgets and so on. 
-// https://smacss.com/book/type-module 
+// Module is a more discrete component of the page.
+// It is your navigation bars and your carousels and your dialogs and your widgets and so on.
+// https://smacss.com/book/type-module
 // ==========================================================================
+
+
+/*Actualités*/
+$home-thumbnail-heigth : 190px;
+$actu-font-size : 16px;
+$actu-font-color : #000000;
+$actu-margin : 40px;
+
+main#home {
+	.actualites {
+		padding : 10px;
+		
+		.actualite {
+			font-size: $actu-font-size;
+			margin-top: $actu-margin;
+			.mdl-card__media { height: 190px; width : 250px;}
+			img { height: 190px; width : 250px;}
+			.mdl-card__supporting-text > p {
+				
+				color : $actu-font-color;
+			}
+			.mdl-card__title {
+				@extend h1;
+				text-transform: none;
+			}
+			.mdl-card__actions > a{
+				text-transform: none;
+				float: right;
+				line-height: 15px;
+			}
+		}
+	}
+}

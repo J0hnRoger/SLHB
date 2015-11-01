@@ -1,5 +1,19 @@
+@charset "UTF-8";
 body {
   font-family: "Roboto"; }
+
+.mdl-card--horizontal {
+  flex-direction: column;
+  height: 1vh;
+  /* 1 */
+  padding-left: 250px; }
+  .mdl-card--horizontal .mdl-card__media {
+    left: 0;
+    position: absolute;
+    width: 150px; }
+  .mdl-card--horizontal .mdl-card__supporting-text {
+    flex: 1 1 auto;
+    width: auto; }
 
 header {
   background-color: #284c93 !important; }
@@ -16,7 +30,35 @@ header {
 
 #banner {
   height: 245px;
-  background: url("../images/banner.jpg") top/cover; }
+  width: 100%;
+  background: url("../images/banner.jpg") top/cover;
+  margin: 0px; }
 
 main#home {
   margin-left: 35px; }
+  main#home h1, main#home .actualites .actualite .mdl-card__title {
+    color: #284c93;
+    font-size: 22px;
+    text-transform: uppercase;
+    font-weight: 500; }
+
+/*Actualités*/
+main#home .actualites {
+  padding: 10px; }
+  main#home .actualites .actualite {
+    font-size: 16px;
+    margin-top: 40px; }
+    main#home .actualites .actualite .mdl-card__media {
+      height: 190px;
+      width: 250px; }
+    main#home .actualites .actualite img {
+      height: 190px;
+      width: 250px; }
+    main#home .actualites .actualite .mdl-card__supporting-text > p {
+      color: #000000; }
+    main#home .actualites .actualite .mdl-card__title {
+      text-transform: none; }
+    main#home .actualites .actualite .mdl-card__actions > a {
+      text-transform: none;
+      float: right;
+      line-height: 15px; }

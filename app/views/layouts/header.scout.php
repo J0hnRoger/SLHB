@@ -12,6 +12,8 @@
         <a class="mdl-navigation__link" href="#">Contact</a>
       </nav>
     </div>
+      <div id="banner" class="mdl-grid mdl-cell mdl-cell--12-col">
+      </div>
   </header>
   <div class="mdl-layout__drawer mdl-layout--small-screen-only">
     <span class="mdl-layout-title">{{ get_bloginfo('name') }}</span>

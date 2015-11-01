@@ -27,9 +27,18 @@ header {
 
 #banner {
 	height: 245px;
+	width: 100%;
 	background : url($home-banner) top / cover;
+	margin: 0px;
 }
 
 main#home{
 	margin-left: 35px;
+	
+	h1 {
+		color : $blue;
+		font-size: $header-title-font-size;
+		text-transform: uppercase;
+		font-weight: 500;
+	}
 }

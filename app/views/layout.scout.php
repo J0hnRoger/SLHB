@@ -19,8 +19,7 @@
 <body>
 <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
   @include('layouts.header')
-  <div class="mdl-layout" id="banner">
-  </div>
+  <div style="clear:both"></div>
   <main id="home" class="mdl-layout__content">
    @include('home-content')
   </main>

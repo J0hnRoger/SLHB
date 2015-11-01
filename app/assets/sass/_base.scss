@@ -7,3 +7,20 @@
 body {
 	font-family: $font-family-default;
 }
+
+.mdl-card--horizontal {
+  flex-direction: column;
+  height: 1vh; /* 1 */
+  padding-left: 250px;
+  
+  .mdl-card__media {
+    left: 0;
+    position: absolute;
+    width: 150px; 
+  }
+  
+  .mdl-card__supporting-text {
+    flex: 1 1 auto;
+    width: auto;
+  }
+}
