@@ -9,4 +9,32 @@
  *
  */
 
+
+/*Page d'accueil */
 Route::get('home', 'HomeController@index');
+
+/*Page de détails d'une actualité */
+
+Route::get('singular', array('post', function (){
+		return View::make('actualites.single')->with(array(
+            'logoUrl' =>     themosis_assets().'/images/slhb-logo.png'
+        ));
+}));
+
+/* Page Toutes les équipes */
+
+/* Page de détails d'une équipes */
+
+/* Page Infos pratiques */
+
+/* Page Médiathèque */
+
+/* Page Contacts */
+
+/* Page Boutique */
+
+/* Page Profil  */
+
+
+
+

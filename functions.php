@@ -20,7 +20,7 @@ defined('THEMOSIS_ASSETS') ? THEMOSIS_ASSETS : define('THEMOSIS_ASSETS', get_tem
 /*----------------------------------------------------*/
 // Theme Textdomain.
 /*----------------------------------------------------*/
-defined('THEMOSIS_THEME_TEXTDOMAIN') ? THEMOSIS_THEME_TEXTDOMAIN : define('THEMOSIS_THEME_TEXTDOMAIN', 'themosis-theme');
+defined('THEMOSIS_THEME_TEXTDOMAIN') ? THEMOSIS_THEME_TEXTDOMAIN : define('THEMOSIS_THEME_TEXTDOMAIN', 'SLHB');
 
 /*----------------------------------------------------*/
 // Themosis Theme class.
