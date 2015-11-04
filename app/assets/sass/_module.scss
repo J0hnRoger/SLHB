@@ -11,8 +11,9 @@ $home-thumbnail-heigth : 190px;
 $actu-font-size : 16px;
 $actu-font-color : #000000;
 $actu-margin : 40px;
+$prefooter-color : white;
 
-main#home {
+main#content {
 	.actualites {
 		padding : 10px;
 		
@@ -36,4 +37,9 @@ main#home {
 			}
 		}
 	}
+}
+
+section.pre-footer {
+	background-color: $blue;
+	color : $prefooter-color
 }

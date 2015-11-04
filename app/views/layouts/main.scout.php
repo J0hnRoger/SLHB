@@ -20,9 +20,12 @@
 <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
   @include('layouts.header')
   <div style="clear:both"></div>
-  <main id="home" class="mdl-layout__content">
-   @include('home-content')
+  <main id="content" class="mdl-layout__content">
+      @yield('main')
   </main>
+  @yield('pre-footer')
+  
+  @include('layouts.footer')  
 </div>
 <?php wp_footer(); ?>
     <!-- Ne pas supprimer les marqueurs suivants ! Sinon Bower sera perdu -->

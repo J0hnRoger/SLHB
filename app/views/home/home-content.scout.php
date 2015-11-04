@@ -1,3 +1,6 @@
+@extends('layouts.main')
+
+@section('main')
 <h1>Actualités</h1>
 
 <div class="actualites mdl-grid">
@@ -21,3 +24,11 @@
 </div>
 @endloop
 </div>
+@stop
+
+@section('pre-footer')
+  <section class="pre-footer">
+    <h2>Pre-footer</h2>
+  </section>
+@stop
+

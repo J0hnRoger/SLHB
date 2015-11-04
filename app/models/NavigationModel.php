@@ -22,5 +22,4 @@ class NavigationModel {
 	public function getMaterialMenu($menuName){
         //TODO
     }
-
 } 

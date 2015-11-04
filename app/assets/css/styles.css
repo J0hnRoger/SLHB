@@ -34,31 +34,35 @@ header {
   background: url("../images/banner.jpg") top/cover;
   margin: 0px; }
 
-main#home {
+main#content {
   margin-left: 35px; }
-  main#home h1, main#home .actualites .actualite .mdl-card__title {
+  main#content h1, main#content .actualites .actualite .mdl-card__title {
     color: #284c93;
     font-size: 22px;
     text-transform: uppercase;
     font-weight: 500; }
 
 /*Actualités*/
-main#home .actualites {
+main#content .actualites {
   padding: 10px; }
-  main#home .actualites .actualite {
+  main#content .actualites .actualite {
     font-size: 16px;
     margin-top: 40px; }
-    main#home .actualites .actualite .mdl-card__media {
+    main#content .actualites .actualite .mdl-card__media {
       height: 190px;
       width: 250px; }
-    main#home .actualites .actualite img {
+    main#content .actualites .actualite img {
       height: 190px;
       width: 250px; }
-    main#home .actualites .actualite .mdl-card__supporting-text > p {
+    main#content .actualites .actualite .mdl-card__supporting-text > p {
       color: #000000; }
-    main#home .actualites .actualite .mdl-card__title {
+    main#content .actualites .actualite .mdl-card__title {
       text-transform: none; }
-    main#home .actualites .actualite .mdl-card__actions > a {
+    main#content .actualites .actualite .mdl-card__actions > a {
       text-transform: none;
       float: right;
       line-height: 15px; }
+
+section.pre-footer {
+  background-color: #284c93;
+  color: white; }
