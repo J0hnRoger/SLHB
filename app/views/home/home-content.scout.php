@@ -25,10 +25,3 @@
 @endloop
 </div>
 @stop
-
-@section('pre-footer')
-  <section class="pre-footer">
-    <h2>Pre-footer</h2>
-  </section>
-@stop
-

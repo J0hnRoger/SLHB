@@ -15,12 +15,12 @@ gulp.task('main-bower-files', function() {
 });
 
 gulp.task('inject', function () {
-  var target = gulp.src('./app/views/material-welcome.scout.php');
+  var target = gulp.src('./app/views/layouts/main.scout.php');
   var vendorSrc = gulp.src(['./app/assets/**/*.js', './app/assets/**/*.css', '!./app/assets/css/*.css'], {read: false});
   var customSrc = gulp.src(['./app/assets/css/*.css']);
   
   return target.pipe(inject(series(vendorSrc, customSrc), {addPrefix : '/content/themes/'+ THEME_NAME +'/'}))
-    .pipe(gulp.dest('./app/views/'));
+    .pipe(gulp.dest('./app/views/layouts/'));
 });
 
 gulp.task('styles', function() {
@@ -42,5 +42,5 @@ gulp.task('browser-sync', function() {
 });
 
 gulp.task('default', ['browser-sync'], function(){
-    gulp.watch('./app/assets/sass/*.scss',['styles']);
+    gulp.watch('./app/assets/sass/*.scss',['']);
 });

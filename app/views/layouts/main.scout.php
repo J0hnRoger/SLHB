@@ -13,6 +13,7 @@
     <!-- Ne pas supprimer les marqueurs suivants ! Sinon Bower sera perdu -->
     <!-- inject:css -->
     <link rel="stylesheet" href="/content/themes/SLHB//app/assets/material-design-lite/material.min.css">
+    <link rel="stylesheet" href="/content/themes/SLHB//app/assets/prism/prism.css">
     <link rel="stylesheet" href="/content/themes/SLHB//app/assets/css/styles.css">
     <!-- endinject -->
 </head>
@@ -25,12 +26,21 @@
   </main>
   @yield('pre-footer')
   
-  @include('layouts.footer')  
+  <section class="bottom-banner">
+  @include('layouts.bottom-banner')
+  </section>
+  <footer>
+  @include('layouts.footer')
+  
+  @include('layouts.credits')
+  </footer>
 </div>
 <?php wp_footer(); ?>
     <!-- Ne pas supprimer les marqueurs suivants ! Sinon Bower sera perdu -->
     <!-- inject:js -->
     <script src="/content/themes/SLHB//app/assets/material-design-lite/material.min.js"></script>
+    <script src="/content/themes/SLHB//app/assets/prism/prism.escapeHtmlMarkup.js"></script>
+    <script src="/content/themes/SLHB//app/assets/prism/prism.js"></script>
     <!-- endinject -->
 </body>
 </html>
