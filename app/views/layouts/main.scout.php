@@ -18,7 +18,7 @@
     <!-- endinject -->
 </head>
 <body>
-<div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
+<div class="mdl-layout mdl-js-layout mdl-layout--fixed-header mdl-grid--no-spacing">
   @include('layouts.header')
   <div style="clear:both"></div>
   <main id="content" class="mdl-layout__content">

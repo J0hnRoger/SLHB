@@ -1,6 +1,6 @@
 <?php 
 
-PostType::make('slug-team', 'Teams', 'Team')->set(array(
+PostType::make('slug-team', 'Equipes', 'Equipe')->set(array(
 
     'public'        => true,
     'menu_position' => 20,

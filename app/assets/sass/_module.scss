@@ -11,7 +11,7 @@ $home-thumbnail-heigth : 190px;
 $actu-font-size : 16px;
 $actu-font-color : #000000;
 $actu-margin : 40px;
-$prefooter-color : white;
+$prefooter-color : $primary;
 
 main#content {
 	.actualites {
@@ -40,6 +40,33 @@ main#content {
 }
 
 section.pre-footer {
-	background-color: $blue;
+	background-color: $primary;
 	color : $prefooter-color
+}
+
+/* Login Section */
+
+#login {
+	
+	.user-information {
+		padding-top: 10px;
+		h5 {
+			font-size: 15px;
+			font-weight: 600;	
+			margin: 0;
+		}
+	
+		a {
+			font-size: 15px;
+			color: inherit;
+			font-weight: 200;
+			text-decoration: none;
+		}
+	}
+	
+	
+	img.avatar {
+		border-radius: 48px;
+		float: right;
+	}
 }

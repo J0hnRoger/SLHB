@@ -6,7 +6,9 @@ class HomeController extends BaseController
     {
         return View::make('home.home-content')->with(array(
             'logoUrl' =>     themosis_assets().'/images/slhb-logo.png',
-             'actus' => PostModel::all()  
+            'defaultAvatar' => themosis_assets(). '/images/slhb-default-avatar.png',
+            'currentUser' => User::current(),
+            'actus' => PostModel::all()
         ));
     }
 }
