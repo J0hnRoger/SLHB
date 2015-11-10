@@ -1,6 +1,6 @@
   <header class="mdl-layout__header mdl-layout__header--scroll">
     <div class="mdl-layout__header-row">
-      <div class="mdl-layout-title mdl-layout--large-screen-only mdl-cell--6-col">
+      <div class="mdl-layout-title mdl-layout--large-screen-only mdl-cell--5-col">
         <h1>SLHB</h1>
         <h4>Chavagnes en Paillers</h4>
       </div>
