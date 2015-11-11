@@ -9,6 +9,14 @@
  *
  */
 
+ /*Layouts Data - Header */
+ View::share(array(
+   'logoUrl' =>     themosis_assets().'/images/slhb-logo.png',
+   'defaultAvatar' => themosis_assets(). '/images/slhb-default-avatar.png',
+   'currentUser' => User::current(),
+   'headerMenu' =>  NavigationModel::all()
+ ));
+
 /*Page d'accueil */
 Route::get('home', 'HomeController@index');
 
@@ -33,7 +41,3 @@ Route::get('singular', array('post', function (){
 /* Page Boutique */
 
 /* Page Profil  */
-
-
-
-

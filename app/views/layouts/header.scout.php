@@ -4,8 +4,8 @@
         <h1>SLHB</h1>
         <h4>Chavagnes en Paillers</h4>
       </div>
-      <div class="logo mdl-cell mdl-cell--1-col">  
-        <img src="{{ $logoUrl }}" alt="">    
+      <div class="logo mdl-cell mdl-cell--1-col">
+        <img src="{{ $logoUrl }}" alt="">
       </div>
       <div class="mdl-layout-spacer"></div>
       <div id="login" class="mdl-cell mdl-cell--4-col mdl-grid">
@@ -18,6 +18,11 @@
         </div>
       </div>
     </div>
+    @foreach($headerMenu as $key => $menuItem)
+    <?php var_dump($menuItem) ?>
+    {{$menuItem->post_title}}
+    @endforeach
+
     <div id="menu" class="mdl-layout__header-row">
       <nav class="mdl-navigation mdl-layout--large-screen-only">
         <a class="mdl-navigation__link" href="#">Accueil</a>
