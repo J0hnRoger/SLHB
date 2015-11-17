@@ -8,41 +8,33 @@
         <img src="{{ $logoUrl }}" alt="">
       </div>
       <div class="mdl-layout-spacer"></div>
+      @if($currentUser->user_login != false )
       <div id="login" class="mdl-cell mdl-cell--4-col mdl-grid">
         <div class="mdl-cell mdl-cell--8-col user-information">
           <h5>Bonjour {{ $currentUser->user_login }}</h5>
           <a href="">Accéder à votre compte </a>
         </div>
         <div class="mdl-cell mdl-cell--4-col">
-          <?php echo get_avatar( "jonathan.roger4@gmail.com", 65); ?>
+          <?php echo get_avatar( $currentUser->user_email, 65); ?>
         </div>
       </div>
+      @endif
     </div>
-    @foreach($headerMenu as $key => $menuItem)
-    <?php var_dump($menuItem) ?>
-    {{$menuItem->post_title}}
-    @endforeach
-
     <div id="menu" class="mdl-layout__header-row">
       <nav class="mdl-navigation mdl-layout--large-screen-only">
-        <a class="mdl-navigation__link" href="#">Accueil</a>
-        <a class="mdl-navigation__link" href="#">Nos équipes</a>
-        <a class="mdl-navigation__link" href="#">Infos pratiques</a>
-        <a class="mdl-navigation__link" href="#">Médiathèque</a>
-        <a class="mdl-navigation__link" href="#">Boutique officiel</a>
-        <a class="mdl-navigation__link" href="#">Contact</a>
-      </nav></div>
+      @foreach((array)$headerMenu as $key => $menuItem)
+        <a class="mdl-navigation__link" href="{{$menuItem->url}}">{{$menuItem->title}}</a>
+      @endforeach
+      </nav>
+    </div>
       <div id="banner" class="mdl-grid mdl-cell mdl-cell--12-col">
       </div>
   </header>
   <div class="mdl-layout__drawer mdl-layout--small-screen-only">
     <span class="mdl-layout-title">{{ get_bloginfo('name') }}</span>
     <nav class="mdl-navigation">
-        <a class="mdl-navigation__link" href="#">Accueil</a>
-        <a class="mdl-navigation__link" href="#">Nos équipes</a>
-        <a class="mdl-navigation__link" href="#">Infos pratiques</a>
-        <a class="mdl-navigation__link" href="#">Médiathèque</a>
-        <a class="mdl-navigation__link" href="#">Boutique officiel</a>
-        <a class="mdl-navigation__link" href="#">Contact</a>
+      @foreach((array)$headerMenu as $key => $menuItem)
+        <a class="mdl-navigation__link" href="{{$menuItem->url}}">{{$menuItem->title}}</a>
+      @endforeach
     </nav>
   </div>

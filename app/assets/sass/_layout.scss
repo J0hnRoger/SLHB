@@ -3,26 +3,26 @@
 // Generally, a Layout style only has a single selector: a single ID or class name
 // https://smacss.com/book/type-layout
 // ==========================================================================
-header { 
+header {
 	background-color: $primary !important;
-	
-	.mdl-layout__header-row 
+
+	.mdl-layout__header-row
 	{
 		height: $header-height;
-		color: #1d3d86;
-		
+		color: $secondary;
+
 		.logo > img {
-			max-height: $max-icon-height;	
-		} 
-		
+			max-height: $max-icon-height;
+		}
+
 		.mdl-layout-title {
-			
+
 			h1 {
 				display: inline;
 				font-size: 35px;
 				font-weight: 600;
 			}
-			
+
 			h4 {
 				margin: 0;
 				font-size: 20px;
@@ -30,19 +30,23 @@ header {
 			}
 		}
 
-		nav > .mdl-navigation__link {
-			font-size: 16px;
-			font-weight: 400;
-			&:hover {
-				text-decoration: underline;
+		nav {
+			margin: 0 auto !important;
+
+	 		.mdl-navigation__link {
+				font-size: 16px;
+				font-weight: 400;
+					&:hover {
+						text-decoration: underline;
+					}
+				}
 			}
-		}
 	}
-	
+
 	#menu {
 		height: $menu-height;
-		background-color: $secondary;	
-	}	
+		background-color: $secondary;
+	}
 }
 
 #banner {
@@ -54,9 +58,9 @@ header {
 
 main#content{
 	margin-left: 35px;
-	
+
 	h1 {
-		color : $primary;
+		color : $secondary;
 		font-size: $header-title-font-size;
 		text-transform: uppercase;
 		font-weight: 500;

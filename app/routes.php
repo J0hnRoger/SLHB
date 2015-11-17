@@ -14,11 +14,18 @@
    'logoUrl' =>     themosis_assets().'/images/slhb-logo.png',
    'defaultAvatar' => themosis_assets(). '/images/slhb-default-avatar.png',
    'currentUser' => User::current(),
-   'headerMenu' =>  NavigationModel::all()
+   'headerMenu' =>  NavigationModel::getMenuItems("header-nav")
  ));
 
+/*Page par défaut*/
+Route::get('page', function (){
+  return View::make('page')->with(array(
+    'page' =>  PageModel::getCurrentPage()
+  ));
+});
+
 /*Page d'accueil */
-Route::get('home', 'HomeController@index');
+Route::any('front', 'HomeController@index');
 
 /*Page de détails d'une actualité */
 
@@ -27,6 +34,9 @@ Route::get('singular', array('post', function (){
 		'logoUrl' =>     themosis_assets().'/images/slhb-logo.png'
 	));
 }));
+
+/* Page Calendrier */
+Route::get('template', array('calendar-template', 'uses' => 'AgendaController@index'));
 
 /* Page Toutes les équipes */
 

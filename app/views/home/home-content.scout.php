@@ -4,7 +4,8 @@
 <h1>Actualités</h1>
 
 <div class="actualites mdl-grid">
-@loop
+@foreach($actus as $i => $actu)
+<?php var_dump($actu) ?>
 <div class="actualite mdl-card mdl-shadow--2dp mdl-card--horizontal mdl-cell mdl-cell--4-col">
 	<div class="mdl-card__media">
     {{Loop::thumbnail($size = 'post-thumbnail')}}
@@ -22,6 +23,6 @@
       <a class="mdl-button mdl-button--icon mdl-js-button mdl-js-ripple-effect" data-upgraded=",MaterialButton,MaterialRipple"><i class="material-icons">share</i></a>
     </div>
 </div>
-@endloop
+@endforeach
 </div>
 @stop
