@@ -5,7 +5,6 @@
 
 <div class="actualites mdl-grid">
 @foreach($actus as $i => $actu)
-<?php var_dump($actu) ?>
 <div class="actualite mdl-card mdl-shadow--2dp mdl-card--horizontal mdl-cell mdl-cell--4-col">
 	<div class="mdl-card__media">
     {{Loop::thumbnail($size = 'post-thumbnail')}}

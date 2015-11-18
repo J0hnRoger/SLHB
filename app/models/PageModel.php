@@ -23,7 +23,11 @@ class PageModel {
       $page = get_queried_object();
       #add custom properties
       $page->author = get_the_author_meta( "user_nicename", $page->post_author );
-      $page->comments = get_comments($page->ID);
+      $page->comments = get_comments(
+        array(
+          'post_id' => $page->ID
+        )
+      );
       return $page;
     }
 }

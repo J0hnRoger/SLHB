@@ -18,11 +18,11 @@
  ));
 
 /*Page par défaut*/
-Route::get('page', function (){
+Route::get('page', array( array('historique', 'boutique-officielle', 'contact'), function (){
   return View::make('page')->with(array(
     'page' =>  PageModel::getCurrentPage()
   ));
-});
+}));
 
 /*Page d'accueil */
 Route::any('front', 'HomeController@index');
