@@ -18,4 +18,15 @@ class PostModel {
         return $query->get_posts();
     }
 
-} 
+    public static function getLastPosts($limit)
+    {
+        $query = new WP_Query(array(
+            'post_type'         => 'post',
+            'posts_per_page'    => $limit,
+            'post_status'       => 'publish',
+        ));
+        
+        return $query->get_posts();
+    }
+
+}

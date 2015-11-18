@@ -11,7 +11,7 @@ body {
 .mdl-card--horizontal {
   flex-direction: column;
   height: 1vh; /* 1 */
-  padding-left: 250px;
+  padding-left: 230px;
 
   .mdl-card__media {
     left: 0;
@@ -33,4 +33,17 @@ body {
 
 .centring {
 	margin: 0 auto;
+}
+
+.label {
+    display: inline;
+    padding: .2em .6em .3em;
+    font-size: 75%;
+    font-weight: 700;
+    line-height: 1;
+    color: #fff;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: baseline;
+    border-radius: .25em;
 }

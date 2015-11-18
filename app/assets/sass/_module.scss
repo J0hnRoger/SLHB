@@ -9,31 +9,54 @@
 /*Actualités*/
 $home-thumbnail-heigth : 190px;
 $actu-font-size : 16px;
-$actu-font-color : #000000;
+$actu-font-weight : 500;
+$actu-font-color : black;
 $actu-margin : 40px;
 $prefooter-color : $primary;
 
 main#content {
 	.actualites {
 		padding : 10px;
-		
 		.actualite {
 			font-size: $actu-font-size;
 			margin-top: $actu-margin;
-			.mdl-card__media { height: 190px; width : 250px;}
-			img { height: 190px; width : 250px;}
-			.mdl-card__supporting-text > p {
-				
+
+			.mdl-card__media {
+				width: 40%;
+				height: 180px;
+				img{
+					height: 100%;
+					width:100%;
+				}
+			}
+
+			.mdl-card__supporting-text {
 				color : $actu-font-color;
+				font-weight: $actu-font-weight;
 			}
+
 			.mdl-card__title {
-				@extend h1;
-				text-transform: none;
+				margin-left: 0;
+				padding: 0;
+				text-align: left;
+				h2{
+					@extend h1;
+					text-transform: none;
+					font-weight: $actu-font-weight;
+				}
 			}
-			.mdl-card__actions > a{
+
+			.mdl-card__actions > a {
 				text-transform: none;
 				float: right;
 				line-height: 15px;
+			}
+
+			.label {
+				float: right;
+				font-weight: 200;
+				color : $primary;
+				background-color: $secondary;
 			}
 		}
 	}
@@ -41,21 +64,21 @@ main#content {
 
 section.pre-footer {
 	background-color: $primary;
-	color : $prefooter-color
+	color : $prefooter-color;
 }
 
 /* Login Section */
 
 #login {
-	
+
 	.user-information {
 		padding-top: 10px;
 		h5 {
 			font-size: 15px;
-			font-weight: 600;	
+			font-weight: 600;
 			margin: 0;
 		}
-	
+
 		a {
 			font-size: 15px;
 			color: inherit;
@@ -63,8 +86,8 @@ section.pre-footer {
 			text-decoration: none;
 		}
 	}
-	
-	
+
+
 	img.avatar {
 		border-radius: 48px;
 		float: right;

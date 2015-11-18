@@ -30,9 +30,7 @@ Route::any('front', 'HomeController@index');
 /*Page de détails d'une actualité */
 
 Route::get('singular', array('post', function (){
-	return View::make('actualites.single')->with(array(
-		'logoUrl' =>     themosis_assets().'/images/slhb-logo.png'
-	));
+	return View::make('actualites.single');
 }));
 
 /* Page Calendrier */
