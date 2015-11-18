@@ -35,12 +35,12 @@ gulp.task('browser-sync', function() {
         './app/**/*.php',
         './app/assets/**/*.js',
         './app/assets/**/*.css'
-    ]
+    ];
     browserSync.init(files, {
         proxy : 'slhb.dev'
     });
 });
 
 gulp.task('default', ['browser-sync'], function(){
-    gulp.watch('./app/assets/sass/*.scss',['']);
+    gulp.watch('./app/assets/sass/*.scss',['styles']);
 });

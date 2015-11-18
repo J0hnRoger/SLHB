@@ -18,7 +18,7 @@
  ));
 
 /*Page par défaut*/
-Route::get('page', array( array('historique', 'boutique-officielle', 'contact'), function (){
+Route::get('page', array( array('historique', 'infos-pratiques', 'boutique-officielle', 'contact'), function (){
   return View::make('page')->with(array(
     'page' =>  PageModel::getCurrentPage()
   ));

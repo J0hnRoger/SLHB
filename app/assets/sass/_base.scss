@@ -12,22 +12,25 @@ body {
   flex-direction: column;
   height: 1vh; /* 1 */
   padding-left: 250px;
-  
+
   .mdl-card__media {
     left: 0;
     position: absolute;
-    width: 150px; 
+    width: 150px;
   }
-  
+
   .mdl-card__supporting-text {
     flex: 1 1 auto;
     width: auto;
   }
 }
 
-/*Login Information*/
 .info-bulle {
     width: 65px;
     height: 65px;
     border-radius: 24px;
+}
+
+.centring {
+	margin: 0 auto;
 }

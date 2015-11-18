@@ -1,5 +1,5 @@
-<section>
-	<pre><code>
-		&lt!-- TODO - HTML qui affiche les credits ici  -->
-	</code></pre>
-</section>
+<footer id="credits" class="mdl-mini-footer">
+  <div class="centring">
+  	@ 2015 SLHB - Tous droits réservés - <a href="#">Mentions légales</a> <a href="#">Crédits</a> <a href="#">Contact</a> 
+  </div>
+</footer>

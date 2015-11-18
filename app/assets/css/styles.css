@@ -15,11 +15,13 @@ body {
     flex: 1 1 auto;
     width: auto; }
 
-/*Login Information*/
 .info-bulle {
   width: 65px;
   height: 65px;
   border-radius: 24px; }
+
+.centring {
+  margin: 0 auto; }
 
 header {
   background-color: white !important; }
@@ -60,6 +62,12 @@ main#content {
     font-size: 22px;
     text-transform: uppercase;
     font-weight: 500; }
+
+footer#credits {
+  background-color: #1d3d86; }
+  footer#credits a {
+    text-decoration: none;
+    color: inherit; }
 
 /*Actualités*/
 main#content .actualites {

@@ -5,7 +5,6 @@
 // ==========================================================================
 header {
 	background-color: $primary !important;
-
 	.mdl-layout__header-row
 	{
 		height: $header-height;
@@ -64,5 +63,13 @@ main#content{
 		font-size: $header-title-font-size;
 		text-transform: uppercase;
 		font-weight: 500;
+	}
+}
+
+footer#credits {
+	background-color: $secondary;
+	a {
+		text-decoration: none;
+		color:inherit;
 	}
 }
