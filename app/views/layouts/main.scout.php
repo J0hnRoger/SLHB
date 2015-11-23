@@ -26,7 +26,7 @@
   </main>
   @yield('pre-footer')
 
-  <section class="bottom-banner">
+  <section id="bottom-banner">
   @include('layouts.bottom-banner')
   </section>
   <footer>

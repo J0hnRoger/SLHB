@@ -8,6 +8,10 @@ body {
 	font-family: $font-family-default;
 }
 
+ul {
+	list-style: none;
+}
+
 .mdl-card--horizontal {
   flex-direction: column;
   height: 1vh; /* 1 */

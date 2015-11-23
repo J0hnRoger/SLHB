@@ -12,6 +12,9 @@
  /*Layouts Data - Header */
  View::share(array(
    'logoUrl' =>     themosis_assets().'/images/slhb-logo.png',
+   'logoFb' =>     themosis_assets().'/images/logo-fb.png',
+   'logoGMap' =>     themosis_assets().'/images/logo-gmap.png',
+   'footerImage' => themosis_assets(). '/images/image-footer-2015.png',
    'defaultAvatar' => themosis_assets(). '/images/slhb-default-avatar.png',
    'currentUser' => User::current(),
    'headerMenu' =>  NavigationModel::getMenuItems("header-nav")

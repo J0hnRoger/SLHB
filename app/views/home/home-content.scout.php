@@ -1,8 +1,6 @@
 @extends('layouts.main')
 
 @section('main')
-<h1>Actualités</h1>
-
 <div class="actualites mdl-grid">
 @foreach($actus as $i => $actu)
 <div class="actualite mdl-card mdl-card--horizontal mdl-cell mdl-cell--5-col">

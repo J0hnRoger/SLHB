@@ -17,6 +17,7 @@ $prefooter-color : $primary;
 main#content {
 	.actualites {
 		padding : 10px;
+		margin-bottom: 50px;
 		.actualite {
 			font-size: $actu-font-size;
 			margin-top: $actu-margin;

@@ -2,6 +2,9 @@
 body {
   font-family: "Roboto"; }
 
+ul {
+  list-style: none; }
+
 .mdl-card--horizontal {
   flex-direction: column;
   height: 1vh;
@@ -108,6 +111,34 @@ main#content {
     text-transform: uppercase;
     font-weight: 500; }
 
+section#bottom-banner {
+  position: relative;
+  background-color: #1d3d86;
+  padding: 35px; }
+  section#bottom-banner ul.social {
+    display: block;
+    color: white; }
+    section#bottom-banner ul.social li {
+      line-height: 20px;
+      margin-bottom: 20px;
+      font-weight: 200; }
+      section#bottom-banner ul.social li a {
+        text-decoration: none;
+        color: white; }
+      section#bottom-banner ul.social li div {
+        font-weight: 500; }
+    section#bottom-banner ul.social img {
+      float: left;
+      margin-right: 15px;
+      z-index: 1000; }
+  section#bottom-banner #banner-image {
+    position: absolute;
+    right: 5%;
+    bottom: 0%;
+    width: 25%; }
+    section#bottom-banner #banner-image img {
+      width: 100%; }
+
 footer#credits {
   background-color: #1d3d86; }
   footer#credits a {
@@ -116,7 +147,8 @@ footer#credits {
 
 /*Actualités*/
 main#content .actualites {
-  padding: 10px; }
+  padding: 10px;
+  margin-bottom: 50px; }
   main#content .actualites .actualite {
     font-size: 16px;
     margin-top: 40px; }

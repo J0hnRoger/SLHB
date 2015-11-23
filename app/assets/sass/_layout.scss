@@ -107,6 +107,46 @@ main#content{
 	}
 }
 
+section#bottom-banner {
+	position: relative;
+	background-color: $secondary;
+	padding:35px;
+
+	ul.social {
+		display: block;
+		color: $primary;
+
+		li {
+			line-height: 20px;
+			margin-bottom: 20px;
+			font-weight: 200;
+			a {
+				text-decoration: none;
+				color: $primary;
+			}
+			div {
+				font-weight: 500;
+			}
+		}
+
+		img {
+			float: left;
+			margin-right: 15px;
+			z-index: 1000;
+		}
+	}
+
+	#banner-image {
+		position: absolute;
+		right: 5%;
+		bottom: 0%;
+		width:25%;
+		img {
+			width : 100%;
+		}
+	}
+}
+
 footer#credits {
 	background-color: $secondary;
 	a {
