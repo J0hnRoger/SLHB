@@ -3,6 +3,7 @@
 // Generally, a Layout style only has a single selector: a single ID or class name
 // https://smacss.com/book/type-layout
 // ==========================================================================
+$deg : 25;
 header {
 	background-color: $primary !important;
 	.mdl-layout__header-row
@@ -53,6 +54,46 @@ header {
 	width: 100%;
 	background : url($home-banner) top / cover;
 	margin: 0px;
+	overflow: hidden;
+
+	.overlay{
+		height: 160%;
+		width:40%;
+		transform: rotate($deg + deg);
+		margin-top: -85px;
+		margin-right: -150px;
+		background-color: $secondary-transparence ;
+		float: right;
+
+		.container {
+			transform: rotate(-$deg + deg);
+			height: 100%;
+			text-align: right;
+			padding-right: 5%;
+			float: right;
+			margin-right: 180px;
+			ul{
+				list-style: none;
+				margin-top: 170px;
+				li{
+					text-decoration: none;
+					font-size: 20px;
+					.team {
+						font-size: 20px;
+						font-weight: 400;
+						text-transform: uppercase;
+						margin-top: 30px;
+					}
+					h2{
+						margin-top:0;
+						line-height: normal;
+						font-size: 24px;
+						font-weight: 500;
+					}
+				}
+			}
+		}
+	}
 }
 
 main#content{

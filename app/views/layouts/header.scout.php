@@ -28,7 +28,30 @@
       @endforeach
       </nav>
     </div>
-      <div id="banner" class="mdl-grid mdl-cell mdl-cell--12-col">
+      <div id="banner" class="mdl-cell mdl-cell--12-col">
+        <div class="overlay">
+          <div class="container">
+            <ul class="events">
+              <li class="event">
+                <div class="team">Senior 1</div>
+                <div class="team">Prochain match</div>
+                <span></span>
+                <h2>HBCV - SLHB</h2>
+                <span class="date">
+                  Samedi 18 Novembre - 18h00
+                </span>
+              </li>
+              <li class="event">
+                <div class="team">Senior 2</div>
+                <div class="team">Prochain match</div>
+                <h2>SLHB - SLAM</h2> 
+                <span class="date">
+                  Dimanche 19 Novembre - 17h00
+                </span>
+              </li>
+            </ul>
+          </div>
+        </div>
       </div>
   </header>
   <div class="mdl-layout__drawer mdl-layout--small-screen-only">
