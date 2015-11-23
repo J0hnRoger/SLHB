@@ -1,16 +1,17 @@
   <header class="mdl-layout__header mdl-layout__header--scroll">
     <div class="mdl-layout__header-row">
-      <div class="mdl-layout-title mdl-layout--large-screen-only mdl-cell--5-col">
-        <h1>SLHB</h1>
-        <h4>Chavagnes en Paillers</h4>
+      <div class="mdl-layout-title mdl-layout--large-screen-only mdl-cell--2-col">
+        <img class="logo" src="{{ $logoUrl }}" alt="">
       </div>
-      <div class="logo mdl-cell mdl-cell--1-col">
-        <img src="{{ $logoUrl }}" alt="">
+      <div class="mdl-layout-spacer"></div>
+      <div id="widget-last-results" class="mdl-cell--3-col">
+        <h3>Derniers résultats</h3>
+        <span class="results">SLHB <b>18</b> - <b>24</b> Fontenay</span>
       </div>
       <div class="mdl-layout-spacer"></div>
       @if($currentUser->user_login != false )
       <div id="login" class="mdl-cell mdl-cell--4-col mdl-grid">
-        <div class="mdl-cell mdl-cell--8-col user-information">
+        <div class="mdl-cell mdl-cell--6-col user-information">
           <h5>Bonjour {{ $currentUser->user_login }}</h5>
           <a href="">Accéder à votre compte </a>
         </div>

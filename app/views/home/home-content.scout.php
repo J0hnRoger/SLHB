@@ -5,7 +5,6 @@
 
 <div class="actualites mdl-grid">
 @foreach($actus as $i => $actu)
-<?php var_dump($actu) ?>
 <div class="actualite mdl-card mdl-card--horizontal mdl-cell mdl-cell--5-col">
 	<div class="mdl-card__media">
     {{ get_the_post_thumbnail($actu->ID) }}
@@ -27,4 +26,3 @@
 @endforeach
 </div>
 @stop
- 

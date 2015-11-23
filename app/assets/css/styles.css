@@ -39,9 +39,10 @@ header {
   background-color: white !important; }
   header .mdl-layout__header-row {
     height: 140px;
-    color: #1d3d86; }
-    header .mdl-layout__header-row .logo > img {
-      max-height: 60px; }
+    color: #1d3d86;
+    padding-left: 140px; }
+    header .mdl-layout__header-row .mdl-layout-title .logo {
+      max-height: 100px; }
     header .mdl-layout__header-row .mdl-layout-title h1, header .mdl-layout__header-row .mdl-layout-title main#content .actualites .actualite .mdl-card__title h2, main#content .actualites .actualite .mdl-card__title header .mdl-layout__header-row .mdl-layout-title h2 {
       display: inline;
       font-size: 35px;
@@ -62,7 +63,7 @@ header {
     background-color: #1d3d86; }
 
 #banner {
-  height: 245px;
+  height: 463px;
   width: 100%;
   background: url("../images/banner.jpg") top/cover;
   margin: 0px; }
@@ -133,3 +134,14 @@ section.pre-footer {
 #login img.avatar {
   border-radius: 48px;
   float: right; }
+
+/* Header Last Results*/
+#widget-last-results {
+  margin: 0 auto;
+  text-align: center; }
+  #widget-last-results h3 {
+    font-size: 16px;
+    margin: 0; }
+  #widget-last-results .results {
+    font-weight: bold;
+    text-transform: uppercase; }

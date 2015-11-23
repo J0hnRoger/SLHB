@@ -9,13 +9,13 @@ header {
 	{
 		height: $header-height;
 		color: $secondary;
+		padding-left: 140px;
 
-		.logo > img {
-			max-height: $max-icon-height;
-		}
 
 		.mdl-layout-title {
-
+			.logo {
+				max-height: $max-icon-height;
+			}
 			h1 {
 				display: inline;
 				font-size: 35px;
@@ -49,7 +49,7 @@ header {
 }
 
 #banner {
-	height: 245px;
+	height: 463px;
 	width: 100%;
 	background : url($home-banner) top / cover;
 	margin: 0px;

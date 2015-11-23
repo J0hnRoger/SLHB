@@ -1,6 +1,6 @@
 // ==========================================================================
 // SMACSS - Theme Scss
-// A theme defines colours and images that give your application or site its look and feel. 
+// A theme defines colours and images that give your application or site its look and feel.
 // Separating the theme out into its own set of styles allows for those styles to be easily redefined for alternate themes.
 // https://smacss.com/book/type-theme
 // ==========================================================================
@@ -8,7 +8,7 @@
 $color-text : #757575;
 $color-link : #757575;
 
-$primary : white; 
+$primary : white;
 $secondary : #1d3d86;
 
 $font-family-default : 'Roboto';
@@ -21,4 +21,4 @@ $menu-height : 60px;
 $header-padding : 20px;
 
 $home-banner : "../images/banner.jpg";
-$max-icon-height : 60px;
+$max-icon-height : 100px;
