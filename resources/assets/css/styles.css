@@ -1,0 +1,211 @@
+@charset "UTF-8";
+body {
+  font-family: "Roboto"; }
+
+ul {
+  list-style: none; }
+
+.mdl-card--horizontal {
+  flex-direction: column;
+  height: 1vh;
+  /* 1 */
+  padding-left: 230px; }
+  .mdl-card--horizontal .mdl-card__media {
+    left: 0;
+    position: absolute;
+    width: 150px; }
+  .mdl-card--horizontal .mdl-card__supporting-text {
+    flex: 1 1 auto;
+    width: auto; }
+
+.info-bulle {
+  width: 65px;
+  height: 65px;
+  border-radius: 24px; }
+
+.centring {
+  margin: 0 auto; }
+
+.label {
+  display: inline;
+  padding: .2em .6em .3em;
+  font-size: 75%;
+  font-weight: 700;
+  line-height: 1;
+  color: #fff;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: baseline;
+  border-radius: .25em; }
+
+header {
+  background-color: white !important; }
+  header .mdl-layout__header-row {
+    height: 140px;
+    color: #1d3d86;
+    padding-left: 140px; }
+    header .mdl-layout__header-row .mdl-layout-title .logo {
+      max-height: 100px; }
+    header .mdl-layout__header-row .mdl-layout-title h1, header .mdl-layout__header-row .mdl-layout-title main#content .actualites .actualite .mdl-card__title h2, main#content .actualites .actualite .mdl-card__title header .mdl-layout__header-row .mdl-layout-title h2 {
+      display: inline;
+      font-size: 35px;
+      font-weight: 600; }
+    header .mdl-layout__header-row .mdl-layout-title h4 {
+      margin: 0;
+      font-size: 20px;
+      line-height: 20px; }
+    header .mdl-layout__header-row nav {
+      margin: 0 auto !important; }
+      header .mdl-layout__header-row nav .mdl-navigation__link {
+        font-size: 16px;
+        font-weight: 400; }
+        header .mdl-layout__header-row nav .mdl-navigation__link:hover {
+          text-decoration: underline; }
+  header #menu {
+    height: 60px;
+    background-color: #1d3d86; }
+
+#banner {
+  height: 463px;
+  width: 100%;
+  background: url("../images/banner.jpg") top/cover;
+  margin: 0px;
+  overflow: hidden; }
+  #banner .overlay {
+    height: 160%;
+    width: 40%;
+    transform: rotate(25deg);
+    margin-top: -85px;
+    margin-right: -150px;
+    background-color: rgba(29, 65, 135, 0.55);
+    float: right; }
+    #banner .overlay .container {
+      transform: rotate(-25deg);
+      height: 100%;
+      text-align: right;
+      padding-right: 5%;
+      float: right;
+      margin-right: 180px; }
+      #banner .overlay .container ul {
+        list-style: none;
+        margin-top: 170px; }
+        #banner .overlay .container ul li {
+          text-decoration: none;
+          font-size: 20px; }
+          #banner .overlay .container ul li .team {
+            font-size: 20px;
+            font-weight: 400;
+            text-transform: uppercase;
+            margin-top: 30px; }
+          #banner .overlay .container ul li h2 {
+            margin-top: 0;
+            line-height: normal;
+            font-size: 24px;
+            font-weight: 500; }
+
+main#content {
+  margin-left: 35px; }
+  main#content h1, main#content .actualites .actualite .mdl-card__title h2 {
+    color: #1d3d86;
+    font-size: 22px;
+    text-transform: uppercase;
+    font-weight: 500; }
+
+section#bottom-banner {
+  position: relative;
+  background-color: #1d3d86;
+  padding: 35px; }
+  section#bottom-banner ul.social {
+    display: block;
+    color: white; }
+    section#bottom-banner ul.social li {
+      line-height: 20px;
+      margin-bottom: 20px;
+      font-weight: 200; }
+      section#bottom-banner ul.social li a {
+        text-decoration: none;
+        color: white; }
+      section#bottom-banner ul.social li div {
+        font-weight: 500; }
+    section#bottom-banner ul.social img {
+      float: left;
+      margin-right: 15px;
+      z-index: 1000; }
+  section#bottom-banner #banner-image {
+    position: absolute;
+    right: 5%;
+    bottom: 0%;
+    width: 25%; }
+    section#bottom-banner #banner-image img {
+      width: 100%; }
+
+footer#credits {
+  background-color: #1d3d86; }
+  footer#credits a {
+    text-decoration: none;
+    color: inherit; }
+
+/*Actualités*/
+main#content .actualites {
+  padding: 10px;
+  margin-bottom: 50px; }
+  main#content .actualites .actualite {
+    font-size: 16px;
+    margin-top: 40px; }
+    main#content .actualites .actualite .mdl-card__media {
+      width: 40%;
+      height: 180px; }
+      main#content .actualites .actualite .mdl-card__media img {
+        height: 100%;
+        width: 100%; }
+    main#content .actualites .actualite .mdl-card__supporting-text {
+      color: black;
+      font-weight: 500; }
+    main#content .actualites .actualite .mdl-card__title {
+      margin-left: 0;
+      padding: 0;
+      text-align: left; }
+      main#content .actualites .actualite .mdl-card__title h2 {
+        text-transform: none;
+        font-weight: 500; }
+    main#content .actualites .actualite .mdl-card__actions > a {
+      text-transform: none;
+      float: right;
+      line-height: 15px; }
+    main#content .actualites .actualite .label {
+      float: right;
+      font-weight: 200;
+      color: white;
+      background-color: #1d3d86; }
+
+section.pre-footer {
+  background-color: white;
+  color: white; }
+
+/* Login Section */
+#login .user-information {
+  padding-top: 10px; }
+  #login .user-information h5 {
+    font-size: 15px;
+    font-weight: 600;
+    margin: 0; }
+  #login .user-information a {
+    font-size: 15px;
+    color: inherit;
+    font-weight: 200;
+    text-decoration: none; }
+
+#login img.avatar {
+  border-radius: 48px;
+  float: right; }
+
+/* Header Last Results*/
+#widget-last-results {
+  margin: 0 auto;
+  text-align: center; }
+  #widget-last-results h3 {
+    font-size: 16px;
+    margin: 0; }
+  #widget-last-results .results {
+    font-weight: bold;
+    text-transform: uppercase; }

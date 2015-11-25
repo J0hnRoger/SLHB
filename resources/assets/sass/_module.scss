@@ -1,0 +1,108 @@
+// ==========================================================================
+// SMACSS - Module Scss
+// Module is a more discrete component of the page.
+// It is your navigation bars and your carousels and your dialogs and your widgets and so on.
+// https://smacss.com/book/type-module
+// ==========================================================================
+
+/*Actualités*/
+$home-thumbnail-heigth : 190px;
+$actu-font-size : 16px;
+$actu-font-weight : 500;
+$actu-font-color : black;
+$actu-margin : 40px;
+$prefooter-color : $primary;
+
+main#content {
+	.actualites {
+		padding : 10px;
+		margin-bottom: 50px;
+		.actualite {
+			font-size: $actu-font-size;
+			margin-top: $actu-margin;
+
+			.mdl-card__media {
+				width: 40%;
+				height: 180px;
+				img{
+					height: 100%;
+					width:100%;
+				}
+			}
+
+			.mdl-card__supporting-text {
+				color : $actu-font-color;
+				font-weight: $actu-font-weight;
+			}
+
+			.mdl-card__title {
+				margin-left: 0;
+				padding: 0;
+				text-align: left;
+				h2{
+					@extend h1;
+					text-transform: none;
+					font-weight: $actu-font-weight;
+				}
+			}
+
+			.mdl-card__actions > a {
+				text-transform: none;
+				float: right;
+				line-height: 15px;
+			}
+
+			.label {
+				float: right;
+				font-weight: 200;
+				color : $primary;
+				background-color: $secondary;
+			}
+		}
+	}
+}
+
+section.pre-footer {
+	background-color: $primary;
+	color : $prefooter-color;
+}
+
+/* Login Section */
+
+#login {
+
+	.user-information {
+		padding-top: 10px;
+		h5 {
+			font-size: 15px;
+			font-weight: 600;
+			margin: 0;
+		}
+
+		a {
+			font-size: 15px;
+			color: inherit;
+			font-weight: 200;
+			text-decoration: none;
+		}
+	}
+
+	img.avatar {
+		border-radius: 48px;
+		float: right;
+	}
+}
+
+/* Header Last Results*/
+#widget-last-results {
+	margin: 0 auto;
+	text-align: center;
+	h3{
+		font-size: 16px;
+		margin:0;
+	}
+	.results {
+		font-weight: bold;
+		text-transform: uppercase;
+	}
+}
