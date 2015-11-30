@@ -21,15 +21,22 @@
    'headerMenu' =>  NavigationModel::getMenuItems("header-nav")
  ));
 
+ /*Page d'accueil */
+ Route::any('front', 'HomeController@index');
+
 /*Page par défaut*/
+Route::get('page', function (){
+  return View::make('page')->with(array(
+    'page' =>  PageModel::getCurrentPage()
+  ));
+});
+
 Route::get('page', array( array('historique', 'infos-pratiques', 'boutique-officielle', 'contact'), function (){
   return View::make('page')->with(array(
     'page' =>  PageModel::getCurrentPage()
   ));
 }));
 
-/*Page d'accueil */
-Route::any('front', 'HomeController@index');
 
 /*Page de détails d'une actualité */
 

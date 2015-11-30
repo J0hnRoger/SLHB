@@ -49,8 +49,7 @@ class MatchModel {
     }
 
     /**
-     * Return only the matchs wich are played, ordered by the most recent match_date
-     * to the older.
+     * Return only the last match played, with additional informations (teams and scores included)
      *
      * @return Match Object
      */
