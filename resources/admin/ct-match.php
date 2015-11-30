@@ -2,24 +2,44 @@
 /*-----------------------------------------------------------------------*/
 // Match Custom Post
 /*-----------------------------------------------------------------------*/
-$match = PostType::make('slhb-match', 'Matchs', 'match')->set(array(
+$match = PostType::make('slhb_match', 'Matchs', 'match')->set(array(
     'public'        => true,
     'menu_position' => 20,
     'supports'      => false,
     'rewrite'       => false,
-    'query_var'     => false
+    'query_var'     => false,
+    'labels' => [
+        'add_item' => 'Ajouter un match',
+        'all_items' => 'Tous les matchs',
+        'edit_item' => 'Modifier un match'
+      ]
 ));
 
 /*-----------------------------------------------------------------------*/
 // Match informations
 /*-----------------------------------------------------------------------*/
 $infos = Metabox::make('Informations du match', $match->get('name'))->set(array(
-    Field::date('match-date', ['title' => 'Date du match']),
-    Field::text('match-team-dom', ['title' => 'Equipe à domicile']),
-    Field::text('match-team-ext', ['title' => 'Equipe à l\'exterieur']),
-    Field::number('score-dom', ['title' => 'Score de l\'équipe à domicile']),
-    Field::number('score-ext', ['title' => 'Score de l\'équipe extérieur'])
+    Field::date('match_date', ['title' => 'Date du match']),
+    Field::text('match_team_dom', ['title' => 'Equipe à domicile']),
+    Field::text('match_team_ext', ['title' => 'Equipe à l\'exterieur']),
+    Field::number('score_dom', ['title' => 'Score de l\'équipe à domicile']),
+    Field::number('score_ext', ['title' => 'Score de l\'équipe extérieur'])
 ));
 /*-----------------------------------------------------------------------*/
 // Match Defaults Values
 /*-----------------------------------------------------------------------*/
+function slhb_set_title ( $post_id, $post , $update){
+  $dateStr = Meta::get($post_id, 'match_date');
+  $title =  $dateStr . ' - '.
+            Meta::get($post_id, 'match_team_dom') . ' - '.
+            Meta::get($post_id, 'match_team_ext');
+    $date = date($dateStr);
+    //This temporarily removes filter to prevent infinite loops
+    remove_action('save_post', __FUNCTION__ );
+
+    wp_update_post( array('ID' => $post_id, 'post_title' => $title, 'match_date' => $date) );
+
+    //redo filter
+    add_filter('wp_insert_post_data', __FUNCTION__, 10, 3 );
+}
+add_action( 'save_post', 'slhb_set_title', 10, 3 );

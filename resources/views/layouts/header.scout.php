@@ -6,7 +6,10 @@
       <div class="mdl-layout-spacer"></div>
       <div id="widget-last-results" class="mdl-cell--3-col">
         <h3>Derniers résultats</h3>
-        <span class="results">SLHB <b>18</b> - <b>24</b> Fontenay</span>
+          <span class="results">{{$last_match->match_team_dom}}
+            <b>{{$last_match->score_dom}}</b>
+              -
+            <b>{{$last_match->score_ext}}</b> {{$last_match->match_team_ext}}</span>
       </div>
       <div class="mdl-layout-spacer"></div>
       @if($currentUser->user_login != false )
@@ -44,7 +47,7 @@
               <li class="event">
                 <div class="team">Senior 2</div>
                 <div class="team">Prochain match</div>
-                <h2>SLHB - SLAM</h2> 
+                <h2>SLHB - SLAM</h2>
                 <span class="date">
                   Dimanche 19 Novembre - 17h00
                 </span>
