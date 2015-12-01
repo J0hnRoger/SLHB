@@ -36,11 +36,11 @@ function slhb_set_title ( $post_id, $post , $update){
             Meta::get($post_id, 'match_team_ext');
     $date = date($dateStr);
     //This temporarily removes filter to prevent infinite loops
-    remove_action('save_post', __FUNCTION__ );
+    remove_action('save_post_slhb_match', __FUNCTION__ );
 
     wp_update_post( array('ID' => $post_id, 'post_title' => $title, 'match_date' => $date) );
 
     //redo filter
-    add_filter('wp_insert_post_data', __FUNCTION__, 10, 3 );
+    add_action('save_post_slhb_match', __FUNCTION__, 10, 3 );
 }
 add_action( 'save_post_slhb_match', 'slhb_set_title', 10, 3 );

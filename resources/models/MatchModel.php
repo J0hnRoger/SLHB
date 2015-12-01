@@ -68,4 +68,51 @@ class MatchModel {
         }
         return $match;
     }
+
+    /**
+     * Return the next matchs wich are not playing yet
+     *
+     * @return Match Object
+     */
+    public static function getNextMatchs($limit)
+    {
+        $query = new WP_Query(array(
+            'post_type'       => 'slhb_match',
+            'posts_per_page'  => $limit,
+            'post_status'     => 'publish',
+            'meta_query'   => array
+  					(
+  						array
+  						(
+  							'key'     => 'match_date',
+  							'value'   => date("Y-m-d"),
+  							'type'    => 'DATE', // TRIED: DATE, SIGNED, NUMBER
+  							'compare' => '>'
+  						)
+  					),
+            'orderby'         => 'match_date',
+            'order'           => 'ASC'
+        ));
+        $matchs = $query->get_posts();
+        return $matchs;
+    }
+
+    /**
+     * Return only the last match played, with additional informations (teams and scores included)
+     *
+     * @return Match Object
+     */
+    public static function getNextMatch()
+    {
+        $matchs = MatchModel::getNextMatchs(1);
+        if (count($matchs) == 1) {
+          $match = $matchs[0];
+          $matchId = $match->ID;
+
+          $match->match_date = Meta::get($matchId, 'match_date');
+          $match->match_team_dom = Meta::get($matchId, 'match_team_dom');
+          $match->match_team_ext = Meta::get($matchId, 'match_team_ext');
+        }
+        return $match;
+    }
 }

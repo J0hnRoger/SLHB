@@ -14,10 +14,6 @@
     <h1>{{ $page->post_title }}</h1>
     <article>{{ $page->post_content }}</article>
 
-    <pre><code class="language-markup">
-    	&lt!-- TODO - Zone de widget  -->
-    	&lt;section id="team-widget">
-        &lt;!-- Afficher le prochain match -->
-    	&lt;/section>
-    </code></pre>
+    <?php if (!function_exists('dynamic_sidebar') || !dynamic_sidebar('Team Widget Zone')) : ?>
+    <?php endif; ?>
 @stop

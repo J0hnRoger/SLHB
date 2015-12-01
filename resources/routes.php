@@ -24,7 +24,6 @@
  /*Page d'accueil */
  Route::any('front', 'HomeController@index');
 
-
  /* Page de détails d'une équipes */
  Route::get('singular', ['slhb_team', function (){
    return View::make('teams.teams')->with(array(
@@ -59,3 +58,9 @@ Route::get('template', array('calendar-template', 'uses' => 'AgendaController@in
 /* Page Boutique */
 
 /* Page Profil  */
+
+/* Page 404 */
+Route::any('404', function()
+{
+    return 'Perdu?';
+});

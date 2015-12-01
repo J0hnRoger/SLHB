@@ -8,10 +8,20 @@ return array(
 	* Add as many as you want, watch-out your commas!
 	*/
 	array(
-		'name'			=> __('First sidebar', THEMOSIS_THEME_TEXTDOMAIN),
-		'id'			=> 'first-sidebar',
-		'description'	=> __('Area of first sidebar', THEMOSIS_THEME_TEXTDOMAIN),
-		'before_widget'	=> '<div>',
+		'name'			=> "Team Widget Zone",
+		'id'			=> 'team-widgets',
+		'description'	=> "Zone de Widget en dessous de la description d'équipe",
+		'before_widget'	=> '<div class="team-widget-zone">',
+		'after_widget'	=> '</div>',
+		'before_title'	=> '<h2>',
+		'after_title'	=> '</h2>'
+	),
+
+	array(
+		'name'			=> "Footer Widget Zone",
+		'id'			=> 'footer-widgets',
+		'description'	=> "Zone de Widget du footer",
+		'before_widget'	=> '<div class=\"footer-widget-zone\">',
 		'after_widget'	=> '</div>',
 		'before_title'	=> '<h2>',
 		'after_title'	=> '</h2>'
