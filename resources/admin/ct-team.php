@@ -1,19 +1,26 @@
 <?php
 
-$team = PostType::make('slhb_team', 'Equipes', 'Equipe')->set(array(
+$team = PostType::make('slhb_team', 'Les équipes', 'équipe')->set(array(
 
     'public'        => true,
     'menu_position' => 30,
-    'supports'      => array('title'),
+    'supports'      => array('title', 'editor'),
     'rewrite'       => false,
-    'query_var'     => false
-
+    'query_var'     => false,
+    'labels' => [
+        'add_new_item' => 'Ajouter une nouvelle équipe',
+        'add_new' => 'Ajouter une équipe',
+        'add_item' => 'Ajouter une équipe',
+        'all_items' => 'Toutes les équipes',
+        'edit_item' => 'Modifier une équipe'
+      ]
 ));
 
 /*-----------------------------------------------------------------------*/
 // Team informations
 /*-----------------------------------------------------------------------*/
-$infos = Metabox::make('Informations de l\'équipe', $team->get('name'))->set(array(
+$infos = Metabox::make('Informations sur l\'équipe', $team->get('name'))->set(array(
+  Field::media('profile', ['title' => 'Photo de groupe de l\'équipe ']),
   Field::select('Niveau', [
   [
       'Excellence Région',

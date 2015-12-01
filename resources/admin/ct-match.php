@@ -2,13 +2,14 @@
 /*-----------------------------------------------------------------------*/
 // Match Custom Post
 /*-----------------------------------------------------------------------*/
-$match = PostType::make('slhb_match', 'Matchs', 'match')->set(array(
+$match = PostType::make('slhb_match', 'Les matchs', 'match')->set(array(
     'public'        => true,
     'menu_position' => 20,
     'supports'      => false,
     'rewrite'       => false,
     'query_var'     => false,
     'labels' => [
+        'add_new' => 'Ajouter un nouveau match',
         'add_item' => 'Ajouter un match',
         'all_items' => 'Tous les matchs',
         'edit_item' => 'Modifier un match'
@@ -42,4 +43,4 @@ function slhb_set_title ( $post_id, $post , $update){
     //redo filter
     add_filter('wp_insert_post_data', __FUNCTION__, 10, 3 );
 }
-add_action( 'save_post', 'slhb_set_title', 10, 3 );
+add_action( 'save_post_slhb_match', 'slhb_set_title', 10, 3 );

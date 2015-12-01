@@ -24,19 +24,20 @@
  /*Page d'accueil */
  Route::any('front', 'HomeController@index');
 
+
+ /* Page de détails d'une équipes */
+ Route::get('singular', ['slhb_team', function (){
+   return View::make('teams.teams')->with(array(
+     'page' =>  PageModel::getCurrentPage()
+   ));
+ }]);
+
 /*Page par défaut*/
 Route::get('page', function (){
   return View::make('page')->with(array(
     'page' =>  PageModel::getCurrentPage()
   ));
 });
-
-Route::get('page', array( array('historique', 'infos-pratiques', 'boutique-officielle', 'contact'), function (){
-  return View::make('page')->with(array(
-    'page' =>  PageModel::getCurrentPage()
-  ));
-}));
-
 
 /*Page de détails d'une actualité */
 
@@ -48,8 +49,6 @@ Route::get('singular', array('post', function (){
 Route::get('template', array('calendar-template', 'uses' => 'AgendaController@index'));
 
 /* Page Toutes les équipes */
-
-/* Page de détails d'une équipes */
 
 /* Page Infos pratiques */
 

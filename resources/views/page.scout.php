@@ -8,7 +8,7 @@
 
 @section('main')
   {{ get_the_date('j F Y') }}
-    <h1>{{ $page->post_name }}</h1>
+    <h1>{{ $page->post_title }}</h1>
     <article>{{ $page->post_content }}</article>
     <ul class="comments">
     @foreach($page->comments as $comment)
