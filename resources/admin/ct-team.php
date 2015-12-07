@@ -3,7 +3,7 @@
 $team = PostType::make('slhb_team', 'Les équipes', 'équipe')->set(array(
 
     'public'        => true,
-    'menu_position' => 30,
+    'menu_position' => 20,
     'supports'      => array('title', 'editor'),
     'rewrite'       => false,
     'query_var'     => false,
@@ -28,5 +28,7 @@ $infos = Metabox::make('Informations sur l\'équipe', $team->get('name'))->set(a
       'Pré-Région',
       'Deuxième division'
   ]
-], ['title' => 'Quelle division? '])
+], ['title' => 'Quelle division? ']),
+  Field::collection('gallery')
+
 ));

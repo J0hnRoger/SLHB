@@ -9,7 +9,5 @@ return array(
 	* Simply define a template slug.
 	*/
 
-	'custom-template',
 	'calendar-template'
-
 );
