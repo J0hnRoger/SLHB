@@ -30,5 +30,4 @@ $infos = Metabox::make('Informations sur l\'équipe', $team->get('name'))->set(a
   ]
 ], ['title' => 'Quelle division? ']),
   Field::collection('gallery')
-
 ));

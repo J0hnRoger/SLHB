@@ -18,7 +18,6 @@ class MatchModel {
         return $query->get_posts();
     }
 
-
     /**
      * Return only the matchs wich are played, ordered by the most recent match_date
      * to the older.

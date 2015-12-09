@@ -24,12 +24,11 @@
  /*Page d'accueil */
  Route::any('front', 'HomeController@index');
 
+ /* Page Toutes les équipes */
+ Route::get('postTypeArchive', ['slhb_team', 'uses' => 'TeamController@index']);
+
  /* Page de détails d'une équipes */
- Route::get('singular', ['slhb_team', function (){
-   return View::make('teams.teams')->with(array(
-     'page' =>  PageModel::getCurrentPage()
-   ));
- }]);
+ Route::get('singular', ['slhb_team', 'uses' => 'TeamController@getSingle']);
 
 /*Page par défaut*/
 Route::get('page', function (){
@@ -47,7 +46,6 @@ Route::get('singular', array('post', function (){
 /* Page Calendrier */
 Route::get('template', array('calendar-template', 'uses' => 'AgendaController@index'));
 
-/* Page Toutes les équipes */
 
 /* Page Infos pratiques */
 

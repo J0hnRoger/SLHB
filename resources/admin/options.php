@@ -1,6 +1,5 @@
 <?php
 
-
 $options = Page::make('options', 'Configuration SLHB')->set([
     'capability'    => 'manage_options',
     'icon'          => 'dashicons-hammer',

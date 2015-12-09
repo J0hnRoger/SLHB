@@ -17,46 +17,73 @@ main#content {
 	.actualites {
 		padding : 10px;
 		margin-bottom: 50px;
+
 		.actualite {
 			font-size: $actu-font-size;
 			margin-top: $actu-margin;
+			height: 213px;
+			overflow: hidden;
+			position: relative;
 
-			.mdl-card__media {
+			img{
+				float: left;
 				width: 40%;
-				height: 180px;
-				img{
-					height: 100%;
-					width:100%;
-				}
+				height: auto;
 			}
 
-			.mdl-card__supporting-text {
+			.content {
+				float: left;
+				width: 55%;
+				padding-left: 30px;
+				max-height: 80%;
+				overflow: hidden;
+			}
+
+			p {
 				color : $actu-font-color;
 				font-weight: $actu-font-weight;
 			}
 
-			.mdl-card__title {
-				margin-left: 0;
-				padding: 0;
-				text-align: left;
-				h2{
-					@extend h1;
-					text-transform: none;
-					font-weight: $actu-font-weight;
-				}
+			h2 {
+				@extend h1;
+				text-transform: none;
+				font-weight: $actu-font-weight;
+				margin: 0;
 			}
 
-			.mdl-card__actions > a {
+			a {
 				text-transform: none;
 				float: right;
-				line-height: 15px;
 			}
 
-			.label {
-				float: right;
-				font-weight: 200;
-				color : $primary;
-				background-color: $secondary;
+			.date {
+				line-height: normal;
+			  position: absolute;
+			  top: 10px;
+			  left: 10px;
+			  z-index: 1;
+			  background: $secondary;
+			  width: 55px;
+			  height: 55px;
+			  padding: 5.5px 0;
+			  -webkit-border-radius: 100%;
+			  -moz-border-radius: 100%;
+			  border-radius: 100%;
+			  color: #ffffff;
+			  font-weight: 700;
+			  text-align: center;
+			  -webkit-box-sizing: border-box;
+			  -moz-box-sizing: border-box;
+			  box-sizing: border-box;
+
+				.day {
+				  font-size: 18px;
+				}
+
+				.month {
+					  font-size: 12px;
+					  text-transform: uppercase;
+					}
 			}
 		}
 	}
