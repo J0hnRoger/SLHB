@@ -7,7 +7,7 @@
     @endforeach
     </nav>
   </div>
-    <div id="banner" class="mdl-cell mdl-cell--12-col">
+    <div id="banner" class="mdl-cell mdl-cell--12-col" style="background : url(<?php echo $home_banner ?>) top / cover;">
       <div class="overlay">
         <div class="container">
           <ul class="events">

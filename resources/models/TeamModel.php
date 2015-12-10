@@ -14,7 +14,20 @@ class TeamModel {
             'posts_per_page'    => -1,
             'post_status'       => 'publish'
         ));
-
         return $query->get_posts();
+    }
+
+    public static function getCurrent()
+    {
+      $team = get_queried_object();
+      #add custom properties
+      $bannerId = Meta::get($team->ID, 'profile', $single = true);
+      $image_attributes = wp_get_attachment_image_src( $bannerId , "full");
+      if( $image_attributes ) {
+        $image_attributes[0];
+        $team->banner = $image_attributes[0];
+      }
+
+      return $team;
     }
 }

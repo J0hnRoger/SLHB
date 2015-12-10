@@ -10,9 +10,17 @@ class TeamController extends BaseController
     }
 
     function getSingle(){
-      return View::make('teams.single')->with(array(
-        'page' =>  PageModel::getCurrentPage()
-      ));
+
+      $team =  TeamModel::getCurrent();
+
+      $options = array(
+        'team' => $team
+      );
+
+      if (isset($team->banner))
+        $options["home_banner"] = $team->banner;
+
+      return View::make('teams.single')->with($options);
     }
 }
 

@@ -18,7 +18,8 @@
    'footerImage' => themosis_assets(). '/images/image-footer-2015.png',
    'defaultAvatar' => themosis_assets(). '/images/slhb-default-avatar.png',
    'currentUser' => User::current(),
-   'headerMenu' =>  NavigationModel::getMenuItems("header-nav")
+   'headerMenu' =>  NavigationModel::getMenuItems("header-nav"),
+   'home_banner' =>  themosis_assets() . "/images/banner.jpg"
  ));
 
  /*Page d'accueil */
@@ -30,12 +31,6 @@
  /* Page de détails d'une équipes */
  Route::get('singular', ['slhb_team', 'uses' => 'TeamController@getSingle']);
 
-/*Page par défaut*/
-Route::get('page', function (){
-  return View::make('page')->with(array(
-    'page' =>  PageModel::getCurrentPage()
-  ));
-});
 
 /*Page de détails d'une actualité */
 
@@ -56,6 +51,12 @@ Route::get('template', array('calendar-template', 'uses' => 'AgendaController@in
 /* Page Boutique */
 
 /* Page Profil  */
+/*Page par défaut*/
+Route::get('page', function (){
+  return View::make('page')->with(array(
+    'page' =>  PageModel::getCurrentPage()
+  ));
+});
 
 /* Page 404 */
 Route::any('404', function()

@@ -6,7 +6,8 @@ class HomeController extends BaseController
     {
         return View::make('home.home-content')->with(array(
             'actus' => PostModel::all(),
-            'last_match' => MatchModel::getLastResult(10)
+            'last_match' => MatchModel::getLastResult(10),
+            'home_banner' =>  themosis_assets() . "/images/banner.jpg"
         ));
     }
 }
