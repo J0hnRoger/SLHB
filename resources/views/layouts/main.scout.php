@@ -35,9 +35,8 @@
   </section>
   <footer>
   @include('layouts.footer')
-
+	</footer>
   @include('layouts.credits')
-  </footer>
 </div>
 <?php wp_footer(); ?>
     <!-- Ne pas supprimer les marqueurs suivants ! Sinon Bower sera perdu -->

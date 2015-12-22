@@ -3,6 +3,11 @@
 $images = Option::get("section-slhb-options", "logos");
 ?>
 
-@foreach($images as $i => $image)
-<?php echo wp_get_attachment_image( $image );  ?>
-@endforeach
+<h1>Nos Partenaires</h1>
+<ul class="partners">
+  @foreach($images as $i => $image)
+  <li>
+    <?php echo wp_get_attachment_image( $image );  ?>
+  </li>
+  @endforeach
+</ul>

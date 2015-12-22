@@ -43,6 +43,7 @@ Route::get('template', array('calendar-template', 'uses' => 'AgendaController@in
 
 
 /* Page Infos pratiques */
+Route::get('template', array('infos-pratiques-template', 'uses' => 'InfosPratiquesController@index'));
 
 /* Page Médiathèque */
 

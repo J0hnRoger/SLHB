@@ -113,6 +113,14 @@ section#bottom-banner {
     section#bottom-banner #banner-image img {
       width: 100%; }
 
+footer {
+  text-align: center; }
+  footer h1, footer main#content .actualites .actualite h2, main#content .actualites .actualite footer h2 {
+    color: #1d3d86;
+    font-size: 22px;
+    text-transform: uppercase;
+    font-weight: 600; }
+
 footer#credits {
   background-color: #1d3d86; }
   footer#credits a {
@@ -206,6 +214,15 @@ section.pre-footer {
   #widget-last-results .results {
     font-weight: bold;
     text-transform: uppercase; }
+
+/* Partner */
+ul.partners li {
+  display: inline-block;
+  height: 100px;
+  margin: 0 40px; }
+  ul.partners li img {
+    width: 80px;
+    height: auto; }
 
 /* Archive Teams */
 ul.all-teams li {

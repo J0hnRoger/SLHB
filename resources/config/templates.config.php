@@ -9,5 +9,6 @@ return array(
 	* Simply define a template slug.
 	*/
 
-	'calendar-template'
+	'calendar-template',
+	'infos-pratiques-template'
 );

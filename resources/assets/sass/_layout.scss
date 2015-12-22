@@ -146,6 +146,16 @@ section#bottom-banner {
 	}
 }
 
+footer{
+	text-align: center;
+	h1 {
+		color : $secondary;
+		font-size: $header-title-font-size;
+		text-transform: uppercase;
+		font-weight: 600;
+	}
+}
+
 footer#credits {
 	background-color: $secondary;
 	a {

@@ -134,6 +134,19 @@ section.pre-footer {
 	}
 }
 
+/* Partner */
+ul.partners {
+	li {
+		display: inline-block;
+		height: 100px;
+		margin: 0 40px ;
+		img {
+			width: 80px;
+			height: auto;
+		}
+	}
+}
+
 /* Archive Teams */
 ul.all-teams {
 	li {
