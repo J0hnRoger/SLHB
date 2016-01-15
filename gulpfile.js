@@ -42,5 +42,5 @@ gulp.task('browser-sync', function() {
 });
 
 gulp.task('default', ['browser-sync'], function(){
-    gulp.watch('./resources/assets/sass/*.scss',['styles']);
+  //  gulp.watch('./resources/assets/sass/*.scss',['styles']);
 });

@@ -33,7 +33,7 @@
   <section id="bottom-banner">
   @include('layouts.bottom-banner')
   </section>
-  <footer>
+  <footer class="mdl-layout--large-screen-only">
   @include('layouts.footer')
 	</footer>
   @include('layouts.credits')
@@ -41,7 +41,17 @@
 <?php wp_footer(); ?>
     <!-- Ne pas supprimer les marqueurs suivants ! Sinon Bower sera perdu -->
     <!-- inject:js -->
+    <script src="/content/themes/SLHB//resources/assets/eventie/eventie.js"></script>
+    <script src="/content/themes/SLHB//resources/assets/doc-ready/doc-ready.js"></script>
+    <script src="/content/themes/SLHB//resources/assets/eventEmitter/EventEmitter.js"></script>
+    <script src="/content/themes/SLHB//resources/assets/get-size/get-size.js"></script>
+    <script src="/content/themes/SLHB//resources/assets/fizzy-ui-utils/utils.js"></script>
+    <script src="/content/themes/SLHB//resources/assets/get-style-property/get-style-property.js"></script>
+    <script src="/content/themes/SLHB//resources/assets/js/upload-media.js"></script>
+    <script src="/content/themes/SLHB//resources/assets/masonry/masonry.js"></script>
     <script src="/content/themes/SLHB//resources/assets/material-design-lite/material.min.js"></script>
+    <script src="/content/themes/SLHB//resources/assets/outlayer/outlayer.js"></script>
+    <script src="/content/themes/SLHB//resources/assets/matches-selector/matches-selector.js"></script>
     <script src="/content/themes/SLHB//resources/assets/prism/prism.js"></script>
     <!-- endinject -->
 </body>

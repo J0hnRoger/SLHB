@@ -135,18 +135,17 @@ main#content .actualites {
   main#content .actualites .actualite {
     font-size: 16px;
     margin-top: 40px;
-    height: 213px;
     overflow: hidden;
     position: relative; }
     main#content .actualites .actualite img {
       float: left;
       width: 40%;
-      height: auto; }
+      height: auto;
+      margin-right: 20px; }
     main#content .actualites .actualite .content {
       float: left;
-      width: 55%;
+      width: 295px;
       padding-left: 30px;
-      max-height: 80%;
       overflow: hidden; }
     main#content .actualites .actualite p {
       color: black;

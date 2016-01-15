@@ -8,8 +8,10 @@
 
 <div class="actualites mdl-grid">
 @foreach($actus as $i => $actu)
-<div class="actualite mdl-cell mdl-cell--5-col">
+<div class="actualite mdl-cell mdl-cell--5-col mdl-cell--10-col-phone">
+	<div class="mdl-layout--large-screen-only">
     {{ get_the_post_thumbnail($actu->ID) }}
+	</div>
 		<div class="content">
       <h2 >{{$actu->post_title}}</h2>
 			<p>{{$actu->post_content}}</p>

@@ -21,7 +21,6 @@ main#content {
 		.actualite {
 			font-size: $actu-font-size;
 			margin-top: $actu-margin;
-			height: 213px;
 			overflow: hidden;
 			position: relative;
 
@@ -29,13 +28,13 @@ main#content {
 				float: left;
 				width: 40%;
 				height: auto;
+				margin-right: 20px;
 			}
 
 			.content {
 				float: left;
-				width: 55%;
+				width: 295px;
 				padding-left: 30px;
-				max-height: 80%;
 				overflow: hidden;
 			}
 

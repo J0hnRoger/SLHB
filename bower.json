@@ -23,6 +23,7 @@
     "tests"
   ],
   "dependencies": {
-    "material-design-lite": "~1.0.5"
+    "material-design-lite": "~1.0.5",
+    "masonry": "~3.3.2"
   }
 }
