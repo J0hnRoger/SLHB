@@ -35,23 +35,26 @@
         <div class="overlay">
           <div class="container">
             <ul class="events">
+              @if(isset($next_match[0]))
               <li class="event">
-                <div class="team">Senior 1</div>
+                <div class="team">{{$next_match[0]->match_team_dom}}</div>
                 <div class="team">Prochain match</div>
                 <span></span>
-                <h2>HBCV - SLHB</h2>
+                <h2>{{$next_match[0]->match_team_dom}} - {{$next_match[0]->match_team_ext}}</h2>
                 <span class="date">
-                  Samedi 18 Novembre - 18h00
                 </span>
               </li>
+              @endif
+              @if(isset($next_match[1]))
               <li class="event">
-                <div class="team">Senior 2</div>
+                <div class="team">{{$next_match[1]->match_team_dom}}</div>
                 <div class="team">Prochain match</div>
-                <h2>SLHB - SLAM</h2>
+                <h2>{{$next_match[1]->match_team_dom}} - {{$next_match[1]->match_team_dom}}</h2>
                 <span class="date">
                   Dimanche 19 Novembre - 17h00
                 </span>
               </li>
+              @endif
             </ul>
           </div>
         </div>

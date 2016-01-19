@@ -19,9 +19,11 @@ $match = PostType::make('slhb_match', 'Les matchs', 'match')->set(array(
 /*-----------------------------------------------------------------------*/
 // Match informations
 /*-----------------------------------------------------------------------*/
+
+
 $infos = Metabox::make('Informations du match', $match->get('name'))->set(array(
     Field::date('match_date', ['title' => 'Date du match']),
-    Field::text('match_team_dom', ['title' => 'Equipe à domicile']),
+    Field::select('match_team_dom', TeamModel::getTeamsArray()),
     Field::text('match_team_ext', ['title' => 'Equipe à l\'exterieur']),
     Field::number('score_dom', ['title' => 'Score de l\'équipe à domicile']),
     Field::number('score_ext', ['title' => 'Score de l\'équipe extérieur'])

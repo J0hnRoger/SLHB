@@ -78,17 +78,22 @@ header {
             font-weight: 500; }
 
 main#content {
-  margin-left: 35px; }
+  margin-left: 35px;
+  /* Responsive Phone */ }
   main#content h1, main#content .actualites .actualite h2 {
     color: #1d3d86;
     font-size: 22px;
     text-transform: uppercase;
     font-weight: 500; }
+  @media (min-width: 320px) {
+    main#content {
+      margin: 0; } }
 
 section#bottom-banner {
   position: relative;
   background-color: #1d3d86;
-  padding: 35px; }
+  padding: 35px;
+  /*Phone Rules*/ }
   section#bottom-banner ul.social {
     display: block;
     color: white; }
@@ -112,6 +117,15 @@ section#bottom-banner {
     width: 25%; }
     section#bottom-banner #banner-image img {
       width: 100%; }
+  @media (min-width: 320px) {
+    section#bottom-banner {
+      padding: 0px;
+      margin: 0; }
+      section#bottom-banner #banner-image {
+        position: inherit;
+        margin-bottom: 20px;
+        float: right;
+        width: 45px; } }
 
 footer {
   text-align: center; }
@@ -238,3 +252,61 @@ ul.all-teams li {
     color: white;
     font-size: 25px;
     text-decoration: none; }
+
+/*Agenda*/
+.agenda {
+  color: #8a8c96;
+  margin: 0;
+  padding: 0; }
+  .agenda .timeline {
+    margin: 0;
+    width: 75px;
+    float: left; }
+    .agenda .timeline ul {
+      margin: 48px 0;
+      padding: 0;
+      text-align: center; }
+      .agenda .timeline ul li.selected {
+        border: 1px solid #eaecf1;
+        color: #2d304a;
+        background-color: #f3f5f9; }
+      .agenda .timeline ul li {
+        height: 74px;
+        padding-top: 10px; }
+        .agenda .timeline ul li .num {
+          display: block;
+          font-size: 22px; }
+        .agenda .timeline ul li .month {
+          text-transform: uppercase;
+          font-size: 12px;
+          color: #8a8c96; }
+  .agenda .left-panel {
+    width: 245px; }
+    .agenda .left-panel .header {
+      text-align: center; }
+      .agenda .left-panel .header h4 {
+        margin: 0;
+        line-height: 72px; }
+      .agenda .left-panel .header .count {
+        margin: 15px;
+        font-weight: lighter;
+        float: right;
+        line-height: 40px;
+        font-size: 20px;
+        color: white;
+        background-color: #fd716a; }
+    .agenda .left-panel ul {
+      margin: 0;
+      padding: 0;
+      line-height: 30px; }
+      .agenda .left-panel ul li {
+        -moz-box-shadow: 1px 1px 1px 0px #ebecf0;
+        -webkit-box-shadow: 0px 0px 0px 0px #ebecf0;
+        -o-box-shadow: 1px 1px 1px 0px #ebecf0;
+        box-shadow: 1px 1px 1px 1px #ebecf0;
+        filter: progid:DXImageTransform.Microsoft.Shadow(color=#ebecf0, Direction=134, Strength=1);
+        height: 80px;
+        padding: 30px; }
+        .agenda .left-panel ul li .descr {
+          color: #2d304a;
+          font-size: 22px; }

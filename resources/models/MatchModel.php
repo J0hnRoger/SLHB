@@ -93,6 +93,17 @@ class MatchModel {
             'order'           => 'ASC'
         ));
         $matchs = $query->get_posts();
+
+        $filledMatchs = [];
+        foreach ($matchs as $key => $match) {
+
+          $matchId = $match->ID;
+
+          $match->match_date = Meta::get($matchId, 'match_date');
+          $match->match_team_dom = Meta::get($matchId, 'match_team_dom');
+          $match->match_team_ext = Meta::get($matchId, 'match_team_ext');
+          array_push($filledMatchs, $match);
+        }
         return $matchs;
     }
 
@@ -111,7 +122,7 @@ class MatchModel {
           $match->match_date = Meta::get($matchId, 'match_date');
           $match->match_team_dom = Meta::get($matchId, 'match_team_dom');
           $match->match_team_ext = Meta::get($matchId, 'match_team_ext');
+          return $match;
         }
-        return $match;
     }
 }

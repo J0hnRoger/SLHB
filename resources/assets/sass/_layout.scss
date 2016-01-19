@@ -104,6 +104,11 @@ main#content{
 		text-transform: uppercase;
 		font-weight: 500;
 	}
+
+	/* Responsive Phone */
+	@include phone {
+		margin:0;
+	}
 }
 
 section#bottom-banner {
@@ -144,6 +149,18 @@ section#bottom-banner {
 			width : 100%;
 		}
 	}
+
+	/*Phone Rules*/
+	@include phone {
+		padding: 0px;
+		margin: 0;
+		#banner-image {
+			position: inherit;
+			margin-bottom: 20px;;
+			float: right;;
+			width: 45px;
+		}
+  }
 }
 
 footer{

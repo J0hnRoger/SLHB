@@ -30,4 +30,12 @@ class TeamModel {
 
       return $team;
     }
+
+    public static function getTeamsArray(){
+      $teamNames = [];
+      foreach (TeamModel::all() as $key => $team) {
+        array_push($teamNames, [$team->post_title => $team->post_title]);
+      }
+      return $teamNames;
+    }
 }
