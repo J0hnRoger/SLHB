@@ -27,3 +27,4 @@ node_modules
 
 #### BOWER MODULE
 bower_components
+###gulpfile (for designer who doesn't use SASS)

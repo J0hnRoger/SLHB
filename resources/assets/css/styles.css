@@ -78,8 +78,8 @@ header {
             font-weight: 500; }
 
 main#content {
-  margin-left: 35px;
-  /* Responsive Phone */ }
+  /* Responsive Phone */
+  /*Responsive - Large Screen*/ }
   main#content h1, main#content .actualites .actualite h2 {
     color: #1d3d86;
     font-size: 22px;
@@ -87,7 +87,11 @@ main#content {
     font-weight: 500; }
   @media (min-width: 320px) {
     main#content {
-      margin: 0; } }
+      margin: 0;
+      margin-left: 0px; } }
+  @media (min-width: 1024px) {
+    main#content {
+      margin-left: 35px; } }
 
 section#bottom-banner {
   position: relative;
@@ -257,7 +261,8 @@ ul.all-teams li {
 .agenda {
   color: #8a8c96;
   margin: 0;
-  padding: 0; }
+  padding: 0;
+  /*--- Event Details*/ }
   .agenda .timeline {
     margin: 0;
     width: 75px;
@@ -269,7 +274,7 @@ ul.all-teams li {
       .agenda .timeline ul li.selected {
         border: 1px solid #eaecf1;
         color: #2d304a;
-        background-color: #f3f5f9; }
+        background-color: #E0E0E0; }
       .agenda .timeline ul li {
         height: 74px;
         padding-top: 10px; }
@@ -280,6 +285,16 @@ ul.all-teams li {
           text-transform: uppercase;
           font-size: 12px;
           color: #8a8c96; }
+  .agenda .count {
+    position: absolute;
+    margin: 15px;
+    font-weight: lighter;
+    font-style: normal;
+    right: 15px;
+    line-height: 40px;
+    font-size: 20px;
+    color: #1d3d86;
+    background-color: white; }
   .agenda .left-panel {
     width: 245px; }
     .agenda .left-panel .header {
@@ -287,14 +302,6 @@ ul.all-teams li {
       .agenda .left-panel .header h4 {
         margin: 0;
         line-height: 72px; }
-      .agenda .left-panel .header .count {
-        margin: 15px;
-        font-weight: lighter;
-        float: right;
-        line-height: 40px;
-        font-size: 20px;
-        color: white;
-        background-color: #fd716a; }
     .agenda .left-panel ul {
       margin: 0;
       padding: 0;
@@ -310,3 +317,59 @@ ul.all-teams li {
         .agenda .left-panel ul li .descr {
           color: #2d304a;
           font-size: 22px; }
+  .agenda div.event-details {
+    height: 85vh;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    padding: 0; }
+    .agenda div.event-details .cover {
+      width: auto;
+      height: 45%; }
+      .agenda div.event-details .cover .header-content {
+        width: 45%;
+        height: 100%;
+        background-color: white;
+        padding: 10px 40px; }
+        .agenda div.event-details .cover .header-content h1, .agenda div.event-details .cover .header-content main#content .actualites .actualite h2, main#content .actualites .actualite .agenda div.event-details .cover .header-content h2 {
+          margin: 0;
+          line-height: 50px;
+          padding: 0;
+          float: left;
+          margin-top: 35%;
+          font-weight: 300 !important;
+          display: inline-block;
+          width: 100%; }
+    .agenda div.event-details .carousel {
+      position: relative;
+      margin: 0;
+      padding: 0; }
+      @media (min-width: 320px) {
+        .agenda div.event-details .carousel div {
+          min-width: calc(100% / 4);
+          min-height: 80px;
+          background-size: 350px;
+          background-repeat: no-repeat; } }
+      .agenda div.event-details .carousel div {
+        background-color: #1abc9c;
+        -webkit-transition: .3s ease-in-out;
+        transition: .3s ease-in-out;
+        opacity: .7; }
+      .agenda div.event-details .carousel div:hover {
+        opacity: 1; }
+      .agenda div.event-details .carousel div.more-pictures {
+        opacity: 1;
+        background-color: #1d3d86;
+        text-align: center;
+        color: white;
+        font-weight: lighter;
+        padding-right: 0px; }
+        .agenda div.event-details .carousel div.more-pictures h1, .agenda div.event-details .carousel div.more-pictures main#content .actualites .actualite h2, main#content .actualites .actualite .agenda div.event-details .carousel div.more-pictures h2 {
+          background-color: #1d3d86;
+          margin: 0;
+          color: white !important;
+          text-align: center;
+          font-size: 2.5em !important;
+          font-weight: 300 !important; }
+    .agenda div.event-details .event-content {
+      padding: 40px; }

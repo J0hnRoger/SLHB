@@ -56,3 +56,16 @@ $phone-width: 320px;
   box-shadow: 1px 1px 1px 1px #ebecf0;
   filter:progid:DXImageTransform.Microsoft.Shadow(color=#ebecf0, Direction=134, Strength=1);
 }
+
+@mixin opacitify {
+   &{
+      background-color: #1abc9c;
+      -webkit-transition: .3s ease-in-out;
+      transition: .3s ease-in-out;
+      opacity: .7;
+    }
+    &:hover{
+      opacity: 1;
+    }
+
+}

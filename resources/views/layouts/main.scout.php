@@ -28,9 +28,8 @@
   <main id="content" class="mdl-layout__content">
       @yield('main')
   </main>
-  @yield('pre-footer')
 
-  <section id="bottom-banner">
+  <section id="bottom-banner" class="mdl-layout--large-screen-only">
   @include('layouts.bottom-banner')
   </section>
   <footer class="mdl-layout--large-screen-only">

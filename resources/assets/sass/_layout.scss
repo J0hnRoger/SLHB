@@ -96,8 +96,6 @@ header {
 }
 
 main#content{
-	margin-left: 35px;
-
 	h1 {
 		color : $secondary;
 		font-size: $header-title-font-size;
@@ -108,6 +106,11 @@ main#content{
 	/* Responsive Phone */
 	@include phone {
 		margin:0;
+		margin-left:0px;
+	}
+	/*Responsive - Large Screen*/
+	@include desktop {
+		margin-left: 35px;
 	}
 }
 
@@ -119,7 +122,6 @@ section#bottom-banner {
 	ul.social {
 		display: block;
 		color: $primary;
-
 		li {
 			line-height: 20px;
 			margin-bottom: 20px;
@@ -156,8 +158,8 @@ section#bottom-banner {
 		margin: 0;
 		#banner-image {
 			position: inherit;
-			margin-bottom: 20px;;
-			float: right;;
+			margin-bottom: 20px;
+			float: right;
 			width: 45px;
 		}
   }
