@@ -2,7 +2,7 @@
 
 $infosPratiques = get_page_by_path('infos-pratiques');
 
-if (themosis_is_post($infosPratiques->ID))
+if (isset($infosPratiques) && themosis_is_post($infosPratiques->ID))
 {
     /*-----------------------------------------------------------------------*/
     // TEAM METABOX

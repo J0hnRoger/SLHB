@@ -5,6 +5,7 @@
 @overwrite
 
 @section('main')
+<h1>Actualités</h1>
 
 <div class="actualites mdl-grid">
 @foreach($actus as $i => $actu)

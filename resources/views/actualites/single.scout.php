@@ -2,10 +2,10 @@
 
 @section('main')
 	@loop
-		<article class="single-article">
-			<pre><code>
-				&lt!-- TODO - HTML qui affiche le détail du post -->
-			</code></pre>
-		</article>
+		
+		<header>
+			<h1>{{ Loop::title() }}</h1>
+			<span>{{ Loop::content() }}</span>			
+		</header>
 	@endloop
 @stop
