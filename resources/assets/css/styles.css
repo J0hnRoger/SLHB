@@ -155,8 +155,11 @@ main#content .actualites {
     margin-top: 40px;
     overflow: hidden;
     position: relative; }
+    main#content .actualites .actualite .mdl-layout--large-screen-only {
+      min-width: 80px;
+      min-height: 250px;
+      float: left; }
     main#content .actualites .actualite img {
-      float: left;
       width: 40%;
       height: auto;
       margin-right: 20px; }

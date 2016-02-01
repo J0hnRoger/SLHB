@@ -54,7 +54,9 @@ class MatchModel {
      */
     public static function getLastResult()
     {
+        $match = null;
         $matchs = MatchModel::getLastResults(1);
+
         if (count($matchs) == 1) {
           $match = $matchs[0];
           $matchId = $match->ID;

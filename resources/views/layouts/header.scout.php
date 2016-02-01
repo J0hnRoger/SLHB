@@ -6,10 +6,14 @@
       <div class="mdl-layout-spacer"></div>
       <div id="widget-last-results" class="mdl-cell--3-col">
         <h3>Derniers résultats</h3>
+          @if(isset($last_match))
           <span class="results">{{$last_match->match_team_dom}}
             <b>{{$last_match->score_dom}}</b>
               -
             <b>{{$last_match->score_ext}}</b> {{$last_match->match_team_ext}}</span>
+            @else
+            <span class="results">L'important, c'est de participer...</span>
+            @endif
       </div>
       <div class="mdl-layout-spacer"></div>
       @if($currentUser->user_login != false )
