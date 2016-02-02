@@ -67,5 +67,10 @@ $phone-width: 320px;
     &:hover{
       opacity: 1;
     }
+}
 
+@mixin borderize($color)
+{
+  width: 190px;
+  border-right : solid 2px $color;
 }

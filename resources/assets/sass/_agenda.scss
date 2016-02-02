@@ -2,14 +2,19 @@
 $soft_grey : #8a8c96;
 $grey : #2d304a;
 $selected: #E0E0E0;
+
+$blue: #1ab3ec;
+$purple : #bb68e3;
+$orange: #f88c4b;
+
 .agenda {
 	color: $soft_grey;
 	margin:0;
 	padding: 0;
 	.timeline {
 		margin:0;
-		width: 75px;
 		float: left;
+		width: 75px;
 		ul {
 			margin: 48px 0;
 			padding: 0;
@@ -36,10 +41,10 @@ $selected: #E0E0E0;
 	}
   .count {
     position: absolute;
-    margin: 15px;
+    margin: 15px 10px;
     font-weight: lighter;
     font-style: normal;
-    right: 15px;
+    right: 5px;
     line-height: 40px;
     font-size: 20px;
     color: $secondary;
@@ -48,15 +53,13 @@ $selected: #E0E0E0;
 	.left-panel {
 		width: 245px;;
 		.header {
-			text-align: center;
-			h4 {
-				margin: 0;
-				line-height: 72px;
+			padding-left: 25px;
+			.mdl-textfield {
+				width: 150px;
 			}
-
 		}
 
-		ul {
+		ul.events {
 			margin: 0;
 			padding: 0;
 			line-height: 30px;
@@ -67,6 +70,17 @@ $selected: #E0E0E0;
 				.descr {
 					color:$grey;
 					font-size: 22px;
+				}
+				.descr{
+					&.purple {
+						@include borderize($blue)
+					}
+					&.orange{
+						@include borderize($purple)
+					}
+					&.blue{
+						@include borderize($orange)
+					}
 				}
 			}
 		}

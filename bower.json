@@ -24,6 +24,8 @@
   ],
   "dependencies": {
     "material-design-lite": "~1.0.5",
-    "masonry": "~3.3.2"
+    "angular": "~1.4.9",
+    "angular-route": "~1.4.9",
+    "getmdl-select": "*"
   }
 }
