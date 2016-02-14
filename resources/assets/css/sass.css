@@ -13,6 +13,19 @@ ul {
 .centring {
   margin: 0 auto; }
 
+h2 {
+  font-size: 20px;
+  line-height: 24px;
+  margin: 0;
+  padding: 5px;
+  color: #1d3d86;
+  font-weight: 600; }
+
+.actualites .actualite:after {
+  content: "";
+  display: table;
+  clear: both; }
+
 header {
   background-color: white !important; }
   header .mdl-layout__header-row {
@@ -21,7 +34,7 @@ header {
     padding-left: 140px; }
     header .mdl-layout__header-row .mdl-layout-title .logo {
       max-height: 100px; }
-    header .mdl-layout__header-row .mdl-layout-title h1, header .mdl-layout__header-row .mdl-layout-title main#content .actualites .actualite h2, main#content .actualites .actualite header .mdl-layout__header-row .mdl-layout-title h2 {
+    header .mdl-layout__header-row .mdl-layout-title h1 {
       display: inline;
       font-size: 35px;
       font-weight: 600; }
@@ -80,7 +93,7 @@ header {
 main#content {
   /* Responsive Phone */
   /*Responsive - Large Screen*/ }
-  main#content h1, main#content .actualites .actualite h2 {
+  main#content h1 {
     color: #1d3d86;
     font-size: 22px;
     text-transform: uppercase;
@@ -133,7 +146,7 @@ section#bottom-banner {
 
 footer {
   text-align: center; }
-  footer h1, footer main#content .actualites .actualite h2, main#content .actualites .actualite footer h2 {
+  footer h1 {
     color: #1d3d86;
     font-size: 22px;
     text-transform: uppercase;
@@ -147,62 +160,6 @@ footer#credits {
     margin-right: 10px; }
 
 /*Actualités*/
-main#content .actualites {
-  padding: 10px;
-  margin-bottom: 50px; }
-  main#content .actualites .actualite {
-    font-size: 16px;
-    margin-top: 40px;
-    overflow: hidden;
-    position: relative; }
-    main#content .actualites .actualite .mdl-layout--large-screen-only {
-      min-width: 80px;
-      min-height: 250px;
-      float: left; }
-    main#content .actualites .actualite img {
-      width: 40%;
-      height: auto;
-      margin-right: 20px; }
-    main#content .actualites .actualite .content {
-      float: left;
-      width: 295px;
-      padding-left: 30px;
-      overflow: hidden; }
-    main#content .actualites .actualite p {
-      color: black;
-      font-weight: 500; }
-    main#content .actualites .actualite h2 {
-      text-transform: none;
-      font-weight: 500;
-      margin: 0; }
-    main#content .actualites .actualite a {
-      text-transform: none;
-      float: right; }
-    main#content .actualites .actualite .date {
-      line-height: normal;
-      position: absolute;
-      top: 10px;
-      left: 10px;
-      z-index: 1;
-      background: #1d3d86;
-      width: 55px;
-      height: 55px;
-      padding: 5.5px 0;
-      -webkit-border-radius: 100%;
-      -moz-border-radius: 100%;
-      border-radius: 100%;
-      color: #ffffff;
-      font-weight: 700;
-      text-align: center;
-      -webkit-box-sizing: border-box;
-      -moz-box-sizing: border-box;
-      box-sizing: border-box; }
-      main#content .actualites .actualite .date .day {
-        font-size: 18px; }
-      main#content .actualites .actualite .date .month {
-        font-size: 12px;
-        text-transform: uppercase; }
-
 section.pre-footer {
   background-color: white;
   color: white; }
@@ -266,10 +223,14 @@ ul.all-teams li {
   margin: 0;
   padding: 0;
   /*--- Event Details*/ }
-  .agenda .timeline {
-    margin: 0;
+  .agenda .timeline-container {
+    width: 75px;
     float: left;
-    width: 75px; }
+    overflow: hidden; }
+  .agenda .timeline {
+    overflow-y: auto;
+    margin-right: -16px;
+    height: 475px; }
     .agenda .timeline ul {
       margin: 48px 0;
       padding: 0;
@@ -299,7 +260,7 @@ ul.all-teams li {
     color: #1d3d86;
     background-color: white; }
   .agenda .left-panel {
-    width: 245px; }
+    width: 236px; }
     .agenda .left-panel .header {
       padding-left: 25px; }
       .agenda .left-panel .header .mdl-textfield {
@@ -342,7 +303,7 @@ ul.all-teams li {
         height: 100%;
         background-color: white;
         padding: 10px 40px; }
-        .agenda div.event-details .cover .header-content h1, .agenda div.event-details .cover .header-content main#content .actualites .actualite h2, main#content .actualites .actualite .agenda div.event-details .cover .header-content h2 {
+        .agenda div.event-details .cover .header-content h1 {
           margin: 0;
           line-height: 50px;
           padding: 0;
@@ -375,7 +336,7 @@ ul.all-teams li {
         color: white;
         font-weight: lighter;
         padding-right: 0px; }
-        .agenda div.event-details .carousel div.more-pictures h1, .agenda div.event-details .carousel div.more-pictures main#content .actualites .actualite h2, main#content .actualites .actualite .agenda div.event-details .carousel div.more-pictures h2 {
+        .agenda div.event-details .carousel div.more-pictures h1 {
           background-color: #1d3d86;
           margin: 0;
           color: white !important;
@@ -384,3 +345,41 @@ ul.all-teams li {
           font-weight: 300 !important; }
     .agenda div.event-details .event-content {
       padding: 40px; }
+
+/*
+ Module : Actualites
+*/
+.actualites .actualite {
+  float: left;
+  margin: 20px 40px;
+  /* Responsive rules */ }
+  .actualites .actualite > img {
+    width: 270px;
+    height: auto;
+    margin: 0; }
+  .actualites .actualite-content {
+    margin: 20px;
+    width: 250px;
+    float: right; }
+  .actualites .actualite a {
+    color: #1d3d86;
+    font-weight: 600;
+    padding: 10px;
+    float: right;
+    text-decoration: none; }
+    .actualites .actualite a span {
+      display: inline-block;
+      vertical-align: middle;
+      height: 34px; }
+  @media (max-width: 640px) {
+    .actualites .actualite > img {
+      width: 200px;
+      height: auto; } }
+  @media (max-width: 580px) {
+    .actualites .actualite > img {
+      display: none;
+      width: 0; }
+    .actualites .actualite-content {
+      margin: 20px;
+      width: 100%;
+      float: right; } }

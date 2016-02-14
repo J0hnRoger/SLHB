@@ -21,3 +21,33 @@ ul {
 .centring {
 	margin: 0 auto;
 }
+
+h2 {
+	font-size: 20px;
+	line-height: 24px;
+	margin: 0;
+	padding: 5px;
+	color: $secondary;
+	font-weight: 600;
+}
+
+%cf {
+	&:after {
+	 content: "";
+	 display: table;
+	 clear: both;
+ }
+}
+
+@mixin read-more {
+	color: $secondary;
+	font-weight: 600;
+	padding: 10px;
+	float: right;
+	text-decoration: none;
+	span {
+		display: inline-block;
+		vertical-align: middle;
+		height: 34px;
+	}
+}

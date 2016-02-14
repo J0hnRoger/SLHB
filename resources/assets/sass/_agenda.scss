@@ -11,10 +11,16 @@ $orange: #f88c4b;
 	color: $soft_grey;
 	margin:0;
 	padding: 0;
-	.timeline {
-		margin:0;
+
+	.timeline-container {
+		width:75px;
 		float: left;
-		width: 75px;
+		overflow: hidden;
+	}
+	.timeline {
+		overflow-y: auto;
+		margin-right: -16px;
+		height: 475px;
 		ul {
 			margin: 48px 0;
 			padding: 0;
@@ -51,7 +57,7 @@ $orange: #f88c4b;
     background-color: white;
   }
 	.left-panel {
-		width: 245px;;
+		width: 236px;;
 		.header {
 			padding-left: 25px;
 			.mdl-textfield {

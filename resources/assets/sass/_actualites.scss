@@ -1,0 +1,38 @@
+/*
+ Module : Actualites
+*/
+
+.actualites {
+  .actualite {
+    float: left;
+    margin: 20px 40px;
+    @extend %cf;
+
+    & > img{
+      width: 270px;
+      height: auto;
+      margin: 0;
+    }
+    &-content{
+      margin: 20px;
+      width: 250px;
+      float: right;
+    }
+    a {
+      @include read-more;
+    }
+
+    /* Responsive rules */
+    @include media-max(640px) {
+      & > img { width: 200px;height: auto;}
+    }
+
+    @include media-max(580px) {
+      & > img {display: none; width: 0;}
+      &-content{
+        margin: 20px;
+        width: 100%;
+      }
+    }
+  }
+}

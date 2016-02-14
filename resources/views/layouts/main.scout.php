@@ -49,15 +49,17 @@
     <script src="/content/themes/SLHB//resources/assets/doc-ready/doc-ready.js"></script>
     <script src="/content/themes/SLHB//resources/assets/eventEmitter/EventEmitter.js"></script>
     <script src="/content/themes/SLHB//resources/assets/eventie/eventie.js"></script>
+    <script src="/content/themes/SLHB//resources/assets/get-style-property/get-style-property.js"></script>
     <script src="/content/themes/SLHB//resources/assets/fizzy-ui-utils/utils.js"></script>
     <script src="/content/themes/SLHB//resources/assets/get-size/get-size.js"></script>
-    <script src="/content/themes/SLHB//resources/assets/get-style-property/get-style-property.js"></script>
     <script src="/content/themes/SLHB//resources/assets/getmdl-select/getmdl-select.min.js"></script>
     <script src="/content/themes/SLHB//resources/assets/js/upload-media.js"></script>
     <script src="/content/themes/SLHB//resources/assets/matches-selector/matches-selector.js"></script>
     <script src="/content/themes/SLHB//resources/assets/material-design-lite/material.min.js"></script>
     <script src="/content/themes/SLHB//resources/assets/outlayer/outlayer.js"></script>
     <script src="/content/themes/SLHB//resources/assets/prism/prism.js"></script>
+    <script src="/content/themes/SLHB//resources/assets/calendar/core/events.factory.js"></script>
+    <script src="/content/themes/SLHB//resources/assets/calendar/core/events.model.js"></script>
     <script src="/content/themes/SLHB//resources/assets/calendar/calendar/calendar.controller.js"></script>
     <script src="/content/themes/SLHB//resources/assets/calendar/event/details.controller.js"></script>
     <!-- endinject -->

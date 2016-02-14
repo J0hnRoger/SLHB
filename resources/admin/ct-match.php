@@ -8,6 +8,7 @@ $match = PostType::make('slhb_match', 'Les matchs', 'match')->set(array(
     'supports'      => false,
     'rewrite'       => false,
     'query_var'     => false,
+    'show_in_rest'       => true,
     'labels' => [
         'add_new' => 'Ajouter un nouveau match',
         'add_item' => 'Ajouter un match',
@@ -19,7 +20,6 @@ $match = PostType::make('slhb_match', 'Les matchs', 'match')->set(array(
 /*-----------------------------------------------------------------------*/
 // Match informations
 /*-----------------------------------------------------------------------*/
-
 
 $infos = Metabox::make('Informations du match', $match->get('name'))->set(array(
     Field::date('match_date', ['title' => 'Date du match']),

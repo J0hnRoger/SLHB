@@ -7,6 +7,7 @@ $team = PostType::make('slhb_team', 'Les équipes', 'équipe')->set(array(
     'supports'      => array('title', 'editor'),
     'rewrite'       => false,
     'query_var'     => false,
+    'show_in_rest'  => true,
     'labels' => [
         'add_new_item' => 'Ajouter une nouvelle équipe',
         'add_new' => 'Ajouter une équipe',
