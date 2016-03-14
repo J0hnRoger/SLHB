@@ -4,8 +4,9 @@ angular
   .module('calendar')
   .factory('EventsFactory', EventsFactory);
 
-EventsFactory.$inject = ['Event'];
-function EventsFactory(Event) {
+EventsFactory.$inject = ['Event', '$http', '$q'];
+function EventsFactory(Event, $http, $q) {
+  var wp_url = "/wp-json/wp/v2/posts";
   var service = {
     GetEvents : GetEvents
   };
@@ -13,6 +14,12 @@ function EventsFactory(Event) {
   return service;
 
   function GetEvents() {
-    return "event1";
+    var defer = $q.defer();
+    $http.get(wp_url).then(function (data){
+
+      defer.resolve(data);
+    });
+    return defer.promise;
   }
+
 }

@@ -27,8 +27,8 @@
       & > img { width: 200px;height: auto;}
     }
 
-    @include media-max(580px) {
-      & > img {display: none; width: 0;}
+    @include media-max(604px) {
+      & > img {float: left;}
       &-content{
         margin: 20px;
         width: 100%;

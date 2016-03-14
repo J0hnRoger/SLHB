@@ -60,7 +60,7 @@
     <script src="/content/themes/SLHB//resources/assets/prism/prism.js"></script>
     <script src="/content/themes/SLHB//resources/assets/calendar/core/events.factory.js"></script>
     <script src="/content/themes/SLHB//resources/assets/calendar/core/events.model.js"></script>
-    <script src="/content/themes/SLHB//resources/assets/calendar/calendar/calendar.controller.js"></script>
+    <script src="/content/themes/SLHB//resources/assets/calendar/calendar/week-list.controller.js"></script>
     <script src="/content/themes/SLHB//resources/assets/calendar/event/details.controller.js"></script>
     <!-- endinject -->
 </body>

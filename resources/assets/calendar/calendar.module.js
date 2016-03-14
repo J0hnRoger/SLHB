@@ -6,12 +6,14 @@ angular
     //Scoot Template has reserved the double curly brace, so we change the Angular markup
     $interpolateProvider.startSymbol('{[').endSymbol(']}');
     $routeProvider.
-       when('/agenda-details/:eventId', {
+       when('calendrier/:ID', {
          templateUrl: themosis.baseurl + '/resources/assets/calendar/event/event-detail.html',
-         controller: 'EventCtrl'
+         controller: 'EventCtrl',
+         controllerAs : 'vm'
        }).
        otherwise({
-         templateUrl: themosis.baseurl + '/resources/assets/calendar/calendar/calendar.html',
-         controller: 'CalendarCtrl'
+         templateUrl: themosis.baseurl + '/resources/assets/calendar/calendar/week-list.html',
+         controller: 'WeekListCtrl',
+         controllerAs : 'vm'
        });
 });

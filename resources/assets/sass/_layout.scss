@@ -96,6 +96,7 @@ header {
 }
 
 main#content{
+
 	h1 {
 		color : $secondary;
 		font-size: $header-title-font-size;
@@ -110,7 +111,8 @@ main#content{
 	}
 	/*Responsive - Large Screen*/
 	@include desktop {
-		margin-left: 35px;
+		max-width: 1280px;
+		margin: 0 auto;
 	}
 }
 

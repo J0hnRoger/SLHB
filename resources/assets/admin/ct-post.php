@@ -8,11 +8,17 @@ $infos = Metabox::make('Informations sur l\'évènement', "post")->set(array(
 ));
 
 /*Expose meta field to REST API*/
-function my_rest_prepare_post( $data, $post, $request ) {
-	$_data = $data->data;
-	$_data['event_date'] = Meta::get($post->ID, 'eventDate');;
-	$data->data = $_data;
-	return $data;
-}
+add_action( 'rest_api_init', function() {
+ register_rest_field( 'post',
+    'eventDate',
+    array(
+       'get_callback'    => 'slug_get_eventDate',
+       'update_callback' => 'slug_update_post_meta_cb',
+       'schema'          => null,
+    )
+ );
+});
 
-add_filter( 'rest_prepare_post', 'my_rest_prepare_post', 10, 3 );
+function slug_get_eventDate( $object, $field_name, $request ) {
+    return get_post_meta( $object[ 'id' ], $field_name, true );
+}
