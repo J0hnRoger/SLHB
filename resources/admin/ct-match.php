@@ -1,4 +1,6 @@
 <?php
+
+
 /*-----------------------------------------------------------------------*/
 // Match Custom Post
 /*-----------------------------------------------------------------------*/
@@ -23,11 +25,34 @@ $match = PostType::make('slhb_match', 'Les matchs', 'match')->set(array(
 
 $infos = Metabox::make('Informations du match', $match->get('name'))->set(array(
     Field::date('match_date', ['title' => 'Date du match']),
-    Field::select('match_team_dom', TeamModel::getTeamsArray()),
+    Field::select('match_team_dom', TeamModel::getTeamsArray(), ['title' => 'Equipe Chavagnaise']),
     Field::text('match_team_ext', ['title' => 'Equipe à l\'exterieur']),
     Field::number('score_dom', ['title' => 'Score de l\'équipe à domicile']),
     Field::number('score_ext', ['title' => 'Score de l\'équipe extérieur'])
 ));
+
+/*-----------------------------------------------------------------------*/
+// Match REST API
+/*-----------------------------------------------------------------------*/
+
+add_action( 'rest_api_init', 'dt_register_api_hooks' );
+function dt_register_api_hooks() {
+    register_api_field(
+        'slhb_match',
+        'slhb_team',
+        array(
+            'get_callback'    => 'dt_return_team_sheet',
+        )
+    );
+}
+
+// Return team for match
+function dt_return_team_sheet( $object, $field_name, $request ) {
+  // return strip_tags( html_entity_decode( $object['content']['rendered'] ) );
+    $team = Meta::get($object["id"], 'match_team_dom');
+    return $team;
+}
+
 /*-----------------------------------------------------------------------*/
 // Match Defaults Values
 /*-----------------------------------------------------------------------*/

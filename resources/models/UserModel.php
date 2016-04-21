@@ -35,6 +35,8 @@ class UserModel {
       $directionMembers = UserModel::getMemberByRole('slhb_direction');
       foreach ($directionMembers as $key => $member) {
         $member->responsibility = get_user_meta($member->ID, 'slhb-responsibility')[0];
+        $phone = get_user_meta($member->ID, 'slhb-phone');
+        $member->phone = (count($phone) > 0 ? $phone[0] : "");
       }
       return $directionMembers;
     }

@@ -7,12 +7,7 @@ if (isset($infosPratiques) && themosis_is_post($infosPratiques->ID))
     /*-----------------------------------------------------------------------*/
     // TEAM METABOX
     /*-----------------------------------------------------------------------*/
-    Metabox::make('Team', 'page')->set(array(
-
-        Field::infinite('collaborators', array(
-            Field::text('full-name', array('title' => 'Full name')),
-            Field::text('job'),
-            Field::media('pic')
-        ), array('title' => 'Collaborateurs'))
+    Metabox::make('Infos pratiques', 'page')->set(array(
+      Field::editor('slhb_after_trombi', ['title' => 'Texte affiché en dessous du trombinoscope'])
     ));
 }
