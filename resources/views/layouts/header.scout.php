@@ -20,7 +20,7 @@
       <div id="login" class="mdl-cell mdl-cell--4-col mdl-grid">
         <div class="mdl-cell mdl-cell--6-col user-information">
           <h5>Bonjour {{ $currentUser->user_login }}</h5>
-          <a href="">Accéder à votre compte </a>
+          <a href="/my-profile">Accéder à votre compte </a>
         </div>
         <div class="mdl-cell mdl-cell--4-col">
           <?php echo get_avatar( $currentUser->user_email, 65); ?>

@@ -50,6 +50,8 @@ Route::get('template', array('team-sheet-builder-template', 'uses' => 'TeamSheet
 /* Page Boutique */
 
 /* Page Profil  */
+Route::get('template', array('profile-template', 'uses' => 'ProfileController@index'));
+
 /*Page par défaut*/
 Route::get('page', function (){
   return View::make('page')->with(array(
