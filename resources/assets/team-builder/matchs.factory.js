@@ -16,13 +16,12 @@ function MatchsFactory(Match, $http, $q) {
 
   function SavePlayers(match) {
     var defer = $q.defer();
-    $http.post(wp_url + match.id ,
-      JSON.stringify([1,4,5]),
-      {
-        headers : {
-          'X-WP-Nonce' : '80b7804c2d'
-        }
-      }).then(function (data){
+    $http.post('/wp-json/slhb/v1/set-players-by-team' ,
+      JSON.stringify({
+      	'match_id' : match.id,
+        'slhb_players' : match.players
+      })
+    ).then(function (data){
       console.log(data);
     });
     return defer.promise;

@@ -44,20 +44,22 @@ function slhb_set_title ( $post_id, $post , $update){
     remove_action('save_post_slhb_match', __FUNCTION__ );
 
     wp_update_post( array('ID' => $post_id, 'post_title' => $title, 'match_date' => $date) );
-
-    //add_post_meta($post_id, 'slhb_players', '[]', true);
+    //TODO - CHeck if exist, update, if not, add
 
     //redo filter
     add_action('save_post_slhb_match', __FUNCTION__, 10, 3 );
 }
 add_action( 'save_post_slhb_match', 'slhb_set_title', 10, 3 );
 
-
 // Display only on CT Match
 add_action( 'admin_head', 'is_ct_match_edit_page' );
 function is_ct_match_edit_page()
 {
     global $current_screen;
+    global $post;
+
+    // $players = get_post_meta($post->ID, 'slhb_players', TRUE);
+    // td($players);
 
     if( 'slhb_match' != $current_screen->post_type || $current_screen->action == 'add')
         return;

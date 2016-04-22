@@ -15,15 +15,13 @@ function TeamBuilderCtrl(PlayersFactory, MatchsFactory, $location) {
     // TODO - Ugly ... use $location
     var matchId = location.search.split('=')[location.search.split('=').length - 1];
 
-    PlayersFactory.loadPlayers("SLHB 1");
     MatchsFactory.getMatch(matchId).then(function (match){
       PlayersFactory.setMatch(match);
-      console.log(match);
+      PlayersFactory.loadFreePlayers(match.slhb_team);
     });
   }
 
   vm.save = function () {
     MatchsFactory.savePlayers(PlayersFactory.match)
   }
-
 }

@@ -6,7 +6,7 @@
   <section class="section--center mdl-grid mdl-grid--no-spacing mdl-shadow--2dp" >
     <div class="mdl-card mdl-cell mdl-cell--6-col">
       <div class="mdl-card__supporting-text mdl-grid mdl-grid--no-spacing">
-        <h4 class="mdl-cell mdl-cell--12-col">Joueurs Libres :</h4>
+        <h4 class="mdl-cell mdl-cell--12-col">Joueurs Dispos en <b>{[vm.playersFactory.match.slhb_team]}</b>:</h4>
         <!--  Starting Template -->
         <div class="mdl-cell mdl-cell--12-col mdl-grid mdl-grid--no-spacing section__text animated bounceIn" ng-repeat="player in vm.playersFactory.freePlayers track by $index">
           <div class="section__circle-container mdl-cell mdl-cell--4-col mdl-cell--1-col-phone">

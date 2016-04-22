@@ -48,4 +48,10 @@ class PostModel {
         return $events;
     }
 
+    public static function getCurrent()
+    {
+      $post = get_queried_object();
+      return $post;
+    }
+
 }

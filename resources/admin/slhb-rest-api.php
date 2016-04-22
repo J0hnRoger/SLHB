@@ -18,6 +18,37 @@ function get_players_by_team(WP_REST_Request $request) {
   return $players;
 }
 
+
+// Update only the slhb_players metadata
+// @match_id - The ID of the match team sheet
+// @slhb_players - an array of plyer's IDs
+add_action( 'rest_api_init', 'dt_register_updateTeamPlayer_hooks' );
+function dt_register_updateTeamPlayer_hooks() {
+    register_rest_route( 'slhb/v1', '/set-players-by-team', array(
+        'methods' => 'POST',
+        'callback' => 'set_players_by_team',
+    ) );
+}
+
+//Update the meta field of the current match
+function set_players_by_team() {
+    $jsonData = json_decode(file_get_contents('php://input'), true);
+    $return = array();
+
+    if (!isset($jsonData['match_id']) || !(isset($jsonData['slhb_players'])))
+      return new WP_Error( 'cant-update', __( 'Il n\'y a pas de propriete match_id ou slhb_player dans les datas', 'text-domain'), array( 'status' => 500 ) );
+
+    $match_id    = $jsonData['match_id'];
+    $slhb_players    = $jsonData['slhb_players'];
+
+    update_post_meta($match_id, 'slhb_players', $slhb_players);
+
+    $return[] = 'match players list updated: '.$match_id;
+
+    $response = new WP_REST_Response( $return , 200);
+    return $response;
+}
+
 /*-----------------------------------------------------------------------*/
 // Match REST API
 /*-----------------------------------------------------------------------*/
@@ -66,21 +97,15 @@ function dt_register_match_opponent_hook() {
 
 add_action( 'rest_api_init', 'dt_register_update_players_hook' );
 function dt_register_update_players_hook() {
-    register_rest_field(
+    register_api_field(
         'slhb_match',
         'slhb_players',
         array(
             'get_callback' => function ( $object, $field_name, $request ) {
-                $players = Meta::get($object["id"], 'slhb_players');
+                $players = get_post_meta($object["id"], 'slhb_players');
                 return $players;
             },
-            'update_callback'    => function ( $value, $object, $field_name ) {
-              if ( ! $value || ! is_string( $value ) ) {
-                   return;
-               }
-
-               return update_post_meta( $object->ID, $field_name, strip_tags( $value ) );
-            },
+            'schema'          => null
         )
     );
 }

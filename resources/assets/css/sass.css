@@ -102,8 +102,9 @@ header {
           #banner .overlay .container ul li h2 {
             margin-top: 0;
             line-height: normal;
-            font-size: 24px;
-            font-weight: 500; }
+            font-size: 44px;
+            font-weight: 500;
+            color: white; }
 
 main#content {
   /* Responsive Phone */

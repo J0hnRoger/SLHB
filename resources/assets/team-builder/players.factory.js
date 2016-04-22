@@ -9,9 +9,9 @@ function PlayersFactory($http, $q) {
   var wp_url = "/wp-json/slhb/v1/get-players-by-team";
   var match = null;
   var freePlayers = [];
-  
+
   var service = {
-    loadPlayers : LoadPlayers,
+    loadFreePlayers : LoadFreePlayers,
     setMatch : SetMatch,
     addPlayer : AddPlayer,
     removePlayer :RemovePlayer
@@ -31,9 +31,10 @@ function PlayersFactory($http, $q) {
 
   function SetMatch(match) {
     this.match = match;
+    this.match.players = match.slhb_players[0] != undefined ? match.slhb_players[0] : [];
   }
 
-  function LoadPlayers(teamName) {
+  function LoadFreePlayers(teamName) {
     var defer = $q.defer();
     var that = this;
     $http.get(wp_url + "?team_name=" + teamName).then(function (data){
@@ -55,5 +56,14 @@ function PlayersFactory($http, $q) {
           array.splice(i, 1);
       }
     }
+  }
+
+  function containsId(array, id) {
+      for (var i = 0; i < array.length; i++) {
+          if (array[i] == id) {
+              return true;
+          }
+      }
+      return false;
   }
 }

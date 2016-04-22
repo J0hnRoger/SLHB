@@ -32,9 +32,7 @@
  Route::get('singular', ['slhb_team', 'uses' => 'TeamController@getSingle']);
 
 /*Page de détails d'une actualité */
-Route::get('singular', array('post', function (){
-	return View::make('actualites.single');
-}));
+Route::get('singular', array('post', 'uses' => 'HomeController@getSingleActualite'));
 
 /* Page Calendrier */
 Route::get('template', array('calendar-template', 'uses' => 'AgendaController@index'));

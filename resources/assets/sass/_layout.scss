@@ -12,7 +12,6 @@ header {
 		color: $secondary;
 		padding-left: 140px;
 
-
 		.mdl-layout-title {
 			.logo {
 				max-height: $max-icon-height;
@@ -86,8 +85,9 @@ header {
 					h2{
 						margin-top:0;
 						line-height: normal;
-						font-size: 24px;
+						font-size: 44px;
 						font-weight: 500;
+						color: white
 					}
 				}
 			}

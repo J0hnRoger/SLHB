@@ -46,6 +46,7 @@
                 <span></span>
                 <h2>{{$next_match[0]->match_team_dom}} - {{$next_match[0]->match_team_ext}}</h2>
                 <span class="date">
+                  {{ $next_match[0]->match_date }}
                 </span>
               </li>
               @endif
@@ -53,9 +54,9 @@
               <li class="event">
                 <div class="team">{{$next_match[1]->match_team_dom}}</div>
                 <div class="team">Prochain match</div>
-                <h2>{{$next_match[1]->match_team_dom}} - {{$next_match[1]->match_team_dom}}</h2>
+                <h2>{{$next_match[1]->match_team_dom}} - {{$next_match[1]->match_team_ext}}</h2>
                 <span class="date">
-                  Dimanche 19 Novembre - 17h00
+                  {{ $next_match[1]->match_date }}
                 </span>
               </li>
               @endif

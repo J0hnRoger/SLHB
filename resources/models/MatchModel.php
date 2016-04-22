@@ -100,8 +100,13 @@ class MatchModel {
         foreach ($matchs as $key => $match) {
 
           $matchId = $match->ID;
+          setlocale (LC_TIME, 'fr_FR.utf8','fra');
 
           $match->match_date = Meta::get($matchId, 'match_date');
+          $date = DateTime::createFromFormat("Y-m-d", $match->match_date);
+          $frDate = strftime("Le %A %d %B %Y", $date->getTimestamp());
+          $match->match_date = $frDate;
+
           $match->match_team_dom = Meta::get($matchId, 'match_team_dom');
           $match->match_team_ext = Meta::get($matchId, 'match_team_ext');
           array_push($filledMatchs, $match);
