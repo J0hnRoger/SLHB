@@ -31,9 +31,7 @@
  /* Page de détails d'une équipes */
  Route::get('singular', ['slhb_team', 'uses' => 'TeamController@getSingle']);
 
-
 /*Page de détails d'une actualité */
-
 Route::get('singular', array('post', function (){
 	return View::make('actualites.single');
 }));
@@ -41,9 +39,11 @@ Route::get('singular', array('post', function (){
 /* Page Calendrier */
 Route::get('template', array('calendar-template', 'uses' => 'AgendaController@index'));
 
-
 /* Page Infos pratiques */
 Route::get('template', array('infos-pratiques-template', 'uses' => 'InfosPratiquesController@index'));
+
+/* Page Team Builder */
+Route::get('template', array('team-sheet-builder-template', 'uses' => 'TeamSheetBuilderController@index'));
 
 /* Page Médiathèque */
 

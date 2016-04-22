@@ -26,32 +26,10 @@ $match = PostType::make('slhb_match', 'Les matchs', 'match')->set(array(
 $infos = Metabox::make('Informations du match', $match->get('name'))->set(array(
     Field::date('match_date', ['title' => 'Date du match']),
     Field::select('match_team_dom', TeamModel::getTeamsArray(), ['title' => 'Equipe Chavagnaise']),
-    Field::text('match_team_ext', ['title' => 'Equipe à l\'exterieur']),
+    Field::text('match_team_ext', ['title' => 'Equipe à l\'exterieur'], ['class' => 'simple-text']),
     Field::number('score_dom', ['title' => 'Score de l\'équipe à domicile']),
     Field::number('score_ext', ['title' => 'Score de l\'équipe extérieur'])
 ));
-
-/*-----------------------------------------------------------------------*/
-// Match REST API
-/*-----------------------------------------------------------------------*/
-
-add_action( 'rest_api_init', 'dt_register_api_hooks' );
-function dt_register_api_hooks() {
-    register_api_field(
-        'slhb_match',
-        'slhb_team',
-        array(
-            'get_callback'    => 'dt_return_team_sheet',
-        )
-    );
-}
-
-// Return team for match
-function dt_return_team_sheet( $object, $field_name, $request ) {
-  // return strip_tags( html_entity_decode( $object['content']['rendered'] ) );
-    $team = Meta::get($object["id"], 'match_team_dom');
-    return $team;
-}
 
 /*-----------------------------------------------------------------------*/
 // Match Defaults Values
@@ -67,7 +45,33 @@ function slhb_set_title ( $post_id, $post , $update){
 
     wp_update_post( array('ID' => $post_id, 'post_title' => $title, 'match_date' => $date) );
 
+    //add_post_meta($post_id, 'slhb_players', '[]', true);
+
     //redo filter
     add_action('save_post_slhb_match', __FUNCTION__, 10, 3 );
 }
 add_action( 'save_post_slhb_match', 'slhb_set_title', 10, 3 );
+
+
+// Display only on CT Match
+add_action( 'admin_head', 'is_ct_match_edit_page' );
+function is_ct_match_edit_page()
+{
+    global $current_screen;
+
+    if( 'slhb_match' != $current_screen->post_type || $current_screen->action == 'add')
+        return;
+    add_action( 'post_submitbox_start', 'my_post_submitbox_misc_actions' );
+}
+
+function my_post_submitbox_misc_actions(){
+  global $post;
+  $id = $post->ID;
+  $nonce = wp_create_nonce( 'wp_rest' );
+  $actionUrl = "/team-builder?nonce=".$nonce."&match_id=".$id;
+
+?>
+  <div id="create-team-sheet-action" style="margin:10px 0; text-align:right">
+		<a style="-webkit-appearance: button;-moz-appearance: button;appearance: button;text-decoration: none;" href="<?php echo $actionUrl;  ?>" name="createTeamSheet" id="createTeamSheet" class="button button-primary button-large">Créer / Editer la feuille de match</a> </div>
+<?php
+}

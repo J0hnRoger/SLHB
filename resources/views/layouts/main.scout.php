@@ -62,6 +62,11 @@
     <script src="/content/themes/SLHB//resources/assets/calendar/core/events.model.js"></script>
     <script src="/content/themes/SLHB//resources/assets/calendar/calendar/week-list.controller.js"></script>
     <script src="/content/themes/SLHB//resources/assets/calendar/event/details.controller.js"></script>
-    <!-- endinject -->
+		<script src="/content/themes/SLHB/resources/assets/team-builder/team-builder.module.js"></script>
+		<script src="/content/themes/SLHB/resources/assets/team-builder/team-builder.controller.js"></script>
+		<script src="/content/themes/SLHB/resources/assets/team-builder/match.model.js"></script>
+		<script src="/content/themes/SLHB/resources/assets/team-builder/matchs.factory.js"></script>
+		<script src="/content/themes/SLHB/resources/assets/team-builder/players.factory.js"></script>
+		<!-- endinject -->
 </body>
 </html>

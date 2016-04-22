@@ -10,5 +10,6 @@ return array(
 	*/
 
 	'calendar-template',
-	'infos-pratiques-template'
+	'infos-pratiques-template',
+	'team-sheet-builder-template'
 );

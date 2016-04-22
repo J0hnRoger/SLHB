@@ -7,16 +7,6 @@ function custom_rest_user_query( $prepared_args, $request = null ) {
   return $prepared_args;
 }
 
-/*Expose meta field to REST API*/
-function my_rest_prepare_match( $data, $post, $request ) {
-	$_data = $data->data;
-	$_data['event_date'] = Meta::get($post->ID, 'slhb_role');;
-	$data->data = $_data;
-	return $data;
-}
-
-add_filter( 'rest_prepare_post', 'my_rest_prepare_match', 10, 3 );
-
 /*
   Add SLHB Custom fields on profil page
 */
@@ -37,6 +27,15 @@ $userId = isset($_REQUEST["user_id"]) ? $_REQUEST["user_id"] : "";
 
 if ($userId != "")
 {
+  $teams = TeamModel::getTeams();
+  if (UserModel::hasTheRole($userId, 'slhb_player')){
+      User::addFields([
+        Field::checkbox('slhb_teams',
+          $teams,
+          ['title' => 'Equipes :'])
+      ]);
+  }
+
   if(UserModel::hasTheRole($userId, 'slhb_direction'))
   {
     User::addFields([

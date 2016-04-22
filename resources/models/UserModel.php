@@ -15,11 +15,14 @@ class UserModel {
     }
 
     public static function hasTheRole($id, $slhb_role){
-      $meta = get_user_meta($id, 'slhb_role');
-      return in_array($slhb_role, $meta[0]);
+      $meta = get_user_meta($id, 'slhb_role')
+        ?get_user_meta($id, 'slhb_role')[0]
+        : [];
+
+      return in_array($slhb_role, $meta);
     }
 
-    private static function getMemberByRole($slhb_role){
+    public static function getMemberByRole($slhb_role){
       $users =  get_users();
       $selectedUsers = [];
       for ($i=0; $i < count($users); $i++) {
@@ -43,7 +46,20 @@ class UserModel {
 
     public static function getPlayers()
     {
-      return UserModel::getMemberByRole('slhb_player');
+      $players = UserModel::getMemberByRole('slhb_player');
+      // The players always have a team
+      foreach ($players as $key => $player) {
+        $player->teams = get_user_meta($player->ID, 'slhb_teams')[0];
+      }
+      return $players;
+    }
+
+    public static function getPlayersByTeam($teamName)
+    {
+      $allPlayers = UserModel::getPlayers();
+      return array_filter($allPlayers, function ($player) use ($teamName){
+        return in_array($teamName,$player->teams);
+      });
     }
 
     public static function getCoach()
