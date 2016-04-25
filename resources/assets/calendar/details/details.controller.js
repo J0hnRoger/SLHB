@@ -13,7 +13,4 @@ function EventCtrl() {
 
   }
 
-  function function() {
-
-  }
 }

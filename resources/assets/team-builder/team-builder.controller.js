@@ -17,7 +17,7 @@ function TeamBuilderCtrl(PlayersFactory, MatchsFactory, $location) {
 
     MatchsFactory.getMatch(matchId).then(function (match){
       PlayersFactory.setMatch(match);
-      PlayersFactory.loadFreePlayers(match.slhb_team);
+      PlayersFactory.loadFreePlayers();
     });
   }
 

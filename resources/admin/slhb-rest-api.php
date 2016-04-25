@@ -4,6 +4,13 @@
 // Endpoint : http://<siteUrl>/wp-json/slhb/v1/<methodName>
 /*-----------------------------------------------------------------------*/
 
+// Expose all users(not only the users that have published a post) in wp Rest api v2
+add_filter( 'rest_user_query' , 'custom_rest_user_query' );
+function custom_rest_user_query( $prepared_args, $request = null ) {
+  unset($prepared_args['has_published_posts']);
+  return $prepared_args;
+}
+
 add_action( 'rest_api_init', function () {
     register_rest_route( 'slhb/v1', '/get-players-by-team', array(
         'methods' => 'GET',
@@ -74,8 +81,9 @@ function dt_register_match_date_hook() {
         'match_date',
         array(
             'get_callback'    => function ( $object, $field_name, $request ) {
-                $team = Meta::get($object["id"], 'match_date');
-                return $team;
+                $date = Meta::get($object["id"], 'match_date');
+                $formatedDate = formatedDate($date);
+                return $formatedDate;
             },
         )
     );

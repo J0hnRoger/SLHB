@@ -14,6 +14,16 @@ class UserModel {
       return $users;
     }
 
+    public static function getCurrentPlayer(){
+      $user = User::current();
+      $userinst = new UserModel();
+
+      if (!UserModel::hasTheRole($user->ID, 'slhb_player'))
+        return $user;
+      return UserModel::bindPlayerMeta($user);
+
+    }
+
     public static function hasTheRole($id, $slhb_role){
       $meta = get_user_meta($id, 'slhb_role')
         ?get_user_meta($id, 'slhb_role')[0]
@@ -49,7 +59,7 @@ class UserModel {
       $players = UserModel::getMemberByRole('slhb_player');
       // The players always have a team
       foreach ($players as $key => $player) {
-        $player->teams = get_user_meta($player->ID, 'slhb_teams')[0];
+        $player =  UserModel::bindPlayerMeta($player);
       }
       return $players;
     }
@@ -65,5 +75,19 @@ class UserModel {
     public static function getCoach()
     {
       return UserModel::getMemberByRole('slhb_coach');
+    }
+
+    // Internal methods
+    public static function bindPlayerMeta($player){
+      $player->teams = get_user_meta($player->ID, 'slhb_teams')[0];
+      $player->positions = get_user_meta($player->ID, 'slhb_positions');
+      $player->thumbnail =  get_avatar($player->ID, 64);
+
+      $player->positions =  count($player->positions) > 0
+                            ? $player->positions[0]
+                            : [];
+      $player->nextMatch = MatchModel::getNextMatch();
+
+      return $player;
     }
 }

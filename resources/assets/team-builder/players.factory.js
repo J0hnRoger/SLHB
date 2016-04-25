@@ -37,10 +37,12 @@ function PlayersFactory($http, $q) {
   function LoadFreePlayers(teamName) {
     var defer = $q.defer();
     var that = this;
-    $http.get(wp_url + "?team_name=" + teamName).then(function (data){
+
+    $http.get(wp_url + "?team_name=" + this.match.slhb_team).then(function (data){
       that.freePlayers = [];
       for (var key in data.data) {
-        that.freePlayers.push(data.data[key]);
+        if (!containsId(that.match.players, data.data[key].ID))
+          that.freePlayers.push(data.data[key]);
       }
       defer.resolve(that.freePlayers);
     });
@@ -58,9 +60,9 @@ function PlayersFactory($http, $q) {
     }
   }
 
-  function containsId(array, id) {
-      for (var i = 0; i < array.length; i++) {
-          if (array[i] == id) {
+  function containsId(objects, id) {
+      for (var i = 0; i < objects.length; i++) {
+          if (objects[i].ID == id) {
               return true;
           }
       }

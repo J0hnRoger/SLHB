@@ -343,6 +343,8 @@ div.event-details {
     height: 45px;
     font-size: 20px;
     font-weight: 300; }
+  .team-builder h6 {
+    margin: 0; }
 
 .mdl-demo .mdl-layout__header-row {
   padding-left: 40px; }
@@ -501,7 +503,8 @@ div.event-details {
   width: 64px;
   height: 64px;
   border-radius: 32px;
-  margin: 8px 0; }
+  margin: 8px 0;
+  overflow: hidden; }
 
 .mdl-demo section.section--footer .section__circle--big {
   width: 100px;

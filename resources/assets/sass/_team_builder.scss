@@ -11,7 +11,10 @@
     font-size: 20px;
     font-weight: 300;
   }
+  h6 {margin: 0;}
 }
+
+
 
 // MDL Demo Theme - TODO - Refactoriser proprement
 .mdl-demo .mdl-layout__header-row {
@@ -169,10 +172,11 @@ margin-bottom: 0.5em;
 text-decoration: none;
 }
 .mdl-demo section .section__circle-container > .section__circle-container__circle {
-width: 64px;
-height: 64px;
-border-radius: 32px;
-margin: 8px 0;
+  width: 64px;
+  height: 64px;
+  border-radius: 32px;
+  margin: 8px 0;
+  overflow: hidden;
 }
 .mdl-demo section.section--footer .section__circle--big {
 width: 100px;

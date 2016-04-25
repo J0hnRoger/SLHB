@@ -17,7 +17,7 @@
    'logoGMap' =>     themosis_assets().'/images/logo-gmap.png',
    'footerImage' => themosis_assets(). '/images/image-footer-2015.png',
    'defaultAvatar' => themosis_assets(). '/images/slhb-default-avatar.png',
-   'currentUser' => User::current(),
+   'currentUser' => UserModel::getCurrentPlayer(),
    'headerMenu' =>  NavigationModel::getMenuItems("header-nav"),
    'home_banner' =>  themosis_assets() . "/images/banner.jpg"
  ));

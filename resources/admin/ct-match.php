@@ -10,7 +10,7 @@ $match = PostType::make('slhb_match', 'Les matchs', 'match')->set(array(
     'supports'      => false,
     'rewrite'       => false,
     'query_var'     => false,
-    'show_in_rest'       => true,
+    'show_in_rest'  => true,
     'labels' => [
         'add_new' => 'Ajouter un nouveau match',
         'add_item' => 'Ajouter un match',
@@ -23,8 +23,16 @@ $match = PostType::make('slhb_match', 'Les matchs', 'match')->set(array(
 // Match informations
 /*-----------------------------------------------------------------------*/
 
+$properties = [
+            'features'  => ['title' => 'Heure du rendez-vous'],
+            'atts'      => array_merge(['class' => 'large-text'], ['class' => 'simple-text'], ['data-field' => 'text']),
+            'name'      => 'match_team_time',
+            'internal'  => 'Bim!'
+        ];
+
 $infos = Metabox::make('Informations du match', $match->get('name'))->set(array(
     Field::date('match_date', ['title' => 'Date du match']),
+    Field::make('Addons\Fields\TimeField', $properties),
     Field::select('match_team_dom', TeamModel::getTeamsArray(), ['title' => 'Equipe Chavagnaise']),
     Field::text('match_team_ext', ['title' => 'Equipe à l\'exterieur'], ['class' => 'simple-text']),
     Field::number('score_dom', ['title' => 'Score de l\'équipe à domicile']),
@@ -58,7 +66,7 @@ function is_ct_match_edit_page()
     global $current_screen;
     global $post;
 
-    // $players = get_post_meta($post->ID, 'slhb_players', TRUE);
+    // $players = get_post_meta($post->ID);
     // td($players);
 
     if( 'slhb_match' != $current_screen->post_type || $current_screen->action == 'add')

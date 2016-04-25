@@ -1,16 +1,7 @@
 <?php
-
-// Expose all users(not only the users that have published a post) in wp Rest api v2
-add_filter( 'rest_user_query' , 'custom_rest_user_query' );
-function custom_rest_user_query( $prepared_args, $request = null ) {
-  unset($prepared_args['has_published_posts']);
-  return $prepared_args;
-}
-
 /*
   Add SLHB Custom fields on profil page
 */
-
 $user = User::addSections([
     Section::make('slhb-section', 'SLHB'),
 ]);
@@ -22,20 +13,33 @@ $user->addFields([
     ]
 ]);
 
-// Display Responsibility Field only if the user is in the direction
 $userId = isset($_REQUEST["user_id"]) ? $_REQUEST["user_id"] : "";
 
 if ($userId != "")
 {
   $teams = TeamModel::getTeams();
-  if (UserModel::hasTheRole($userId, 'slhb_player')){
+  // Display Player Fields only if the user is in the direction
+  if (UserModel::hasTheRole($userId, 'slhb_player'))
+  {
       User::addFields([
         Field::checkbox('slhb_teams',
           $teams,
-          ['title' => 'Equipes :'])
+          ['title' => 'Equipes :']),
+        Field::checkbox('slhb_positions',
+            [
+              'Arrière Gauche' => 'Arrière Gauche',
+              'Arrière Droit' => 'Arrière Droit',
+              'Aillier Gauche' => 'Aillier Gauche',
+              'Aillier Droit' => 'Aillier Droit',
+              'Pivot' => 'Pivot',
+              'Demi-Centre' => 'Demi-Centre',
+              'Gardien' => 'Gardien'
+            ],
+          ['title' => 'Postes joués :']),
       ]);
   }
 
+  // Display Responsibility Field only if the user is in the direction
   if(UserModel::hasTheRole($userId, 'slhb_direction'))
   {
     User::addFields([

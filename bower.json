@@ -26,6 +26,8 @@
     "material-design-lite": "~1.0.5",
     "angular": "~1.4.9",
     "angular-route": "~1.4.9",
-    "getmdl-select": "*"
+    "getmdl-select": "*",
+    "angular-sanitize": "^1.5.5",
+    "jquery": "^2.2.3"
   }
 }

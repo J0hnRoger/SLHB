@@ -100,12 +100,9 @@ class MatchModel {
         foreach ($matchs as $key => $match) {
 
           $matchId = $match->ID;
-          setlocale (LC_TIME, 'fr_FR.utf8','fra');
-
           $match->match_date = Meta::get($matchId, 'match_date');
-          $date = DateTime::createFromFormat("Y-m-d", $match->match_date);
-          $frDate = strftime("Le %A %d %B %Y", $date->getTimestamp());
-          $match->match_date = $frDate;
+
+          $match->match_date = "Le ".formatedDate($match->match_date);
 
           $match->match_team_dom = Meta::get($matchId, 'match_team_dom');
           $match->match_team_ext = Meta::get($matchId, 'match_team_ext');
@@ -115,7 +112,7 @@ class MatchModel {
     }
 
     /**
-     * Return only the last match played, with additional informations (teams and scores included)
+     * Return only the next match
      *
      * @return Match Object
      */
@@ -129,6 +126,33 @@ class MatchModel {
           $match->match_date = Meta::get($matchId, 'match_date');
           $match->match_team_dom = Meta::get($matchId, 'match_team_dom');
           $match->match_team_ext = Meta::get($matchId, 'match_team_ext');
+          return $match;
+        }
+    }
+
+    /**
+     * Return only the next match with the list of players on the Team Sheet
+     *
+     * @return Match Object
+     */
+    public static function getFullNextMatch()
+    {
+        $matchs = MatchModel::getNextMatchs(1);
+        if (count($matchs) == 1) {
+          $match = $matchs[0];
+          $matchId = $match->ID;
+
+          $match->match_date = Meta::get($matchId, 'match_date');
+          $match->match_team_dom = Meta::get($matchId, 'match_team_dom');
+          $match->match_team_ext = Meta::get($matchId, 'match_team_ext');
+          $match->players = [];
+
+          //TODO - Modify this hack and correct the problem at this root (save/get in team builder)
+          $players = get_post_meta($matchId, 'slhb_players');
+          foreach($players[0] as $key => $player)
+          {
+            $match->players[] = $player['data'];
+          }
           return $match;
         }
     }

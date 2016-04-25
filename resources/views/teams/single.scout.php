@@ -12,7 +12,5 @@
 
     <h1>{{ $team->post_title }}</h1>
     <article>{{ $team->post_content }}</article>
-
-    <?php if (!function_exists('dynamic_sidebar') || !dynamic_sidebar('Team Widget Zone')) : ?>
-    <?php endif; ?>
+  
 @stop
