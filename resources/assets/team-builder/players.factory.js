@@ -30,15 +30,15 @@ function PlayersFactory($http, $q) {
   }
 
   function SetMatch(match) {
-    this.match = match;
-    this.match.players = match.slhb_players[0] != undefined ? match.slhb_players[0] : [];
+    this.match = match.slhb_match_meta;
+    this.match.id = match.id;
+    this.match.players = match.slhb_players.length > 0 ? match.slhb_players : [];
   }
 
-  function LoadFreePlayers(teamName) {
+  function LoadFreePlayers() {
     var defer = $q.defer();
     var that = this;
-
-    $http.get(wp_url + "?team_name=" + this.match.slhb_team).then(function (data){
+    $http.get(wp_url + "?team_name=" + this.match.match_team_dom[0]).then(function (data){
       that.freePlayers = [];
       for (var key in data.data) {
         if (!containsId(that.match.players, data.data[key].ID))

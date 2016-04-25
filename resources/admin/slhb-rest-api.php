@@ -59,61 +59,52 @@ function set_players_by_team() {
 /*-----------------------------------------------------------------------*/
 // Match REST API
 /*-----------------------------------------------------------------------*/
-
 add_action( 'rest_api_init', 'dt_register_team_hook' );
 function dt_register_team_hook() {
     register_rest_field(
         'slhb_match',
-        'slhb_team',
+        'slhb_match_meta',
         array(
             'get_callback'    => function ( $object, $field_name, $request ) {
-                $team = Meta::get($object["id"], 'match_team_dom');
-                return $team;
+                $pascal = $object["id"];
+                $allMetas = Meta::get($pascal);
+
+                $allMetas = sanitizeCTMetas($allMetas);
+                //Special keys for players
+                unset($allMetas['slhb_players']);
+
+                if( isset($allMetas['match_date']) )
+                  $allMetas['match_date'] = formatedDate($allMetas['match_date'][0]);
+                return $allMetas;
             },
         )
     );
 }
 
-add_action( 'rest_api_init', 'dt_register_match_date_hook' );
-function dt_register_match_date_hook() {
+add_action( 'rest_api_init', 'dt_register_players_hook' );
+function dt_register_players_hook() {
     register_rest_field(
-        'slhb_match',
-        'match_date',
-        array(
-            'get_callback'    => function ( $object, $field_name, $request ) {
-                $date = Meta::get($object["id"], 'match_date');
-                $formatedDate = formatedDate($date);
-                return $formatedDate;
-            },
-        )
-    );
-}
-
-add_action( 'rest_api_init', 'dt_register_match_opponent_hook' );
-function dt_register_match_opponent_hook() {
-    register_rest_field(
-        'slhb_match',
-        'opponent',
-        array(
-            'get_callback'    => function ( $object, $field_name, $request ) {
-                $team = Meta::get($object["id"], 'match_team_ext');
-                return $team;
-            },
-        )
-    );
-}
-
-add_action( 'rest_api_init', 'dt_register_update_players_hook' );
-function dt_register_update_players_hook() {
-    register_api_field(
         'slhb_match',
         'slhb_players',
         array(
-            'get_callback' => function ( $object, $field_name, $request ) {
-                $players = get_post_meta($object["id"], 'slhb_players');
+            'get_callback'    => function ( $object, $field_name, $request ) {
+                $players = Meta::get($object["id"], 'slhb_players');
                 return $players;
             },
-            'schema'          => null
         )
     );
+}
+
+// Generic sanitize JSON method
+function sanitizeCTMetas($metas){
+  $excludeKeys = ['_edit_lock', '_edit_last'];
+  $sanitizeMetas = [];
+
+  foreach ($metas as $key => $value) {
+    if (in_array($key, $excludeKeys)){
+      unset($metas[$key]);
+    }
+  }
+
+  return $metas;
 }
