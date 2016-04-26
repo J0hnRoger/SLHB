@@ -56,6 +56,11 @@ h2 {
  }
 }
 
+// For avoiding display angular template
+[ng\:cloak], [ng-cloak], .ng-cloak {
+  display: none !important;
+}
+
 @mixin read-more {
 	color: $secondary;
 	font-weight: 600;

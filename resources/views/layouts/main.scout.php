@@ -12,6 +12,7 @@
    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     <!-- Ne pas supprimer les marqueurs suivants ! Sinon Bower sera perdu -->
     <!-- inject:css -->
+    <link rel="stylesheet" href="/content/themes/SLHB//resources/assets/angular-material/angular-material.css">
     <link rel="stylesheet" href="/content/themes/SLHB//resources/assets/getmdl-select/getmdl-select.min.css">
     <link rel="stylesheet" href="/content/themes/SLHB//resources/assets/material-design-lite/material.min.css">
     <link rel="stylesheet" href="/content/themes/SLHB//resources/assets/prism/prism.css">
@@ -44,32 +45,47 @@
     <!-- Ne pas supprimer les marqueurs suivants ! Sinon Bower sera perdu -->
     <!-- inject:js -->
 		<script src="/content/themes/SLHB//resources/assets/jquery/dist/jquery.js"></script>
-    <script src="/content/themes/SLHB//resources/assets/angular/angular.js"></script>
-    <script src="/content/themes/SLHB//resources/assets/angular-route/angular-route.js"></script>
-    <script src="/content/themes/SLHB//resources/assets/angular-sanitize/angular-sanitize.js"></script>
-    <script src="/content/themes/SLHB//resources/assets/calendar/calendar.module.js"></script>
-    <script src="/content/themes/SLHB//resources/assets/doc-ready/doc-ready.js"></script>
-    <script src="/content/themes/SLHB//resources/assets/eventEmitter/EventEmitter.js"></script>
-    <script src="/content/themes/SLHB//resources/assets/eventie/eventie.js"></script>
-    <script src="/content/themes/SLHB//resources/assets/fizzy-ui-utils/utils.js"></script>
-    <script src="/content/themes/SLHB//resources/assets/get-size/get-size.js"></script>
-    <script src="/content/themes/SLHB//resources/assets/get-style-property/get-style-property.js"></script>
-    <script src="/content/themes/SLHB//resources/assets/getmdl-select/getmdl-select.min.js"></script>
-    <script src="/content/themes/SLHB//resources/assets/js/upload-media.js"></script>
-    <script src="/content/themes/SLHB//resources/assets/matches-selector/matches-selector.js"></script>
-    <script src="/content/themes/SLHB//resources/assets/material-design-lite/material.min.js"></script>
-    <script src="/content/themes/SLHB//resources/assets/outlayer/outlayer.js"></script>
+		<script src="/content/themes/SLHB//resources/assets/angular/angular.js"></script>
+		<script src="/content/themes/SLHB//resources/assets/angular-animate/angular-animate.js"></script>
+		<script src="/content/themes/SLHB//resources/assets/angular-aria/angular-aria.js"></script>
+		<script src="/content/themes/SLHB//resources/assets/angular-material/angular-material.js"></script>
+		<script src="/content/themes/SLHB//resources/assets/angular-messages/angular-messages.js"></script>
+		<script src="/content/themes/SLHB//resources/assets/angular-route/angular-route.js"></script>
+		<script src="/content/themes/SLHB//resources/assets/angular-sanitize/angular-sanitize.js"></script>
+		<script src="/content/themes/SLHB//resources/assets/calendar/calendar.module.js"></script>
 		<script src="/content/themes/SLHB//resources/assets/team-builder/team-builder.module.js"></script>
-    <script src="/content/themes/SLHB//resources/assets/team-builder/match.model.js"></script>
-    <script src="/content/themes/SLHB//resources/assets/team-builder/matchs.factory.js"></script>
-    <script src="/content/themes/SLHB//resources/assets/team-builder/players.factory.js"></script>
-    <script src="/content/themes/SLHB//resources/assets/team-builder/team-builder.controller.js"></script>
-    <script src="/content/themes/SLHB//resources/assets/calendar/calendar/calendar.controller.js"></script>
-    <script src="/content/themes/SLHB//resources/assets/calendar/calendar/week-list.controller.js"></script>
-    <script src="/content/themes/SLHB//resources/assets/calendar/core/events.factory.js"></script>
-    <script src="/content/themes/SLHB//resources/assets/calendar/core/events.model.js"></script>
-    <script src="/content/themes/SLHB//resources/assets/calendar/event/details.controller.js"></script>
-    <script src="/content/themes/SLHB//resources/assets/calendar/details/details.controller.js"></script>
-    <!-- endinject -->
+		<script src="/content/themes/SLHB//resources/assets/doc-ready/doc-ready.js"></script>
+		<script src="/content/themes/SLHB//resources/assets/eventEmitter/EventEmitter.js"></script>
+		<script src="/content/themes/SLHB//resources/assets/fizzy-ui-utils/utils.js"></script>
+		<script src="/content/themes/SLHB//resources/assets/eventie/eventie.js"></script>
+		<script src="/content/themes/SLHB//resources/assets/get-size/get-size.js"></script>
+		<script src="/content/themes/SLHB//resources/assets/getmdl-select/getmdl-select.min.js"></script>
+		<script src="/content/themes/SLHB//resources/assets/get-style-property/get-style-property.js"></script>
+		<script src="/content/themes/SLHB//resources/assets/js/upload-media.js"></script>
+		<script src="/content/themes/SLHB//resources/assets/matches-selector/matches-selector.js"></script>
+		<script src="/content/themes/SLHB//resources/assets/outlayer/outlayer.js"></script>
+		<script src="/content/themes/SLHB//resources/assets/material-design-lite/material.min.js"></script>
+		<script src="/content/themes/SLHB//resources/assets/prism/prism.js"></script>
+		<script src="/content/themes/SLHB//resources/assets/team-builder/match.model.js"></script>
+		<script src="/content/themes/SLHB//resources/assets/team-builder/matchs.factory.js"></script>
+		<script src="/content/themes/SLHB//resources/assets/team-builder/players.factory.js"></script>
+		<script src="/content/themes/SLHB//resources/assets/team-builder/team-builder.controller.js"></script>
+		<script src="/content/themes/SLHB//resources/assets/calendar/calendar/calendar.controller.js"></script>
+		<script src="/content/themes/SLHB//resources/assets/calendar/calendar/week-list.controller.js"></script>
+		<script src="/content/themes/SLHB//resources/assets/calendar/core/events.factory.js"></script>
+		<script src="/content/themes/SLHB//resources/assets/calendar/core/events.model.js"></script>
+		<script src="/content/themes/SLHB//resources/assets/calendar/details/details.controller.js"></script>
+		<script src="/content/themes/SLHB//resources/assets/calendar/event/details.controller.js"></script>
+		<!-- endinject -->
+
+		  <script>
+		    angular.module('demoApp', ['ngMaterial'])
+					.controller('DemoController', DemoController)
+
+			function DemoController (){
+				
+			}
+
+			</script>
 </body>
 </html>

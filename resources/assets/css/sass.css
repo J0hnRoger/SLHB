@@ -23,7 +23,8 @@ ul {
   color: #fff;
   text-align: center;
   white-space: nowrap;
-  vertical-align: baseline; }
+  vertical-align: baseline;
+  margin: 3px; }
 
 .centring {
   margin: 0 auto; }
@@ -40,6 +41,9 @@ h2 {
   content: "";
   display: table;
   clear: both; }
+
+[ng\:cloak], [ng-cloak], .ng-cloak {
+  display: none !important; }
 
 header {
   background-color: white !important; }

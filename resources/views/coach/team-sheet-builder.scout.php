@@ -2,7 +2,7 @@
 @section('main')
 
 <h1>Team Builder</h1>
-<div class="mdl-demo team-builder" ng-app="team-builder" ng-controller="TeamBuilderCtrl as vm">
+<div class="mdl-demo team-builder" ng-app="team-builder" ng-controller="TeamBuilderCtrl as vm" ng-cloak>
   <section class="section--center mdl-grid mdl-grid--no-spacing mdl-shadow--2dp" >
     <div class="mdl-card mdl-cell mdl-cell--6-col">
       <div class="mdl-card__supporting-text mdl-grid mdl-grid--no-spacing">
