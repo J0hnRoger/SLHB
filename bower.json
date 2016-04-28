@@ -29,6 +29,7 @@
     "getmdl-select": "*",
     "angular-sanitize": "^1.5.5",
     "jquery": "^2.2.3",
-    "angular-material": "^1.0.7"
+    "angular-material": "^1.0.7",
+    "moment": "momentjs#~2.13.0"
   }
 }

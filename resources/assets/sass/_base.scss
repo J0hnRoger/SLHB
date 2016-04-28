@@ -8,6 +8,14 @@ body {
 	font-family: $font-family-default;
 }
 
+html, div {
+  box-sizing: border-box;
+}
+
+body {
+	font-family: $font-family-default;
+}
+
 ul {
 	list-style: none;
 }

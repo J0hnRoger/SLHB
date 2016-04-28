@@ -1,3 +1,7 @@
+/*
+ * Responsabilité : en fonction du mois, nous fournir une liste d'Events
+*/
+
 'use strict';
 
 angular
@@ -6,6 +10,7 @@ angular
 
 EventsFactory.$inject = ['Event', '$http', '$q'];
 function EventsFactory(Event, $http, $q) {
+  var events = [];
   var wp_url = "/wp-json/wp/v2/posts";
   var service = {
     GetEvents : GetEvents
@@ -15,10 +20,16 @@ function EventsFactory(Event, $http, $q) {
 
   function GetEvents() {
     var defer = $q.defer();
-    $http.get(wp_url).then(function (data){
-
-      defer.resolve(data);
-    });
+    if (events.length == 0)
+    {
+      $http.get(wp_url).then(function (data){
+        events = data.data.map( (jsonObject) => new Event(jsonObject) );
+        defer.resolve(events);
+      });
+    }
+    else {
+      defer.resolve(events);
+    }
     return defer.promise;
   }
 

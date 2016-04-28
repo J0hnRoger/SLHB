@@ -54,7 +54,7 @@ return array(
 	// Application classes' alias
 	/* --------------------------------------------------------------- */
 	'aliases'   => [
-	  'Action'        => 'Themosis\\Facades\\Action',
+	/*  'Action'        => 'Themosis\\Facades\\Action',
 	  'Ajax'          => 'Themosis\\Facades\\Ajax',
 	  'Asset'         => 'Themosis\\Facades\\Asset',
 	  'Config'        => 'Themosis\\Facades\\Config',
@@ -77,7 +77,7 @@ return array(
 	  'User'          => 'Themosis\\Facades\\User',
 	  'Validator'     => 'Themosis\\Facades\\Validator',
 	  'Loop'          => 'Themosis\\Facades\\Loop',
-	  'View'          => 'Themosis\\Facades\\View'
+	  'View'          => 'Themosis\\Facades\\View'*/
 ]
 
 );

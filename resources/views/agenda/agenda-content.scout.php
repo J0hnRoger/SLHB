@@ -4,12 +4,12 @@
 
 <div>
 <div class="agenda mdl-grid" ng-app="calendar">
-  <div class="left-column animated slideInRight mdl-shadow--8dp" >
-    <h1>Left Column</h1>
+  <div class="left-column animated slideInRight mdl-shadow--8dp mdl-cell mdl-cell--5-col" >
+    <h1>{{ Loop::Title()}}</h1>
+    <slhb />
   </div>
-  <div class="slhb-calendar animated slideInRight mdl-shadow--8dp">
+  <div class="slhb-calendar animated slideInRight mdl-shadow--8dp mdl-cell mdl-cell--7-col" ng-view>
   </div>
-	<div class="animated slideInRight" ng-view></div>
 </div>
 
 @stop

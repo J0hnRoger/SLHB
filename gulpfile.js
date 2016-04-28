@@ -14,7 +14,7 @@ gulp.task('main-bower-files', function() {
         .pipe(gulp.dest('./resources/assets'));
 });
 
-gulp.task('inject', function () {
+gulp.task('inject', [ 'main-bower-files' ], function () {
   var target = gulp.src('./resources/views/layouts/main.scout.php');
   var vendorSrc = gulp.src(['./resources/assets/**/*.js', './resources/assets/**/*.css', '!./resources/assets/css/*.css'], {read: false});
   var customSrc = gulp.src(['./resources/assets/css/*.css']);
