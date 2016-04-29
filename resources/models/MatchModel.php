@@ -138,6 +138,7 @@ class MatchModel {
     public static function getFullNextMatch()
     {
         $matchs = MatchModel::getNextMatchs(1);
+
         if (count($matchs) == 1) {
           $match = $matchs[0];
           $matchId = $match->ID;
@@ -149,11 +150,38 @@ class MatchModel {
 
           //TODO - Modify this hack and correct the problem at this root (save/get in team builder)
           $players = get_post_meta($matchId, 'slhb_players');
-          foreach($players[0] as $key => $player)
+
+          if (count($players) > 0)
           {
-            $match->players[] = $player['data'];
+            foreach($players[0] as $key => $player)
+            {
+              $match->players[] = $player['data'];
+            }
           }
           return $match;
         }
+    }
+
+    public static function getNextMatchForPlayer($playerId){
+      $query = new WP_Query(array(
+          'post_type'       => 'slhb_match',
+          'posts_per_page'  => 1,
+          'post_status'     => 'publish',
+          'meta_query'   => array
+          (
+            array
+            (
+              'key'     => 'match_date',
+              'value'   => date("Y-m-d"),
+              'type'    => 'DATE', // TRIED: DATE, SIGNED, NUMBER
+              'compare' => '>'
+            )
+          ),
+          'orderby'         => 'match_date',
+          'order'           => 'ASC'
+      ));
+      $matchs = $query->get_posts();
+      td($matchs);
+
     }
 }

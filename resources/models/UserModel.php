@@ -47,7 +47,10 @@ class UserModel {
     {
       $directionMembers = UserModel::getMemberByRole('slhb_direction');
       foreach ($directionMembers as $key => $member) {
-        $member->responsibility = get_user_meta($member->ID, 'slhb-responsibility')[0];
+        $currentResponsibility = get_user_meta($member->ID, 'slhb-responsibility');
+        $member->responsibility = (count($currentResponsibility) > 0)
+          ? $currentResponsibility[0]
+          : "" ;
         $phone = get_user_meta($member->ID, 'slhb-phone');
         $member->phone = (count($phone) > 0 ? $phone[0] : "");
       }
@@ -86,8 +89,8 @@ class UserModel {
       $player->positions =  count($player->positions) > 0
                             ? $player->positions[0]
                             : [];
-      $player->nextMatch = MatchModel::getNextMatch();
-
+      $player->nextMatch = MatchModel::getNextMatchForPlayer($player->ID);
+      td($player->ID);
       return $player;
     }
 }
