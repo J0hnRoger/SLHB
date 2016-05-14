@@ -14,8 +14,8 @@
                 <div>Mon</div><div>Tue</div><div>Wed</div><div>Thu</div><div>Fri</div><div>Sat</div><div>Sun</div></div>
                 <div class="fc-body">
                   <div class="fc-row" ng-repeat='week in vm.CalendarService.weeks' >
-                    <div ng-repeat='day in week' ng-class="day.date.month() != (vm.date.month()) ? 'fc-past' : day.isToday ? 'fc-today' : 'fc-weekday'" style="cursor: default; ">
-                      <span class="fc-date">{[day.number]}</span>
+                    <div ng-repeat='day in week' ng-class="vm.getClass(day)" style="cursor: default; ">
+                      <span ng-class="day.notThisMonth ? 'fc-emptydate' : ''" class="fc-date">{[day.number]}</span>
                       <span class="fc-weekday">Mon</span>
                     </div>
                      <!--<div class="fc-past">

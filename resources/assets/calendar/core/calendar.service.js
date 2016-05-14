@@ -30,7 +30,6 @@ function CalendarService(Day, $http, $q) {
     self.monthName = objDate.toLocaleString(locale, { month: "long" });
 
     self.date = moment([dateInterval.year, dateInterval.month]);
-    console.log(self.date.month);
 
     //Get the first monday of the month
     self.firstMondayOfTheMonth = moment(self.date.day(1));
@@ -40,8 +39,7 @@ function CalendarService(Day, $http, $q) {
       self.weeks[weekIdx] = [];
       for(var i = 0; i < 7; i++){
         self.weeks[weekIdx][i] = new Day(moment(self.firstMondayOfTheMonth));
-        self.weeks[weekIdx][i].isToday = (moment().date() == self.weeks[weekIdx][i].date.date())
-            ? true : false;
+        self.weeks[weekIdx][i].notThisMonth = self.weeks[weekIdx][i].date.month() != dateInterval.month;
         self.firstMondayOfTheMonth.add(1, 'days');
       }
     }
@@ -50,7 +48,7 @@ function CalendarService(Day, $http, $q) {
   function addEvents (eventsLiterals) {
     var events = eventsLiterals.map(function (eventObj) {
       return new Event(eventObj);
-    });
+  });
 
     self.events = self.events.concat(events);
 

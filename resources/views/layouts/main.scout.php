@@ -54,7 +54,6 @@
 		<script src="/content/themes/SLHB//resources/assets/angular-route/angular-route.js"></script>
 		<script src="/content/themes/SLHB//resources/assets/angular-sanitize/angular-sanitize.js"></script>
 		<script src="/content/themes/SLHB//resources/assets/calendar/calendar.module.js"></script>
-		<script src="/content/themes/SLHB//resources/assets/calendar/calendar.controller.js"></script>
 		<script src="/content/themes/SLHB//resources/assets/doc-ready/doc-ready.js"></script>
 		<script src="/content/themes/SLHB//resources/assets/team-builder/team-builder.module.js"></script>
 		<script src="/content/themes/SLHB//resources/assets/eventEmitter/EventEmitter.js"></script>

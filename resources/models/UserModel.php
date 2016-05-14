@@ -90,7 +90,6 @@ class UserModel {
                             ? $player->positions[0]
                             : [];
       $player->nextMatch = MatchModel::getNextMatchForPlayer($player->ID);
-      td($player->ID);
       return $player;
     }
 }

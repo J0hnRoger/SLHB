@@ -2,13 +2,15 @@
 
 angular
   .module('calendar')
-  .directive('slhb', slhb);
+  .directive('slhbCalendar', slhbCalendar);
 
-function slhb() {
+function slhbCalendar() {
   var directive = {
     restrict: 'EA',
     templateUrl: themosis.baseurl + '/resources/assets/calendar/calendar.directive.html',
-    scope: {},
+    scope: {
+      events : '<'
+    },
     link: linkFunc,
     controller: 'SlhbCalendarCtrl',
     controllerAs: 'vm'
@@ -17,7 +19,6 @@ function slhb() {
   return directive;
 
   function linkFunc(scope, el, attr, ctrl) {
-    console.log("Passed");
   }
 }
 
@@ -28,9 +29,15 @@ angular
 SlhbCalendarCtrl.$inject = ['CalendarService', '$http', '$q'];
 function SlhbCalendarCtrl(CalendarService){
   var vm = this;
+
   vm.CalendarService = CalendarService;
-  var date = new Date();
-  vm.CalendarService.set({ year : date.getFullYear(), month : date.getMonth() });
+
+  init();
+
+  function init (){
+    vm.date = new Date();
+    vm.CalendarService.set({ year : vm.date.getFullYear(), month : vm.date.getMonth() });
+  }
 
   vm.next = function (){
     CalendarService.goToNextMonth();
@@ -38,6 +45,13 @@ function SlhbCalendarCtrl(CalendarService){
 
   vm.prev = function (){
     CalendarService.goToPreviousMonth();
+  }
+
+  vm.getClass = function (day){
+    var classes = day.isPast ? 'fc-past' : 'fc-future';
+    if (day.isToday)
+      classes += ' fc-today';
+    return classes;
   }
 
 }

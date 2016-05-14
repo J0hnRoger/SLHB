@@ -12,6 +12,8 @@ function Day() {
   var Day = function (myDate) {
     this.number = myDate.get('date');
     this.date = myDate.get();
+    this.isToday = (moment().date() == this.date.date());
+    this.isPast =  this.date.isBefore(Date.now(), 'day');
     this.events = [];
     this.toString = function () {
       var eventsList = "<ul>";
