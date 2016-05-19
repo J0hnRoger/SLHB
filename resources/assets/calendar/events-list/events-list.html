@@ -1,12 +1,12 @@
-<span id="btn-navigation" class="mdl-button mdl-js-ripple-effect mdl-js-button mdl-button--fab mdl-button--mini-fab count">3</span>
+<span id="btn-navigation" class="mdl-button mdl-js-ripple-effect mdl-js-button mdl-button--fab mdl-button--mini-fab count">{[vm.calendarService.getSelectedEvents().length]}</span>
 
 <div class="left-panel mdl-shadow--2dp">
   <div class="header mdl-shadow--3dp">
-    <h6>Septembre</h6>
+    <h6>Les évènements de ce mois de <span class="animated flipInX"> {[vm.calendarService.monthName]} <span></h6>
   </div>
   <ul class="events">
-    <li ng-repeat="event in vm.events">
-      <div class="hour">12:00</div>
+    <li ng-repeat="event in vm.calendarService.getSelectedEvents()" ng-click="vm.details(event.ID)" class="animated flipInX">
+      <div class="hour">{[event.formatedDate]}</div>
       <div class="descr purple">{[event.title.rendered]}</div>
     </li>
   </ul>

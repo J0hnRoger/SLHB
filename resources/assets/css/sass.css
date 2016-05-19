@@ -306,7 +306,8 @@ ul.all-teams li {
   border-right: 1px solid #ddd;
   padding: 4px;
   overflow: hidden;
-  position: relative; }
+  position: relative;
+  cursor: pointer; }
 
 .fc-calendar .fc-head > div {
   text-align: center; }

@@ -6,15 +6,19 @@ angular
 
 CalendarService.$inject = ['Day', '$http', '$q'];
 function CalendarService(Day, $http, $q) {
+  var selectedEvents = [];
 
   var self = {
-    days : [],
     weeks : [],
     events : [],
     addEvents : addEvents,
     set : set,
+    bindEvents : bindEvents,
     goToNextMonth : goToNextMonth,
-    goToPreviousMonth : goToPreviousMonth
+    goToPreviousMonth : goToPreviousMonth,
+
+    getSelectedEvents : getSelectedEvents,
+    setSelectedEvents : setSelectedEvents
   };
   self.now = moment().date();
 
@@ -43,25 +47,28 @@ function CalendarService(Day, $http, $q) {
         self.firstMondayOfTheMonth.add(1, 'days');
       }
     }
+    bindEvents();
   }
 
-  function addEvents (eventsLiterals) {
-    var events = eventsLiterals.map(function (eventObj) {
-      return new Event(eventObj);
-  });
-
+  function addEvents (events) {
     self.events = self.events.concat(events);
+  }
 
-    var eventOfCurrMonth = events.filter(function (event) {
-      return event.date.month() == (self.month - 1)
+  function bindEvents(){
+    selectedEvents = self.events.filter(function (event) {
+      return event.date.month() == self.month
         && event.date.year() == self.year;
     });
 
-    for(var i = 0; i < eventOfCurrMonth.length; i++){
-      var eventDay = self.days.find(function (day) {
-        return day.number == eventOfCurrMonth[i].date.get('date');
-      });
-      eventDay.events.push(eventOfCurrMonth[i]);
+    for(var i = 0; i < selectedEvents.length; i++){
+      for (var weekIdx in self.weeks){
+        var eventDay = self.weeks[weekIdx].find(function (day) {
+          return day.date.isSame(selectedEvents[i].date, 'days');
+        });
+        if (eventDay != undefined)
+          eventDay.events.push(selectedEvents[i]);
+      }
+
     }
   }
 
@@ -73,6 +80,14 @@ function CalendarService(Day, $http, $q) {
   function goToPreviousMonth(){
     self.month--;
     set({ month : self.month, year : self.year });
+  }
+
+  function setSelectedEvents(events) {
+    selectedEvents = events;
+  }
+
+  function getSelectedEvents() {
+    return selectedEvents;
   }
 
   return self;

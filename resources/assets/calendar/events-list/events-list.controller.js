@@ -4,17 +4,12 @@ angular
   .module('calendar')
   .controller('EventListCtrl', EventListCtrl);
 
-EventListCtrl.$inject = ['EventsFactory'];
-function EventListCtrl(eventsFactory) {
+EventListCtrl.$inject = ['CalendarService', '$location'];
+function EventListCtrl(calendarService, $location) {
   var vm = this;
-  vm.events = [];
+  vm.calendarService = calendarService;
 
-  activate();
-
-  function activate() {
-   eventsFactory.GetEvents()
-      .then(function(events){
-        vm.events = events;
-   });
+  vm.details = function (eventId) {
+    $location.path( '/' + eventId)
   }
 }

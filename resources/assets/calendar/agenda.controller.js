@@ -1,20 +1,24 @@
+/**
+ * Top Level Controller - Load Ajax Informations
+ */
 'use strict';
 
 angular
   .module('calendar')
   .controller('AgendaCtrl', AgendaCtrl);
 
-AgendaCtrl.$inject = ['EventsFactory'];
-function AgendaCtrl(eventsFactory) {
+AgendaCtrl.$inject = ['EventsFactory', 'CalendarService'];
+function AgendaCtrl(EventsFactory, calendarService) {
   var vm = this;
   vm.events = [];
 
   activate();
 
   function activate() {
-   eventsFactory.GetEvents()
+   EventsFactory.getEvents()
       .then(function(events){
-        vm.events = events;
+        calendarService.addEvents(events);
+        calendarService.bindEvents();
    });
   }
 }

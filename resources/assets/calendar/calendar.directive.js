@@ -9,11 +9,11 @@ function slhbCalendar() {
     restrict: 'EA',
     templateUrl: themosis.baseurl + '/resources/assets/calendar/calendar.directive.html',
     scope: {
-      events : '<'
     },
     link: linkFunc,
     controller: 'SlhbCalendarCtrl',
-    controllerAs: 'vm'
+    controllerAs: 'vm',
+    bindToController: true
   };
 
   return directive;
@@ -29,7 +29,6 @@ angular
 SlhbCalendarCtrl.$inject = ['CalendarService', '$http', '$q'];
 function SlhbCalendarCtrl(CalendarService){
   var vm = this;
-
   vm.CalendarService = CalendarService;
 
   init();
@@ -51,7 +50,12 @@ function SlhbCalendarCtrl(CalendarService){
     var classes = day.isPast ? 'fc-past' : 'fc-future';
     if (day.isToday)
       classes += ' fc-today';
+    if (day.events.length > 0)
+      classes += ' fc-content';
     return classes;
   }
 
+  vm.selectDate = function (day){
+      vm.CalendarService.setSelectedEvents(day.events);
+  }
 }

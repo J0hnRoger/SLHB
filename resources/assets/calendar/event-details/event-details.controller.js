@@ -4,9 +4,11 @@ angular
   .module('calendar')
   .controller('EventCtrl', EventCtrl);
 
-function EventCtrl() {
+EventCtrl.$inject = ['EventsFactory', '$routeParams'];
+function EventCtrl(eventsFactory, $routeParams) {
   var vm = this;
-
-  activate();
+  eventsFactory.getEvent($routeParams.id).then(function (ev){
+      vm.event = ev; 
+  })
 
 }
