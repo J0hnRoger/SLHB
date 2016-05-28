@@ -7,7 +7,7 @@
   <ul class="events">
     <li ng-repeat="event in vm.calendarService.getSelectedEvents()" ng-click="vm.details(event.ID)" class="animated flipInX">
       <div class="hour">{[event.formatedDate]}</div>
-      <div class="descr purple">{[event.title.rendered]}</div>
+      <div class="descr purple">{[event.title]}</div>
     </li>
   </ul>
 </div>

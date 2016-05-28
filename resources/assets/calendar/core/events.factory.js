@@ -61,7 +61,7 @@ function EventsFactory(Event, $http, $q) {
        });
       }
       else{
-        var event = events.find(ev => {return (ev.ID == +id) });
+        var event = events.find(ev => {return (ev.ID == +id) }); 
         defer.resolve(event);
       }
 
