@@ -16,8 +16,8 @@
             @endif
       </div>
       <div class="mdl-layout-spacer"></div>
-      @if($currentUser->user_login != false )
       <div id="login" class="mdl-cell mdl-cell--4-col mdl-grid">
+        @if($currentUser->user_login != false )
         <div class="mdl-cell mdl-cell--6-col user-information">
           <h5>Bonjour {{ $currentUser->user_login }}</h5>
           <a href="/my-profile">Accéder à votre compte </a>
@@ -31,8 +31,8 @@
         <div class="mdl-cell mdl-cell--4-col">
           <?php echo get_avatar( $currentUser->user_email, 65); ?>
         </div>
+        @endif
       </div>
-      @endif
     </div>
     <div id="menu" class="mdl-layout__header-row">
       <nav class="mdl-navigation mdl-layout--large-screen-only">

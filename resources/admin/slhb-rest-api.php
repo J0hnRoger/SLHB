@@ -18,7 +18,7 @@ add_action( 'rest_api_init', function () {
     ) );
 } );
 
-// Return all post IDs
+// Return all players by team
 function get_players_by_team(WP_REST_Request $request) {
   $teamName = $request->get_param( 'team_name' );
   $players = UserModel::getPlayersByTeam($teamName);
