@@ -5,8 +5,44 @@ var sass = require('gulp-sass');
 var browserSync = require('browser-sync');
 var reload = browserSync.reload;
 var series = require('stream-series');
+var gutil = require( 'gulp-util' );
+var ftp = require( 'vinyl-ftp' );
+var argv = require('yargs').argv
 
 var THEME_NAME = "SLHB";
+
+
+/** Configuration **/
+var host = 'ftp.slhb.fr';
+var port = 21;
+var localFilesGlob = ['./resources/*/*/*.*'];
+var remoteFolder = '/www/htdocs/content/themes/SLHB'
+
+// helper function to build an FTP connection based on our configuration
+function getFtpConnection(username, password) {
+    return ftp.create({
+        host: host,
+        port: port,
+        user: username,
+        password: password,
+        parallel: 5,
+        log: gutil.log
+    });
+}
+
+/**
+ * Deploy task.
+ * Copies the new files to the server
+ *
+ * Usage: `FTP_USER=someuser FTP_PWD=somepwd gulp ftp-deploy`
+ */
+gulp.task('ftp-deploy', function() {
+    var conn = getFtpConnection(argv.username, argv.password);
+
+    return gulp.src(localFilesGlob, { base: '.', buffer: false })
+        .pipe( conn.newer( remoteFolder ) ) // only upload newer files
+        .pipe( conn.dest( remoteFolder ) );
+});
 
 gulp.task('main-bower-files', function() {
     return gulp.src('./bower.json')
