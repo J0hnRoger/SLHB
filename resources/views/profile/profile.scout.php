@@ -17,7 +17,6 @@ for each players : Array
           (
               [0] => SLHB 1
           )
-
   )
 */
 ?>
@@ -46,7 +45,7 @@ for each players : Array
           Prochains Matchs
         </md-tab-label>
         <md-tab-body>
-            @if (count($next_match->players) == 0)
+            @if (!isset($next_match) || count( $next_match->players) == 0)
               <h5>La liste de gladiateurs morts de faim n'est pas encore sortie.</h5>
             @else
               <ul>
