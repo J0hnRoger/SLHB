@@ -43,12 +43,12 @@ class ContactForm_Widget extends WP_Widget
 
     public function renderForm()
     {
-       echo '<div class="contact mdl-card mdl-shadow--6dp">'
+      echo '<form action="' . esc_url( $_SERVER['REQUEST_URI'] ) . '" method="post">'
+       . '<div class="contact mdl-card mdl-shadow--6dp">'
     			.'<div class="mdl-card__title mdl-color--primary mdl-color-text--white">'
     			.	'<h2 class="mdl-card__title-text">Pour toute demande sur le club, les entrainements ou les inscriptions.</h2>'
     		.	'</div>'
     	  .	'<div class="mdl-card__supporting-text">'
-    			.	'<form action="' . esc_url( $_SERVER['REQUEST_URI'] ) . '" method="post">'
           .	'<div class="mdl-textfield mdl-js-textfield">'
             .	'<input class="mdl-textfield__input" name="cf-name" pattern="[a-zA-Z0-9 ]+" value="' . ( isset( $_POST["cf-name"] ) ? esc_attr( $_POST["cf-name"] ) : '' ) . '" size="40"  />'
             .	'<label class="mdl-textfield__label" for="cf-name">Nom *</label>'
@@ -58,7 +58,7 @@ class ContactForm_Widget extends WP_Widget
         .			'<label class="mdl-textfield__label" for="cf-email">Mail *</label>'
         .		'</div>'
         .		'<div class="mdl-textfield mdl-js-textfield">'
-        .			'<input class="mdl-textfield__input" name="cf-subject"pattern="[a-zA-Z ]+" value="' . ( isset( $_POST["cf-subject"] ) ? esc_attr( $_POST["cf-subject"] ) : '' ) . '" size="40" />'
+        .			'<input class="mdl-textfield__input" name="cf-subject" value="' . ( isset( $_POST["cf-subject"] ) ? esc_attr( $_POST["cf-subject"] ) : '' ) . '" size="40" />'
         .			'<label class="mdl-textfield__label" for="cf-subject">Sujet *</label>'
         .		'</div>'
           .'<div class="mdl-textfield mdl-js-textfield">'
@@ -67,29 +67,12 @@ class ContactForm_Widget extends WP_Widget
             . '</textarea>'
             .  '<label class="mdl-textfield__label" for="cf-message">Votre question...</label>'
             .'</div>'
-    			.	'</form>'
     		.	'</div>'
     	.	'	<div class="mdl-card__actions mdl-card--border">'
-    		.	'	<input type="submit" name="cf-submitted" value="Send" class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">Envoyer</button>'
+    		.	'	<input type="submit" name="cf-submitted" value="Envoyer" class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect"></button>'
     		.	'</div>'
-    	.	'</div>';
-      // echo 'Your Name (required) <br/>';
-      // echo '<input type="text" name="cf-name" pattern="[a-zA-Z0-9 ]+" value="' . ( isset( $_POST["cf-name"] ) ? esc_attr( $_POST["cf-name"] ) : '' ) . '" size="40" />';
-      // echo '</p>';
-      // echo '<p>';
-      // echo 'Your Email (required) <br/>';
-      // echo '<input type="email" name="cf-email" value="' . ( isset( $_POST["cf-email"] ) ? esc_attr( $_POST["cf-email"] ) : '' ) . '" size="40" />';
-      // echo '</p>';
-      // echo '<p>';
-      // echo 'Subject (required) <br/>';
-      // echo '<input type="text" name="cf-subject" pattern="[a-zA-Z ]+" value="' . ( isset( $_POST["cf-subject"] ) ? esc_attr( $_POST["cf-subject"] ) : '' ) . '" size="40" />';
-      // echo '</p>';
-      // echo '<p>';
-      // echo 'Your Message (required) <br/>';
-      // echo '<textarea rows="10" cols="35" name="cf-message">' . ( isset( $_POST["cf-message"] ) ? esc_attr( $_POST["cf-message"] ) : '' ) . '</textarea>';
-      // echo '</p>';
-      // echo '<p><input type="submit" name="cf-submitted" value="Send"></p>';
-      // echo '</form>';
+    	.	'</div>'
+      .	'</form>';
     }
 
     function deliver_mail() {
@@ -110,7 +93,7 @@ class ContactForm_Widget extends WP_Widget
     		// If email has been process for sending, display a success message
     		if ( wp_mail( $to, $subject, $message, $headers ) ) {
     			echo '<div>';
-    			echo '<p>Thanks for contacting me, expect a response soon.</p>';
+    			echo '<p>Votre demande a bien été prise en compte, nous vous répondront incessamment sous peu. Bonne journée !</p>';
     			echo '</div>';
     		} else {
     			echo 'An unexpected error occurred';
