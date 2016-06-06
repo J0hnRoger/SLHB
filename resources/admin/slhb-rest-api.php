@@ -4,6 +4,20 @@
 // Endpoint : http://<siteUrl>/wp-json/slhb/v1/<methodName>
 /*-----------------------------------------------------------------------*/
 
+/**
+ * POST REST API
+ */
+ function my_rest_prepare_post( $data, $post, $request ) {
+ 	$_data = $data->data;
+ 	$_data['event_date'] = Meta::get($post->ID, 'eventDate');
+  $_data['end_time'] = Meta::get($post->ID, 'eventStartTime');
+  $_data['start_time'] = Meta::get($post->ID, 'eventEndTime');
+ 	$data->data = $_data;
+ 	return $data;
+ }
+
+add_filter( 'rest_prepare_post', 'my_rest_prepare_post', 10, 3 );
+
 // Expose all users(not only the users that have published a post) in wp Rest api v2
 add_filter( 'rest_user_query' , 'custom_rest_user_query' );
 function custom_rest_user_query( $prepared_args, $request = null ) {

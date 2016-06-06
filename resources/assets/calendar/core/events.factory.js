@@ -45,7 +45,7 @@ function EventsFactory(Event, $http, $q) {
   }
 
   function GetEvent(id){
-    var defer = $q.defer();
+    var defer = $q.defer(); 
 
     if (promises.length > 0) {
         promises.push(defer);
@@ -61,7 +61,7 @@ function EventsFactory(Event, $http, $q) {
        });
       }
       else{
-        var event = events.find(ev => {return (ev.ID == +id) }); 
+        var event = events.find(ev => {return (ev.ID == +id) });
         defer.resolve(event);
       }
 

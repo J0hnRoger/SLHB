@@ -11,11 +11,20 @@ function Event() {
     this.date = moment(eventObject.event_date);
     this.title = eventObject.title.rendered;
     this.content = eventObject.content.rendered;
+    if (eventObject.start_time != "") {
+      this.startTime = eventObject.start_time;
+
+    }
+    if (eventObject.end_time != "") {
+      this.endTime = eventObject.end_time;
+    }
     this.toString = function ()
     {
       return "Event : " + this.title + " - " + this.description;
     }
+
     this.formatedDate = this.date.format("MMM Do");
+
   }
 
   return Event;

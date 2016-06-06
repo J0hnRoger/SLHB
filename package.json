@@ -44,5 +44,8 @@
     "vinyl-ftp": "~0.4.5",
     "gulp-util": "~3.0.7",
     "yargs": "~4.7.1"
+  },
+  "dependencies": {
+    "gulp-util": "^3.0.7"
   }
 }

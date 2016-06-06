@@ -11,7 +11,6 @@ var argv = require('yargs').argv
 
 var THEME_NAME = "SLHB";
 
-
 /** Configuration **/
 var host = 'ftp.slhb.fr';
 var port = 21;
@@ -34,11 +33,11 @@ function getFtpConnection(username, password) {
  * Deploy task.
  * Copies the new files to the server
  *
- * Usage: `FTP_USER=someuser FTP_PWD=somepwd gulp ftp-deploy`
+ * Usage: `C:\wamp\www\SLHB\htdocs\content\themes\SLHB>gulp ftp-deploy --username <username> --password <mdp>`
  */
 gulp.task('ftp-deploy', function() {
     var conn = getFtpConnection(argv.username, argv.password);
-
+    
     return gulp.src(localFilesGlob, { base: '.', buffer: false })
         .pipe( conn.newer( remoteFolder ) ) // only upload newer files
         .pipe( conn.dest( remoteFolder ) );

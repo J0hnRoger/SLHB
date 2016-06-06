@@ -1,7 +1,7 @@
 'use strict';
 
 angular
-  .module('calendar')
+  .module('calendar') 
   .factory('CalendarService', CalendarService);
 
 CalendarService.$inject = ['Day', '$http', '$q'];

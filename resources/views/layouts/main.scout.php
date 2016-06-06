@@ -15,7 +15,6 @@
     <link rel="stylesheet" href="/content/themes/SLHB//resources/assets/angular-material/angular-material.css">
     <link rel="stylesheet" href="/content/themes/SLHB//resources/assets/getmdl-select/getmdl-select.min.css">
     <link rel="stylesheet" href="/content/themes/SLHB//resources/assets/material-design-lite/material.min.css">
-    <link rel="stylesheet" href="/content/themes/SLHB//resources/assets/prism/prism.css">
     <link rel="stylesheet" href="/content/themes/SLHB//resources/assets/css/animate.css">
     <link rel="stylesheet" href="/content/themes/SLHB//resources/assets/css/sass.css">
     <link rel="stylesheet" href="/content/themes/SLHB//resources/assets/css/styles.css">
@@ -64,11 +63,8 @@
 		<script src="/content/themes/SLHB//resources/assets/calendar/calendar.directive.js"></script>
 		<script src="/content/themes/SLHB//resources/assets/get-style-property/get-style-property.js"></script>
 		<script src="/content/themes/SLHB//resources/assets/getmdl-select/getmdl-select.min.js"></script>
-		<script src="/content/themes/SLHB//resources/assets/js/upload-media.js"></script>
 		<script src="/content/themes/SLHB//resources/assets/matches-selector/matches-selector.js"></script>
 		<script src="/content/themes/SLHB//resources/assets/material-design-lite/material.min.js"></script>
-		<script src="/content/themes/SLHB//resources/assets/prism/prism.js"></script>
-		<script src="/content/themes/SLHB//resources/assets/outlayer/outlayer.js"></script>
 		<script src="/content/themes/SLHB//resources/assets/team-builder/match.model.js"></script>
 		<script src="/content/themes/SLHB//resources/assets/team-builder/matchs.factory.js"></script>
 		<script src="/content/themes/SLHB//resources/assets/team-builder/players.factory.js"></script>

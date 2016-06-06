@@ -5,7 +5,7 @@
 
 angular
   .module('calendar')
-  .factory('Day', Day);
+  .factory('Day', Day); 
 
 function Day() {
 

@@ -8,6 +8,8 @@
         <div class="header-content">
           <h1>{[vm.event.title]}</h1>
           <div class="date">{[vm.event.formatedDate]}</div>
+          <div ng-show="vm.event.startTime" class="date">à partir de {[vm.event.startTime]}</div>
+          <div ng-show="vm.event.endTime" class="date">jusqu'à {[vm.event.endTime]}</div>
         </div>
       </div>
 
@@ -18,7 +20,5 @@
         <div style="background-image : url(/content/uploads/2015/10/SENIORSGARS1.jpg);background-position:center" ></div>
       </div>
       <div class="event-content" ng-bind-html="vm.event.content">
-
       </div>
-
     </div>

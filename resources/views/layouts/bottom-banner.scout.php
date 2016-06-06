@@ -18,8 +18,8 @@
   </li>
 </ul>
 <div id="banner-image" class="mdl-layout--large-screen-only">
-  <img src="{{$footerImage}}" alt="" />
+  <!-- <img src="{{$footerImage}}" alt="" /> -->
 </div>
 <div id="banner-image" class="mdl-layout--small-screen-only">
-  <img src="{{ $logoUrl}}" alt="" />
+  <!-- <img src="{{ $logoUrl}}" alt="" /> -->
 </div>

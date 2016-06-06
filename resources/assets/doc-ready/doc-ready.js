@@ -6,7 +6,7 @@
 
 /*jshint browser: true, strict: true, undef: true, unused: true*/
 /*global define: false, require: false, module: false */
-
+/*
 ( function( window ) {
 
 'use strict';
@@ -78,3 +78,4 @@ if ( typeof define === 'function' && define.amd ) {
 }
 
 })( window );
+*/
