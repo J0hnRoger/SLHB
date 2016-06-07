@@ -44,7 +44,7 @@ $phone-width: 320px;
 }
 
 @mixin phone {
-  @media (min-width: #{$phone-width}) {
+  @media (min-width: #{$phone-width}) and (max-width: #{$tablet-width - 1px}) {
     @content;
   }
 }
@@ -86,4 +86,18 @@ $phone-width: 320px;
   width: 55%;
   min-width: 150px;
   border-right : solid 2px $color;
+}
+
+
+@mixin read-more {
+	color: $secondary;
+	font-weight: 600;
+	padding: 10px;
+	float: right;
+	text-decoration: none;
+	span {
+		display: inline-block;
+		vertical-align: middle;
+		height: 34px;
+	}
 }

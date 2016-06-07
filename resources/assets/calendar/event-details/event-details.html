@@ -13,11 +13,11 @@
         </div>
       </div>
 
-      <div class="mdl-grid carousel mdl-shadow--2dp">
-        <div style="background-image : url(/content/uploads/2015/10/SENIORSGARS1.jpg);background-position:top" > </div>
-        <div style="background-image : url(/content/uploads/2015/10/SENIORSGARS1.jpg);background-position:right" > </div>
-        <div class="more-pictures" > <h1>+5</h1> Photos</div>
-        <div style="background-image : url(/content/uploads/2015/10/SENIORSGARS1.jpg);background-position:center" ></div>
+      <div class="mdl-grid carousel mdl-shadow--2dp" ng-show="vm.event.post_gallery.length > 0">
+        <div ng-repeat="url in vm.event.post_gallery" style="background-image : url({[url]});background-position:top" > </div>
+        <!-- <div style="background-image : url(/content/uploads/2015/10/SENIORSGARS1.jpg);background-position:right" > </div> -->
+        <div class="more-pictures" ng-show="vm.event.post_gallery.length >= 3"> <h1>+{[vm.event.post_gallery.length - 3]}</h1> Photos</div>
+        <!-- <div style="background-image : url(/content/uploads/2015/10/SENIORSGARS1.jpg);background-position:center" ></div> -->
       </div>
       <div class="event-content" ng-bind-html="vm.event.content">
       </div>

@@ -126,7 +126,7 @@ main#content {
     font-size: 22px;
     text-transform: uppercase;
     font-weight: 500; }
-  @media (min-width: 320px) {
+  @media (min-width: 320px) and (max-width: 767px) {
     main#content {
       margin: 0;
       margin-left: 0px; } }
@@ -163,7 +163,7 @@ section#bottom-banner {
     width: 25%; }
     section#bottom-banner #banner-image img {
       width: 100%; }
-  @media (min-width: 320px) {
+  @media (min-width: 320px) and (max-width: 767px) {
     section#bottom-banner {
       padding: 0px;
       margin: 0; }
@@ -579,7 +579,8 @@ ul.all-teams li {
 
 /* SLHB Agenda */
 .slhb-calendar {
-  margin: 0 auto; }
+  margin: 0 auto;
+  min-height: 85vh; }
 
 .agenda {
   color: #8a8c96;
@@ -637,14 +638,14 @@ ul.all-teams li {
 
 /*--- Event Details*/
 div.event-details {
-  min-height: 85vh;
   width: 100%;
+  height: 85vh;
   padding: 0;
   margin: 0;
   padding: 0; }
   div.event-details .cover {
     width: auto;
-    height: 45%; }
+    height: 30%; }
     div.event-details .cover .header-content {
       width: 45%;
       height: 100%;
@@ -662,20 +663,20 @@ div.event-details {
   div.event-details .carousel {
     position: relative;
     margin: 0;
-    padding: 0; }
-    @media (min-width: 320px) {
-      div.event-details .carousel div {
-        min-width: calc(100% / 4);
-        min-height: 80px;
-        background-size: 350px;
-        background-repeat: no-repeat; } }
+    padding: 0;
+    min-height: 110px; }
     div.event-details .carousel div {
-      background-color: #1abc9c;
-      -webkit-transition: .3s ease-in-out;
-      transition: .3s ease-in-out;
-      opacity: .7; }
-    div.event-details .carousel div:hover {
-      opacity: 1; }
+      min-width: calc(100% / 4);
+      min-height: 80px;
+      background-size: 350px;
+      background-repeat: no-repeat; }
+      div.event-details .carousel div {
+        background-color: #1abc9c;
+        -webkit-transition: .3s ease-in-out;
+        transition: .3s ease-in-out;
+        opacity: .7; }
+      div.event-details .carousel div:hover {
+        opacity: 1; }
     div.event-details .carousel div.more-pictures {
       opacity: 1;
       background-color: #1d3d86;

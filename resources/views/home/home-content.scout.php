@@ -22,16 +22,3 @@
 @endforeach
 </div>
 @stop
-
-<!-- <div class="actualite mdl-cell mdl-cell--5-col mdl-cell--10-col-phone">
-	<div class="mdl-layout--large-screen-only">
-    {{ get_the_post_thumbnail($actu->ID) }}
-	</div>
-		<div class="content">
-      <h2 >{{$actu->post_title}}</h2>
-		</div>
-    <div class="date">  <div class="day">{{ date('j', strtotime($actu->post_date)) }}</div>
-			<div class="month">{{ date('M', strtotime($actu->post_date)) }}</div>
-		</div>
-</div>
-<div class="mdl-layout-spacer"></div> -->

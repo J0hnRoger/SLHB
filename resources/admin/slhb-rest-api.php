@@ -14,6 +14,9 @@
   $_data['start_time'] = Meta::get($post->ID, 'eventEndTime');
 
   $_data['featured_image'] = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'single-post-thumbnail' );
+
+  $_data['post_gallery'] = PostModel::getPostImagesUrl($post->ID);
+
  	$data->data = $_data;
  	return $data;
  }

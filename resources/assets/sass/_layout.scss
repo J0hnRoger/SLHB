@@ -6,6 +6,7 @@
 $deg : 25;
 header {
 	background-color: $primary !important;
+
 	.mdl-layout__header-row
 	{
 		height: $header-height;
@@ -50,6 +51,7 @@ header {
 		background-color: $secondary;
 	}
 }
+
 
 #banner {
 	height: 463px;

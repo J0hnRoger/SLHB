@@ -54,4 +54,17 @@ class PostModel {
       return $post;
     }
 
+    public static function getPostImagesUrl($postId){
+      $imageUrls = [];
+      $imageIds = Meta::get($postId, 'post_gallery');
+      if (empty($imageIds))
+        return $imageUrls;
+
+      foreach ($imageIds as $imageId) {
+        array_push($imageUrls, wp_get_attachment_url($imageId));
+      }
+
+      return $imageUrls;
+    }
+
 }

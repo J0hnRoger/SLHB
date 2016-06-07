@@ -16,8 +16,15 @@ $endDateProperties = [
                     'internal'  => 'Bim!'
                 ];
 
+$galleryProperties = [
+                    'title' => 'Gallerie d\'images de l\'évènement',
+                    'name'      => 'postGallery',
+                    'internal'  => 'postGallery'
+                ];
+
 $infos = Metabox::make('Informations sur l\'évènement', "post")->set(array(
   Field::date('eventDate', ['title' => 'Date de l\'évènement']),
   Field::make('Addons\Fields\TimeField', $startDateProperties),
   Field::make('Addons\Fields\TimeField', $endDateProperties),
+  Field::collection('post_gallery', $galleryProperties)
 ));
