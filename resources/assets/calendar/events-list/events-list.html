@@ -2,7 +2,7 @@
 
 <div class="left-panel mdl-shadow--2dp">
   <div class="header mdl-shadow--3dp">
-    <h6>Les évènements de ce mois de <span class="animated flipInX"> {[vm.calendarService.monthName]} <span></h6>
+    <h6>Au programme, ce mois de <span class="animated flipInX month-name"> {[vm.calendarService.monthName]} <span></h6>
   </div>
   <ul class="events">
     <li ng-repeat="event in vm.calendarService.getSelectedEvents()" ng-click="vm.details(event.ID)" class="animated flipInX">

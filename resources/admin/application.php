@@ -12,6 +12,9 @@ function formatedDate($date){
   return strftime("%A %d %B %Y", $date->getTimestamp());
 }
 
+/**
+ * User Capabilities
+ */
 
 //Allow Contributors to Add Media
 if ( current_user_can('contributor') && !current_user_can('upload_files') )
