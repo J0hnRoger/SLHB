@@ -181,7 +181,5 @@ class MatchModel {
           'order'           => 'ASC'
       ));
       $matchs = $query->get_posts();
-      td($matchs);
-
     }
 }
