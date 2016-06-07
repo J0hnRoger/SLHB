@@ -32,9 +32,11 @@
       @yield('main')
   </main>
 
+	@section('bottom-banner')
   <section id="bottom-banner" class="mdl-layout--large-screen-only">
-  @include('layouts.bottom-banner')
-  </section>
+		@include('layouts.bottom-banner')
+	</section>
+	@show
   <footer class="mdl-layout--large-screen-only">
   @include('layouts.footer')
 	</footer>

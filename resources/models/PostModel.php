@@ -51,6 +51,7 @@ class PostModel {
     public static function getCurrent()
     {
       $post = get_queried_object();
+      $post->formated_modified_date = get_the_date('j F Y', $post->ID);
       return $post;
     }
 

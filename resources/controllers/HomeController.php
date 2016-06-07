@@ -15,9 +15,11 @@ class HomeController extends BaseController
 
     public function getSingleActualite()
     {
+
       return View::make('actualites.single')->with(array(
-        'actu' => PostModel::getCurrent()
-        // 'relatedPosts'
+        'actu' => PostModel::getCurrent(),
+        'next_post' => get_next_post(),
+        'previous_post' => get_previous_post()
       ));
     }
 

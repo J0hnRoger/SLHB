@@ -68,16 +68,3 @@ h2 {
 [ng\:cloak], [ng-cloak], .ng-cloak {
   display: none !important;
 }
-
-@mixin read-more {
-	color: $secondary;
-	font-weight: 600;
-	padding: 10px;
-	float: right;
-	text-decoration: none;
-	span {
-		display: inline-block;
-		vertical-align: middle;
-		height: 34px;
-	}
-}

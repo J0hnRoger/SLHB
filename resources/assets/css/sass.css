@@ -583,6 +583,7 @@ ul.all-teams li {
   min-height: 85vh; }
 
 .agenda {
+  min-height: 85vh;
   color: #8a8c96;
   margin: 0;
   padding: 0;
@@ -960,6 +961,89 @@ div.event-details {
     .actualites .actualite-content {
       margin: 20px;
       width: 100%; } }
+
+/* Actu Details */
+main#content .details-actualite {
+  width: 660px;
+  padding: 20px;
+  margin: 0 auto; }
+  main#content .details-actualite header h1 {
+    text-transform: none;
+    font-weight: 700;
+    font-size: 35px;
+    color: #1d3d86;
+    margin-bottom: 0; }
+  main#content .details-actualite header .sub-infos {
+    text-transform: uppercase;
+    color: #767676; }
+  main#content .details-actualite section {
+    margin-top: 45px; }
+
+.related {
+  background-color: #1d3d86;
+  padding: 0;
+  margin: 0;
+  margin-top: 5rem; }
+  .related .related-center {
+    width: 100%;
+    margin: 0 auto;
+    height: 250px;
+    overflow: hidden;
+    position: relative; }
+    .related .related-center a.read-next-story {
+      text-decoration: none;
+      position: relative;
+      text-align: center;
+      color: #fff;
+      background: #1d3d86 no-repeat center center;
+      background-size: cover;
+      overflow: hidden;
+      float: left;
+      width: 50%;
+      height: 100%; }
+      .related .related-center a.read-next-story:before {
+        content: "";
+        display: block;
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        background: rgba(0, 0, 0, 0.7);
+        transition: all 0.5s ease; }
+      .related .related-center a.read-next-story:hover:before {
+        background: rgba(0, 0, 0, 0.8);
+        transition: all 0.2s ease; }
+      .related .related-center a.read-next-story:hover .post:before {
+        color: #222;
+        background: #fff;
+        transition: all 0.2s ease; }
+      .related .related-center a.read-next-story .post {
+        position: relative;
+        width: 80%;
+        margin: 1rem auto;
+        padding-top: 3rem;
+        padding-bottom: 3rem; }
+        .related .related-center a.read-next-story .post:before {
+          content: "A lire ensuite";
+          padding: 4px 10px 5px;
+          text-transform: uppercase;
+          font-size: 0.8rem;
+          font-family: "Open Sans", sans-serif;
+          color: rgba(255, 255, 255, 0.8);
+          border: rgba(255, 255, 255, 0.5) 1px solid;
+          border-radius: 4px;
+          transition: all 0.5s ease; }
+        .related .related-center a.read-next-story .post h2 {
+          margin-top: 10px;
+          color: white;
+          font-weight: bold;
+          font-size: 28px;
+          text-align: center; }
+        .related .related-center a.read-next-story .post p {
+          padding: 20px 0;
+          color: rgba(255, 255, 255, 0.8);
+          font-weight: 300; }
 
 .contact {
   margin: 0 auto;

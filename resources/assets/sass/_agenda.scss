@@ -400,6 +400,7 @@ $orange: #f88c4b;
 /* SLHB Agenda */
 .slhb-calendar { margin: 0 auto; min-height: 85vh;}
 .agenda {
+	min-height: 85vh;
 	color: $soft_grey;
 	margin:0;
 	padding: 0;
@@ -478,7 +479,6 @@ div.event-details {
 				width: 100%;
 			}
 		}
-
 	}
 	.carousel {
 		position: relative;
