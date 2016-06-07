@@ -578,6 +578,9 @@ ul.all-teams li {
     font-size: 15px; } }
 
 /* SLHB Agenda */
+.slhb-calendar {
+  margin: 0 auto; }
+
 .agenda {
   color: #8a8c96;
   margin: 0;
