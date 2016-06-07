@@ -14,6 +14,7 @@ var THEME_NAME = "SLHB";
 /** Configuration **/
 var host = 'ftp.slhb.fr';
 var port = 21;
+
 var localFilesGlob = ['./resources/**/*.*', '!./resources/assets/sass/*.*'];
 var remoteFolder = '/www/htdocs/content/themes/SLHB'
 

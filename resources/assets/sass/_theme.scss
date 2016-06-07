@@ -83,6 +83,7 @@ $phone-width: 320px;
 
 @mixin borderize($color)
 {
-  width: 190px;
+  width: 55%;
+  min-width: 150px;
   border-right : solid 2px $color;
 }

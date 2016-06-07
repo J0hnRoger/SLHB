@@ -74,6 +74,8 @@ header {
         font-weight: 400; }
         header .mdl-layout__header-row nav .mdl-navigation__link:hover {
           text-decoration: underline; }
+    header .mdl-layout__header-row #login a {
+      margin-right: 5px; }
   header #menu {
     height: 60px;
     background-color: #1d3d86; }
@@ -561,9 +563,6 @@ ul.all-teams li {
 .fc-calendar .fc-row > div.fc-today.fc-content:after {
   color: #b02c42; }
 
-.fc-calendar .fc-row > div.fc-content:hover:after {
-  color: #1d3d86; }
-
 .fc-calendar .fc-row > div.fc-today.fc-content:hover:after {
   color: #fff; }
 
@@ -579,12 +578,17 @@ ul.all-teams li {
     font-size: 15px; } }
 
 /* SLHB Agenda */
+.slhb-calendar {
+  margin: 0 auto; }
+
 .agenda {
   color: #8a8c96;
   margin: 0;
   padding: 0;
   /* Calendar */
   /* Events Lists*/ }
+  .agenda .left-column h1 {
+    text-align: center; }
   .agenda .fc-calendar .fc-row > div {
     padding: 0; }
   .agenda .count {
@@ -597,6 +601,12 @@ ul.all-teams li {
     font-size: 20px;
     color: #1d3d86;
     background-color: white; }
+  .agenda h6 {
+    line-height: 42px;
+    font-size: 20px;
+    text-align: center; }
+  .agenda .month-name {
+    color: #1d3d86; }
   .agenda ul.events {
     margin: 0;
     padding: 0;
@@ -613,18 +623,21 @@ ul.all-teams li {
         color: #2d304a;
         font-size: 22px; }
       .agenda ul.events li .descr.purple {
-        width: 190px;
+        width: 55%;
+        min-width: 150px;
         border-right: solid 2px #1ab3ec; }
       .agenda ul.events li .descr.orange {
-        width: 190px;
+        width: 55%;
+        min-width: 150px;
         border-right: solid 2px #bb68e3; }
       .agenda ul.events li .descr.blue {
-        width: 190px;
+        width: 55%;
+        min-width: 150px;
         border-right: solid 2px #f88c4b; }
 
 /*--- Event Details*/
 div.event-details {
-  height: 85vh;
+  min-height: 85vh;
   width: 100%;
   padding: 0;
   margin: 0;

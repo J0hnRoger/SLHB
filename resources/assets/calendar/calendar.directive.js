@@ -56,6 +56,7 @@ function SlhbCalendarCtrl(CalendarService){
   }
 
   vm.selectDate = function (day){
+    if (day.events.length > 0)
       vm.CalendarService.setSelectedEvents(day.events);
   }
 }
