@@ -21,7 +21,7 @@
         <div class="mdl-cell mdl-cell--6-col user-information">
           <h5>Bonjour {{ $currentUser->user_login }}</h5>
           <a href="/my-profile">Accéder à votre compte </a>
-          @if(UserModel::hasTheRole($currentUser->ID, 'slhb_player'))
+          @if(UserModel::hasTheRole($currentUser->ID, 'slhb_player') && property_exists($currentUser, 'nextMatch'))
           <a href="/my-profile"><div id="ttPlay" class="icon material-icons">announcement</div></a>
           <div id="play" class="mdl-tooltip mdl-tooltip--large" for="ttPlay">
             Tu joues à {{$currentUser->nextMatch->match_date}} le {{$currentUser->nextMatch->match_date}} contre {{ $currentUser->nextMatch->match_team_ext }}!

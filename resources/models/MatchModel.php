@@ -180,6 +180,14 @@ class MatchModel {
           'orderby'         => 'match_date',
           'order'           => 'ASC'
       ));
+
       $matchs = $query->get_posts();
+      if (count($matchs) == 1) {
+        $match = $matchs[0];
+        $matchId = $match->ID;
+        $match->match_date = Meta::get($matchId, 'match_date');
+        $match->match_team_ext = Meta::get($matchId, 'match_team_ext');
+      }
+      return $matchs;
     }
 }

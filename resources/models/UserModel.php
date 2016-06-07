@@ -70,6 +70,7 @@ class UserModel {
     public static function getPlayersByTeam($teamName)
     {
       $allPlayers = UserModel::getPlayers();
+
       return array_filter($allPlayers, function ($player) use ($teamName){
         return in_array($teamName,$player->teams);
       });
