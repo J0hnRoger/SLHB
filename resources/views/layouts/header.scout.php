@@ -31,6 +31,9 @@
         <div class="mdl-cell mdl-cell--4-col">
           <?php echo get_avatar( $currentUser->user_email, 65); ?>
         </div>
+        @else
+        <?php
+            echo "<a href=\"" . $login_url. "/cms/wp-login.php?redirect_to=". $login_url ."\"> Cliquez ici </a>  pour vous connecter"; ?>
         @endif
       </div>
     </div>

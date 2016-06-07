@@ -8,7 +8,8 @@ class HomeController extends BaseController
             'actus' => PostModel::all(),
             'last_match' => MatchModel::getLastResult(10),
             'next_match' => MatchModel::getNextMatchs(2),
-            'home_banner' =>  themosis_assets() . "/images/banner.jpg"
+            'home_banner' =>  themosis_assets() . "/images/banner.jpg",
+            'login_url' =>  home_url()
         ));
     }
 

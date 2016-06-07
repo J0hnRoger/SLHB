@@ -74,6 +74,8 @@ header {
         font-weight: 400; }
         header .mdl-layout__header-row nav .mdl-navigation__link:hover {
           text-decoration: underline; }
+    header .mdl-layout__header-row #login a {
+      margin-right: 5px; }
   header #menu {
     height: 60px;
     background-color: #1d3d86; }
@@ -552,7 +554,7 @@ ul.all-teams li {
   width: 20px;
   margin-left: -10px;
   position: absolute;
-  color: #DDD;
+  color: #1ab3ec;
   font-size: 70px;
   line-height: 20px;
   left: 50%;
