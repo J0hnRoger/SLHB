@@ -552,7 +552,7 @@ ul.all-teams li {
   width: 20px;
   margin-left: -10px;
   position: absolute;
-  color: #DDD;
+  color: #1ab3ec;
   font-size: 70px;
   line-height: 20px;
   left: 50%;
@@ -946,3 +946,10 @@ div.event-details {
     .actualites .actualite-content {
       margin: 20px;
       width: 100%; } }
+
+.contact {
+  margin: 0 auto;
+  width: 50%;
+  min-width: 385px; }
+  .contact .mdl-card__title h2 {
+    font-size: 15px; }

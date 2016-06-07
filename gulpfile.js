@@ -14,7 +14,7 @@ var THEME_NAME = "SLHB";
 /** Configuration **/
 var host = 'ftp.slhb.fr';
 var port = 21;
-var localFilesGlob = ['./resources/*/*/*.*'];
+var localFilesGlob = ['./resources/**/*.*', '!./resources/assets/sass/*.*'];
 var remoteFolder = '/www/htdocs/content/themes/SLHB'
 
 // helper function to build an FTP connection based on our configuration
@@ -37,7 +37,7 @@ function getFtpConnection(username, password) {
  */
 gulp.task('ftp-deploy', function() {
     var conn = getFtpConnection(argv.username, argv.password);
-    
+
     return gulp.src(localFilesGlob, { base: '.', buffer: false })
         .pipe( conn.newer( remoteFolder ) ) // only upload newer files
         .pipe( conn.dest( remoteFolder ) );

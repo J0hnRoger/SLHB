@@ -59,6 +59,11 @@ Route::get('page', function (){
   ));
 });
 
+Route::post('page', function (){
+  return View::make('page')->with(array(
+    'page' =>  PageModel::getCurrentPage()
+  ));
+});
 /* Page 404 */
 Route::any('404', function()
 {
