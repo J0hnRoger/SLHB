@@ -77,14 +77,29 @@
   <script src="https://maps.googleapis.com/maps/api/js?callback=initMap&key=AIzaSyDZUvW8KAVHSOGek443WxSheEIgOiAkUKQ" async defer></script>
 
 <h1>Le bureau</h1>
-<p>
-  Le bureau est composé de {{ count($direction_members) }} membres
-</p>
-@foreach($direction_members as $key => $member)
-    <p> {{ get_avatar($member->ID, 32) }} {{ $member->user_nicename }} {{ $member->responsibility}} - {{ $member->phone }}</p>
-@endforeach
+<div class="the-crew">
+  <p>
+    Le bureau est composé de {{ count($direction_members) }} membres.
+  </p>
+  <ul>
+    @foreach($direction_members as $key => $member)
+      <li>
+        <div>
+          <?php  ?>
+          <img src="{{ $member->profilePicture  }}" alt="" />
+          <p>
+            {{ $member->responsibility}} : <b>{{ $member->display_name }}</b>
+            <p>{{ $member->user_email }}</p>
+            <p>Tel : {{ $member->phone }}</p>
+          </p>
+        </div>
+      </li>
+    @endforeach
+  </ul>
+  <div class="after-trombi">
+    {{$infos_after_trombi}}
+    @endloop
 
-{{$infos_after_trombi}}
-@endloop
-
-@stop
+    @stop
+  </div>
+</div>

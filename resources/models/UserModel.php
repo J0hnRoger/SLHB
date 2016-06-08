@@ -21,7 +21,6 @@ class UserModel {
       if (!UserModel::hasTheRole($user->ID, 'slhb_player'))
         return $user;
       return UserModel::bindPlayerMeta($user);
-
     }
 
     public static function hasTheRole($id, $slhb_role){
@@ -42,7 +41,7 @@ class UserModel {
       return $selectedUsers;
     }
 
-    //TODO - Optimize this func
+    //TODO - Optimize this fun
     public static function getDirectionMembers()
     {
       $directionMembers = UserModel::getMemberByRole('slhb_direction');
@@ -52,6 +51,14 @@ class UserModel {
           ? $currentResponsibility[0]
           : "" ;
         $phone = get_user_meta($member->ID, 'slhb-phone');
+
+        $profilePicture = get_cupp_meta($member->ID, 'thumbnail');
+        if (empty($profilePicture)){
+          $profilePicture = themosis_assets().'/images/slhb-default-avatar.png';
+        }
+
+        $member->profilePicture = $profilePicture;
+
         $member->phone = (count($phone) > 0 ? $phone[0] : "");
       }
       return $directionMembers;
@@ -70,7 +77,6 @@ class UserModel {
     public static function getPlayersByTeam($teamName)
     {
       $allPlayers = UserModel::getPlayers();
-
       return array_filter($allPlayers, function ($player) use ($teamName){
         return in_array($teamName,$player->teams);
       });

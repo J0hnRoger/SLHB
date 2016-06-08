@@ -1,0 +1,30 @@
+/*
+  Organigramme component
+ */
+.the-crew {
+  width: 80%;
+  margin:0 auto;
+  ul {
+    padding: 0;
+
+    li {
+      float: left;
+      margin: 25px 20px;
+      width:288px;
+      img {
+        float: left;
+        @include roundedImg(85px)
+      }
+      p {
+        margin: 0;
+        float: left;
+        margin-left: 25px;
+        color : $secondary;
+      }
+    }
+    @include clearfix
+  }
+}
+.after-trombi {
+  margin: 25px 0;
+}

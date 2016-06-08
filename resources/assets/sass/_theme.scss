@@ -114,3 +114,19 @@ $phone-width: 320px;
         box-shadow: 0 19px 38px rgba(0,0,0,0.30), 0 15px 12px rgba(0,0,0,0.22);
     }
 }
+
+@mixin roundedImg($px: 100px) {
+  -webkit-border-radius: $px;
+  -moz-border-radius: $px;
+  border-radius: $px;
+  width: $px;
+  height: $px;
+}
+
+@mixin clearfix {
+  &:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+}
