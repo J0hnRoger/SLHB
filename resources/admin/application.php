@@ -24,3 +24,8 @@ function allow_contributor_uploads() {
      $contributor = get_role('contributor');
      $contributor->add_cap('upload_files');
 }
+
+//Disable admin Bar for players
+if (!current_user_can('edit_posts')) {
+	add_filter('show_admin_bar', '__return_false');
+}
