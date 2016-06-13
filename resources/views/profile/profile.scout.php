@@ -52,7 +52,6 @@ for each players : Array
             <div class="match-header">
               <h2>{{$next_match->match_date}} - {{$next_match->time}}</h2>
               <h1>{{$next_match->match_team_dom}} - {{$next_match->match_team_ext}}</h1>
-
             </div>
 
             <ul class="mdl-list players-list">

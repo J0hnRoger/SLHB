@@ -14,7 +14,8 @@ $team = PostType::make('slhb_team', 'Les équipes', 'équipe')->set(array(
         'add_item' => 'Ajouter une équipe',
         'all_items' => 'Toutes les équipes',
         'edit_item' => 'Modifier une équipe'
-      ]
+      ],
+      'menu_icon' => 'dashicons-groups'
 ));
 
 /*-----------------------------------------------------------------------*/
