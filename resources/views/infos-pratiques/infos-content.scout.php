@@ -44,7 +44,8 @@
 
        var map = new google.maps.Map(mapDiv, {
          center: chavagnesLatLng,
-         zoom: 14
+         zoom: 14,
+         scrollwheel : false
        });
 
        var panorama = new google.maps.StreetViewPanorama( document.getElementById('pano'), {
