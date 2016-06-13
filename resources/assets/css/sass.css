@@ -978,6 +978,8 @@ main#content .details-actualite {
     color: #767676; }
   main#content .details-actualite section {
     margin-top: 45px; }
+  main#content .details-actualite .fb-share-button {
+    margin-top: 25px; }
 
 .related {
   background-color: #1d3d86;
