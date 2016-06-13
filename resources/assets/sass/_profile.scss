@@ -1,0 +1,45 @@
+#profile {
+  .mdl-grid {
+    padding: 0;
+
+    aside{
+      @include box_shadow(1);
+      margin: 0;
+      padding: 15px;
+      h2 {
+        text-align: center;
+      }
+      img {
+        @include roundedImg(155px);
+        display: block;
+        margin: 20px auto;
+      }
+      .infos {
+        text-align: center;
+      }
+    }
+
+    // Match Composition panel
+      .match-header {
+        margin: 15px;
+        text-align: center;
+        h2 {
+          color: $subInfoColor;
+        }
+        h1 {
+          margin: 0;
+          color: $secondary;
+          font-size: 30px;
+        }
+      }
+      ul.players-list {
+        width: 60%;
+        margin: 0 auto;
+        li {
+          img {
+            @include roundedImg(32px);
+          }
+        }
+      }
+  }
+}

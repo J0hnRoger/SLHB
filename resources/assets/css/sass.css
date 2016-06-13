@@ -1083,3 +1083,40 @@ main#content .details-actualite {
 
 .after-trombi {
   margin: 25px 0; }
+
+#profile .mdl-grid {
+  padding: 0; }
+  #profile .mdl-grid aside {
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+    margin: 0;
+    padding: 15px; }
+    #profile .mdl-grid aside h2 {
+      text-align: center; }
+    #profile .mdl-grid aside img {
+      -webkit-border-radius: 155px;
+      -moz-border-radius: 155px;
+      border-radius: 155px;
+      width: 155px;
+      height: 155px;
+      display: block;
+      margin: 20px auto; }
+    #profile .mdl-grid aside .infos {
+      text-align: center; }
+  #profile .mdl-grid .match-header {
+    margin: 15px;
+    text-align: center; }
+    #profile .mdl-grid .match-header h2 {
+      color: #767676; }
+    #profile .mdl-grid .match-header h1 {
+      margin: 0;
+      color: #1d3d86;
+      font-size: 30px; }
+  #profile .mdl-grid ul.players-list {
+    width: 60%;
+    margin: 0 auto; }
+    #profile .mdl-grid ul.players-list li img {
+      -webkit-border-radius: 32px;
+      -moz-border-radius: 32px;
+      border-radius: 32px;
+      width: 32px;
+      height: 32px; }

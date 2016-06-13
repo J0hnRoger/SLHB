@@ -22,19 +22,20 @@ for each players : Array
 ?>
 
 @extends('layouts.main')
-
-@section('main')
+@section('main-wrapper')
+<main id="profile" class="mdl-layout__content">
 <div class="mdl-grid">
   <aside class="mdl-cell mdl-cell--4-col">
-    <h1>Mon profil</h1>
+    <h2>Mon profil</h2>
   {{ get_avatar($current_user->ID, 128) }}
-  {{$current_user->user_nicename}}
-
-  @if($current_user->positions != '')
-    @foreach($current_user->positions as $key => $pos)
-      <span class="label-pills">{{ $pos }}</span>
-    @endforeach
-  @endif
+    <div class="infos">
+  <h4>{{$current_user->user_nicename}}</h4>
+    @if($current_user->positions != '')
+      @foreach($current_user->positions as $key => $pos)
+        <span class="label-pills">{{ $pos }}</span>
+      @endforeach
+    @endif
+    </div>
   </aside>
 
   <div class="mdl-cell mdl-cell--8-col" ng-app="demoApp" ng-controller="DemoController">
@@ -44,19 +45,28 @@ for each players : Array
         <md-tab-label>
           Prochains Matchs
         </md-tab-label>
-        <md-tab-body>
-            @if (!isset($next_match) || count( $next_match->players) == 0)
-              <h5>La liste de gladiateurs morts de faim n'est pas encore sortie.</h5>
-            @else
-              <ul>
+        <md-tab-body class="match-list">
+          @if (!isset($next_match) || count( $next_match->players) == 0)
+          <h5>La liste de gladiateurs morts de faim n'est pas encore sortie.</h5>
+          @else
+            <div class="match-header">
+              <h2>{{$next_match->match_date}} - {{$next_match->time}}</h2>
+              <h1>{{$next_match->match_team_dom}} - {{$next_match->match_team_ext}}</h1>
+
+            </div>
+
+            <ul class="mdl-list players-list">
               @foreach($next_match->players as $key => $player)
-                <li>
-                  {{ get_avatar($player['ID'], 32) }}
-                  {{ $player['user_nicename'] }}
-                </li>
+              <li class="mdl-list__item">
+                <span class="mdl-list__item-primary-content">
+                {{ get_avatar($player['ID'], 32) }}
+                {{ $player['user_nicename'] }}
+                </span>
+              </li>
               @endforeach
-              </ul>
+            </ul>
             @endif
+
         </md-tab-body>
       </md-tab>
       <md-tab>
@@ -101,4 +111,5 @@ for each players : Array
     </md-tabs>
   </div>
 </div>
-@stop
+</main>
+@overwrite

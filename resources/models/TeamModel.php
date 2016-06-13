@@ -46,4 +46,15 @@ class TeamModel {
       }
       return $teamNames;
     }
+
+    public static function getTeam($name){
+      $query = new WP_Query(array(
+          'post_type'         => 'slhb_team',
+          'posts_per_page'    => 1,
+          'post_status'       => 'publish',
+          'meta_key'   => 'post_title',
+          'meta_value' => 'Equipe 1'
+      ));
+      return $query->get_posts();
+    }
 }

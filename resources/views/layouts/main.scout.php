@@ -28,9 +28,11 @@
 	@show
 
   <div style="clear:both"></div>
+	@section('main-wrapper')
   <main id="content" class="mdl-layout__content">
       @yield('main')
   </main>
+	@show
 
 	@section('bottom-banner')
   <section id="bottom-banner" class="mdl-layout--large-screen-only">
