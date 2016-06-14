@@ -18,7 +18,7 @@
     </article>
     <h2>Entraineur :</h2>
 
-  <div class="the-crew">
+  <div class="the-crew animated bounceIn">
     <ul>
     @foreach($coaches as $coach)
     <li>
@@ -33,6 +33,30 @@
   </ul>
   </div>
 
+  <div id="widget-next-match">
+    <h3>Prochain match</h3>
+    @if(isset($next_match))
+      <div class="next-match">
+        <span class="left">
+          <b>
+            <i class=" fa <?php if ($next_match->lieu == "Activate") { echo "fa-home"; } else { echo "fa-bus";} ?>" aria-hidden="true"></i>
+          {{$next_match->match_team_dom}}
+          </b>
+        </span>
+        contre
+        <span class="right">
+          <b>{{$next_match->match_team_ext}}
+            <i class="fa <?php if ($next_match->lieu == "Activate") { echo "fa-bus"; } else { echo "fa-home";} ?>" aria-hidden="true"></i>
+          </b>
+        </span>
+      </div>
+      <span>
+        {{$next_match->formatedDate}}
+      </span>
+        @else
+        <span class="results">Pas encore de match de planifié</span>
+        @endif
   </div>
+</div>
 
 @stop

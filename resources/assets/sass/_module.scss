@@ -13,9 +13,42 @@ $actu-font-color : black;
 $actu-margin : 40px;
 $prefooter-color : $primary;
 
+$grey : #ddd;
+
 section.pre-footer {
 	background-color: $primary;
 	color : $prefooter-color;
+}
+
+/* Next Match Module */
+#widget-next-match {
+	text-align: center;
+	padding: 10px;
+	font-size: 1.5vw;
+
+	h3 {
+		margin: 0;
+	}
+	.next-match {
+		border-bottom: 1px solid $grey;
+		line-height: 43px;
+		span {
+			display: block;
+			&.right {
+				float: right;
+			}
+			&.left {
+				float: left;
+			}
+		}
+		i {
+			padding: 10px;
+		}
+		@include clearfix;
+	}
+	span {
+		line-height: 25px;
+	}
 }
 
 /* Login Section */

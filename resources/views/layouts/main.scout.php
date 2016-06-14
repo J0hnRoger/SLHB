@@ -16,7 +16,8 @@
     <link rel="stylesheet" href="/content/themes/SLHB//resources/assets/angular-material/angular-material.css">
     <link rel="stylesheet" href="/content/themes/SLHB//resources/assets/getmdl-select/getmdl-select.min.css">
     <link rel="stylesheet" href="/content/themes/SLHB//resources/assets/material-design-lite/material.min.css">
-    <link rel="stylesheet" href="/content/themes/SLHB//resources/assets/css/animate.css">
+		<link rel="stylesheet" href="/content/themes/SLHB//resources/assets/css/animate.css">
+    <link rel="stylesheet" href="/content/themes/SLHB//resources/assets/css/font-awesome.min.css">
     <link rel="stylesheet" href="/content/themes/SLHB//resources/assets/css/sass.css">
     <link rel="stylesheet" href="/content/themes/SLHB//resources/assets/css/styles.css">
     <!-- endinject -->

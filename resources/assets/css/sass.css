@@ -191,6 +191,30 @@ section.pre-footer {
   background-color: white;
   color: white; }
 
+/* Next Match Module */
+#widget-next-match {
+  text-align: center;
+  padding: 10px;
+  font-size: 1.5vw; }
+  #widget-next-match h3 {
+    margin: 0; }
+  #widget-next-match .next-match {
+    border-bottom: 1px solid #ddd; }
+    #widget-next-match .next-match span {
+      display: block; }
+      #widget-next-match .next-match span.right {
+        float: right; }
+      #widget-next-match .next-match span.left {
+        float: left; }
+    #widget-next-match .next-match i {
+      padding: 10px; }
+    #widget-next-match .next-match:after {
+      content: "";
+      display: table;
+      clear: both; }
+  #widget-next-match span {
+    line-height: 25px; }
+
 /* Login Section */
 #login .user-information {
   padding-top: 10px; }
@@ -1134,3 +1158,7 @@ main#content .details-team {
     margin-bottom: 0; }
   main#content .details-team article {
     margin-top: 45px 0; }
+  main#content .details-team h2 {
+    margin-top: 25px; }
+  main#content .details-team .the-crew {
+    width: 100%; }

@@ -41,8 +41,8 @@ $propertiesMatchTime = [
 
 $infos = Metabox::make('Informations du match', $match->get('name'))->set(array(
     Field::date('match_date', ['title' => 'Date du match']),
-    Field::make('Addons\Fields\TimeField', $propertiesMatchTime),
     Field::make('Addons\Fields\TimeField', $propertiesRendezvous),
+    Field::make('Addons\Fields\TimeField', $propertiesMatchTime),
     Field::select('match_team_dom', TeamModel::getTeamsArray(), ['title' => 'Equipe Chavagnaise']),
     Field::text('match_team_ext', ['title' => 'Equipe à l\'exterieur'], ['class' => 'simple-text']),
     Field::number('score_dom', ['title' => 'Score de l\'équipe à domicile']),

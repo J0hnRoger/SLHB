@@ -21,7 +21,6 @@ class UserModel {
       return UserModel::bindPlayerMeta($user);
     }
 
-
     public static function hasTheRole($id, $slhb_role){
       $meta = get_user_meta($id, 'slhb_role')
         ?get_user_meta($id, 'slhb_role')[0]
@@ -99,7 +98,7 @@ class UserModel {
           if (empty($profilePicture)){
             $profilePicture = themosis_assets().'/images/slhb-default-avatar.png';
           }
-  
+
           $coach->profilePicture = $profilePicture;
 
           $allCoach[] = $coach;

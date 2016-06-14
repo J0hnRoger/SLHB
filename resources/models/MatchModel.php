@@ -146,6 +146,9 @@ class MatchModel {
           $match->match_date = Meta::get($matchId, 'match_date');
           $match->match_team_dom = Meta::get($matchId, 'match_team_dom');
           $match->match_team_ext = Meta::get($matchId, 'match_team_ext');
+
+          $match->match_team_time = Meta::get($matchId, 'match_team_time');
+          $match->match_real_time = Meta::get($matchId, 'match_real_time');
           $match->players = [];
 
           //TODO - Modify this hack and correct the problem at this root (save/get in team builder)
@@ -164,7 +167,32 @@ class MatchModel {
 
     public static function getFullNextMatchForTeam($teamName)
     {
-        $matchs = MatchModel::getNextMatchs(1);
+        $query = new WP_Query(array(
+            'post_type'       => 'slhb_match',
+            'posts_per_page'  => 1,
+            'post_status'     => 'publish',
+            'meta_query'   => array
+            (
+            'relation' => 'AND',
+            array(
+              'key'       => 'match_team_dom',
+              'value'     => $teamName,
+              'compare'   => '=',
+            ),
+              array
+              (
+                'key'     => 'match_date',
+                'value'   => date("Y-m-d"),
+                'type'    => 'DATE', // TRIED: DATE, SIGNED, NUMBER
+                'compare' => '>'
+              )
+            ),
+            'orderby'         => 'match_date',
+            'order'           => 'ASC'
+        ));
+
+        $matchs = $query->get_posts();
+
 
         if (count($matchs) == 1) {
           $match = $matchs[0];
@@ -174,7 +202,9 @@ class MatchModel {
           $match->match_team_dom = Meta::get($matchId, 'match_team_dom');
           $match->match_team_ext = Meta::get($matchId, 'match_team_ext');
           $match->players = [];
-
+          $match->lieu = Meta::get($matchId, 'match_team_ext');
+          $match->match_team_time = Meta::get($matchId, 'match_team_time');
+          $match->match_real_time = Meta::get($matchId, 'match_real_time');
           //TODO - Modify this hack and correct the problem at this root (save/get in team builder)
           $players = get_post_meta($matchId, 'slhb_players');
 
@@ -217,4 +247,5 @@ class MatchModel {
       }
       return $matchs;
     }
+
 }
