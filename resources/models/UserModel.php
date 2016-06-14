@@ -7,7 +7,6 @@ class UserModel {
      *
      * @return array
      */
-
     public static function all()
     {
       $users = get_users();
@@ -16,12 +15,12 @@ class UserModel {
 
     public static function getCurrentPlayer(){
       $user = User::current();
-      $userinst = new UserModel();
 
       if (!UserModel::hasTheRole($user->ID, 'slhb_player'))
         return $user;
       return UserModel::bindPlayerMeta($user);
     }
+
 
     public static function hasTheRole($id, $slhb_role){
       $meta = get_user_meta($id, 'slhb_role')
@@ -99,4 +98,10 @@ class UserModel {
       $player->nextMatch = MatchModel::getNextMatchForPlayer($player->ID);
       return $player;
     }
+    
+    public function getSubscribeTeams()
+    {
+      return "My Teams are : ";
+    }
+
 }
