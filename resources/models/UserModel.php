@@ -98,10 +98,4 @@ class UserModel {
       $player->nextMatch = MatchModel::getNextMatchForPlayer($player->ID);
       return $player;
     }
-    
-    public function getSubscribeTeams()
-    {
-      return "My Teams are : ";
-    }
-
 }

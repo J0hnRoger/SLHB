@@ -162,6 +162,33 @@ class MatchModel {
         }
     }
 
+    public static function getFullNextMatchForTeam($teamName)
+    {
+        $matchs = MatchModel::getNextMatchs(1);
+
+        if (count($matchs) == 1) {
+          $match = $matchs[0];
+          $matchId = $match->ID;
+
+          $match->match_date = Meta::get($matchId, 'match_date');
+          $match->match_team_dom = Meta::get($matchId, 'match_team_dom');
+          $match->match_team_ext = Meta::get($matchId, 'match_team_ext');
+          $match->players = [];
+
+          //TODO - Modify this hack and correct the problem at this root (save/get in team builder)
+          $players = get_post_meta($matchId, 'slhb_players');
+
+          if (count($players) > 0)
+          {
+            foreach($players[0] as $key => $player)
+            {
+              $match->players[] = $player['data'];
+            }
+          }
+          return $match;
+        }
+    }
+
     public static function getNextMatchForPlayer($playerId){
       $query = new WP_Query(array(
           'post_type'       => 'slhb_match',
