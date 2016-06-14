@@ -29,14 +29,14 @@ $propertiesRendezvous = [
             'features'  => ['title' => 'Heure du rendez-vous'],
             'atts'      => array_merge(['class' => 'large-text'], ['class' => 'simple-text'], ['data-field' => 'text']),
             'name'      => 'match_team_time',
-            'internal'  => 'Bim!'
+            'internal'  => 'match_team_time'
         ];
 
 $propertiesMatchTime = [
             'features'  => ['title' => 'Heure du match'],
             'atts'      => array_merge(['class' => 'large-text'], ['class' => 'simple-text'], ['data-field' => 'text']),
             'name'      => 'match_real_time',
-            'internal'  => 'Bim!'
+            'internal'  => 'match_real_time'
         ];
 
 $infos = Metabox::make('Informations du match', $match->get('name'))->set(array(
