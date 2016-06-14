@@ -86,7 +86,6 @@
     @foreach($direction_members as $key => $member)
       <li>
         <div>
-          <?php  ?>
           <img src="{{ $member->profilePicture  }}" alt="" />
           <p>
             {{ $member->responsibility}} : <b>{{ $member->display_name }}</b>

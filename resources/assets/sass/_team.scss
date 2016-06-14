@@ -1,0 +1,19 @@
+main#content{
+  .details-team {
+    width: 660px;
+    padding: 20px;
+    margin: 0 auto;
+    header {
+      h1 {
+        text-transform: none;
+        font-weight: 700;
+        font-size: 35px;
+        color: $secondary;
+        margin-bottom: 0;
+      }
+    }
+    article {
+      margin-top: 45px 0;
+    }
+  }
+}

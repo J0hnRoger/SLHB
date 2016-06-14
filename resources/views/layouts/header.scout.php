@@ -50,8 +50,7 @@
             <ul class="events">
               @if(isset($next_match[0]))
               <li class="event">
-                <div class="team">{{$next_match[0]->match_team_dom}}</div>
-                <div class="team">Prochain match</div>
+                <div class="label">Prochain match</div>
                 <span></span>
                 <h2>{{$next_match[0]->match_team_dom}} - {{$next_match[0]->match_team_ext}}</h2>
                 <span class="date">
@@ -61,8 +60,7 @@
               @endif
               @if(isset($next_match[1]))
               <li class="event">
-                <div class="team">{{$next_match[1]->match_team_dom}}</div>
-                <div class="team">Prochain match</div>
+                <div class="label">Prochain match</div>
                 <h2>{{$next_match[1]->match_team_dom}} - {{$next_match[1]->match_team_ext}}</h2>
                 <span class="date">
                   {{ $next_match[1]->match_date }}

@@ -87,6 +87,28 @@ class UserModel {
       return UserModel::getMemberByRole('slhb_coach');
     }
 
+    public static function getCoachsByTeam($teamName)
+    {
+      $allCoach = [];
+      foreach (UserModel::getMemberByRole('slhb_coach') as $coach) {
+        $teams = get_user_meta($coach->ID, 'slhb_trained_teams');
+        if (count($teams) > 0 && in_array($teamName , $teams[0])){
+          $phone = get_user_meta($coach->ID, 'slhb-phone');
+          $coach->phone = (count($phone) > 0 ? $phone[0] : "");
+
+          $profilePicture = get_cupp_meta($coach->ID, 'thumbnail');
+          if (empty($profilePicture)){
+            $profilePicture = themosis_assets().'/images/slhb-default-avatar.png';
+          }
+  
+          $coach->profilePicture = $profilePicture;
+
+          $allCoach[] = $coach;
+        }
+      }
+      return $allCoach;
+    }
+
     // Internal methods
     public static function bindPlayerMeta($player){
       $player->teams = get_user_meta($player->ID, 'slhb_teams')[0];

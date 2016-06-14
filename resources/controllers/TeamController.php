@@ -14,8 +14,9 @@ class TeamController extends BaseController
       $team =  TeamModel::getCurrent();
 
       $options = array(
-        'team' => $team
-      );
+        'team' => $team,
+        'coaches' => UserModel::getCoachsByTeam($team->post_title)
+        );
 
       if (isset($team->banner))
         $options["home_banner"] = $team->banner;

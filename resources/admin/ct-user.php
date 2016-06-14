@@ -19,6 +19,14 @@ if ($userId != "")
 {
   $teams = TeamModel::getTeams();
   // Display Player Fields only if the user is in the direction
+  if (UserModel::hasTheRole($userId, 'slhb_coach'))
+  {
+      User::addFields([
+      Field::checkbox('slhb_trained_teams',
+        $teams,
+        ['title' => 'Equipes entrainée:'])]);
+  }
+
   if (UserModel::hasTheRole($userId, 'slhb_player'))
   {
       User::addFields([

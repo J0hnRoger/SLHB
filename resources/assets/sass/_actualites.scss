@@ -8,6 +8,7 @@ $subInfoColor : #767676;
   .actualite {
     float: left;
     margin: 20px 40px;
+    widows: 560px;
     @extend %cf;
 
     & > img{
