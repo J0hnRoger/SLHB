@@ -14,7 +14,6 @@ class TeamController extends BaseController
       $team =  TeamModel::getCurrent();
       $nextMatch = MatchModel::getFullNextMatchForTeam($team->post_title);
       $nextMatch->formatedDate = "Le ".formatedDate($nextMatch->match_date);
-      td($nextMatch);
       if (isset($nextMatch->match_real_time) && !empty($nextMatch->match_real_time))
         $nextMatch->formatedDate .=  " à " . $nextMatch->match_real_time;
 
