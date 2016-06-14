@@ -52,7 +52,10 @@ for each players : Array
             <div class="match-header">
               <h2>{{$next_match->match_date}} - {{$next_match->time}}</h2>
               <h1>{{$next_match->match_team_dom}} - {{$next_match->match_team_ext}}</h1>
+<<<<<<< HEAD
               <span>Date du rendez-vous : 18h</span>
+=======
+>>>>>>> 401f03d30ab2597ad838ea514840ed6f44408fae
             </div>
 
             <ul class="mdl-list players-list">
