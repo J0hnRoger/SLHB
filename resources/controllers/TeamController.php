@@ -25,6 +25,8 @@ class TeamController extends BaseController
 
       if (isset($team->banner))
         $options["home_banner"] = $team->banner;
+      else
+        $options["home_banner"] =  themosis_assets() . "/images/_Equipes_Header01.jpg";
 
       return View::make('teams.single')->with($options);
     }

@@ -13,7 +13,7 @@ class AgendaController extends BaseController
         });
 
         return View::make('agenda.agenda-content')->with(array(
-          'events' => PostModel::getEventPosts(100)
+          'home_banner' =>  themosis_assets() . "/images/_Agenda_Header01.jpg"
         ));
     }
 }
