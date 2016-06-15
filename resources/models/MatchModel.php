@@ -193,7 +193,6 @@ class MatchModel {
 
         $matchs = $query->get_posts();
 
-
         if (count($matchs) == 1) {
           $match = $matchs[0];
           $matchId = $match->ID;

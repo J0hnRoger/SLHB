@@ -7,7 +7,8 @@
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-  <?php wp_head(); ?>
+	<link rel="shortcut icon" href="<?php echo themosis_assets() . "/images/favicon.ico"?>"  />
+	<?php wp_head(); ?>
 	@yield('facebook-meta')
 	 <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Roboto:300,400,500,700" type="text/css">
    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">

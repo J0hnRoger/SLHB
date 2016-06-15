@@ -1079,8 +1079,12 @@ main#content .details-actualite {
   margin: 0 auto;
   width: 50%;
   min-width: 385px; }
-  .contact .mdl-card__title h2 {
-    font-size: 15px; }
+  .contact .mdl-card__title {
+    background-color: #1d3d86; }
+    .contact .mdl-card__title h2 {
+      font-size: 15px; }
+  .contact .mdl-button {
+    color: #1d3d86; }
 
 /*
   Organigramme component

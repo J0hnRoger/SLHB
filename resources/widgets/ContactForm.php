@@ -45,7 +45,7 @@ class ContactForm_Widget extends WP_Widget
     {
       echo '<form action="' . esc_url( $_SERVER['REQUEST_URI'] ) . '" method="post">'
        . '<div class="contact mdl-card mdl-shadow--6dp">'
-    			.'<div class="mdl-card__title mdl-color--primary mdl-color-text--white">'
+    			.'<div class="mdl-card__title mdl-color-text--white">'
     			.	'<h2 class="mdl-card__title-text">Pour toute demande sur le club, les entrainements ou les inscriptions.</h2>'
     		.	'</div>'
     	  .	'<div class="mdl-card__supporting-text">'
@@ -69,7 +69,7 @@ class ContactForm_Widget extends WP_Widget
             .'</div>'
     		.	'</div>'
     	.	'	<div class="mdl-card__actions mdl-card--border">'
-    		.	'	<input type="submit" name="cf-submitted" value="Envoyer" class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect"></button>'
+    		.	'	<input type="submit" name="cf-submitted" value="Envoyer" class="mdl-button mdl-js-button mdl-js-ripple-effect"></button>'
     		.	'</div>'
     	.	'</div>'
       .	'</form>';
