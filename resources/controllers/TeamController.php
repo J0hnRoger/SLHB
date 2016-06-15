@@ -6,7 +6,7 @@ class TeamController extends BaseController
     {
         return  View::make('teams.archive')->with(array(
           'teams' =>  TeamModel::all(),
-          'home_banner' =>  themosis_assets() . "/images/_Equipes_Header01.jpg";
+          'home_banner' =>  themosis_assets() . "/images/_Equipes_Header01.jpg"
         ));
     }
 
@@ -15,7 +15,7 @@ class TeamController extends BaseController
       $team =  TeamModel::getCurrent();
       $nextMatch = MatchModel::getFullNextMatchForTeam($team->post_title);
 
-      if (isset($nextMatch->match_date)
+      if (isset($nextMatch->match_date))
         $nextMatch->formatedDate = "Le ".formatedDate($nextMatch->match_date);
 
       if (isset($nextMatch->match_real_time)
