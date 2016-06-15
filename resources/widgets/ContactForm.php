@@ -19,7 +19,6 @@ class ContactForm_Widget extends WP_Widget
         parent::__construct('ContactForm_Widget', '', $params);
 
         add_shortcode('ClubContactForm', array($this, 'shortcode'));
-
     }
 
     public function shortcode($atts)

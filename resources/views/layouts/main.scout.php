@@ -25,7 +25,6 @@
 </head>
 <body>
 <div class="mdl-layout mdl-js-layout mdl-grid--no-spacing">
-
 	@section('header')
 		@include('layouts.header-min')
 	@show

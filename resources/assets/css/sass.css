@@ -79,6 +79,15 @@ header {
   header #menu {
     height: 60px;
     background-color: #1d3d86; }
+  header #min-login-menu {
+    color: white;
+    margin-right: 3%; }
+    header #min-login-menu img {
+      -webkit-border-radius: 35px;
+      -moz-border-radius: 35px;
+      border-radius: 35px;
+      width: 35px;
+      height: 35px; }
 
 #banner {
   height: 463px;
