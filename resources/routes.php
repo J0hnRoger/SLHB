@@ -49,6 +49,24 @@ Route::get('template', array('team-sheet-builder-template', 'uses' => 'TeamSheet
 
 /* Page Boutique */
 
+/* Page Historique */
+Route::get('page', ['historique', function()
+{
+  return View::make('page')->with(array(
+    'page' =>  PageModel::getCurrentPage(),
+    'home_banner' =>  themosis_assets() . "/images/_Historique_Header01.jpg"
+  ));
+}]);
+
+/* Page Contact */
+Route::get('page', ['contact', function()
+{
+  return View::make('page')->with(array(
+    'page' =>  PageModel::getCurrentPage(),
+    'home_banner' =>  themosis_assets() . "/images/_Contact_Header01.jpg"
+  ));
+}]);
+
 /* Page Profil  */
 Route::get('template', array('profile-template', 'uses' => 'ProfileController@index'));
 
