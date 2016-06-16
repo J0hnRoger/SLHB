@@ -26,6 +26,9 @@
           <div id="play" class="mdl-tooltip mdl-tooltip--large" for="ttPlay">
             Tu joues le {{$currentUser->nextMatch[0]->match_date}} contre {{ $currentUser->nextMatch[0]->match_team_ext }}!
           </div>
+          <div ng-app="presential">
+            <is-present></is-present>
+          </div>
           @endif
         </div>
         <div class="mdl-cell mdl-cell--4-col">
