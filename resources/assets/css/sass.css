@@ -956,6 +956,8 @@ div.event-details {
   float: left;
   margin: 20px 40px;
   width: 560px;
+  height: 250px;
+  overflow: hidden;
   /* Responsive rules */ }
   .actualites .actualite > img {
     width: 270px;

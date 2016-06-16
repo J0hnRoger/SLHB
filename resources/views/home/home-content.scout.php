@@ -10,7 +10,11 @@
 <div class="actualites">
 @foreach($actus as $i => $actu)
 	<article class="actualite">
-		{{ get_the_post_thumbnail($actu->ID) }}
+		@if (has_post_thumbnail($actu->ID))
+		{{  get_the_post_thumbnail($actu->ID) }}
+		@else
+		<img src="{{  $actu_default_image }}" alt="" />
+		@endif
 		<div class="actualite-content">
 			<h2 >{{$actu->post_title}}</h2>
 			<div class="excerpt">
