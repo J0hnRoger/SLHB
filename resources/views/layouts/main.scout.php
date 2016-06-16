@@ -82,6 +82,7 @@
 		<script src="/content/themes/SLHB//resources/assets/calendar/core/events.factory.js"></script>
 		<script src="/content/themes/SLHB//resources/assets/calendar/events-list/events-list.controller.js"></script>
 		<script src="/content/themes/SLHB/resources/assets/presential/presential.module.js"></script>
+		<script src="/content/themes/SLHB/resources/assets/presential/player.service.js"></script>
 		<script src="/content/themes/SLHB/resources/assets/presential/presential.directive.js"></script>
 		<!-- endinject -->
 

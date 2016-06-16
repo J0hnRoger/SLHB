@@ -3,15 +3,16 @@
 
 angular
   .module('presential')
-  .directive('isPresent', isPresent)
-  .controller('isPresentCtrl',  IsPresentCtrl);
+  .directive('isPresent', isPresent);
 
 function isPresent() {
   var directive = {
     restrict: 'EA',
     templateUrl: '/content/themes/SLHB/resources/assets/presential/presential.html',
-    scope: {},
-    controller: 'isPresentCtrl',
+    scope: {
+      init : '@'
+    },
+    controller: IsPresentCtrl,
     controllerAs: 'vm',
     bindToController: true
   };
@@ -20,14 +21,20 @@ function isPresent() {
 
 }
 
-function IsPresentCtrl() {
+IsPresentCtrl.$inject = ['$element', 'PlayersService'];
+function IsPresentCtrl($element, PlayersService) {
   var vm = this;
-  vm.isPresent = true;
-  changeLabel();
 
-  vm.changeLabel = changeLabel;
+  vm.isPresent = (parseInt(vm.init) == 0) ? false : true;
+  if (vm.isPresent)
+    $element.find('#presential-switch').click();
 
-  function changeLabel  () {
+  vm.label = ((vm.isPresent) ? "Présent" : "Absent" );
+
+  vm.changeLabel = function () {
+    PlayersService.setPresential(themosis.userId, vm.isPresent);
     vm.label = ((vm.isPresent) ? "Présent" : "Absent" );
   }
+
+
 }

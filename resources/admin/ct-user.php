@@ -27,7 +27,8 @@ if ($userId != "")
       User::addFields([
       Field::checkbox('slhb_trained_teams',
         $teams,
-        ['title' => 'Equipes entrainée:'])]);
+        ['title' => 'Equipes entrainée:'])
+      ]);
   }
 
   if (UserModel::hasTheRole($userId, 'slhb_player'))
@@ -49,7 +50,6 @@ if ($userId != "")
           ['title' => 'Postes joués :']),
       ]);
   }
-
   // Display Responsibility Field only if the user is in the direction
   if(UserModel::hasTheRole($userId, 'slhb_direction'))
   {
@@ -75,3 +75,7 @@ if ($userId != "")
     ]);
   }
 }
+
+User::addFields([
+  Field::checkbox('is_present', 'true')
+]);

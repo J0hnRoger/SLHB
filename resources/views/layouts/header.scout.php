@@ -27,7 +27,7 @@
             Tu joues le {{$currentUser->nextMatch[0]->match_date}} contre {{ $currentUser->nextMatch[0]->match_team_ext }}!
           </div>
           <div ng-app="presential">
-            <is-present></is-present>
+            <is-present init="{{ $isPresent }}"></is-present>
           </div>
           @endif
         </div>

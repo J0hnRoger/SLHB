@@ -100,6 +100,34 @@ function dt_register_team_hook() {
     );
 }
 
+add_action( 'rest_api_init', 'set_presential' );
+function set_presential() {
+    register_rest_route( 'slhb/v1', '/set-presential', array(
+        'methods' => 'POST',
+        'callback' => 'set_presential_for_current_user',
+    ) );
+}
+
+function set_presential_for_current_user() {
+    $jsonData = json_decode(file_get_contents('php://input'), true);
+    $return = array();
+
+    if (!isset($jsonData['present']) && !isset($jsonData['userId']))
+      return new WP_Error( 'cant-update', __( 'Il n\'y a pas de propriete present dans les datas', 'text-domain'), array( 'status' => 500 ) );
+
+    $is_present   = $jsonData['present'];
+    $userId =  $jsonData['userId'];
+
+    $user = User::get($userId);
+    if (empty($is_present))
+      $is_present = 0;
+    update_user_meta( $user->ID, 'is_present', $is_present );
+    $return[] = 'User updated: '.$user->ID;
+
+    $response = new WP_REST_Response( $return , 200);
+    return $response;
+}
+
 add_action( 'rest_api_init', 'dt_register_players_hook' );
 function dt_register_players_hook() {
     register_rest_field(

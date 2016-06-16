@@ -19,7 +19,6 @@
         <?php echo get_avatar( $currentUser->user_email, 35); ?>
       </div>
     @endif
-
   </div>
     <div id="banner" class="mdl-cell mdl-cell--12-col" style="background : url(<?php echo $home_banner ?>) top / cover;">
 
