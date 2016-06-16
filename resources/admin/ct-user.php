@@ -15,6 +15,9 @@ $user->addFields([
 
 $userId = isset($_REQUEST["user_id"]) ? $_REQUEST["user_id"] : "";
 
+if(empty($userId))
+  $userId = User::current()->ID;
+
 if ($userId != "")
 {
   $teams = TeamModel::getTeams();

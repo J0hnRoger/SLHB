@@ -193,7 +193,6 @@ class MatchModel {
 
         $matchs = $query->get_posts();
 
-
         if (count($matchs) == 1) {
           $match = $matchs[0];
           $matchId = $match->ID;
@@ -202,7 +201,7 @@ class MatchModel {
           $match->match_team_dom = Meta::get($matchId, 'match_team_dom');
           $match->match_team_ext = Meta::get($matchId, 'match_team_ext');
           $match->players = [];
-          $match->lieu = Meta::get($matchId, 'match_team_ext');
+          $match->lieu = Meta::get($matchId, 'Lieu');
           $match->match_team_time = Meta::get($matchId, 'match_team_time');
           $match->match_real_time = Meta::get($matchId, 'match_real_time');
           //TODO - Modify this hack and correct the problem at this root (save/get in team builder)

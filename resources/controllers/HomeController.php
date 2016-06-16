@@ -19,7 +19,8 @@ class HomeController extends BaseController
       return View::make('actualites.single')->with(array(
         'actu' => PostModel::getCurrent(),
         'next_post' => get_next_post(),
-        'previous_post' => get_previous_post()
+        'previous_post' => get_previous_post(),
+        'home_banner' =>  themosis_assets() . "/images/_Actu_Header01.jpg"
       ));
     }
 

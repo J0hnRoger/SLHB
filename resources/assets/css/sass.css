@@ -79,6 +79,15 @@ header {
   header #menu {
     height: 60px;
     background-color: #1d3d86; }
+  header #min-login-menu {
+    color: white;
+    margin-right: 3%; }
+    header #min-login-menu img {
+      -webkit-border-radius: 35px;
+      -moz-border-radius: 35px;
+      border-radius: 35px;
+      width: 35px;
+      height: 35px; }
 
 #banner {
   height: 463px;
@@ -1078,11 +1087,15 @@ main#content .details-actualite {
           font-weight: 300; }
 
 .contact {
-  margin: 0 auto;
+  margin: 65px auto;
   width: 50%;
   min-width: 385px; }
-  .contact .mdl-card__title h2 {
-    font-size: 15px; }
+  .contact .mdl-card__title {
+    background-color: #1d3d86; }
+    .contact .mdl-card__title h2 {
+      font-size: 15px; }
+  .contact .mdl-button {
+    color: #1d3d86; }
 
 /*
   Organigramme component

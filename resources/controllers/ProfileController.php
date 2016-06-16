@@ -9,9 +9,11 @@ class ProfileController extends BaseController
 
       $currentPlayer = UserModel::getCurrentPlayer();
 
-      $matchs = [];
-      foreach ($currentPlayer->teams as $teamName) {
-        array_push($matchs, MatchModel::getFullNextMatchForTeam($teamName));
+      if (isset($currentPlayer->teams)){
+        $matchs = [];
+        foreach ($currentPlayer->teams as $teamName) {
+          array_push($matchs, MatchModel::getFullNextMatchForTeam($teamName));
+        }
       }
 
       return  View::make('profile.profile')->with(array(

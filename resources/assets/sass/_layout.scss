@@ -50,6 +50,15 @@ header {
 		height: $menu-height;
 		background-color: $secondary;
 	}
+	//Mini Header
+	#min-login-menu {
+		color:$primary;
+		margin-right: 3%;
+		img {
+		 @include	roundedImg(35px);
+		}
+
+	}
 }
 
 
