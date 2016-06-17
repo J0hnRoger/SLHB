@@ -239,6 +239,7 @@ section.pre-footer {
     text-decoration: none; }
 
 #login img.avatar {
+  height: 83px;
   border-radius: 48px;
   float: right; }
 
@@ -672,7 +673,7 @@ ul.all-teams li {
 /*--- Event Details*/
 div.event-details {
   width: 100%;
-  height: 85vh;
+  min-height: 85vh;
   padding: 0;
   margin: 0;
   padding: 0; }
@@ -726,6 +727,10 @@ div.event-details {
         font-weight: 300 !important; }
   div.event-details .event-content {
     padding: 40px; }
+    div.event-details .event-content:after {
+      content: "";
+      display: table;
+      clear: both; }
 
 .team-builder {
   margin: 25px; }

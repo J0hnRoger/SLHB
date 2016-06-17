@@ -21,18 +21,20 @@
         <div class="mdl-cell mdl-cell--6-col user-information">
           <h5>Bonjour {{ $currentUser->user_login }}</h5>
           <a href="/my-profile">Accéder à votre compte </a>
-          @if(UserModel::hasTheRole($currentUser->ID, 'slhb_player') && count($currentUser->nextMatch) > 0)
-          <a href="/my-profile"><div id="ttPlay" class="icon material-icons">announcement</div></a>
+          @if(UserModel::hasTheRole($currentUser->ID, 'slhb_player'))
+            @if (!empty($currentUser->nextMatch))
+          <a href="/my-profile"><div id="ttPlay" class="animated bounceIn icon material-icons">announcement</div></a>
           <div id="play" class="mdl-tooltip mdl-tooltip--large" for="ttPlay">
-            Tu joues le {{$currentUser->nextMatch[0]->match_date}} contre {{ $currentUser->nextMatch[0]->match_team_ext }}!
+            Tu joues le {{$currentUser->nextMatch->match_date}} contre {{ $currentUser->nextMatch->match_team_ext }}!
           </div>
+            @endif
           <div ng-app="presential">
-            <is-present init="{{ $isPresent }}"></is-present>
+            <is-present init="{{ $currentUser->is_present }}"></is-present>
           </div>
           @endif
         </div>
         <div class="mdl-cell mdl-cell--4-col">
-          <?php echo get_avatar( $currentUser->user_email, 65); ?>
+          <img class="avatar avatar-65 photo"  src="<?php echo get_cupp_meta($currentUser->ID, 'thumbnail'); ?>" alt="" />
         </div>
         @else
         <?php

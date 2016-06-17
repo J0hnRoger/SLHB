@@ -16,10 +16,11 @@
 @extends('layouts.main')
 
 @section('facebook-meta')
+<meta property="og:site_name" content="<?php echo get_bloginfo(); ?>"/>
 <meta property="og:url"                content="{{ get_permalink() }}" />
 <meta property="og:type"               content="article" />
 <meta property="og:title"              content="{{ $actu->post_title }}" />
-<meta property="og:description"        content="{{ $actu->post_content }}" />
+<meta property="og:description"        content="{{ $actu->excerpt }}" />
 <meta property="og:image"              content="{{ $actu->featuredImg[0] or $logoUrl }}"/>
 @stop
 

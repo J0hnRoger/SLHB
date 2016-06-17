@@ -4,7 +4,6 @@ class HomeController extends BaseController
 {
     public function index()
     {
-
         // admin/application.php or inside any controllers or route closure.
         add_filter('themosisGlobalObject', function($data)
         {
@@ -14,14 +13,7 @@ class HomeController extends BaseController
             return $data;
         });
 
-        $user = User::current();
-        $meta= get_user_meta($user->ID, 'is_present')[0];
-        //hack cause when a player has never set the 'ispresent' var, it's an array of ... aray, odd. 
-        if (is_array($meta))
-          $meta = 0;
-
         return View::make('home.home-content')->with(array(
-            'isPresent' =>   $meta,
             'actus' => PostModel::all(),
             'last_match' => MatchModel::getLastResult(10),
             'next_match' => MatchModel::getNextMatchs(2),
