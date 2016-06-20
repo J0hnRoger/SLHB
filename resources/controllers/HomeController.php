@@ -15,13 +15,15 @@ class HomeController extends BaseController
         });
 
         $user = User::current();
-        $meta= get_user_meta($user->ID, 'is_present')[0];
-        //hack cause when a player has never set the 'ispresent' var, it's an array of ... aray, odd. 
-        if (is_array($meta))
-          $meta = 0;
+        $metas = get_user_meta($user->ID, 'is_present');
+        $meta = 0;
+        //hack cause when a player has never set the 'ispresent' var, it's an array of ... aray, odd.
+        if (count($metas) > 0 && !is_array($metas[0])) {
+          $metas = 0;
+        }
 
         return View::make('home.home-content')->with(array(
-            'isPresent' =>   $meta,
+            'isPresent' =>   $metas,
             'actus' => PostModel::all(),
             'last_match' => MatchModel::getLastResult(10),
             'next_match' => MatchModel::getNextMatchs(2),
