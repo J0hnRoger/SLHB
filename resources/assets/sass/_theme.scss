@@ -5,6 +5,10 @@
 // https://smacss.com/book/type-theme
 // ==========================================================================
 
+/**
+ * COLORS
+ */
+
 $color-text : #757575;
 $color-link : #757575;
 
@@ -24,8 +28,9 @@ $header-padding : 20px;
 $home-banner : "../images/banner.jpg";
 $max-icon-height : 100px;
 
-$tablet-width: 768px;
-$desktop-width: 1024px;
+/**
+ * BREAKPOINTS
+ */
 
 $tablet-width: 768px;
 $desktop-width: 1024px;

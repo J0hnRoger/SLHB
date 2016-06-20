@@ -906,6 +906,12 @@ div.event-details {
   margin: 8px 0;
   overflow: hidden; }
 
+.mdl-demo section .section__circle-container > .section__circle-container__circle > img {
+  width: 64px;
+  height: 64px;
+  border-radius: 32px;
+  overflow: hidden; }
+
 .mdl-demo section.section--footer .section__circle--big {
   width: 100px;
   height: 100px;
