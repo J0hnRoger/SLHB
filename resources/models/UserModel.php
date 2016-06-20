@@ -109,14 +109,33 @@ class UserModel {
 
     // Internal methods
     public static function bindPlayerMeta($player){
-      $player->teams = get_user_meta($player->ID, 'slhb_teams')[0];
+      $player->teams = get_user_meta($player->ID, 'slhb_teams');
+
+      $player->teams = (count($player->teams) > 0)
+              ? $player->teams[0]
+              : [];
+
+      $player->is_present = get_user_meta($player->ID, 'is_present');
+      $player->is_present = ( count($player->is_present) > 0
+                                && !is_array($player->is_present)[0] )
+                            ? $player->is_present[0]
+                            : 0;
+
       $player->positions = get_user_meta($player->ID, 'slhb_positions');
-      $player->thumbnail =  get_avatar($player->ID, 64);
+
+      $profilePicture = get_cupp_meta($player->ID, 'thumbnail');
+      if (empty($profilePicture)){
+        $profilePicture = themosis_assets().'/images/slhb-default-avatar.png';
+      }
+      $player->profilePicture = $profilePicture;
 
       $player->positions =  count($player->positions) > 0
                             ? $player->positions[0]
                             : [];
-      $player->nextMatch = MatchModel::getNextMatchForPlayer($player->ID);
+
+      if (count($player->teams) > 0)
+        $player->nextMatch = MatchModel::getFullNextMatchForTeam($player->teams[0]);
+
       return $player;
     }
 }

@@ -14,8 +14,6 @@
   h6 {margin: 0;}
 }
 
-
-
 // MDL Demo Theme - TODO - Refactoriser proprement
 .mdl-demo .mdl-layout__header-row {
 padding-left: 40px;
@@ -178,6 +176,13 @@ text-decoration: none;
   margin: 8px 0;
   overflow: hidden;
 }
+.mdl-demo section .section__circle-container > .section__circle-container__circle > img {
+  width: 64px;
+  height: 64px;
+  border-radius: 32px;
+  overflow: hidden;
+}
+
 .mdl-demo section.section--footer .section__circle--big {
 width: 100px;
 height: 100px;

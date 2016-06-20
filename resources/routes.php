@@ -48,6 +48,13 @@ Route::get('template', array('team-sheet-builder-template', 'uses' => 'TeamSheet
 /* Page Contacts */
 
 /* Page Boutique */
+Route::get('page', ['boutique-officielle', function()
+{
+  return View::make('page')->with(array(
+    'page' =>  PageModel::getCurrentPage(),
+    'home_banner' =>  themosis_assets() . "/images/_Boutique_Header01.jpg"
+  ));
+}]);
 
 /* Page Historique */
 Route::get('page', ['historique', function()

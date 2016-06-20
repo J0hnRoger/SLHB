@@ -28,12 +28,16 @@ $subInfoColor : #767676;
     }
 
     /* Responsive rules */
-    @include media-max(640px) {
+    @include tablet {
+
+    }
+
+    @include only-phone {
       width: 490px;
       & > img { width: 200px;height: auto;}
     }
 
-    @include media-max(604px) {
+    @include tablet {
       width: inherit;
 
       & > img {float: left;}

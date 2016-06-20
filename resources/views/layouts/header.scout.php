@@ -1,6 +1,6 @@
-  <header class="mdl-layout__header mdl-layout__header--scroll">
+  <header class="mdl-layout__header--scroll">
     <div class="mdl-layout__header-row">
-      <div class="mdl-layout-title mdl-cell--2-col">
+      <div class="mdl-layout-title mdl-cell--2-col mdl-cell--1-col-phone">
         <img class="logo" src="{{ $logoUrl }}" alt="">
       </div>
       <div class="mdl-layout-spacer"></div>
@@ -18,29 +18,36 @@
       <div class="mdl-layout-spacer"></div>
       <div id="login" class="mdl-cell mdl-cell--4-col mdl-grid">
         @if($currentUser->user_login != false )
-        <div class="mdl-cell mdl-cell--6-col user-information">
+        <div class="mdl-cell mdl-cell--6-col mdl-cell--3-col-phone user-information">
           <h5>Bonjour {{ $currentUser->user_login }}</h5>
           <a href="/my-profile">Accéder à votre compte </a>
-          @if(UserModel::hasTheRole($currentUser->ID, 'slhb_player') && count($currentUser->nextMatch) > 0)
-          <a href="/my-profile"><div id="ttPlay" class="icon material-icons">announcement</div></a>
+          @if(UserModel::hasTheRole($currentUser->ID, 'slhb_player'))
+            @if (!empty($currentUser->nextMatch))
+          <a href="/my-profile"><div id="ttPlay" class="animated bounceIn icon material-icons">announcement</div></a>
           <div id="play" class="mdl-tooltip mdl-tooltip--large" for="ttPlay">
-            Tu joues le {{$currentUser->nextMatch[0]->match_date}} contre {{ $currentUser->nextMatch[0]->match_team_ext }}!
+            Tu joues le {{$currentUser->nextMatch->match_date}} contre {{ $currentUser->nextMatch->match_team_ext }}!
           </div>
-          <div ng-app="presential">
-            <is-present init="{{ $isPresent }}"></is-present>
+            @endif
+          <div id="presential" ng-app="presential">
+            <is-present init="{{ $currentUser->is_present }}"></is-present>
           </div>
           @endif
         </div>
-        <div class="mdl-cell mdl-cell--4-col">
-          <?php echo get_avatar( $currentUser->user_email, 65); ?>
+        <div class="photo mdl-cell mdl-cell--4-col mdl-cell--1-col-phone">
+          <div class="avatar" style="background:url( {{$currentUser->profilePicture }}) center / cover">
+          </div>
         </div>
         @else
-        <?php
-            echo "<a href=\"" . $login_url. "/cms/wp-login.php?redirect_to=". $login_url ."\"> Cliquez ici </a>  pour vous connecter"; ?>
+         <a id="login-link" class="mdl-cell--3-col-phone " href="{{$login_url}}/cms/wp-login.php?redirect_to={{ $login_url }}">
+            <i class="fa fa-sign-in"></i><span class="mdl-layout--large-screen-only">Connectez-vous avec votre compte SLHB</span>
+        </a>
+        <div id="login-popin" class="mdl-tooltip mdl-tooltip--large mdl-layout--small-screen-only" for="login-link">
+          Connectez-vous avec votre compte SLHB
+        </div>
         @endif
       </div>
     </div>
-    <div id="menu" class="mdl-layout__header-row">
+     <div id="menu" class="mdl-layout__header-row mdl-layout--large-screen-only">
       <nav class="mdl-navigation mdl-layout--large-screen-only">
       @foreach((array)$headerMenu as $key => $menuItem)
         <a class="mdl-navigation__link" href="{{$menuItem->url}}">{{$menuItem->title}}</a>

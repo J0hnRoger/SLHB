@@ -10,7 +10,9 @@
         <!--  Starting Template -->
         <div class="mdl-cell mdl-cell--12-col mdl-grid mdl-grid--no-spacing section__text animated bounceIn" ng-repeat="player in vm.playersFactory.freePlayers track by $index">
           <div class="section__circle-container mdl-cell mdl-cell--4-col mdl-cell--1-col-phone">
-            <div class="section__circle-container__circle mdl-color--primary" ng-bind-html="player.data.thumbnail"></div>
+            <div class="section__circle-container__circle mdl-color--primary" >
+              <img src="{[player.data.profilePicture]}" />
+            </div>
           </div>
           <div class="section__text mdl-cell mdl-cell--8-col-desktop mdl-cell--6-col-tablet mdl-cell--3-col-phone">
             <h5>{[player.data.user_login]}</h5>
@@ -31,7 +33,9 @@
         <h6 class="mdl-cell--12-col">Rendez-vous : {[vm.playersFactory.match.match_team_time[0]]} </h6>
         <div class="mdl-cell mdl-cell--12-col mdl-grid mdl-grid--no-spacing section__text animated bounceIn" ng-repeat="player in vm.playersFactory.match.players track by $index">
           <div class="section__circle-container mdl-cell mdl-cell--4-col mdl-cell--1-col-phone">
-            <div class="section__circle-container__circle mdl-color--primary" ng-bind-html="player.data.thumbnail"></div>
+            <div class="section__circle-container__circle mdl-color--primary" >
+              <img src="{[player.data.profilePicture]}" />
+            </div>
           </div>
           <div class="section__text mdl-cell mdl-cell--8-col-desktop mdl-cell--6-col-tablet mdl-cell--3-col-phone">
             <h5>{[player.data.user_login]}</h5>

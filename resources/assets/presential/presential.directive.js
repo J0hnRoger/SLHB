@@ -21,8 +21,8 @@ function isPresent() {
 
 }
 
-IsPresentCtrl.$inject = ['$element', 'PlayersService'];
-function IsPresentCtrl($element, PlayersService) {
+IsPresentCtrl.$inject = ['$element', 'PlayersService', '$mdToast'];
+function IsPresentCtrl($element, PlayersService, $mdToast) {
   var vm = this;
 
   vm.isPresent = (parseInt(vm.init) == 0) ? false : true;
@@ -32,8 +32,16 @@ function IsPresentCtrl($element, PlayersService) {
   vm.label = ((vm.isPresent) ? "Présent" : "Absent" );
 
   vm.changeLabel = function () {
-    PlayersService.setPresential(themosis.userId, vm.isPresent);
-    vm.label = ((vm.isPresent) ? "Présent" : "Absent" );
+    PlayersService.setPresential(themosis.userId, vm.isPresent)
+      .then(function (){
+        vm.label = ((vm.isPresent) ? "Présent" : "Absent" );
+        $mdToast.show(
+         $mdToast.simple()
+           .textContent(vm.label + ' à l\'entrainement')
+           .hideDelay(2500)
+         );
+      })
+
   }
 
 
