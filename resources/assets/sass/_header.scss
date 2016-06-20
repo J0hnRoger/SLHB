@@ -1,0 +1,143 @@
+/**
+ * Header & Menu
+ */
+
+$banner-height: 463px;
+$header-height : 140px;
+$menu-height : 60px;
+$header-padding : 20px;
+$home-banner : "../images/banner.jpg";
+$max-icon-height : 100px;
+$min-max-icon-height : 50px;
+$min-banner-height : 150px;
+$min-header-height : 280px;
+$min-padding-logo : 20px;
+
+header {
+	background-color: $primary !important;
+
+	.mdl-layout__header-row
+	{
+		height: $header-height;
+		color: $secondary;
+		padding-left: 140px;
+
+		.mdl-layout-title {
+			.logo {
+				max-height: $max-icon-height;
+        @include only-phone {
+          max-height: $min-max-icon-height;
+        }
+			}
+			h1 {
+				display: inline;
+				font-size: 35px;
+				font-weight: 600;
+			}
+
+			h4 {
+				margin: 0;
+				font-size: 20px;
+				line-height: 20px
+			}
+		}
+
+		nav {
+			margin: 0 auto !important;
+
+	 		.mdl-navigation__link {
+				font-size: 16px;
+				font-weight: 400;
+					&:hover {
+						text-decoration: underline;
+					}
+				}
+			}
+
+		#login {
+      i {
+        @include roundedImg(40px);
+        text-align: center;
+        line-height: 40px;
+        font-size: 15px;
+        color:$primary;
+        background-color: $secondary;
+      }
+      a {
+          margin-right: 5px;
+      }
+		}
+    @include only-phone {
+      padding-left: $min-padding-logo;
+    }
+	}
+
+	#menu {
+		height: $menu-height;
+		background-color: $secondary;
+	}
+
+	//Mini Header
+	#min-login-menu {
+		color:$primary;
+		margin-right: 3%;
+		img {
+		 @include	roundedImg(35px);
+		}
+	}
+  @include only-phone {
+    height: $min-header-height;
+  }
+}
+
+
+/**
+ * Banner
+ */
+#banner {
+	height: $banner-height;
+	width: 100%;
+	margin: 0px;
+	overflow: hidden;
+
+	.overlay{
+		height: 160%;
+		width:40%;
+		transform: rotate($deg + deg);
+		margin-top: -85px;
+		margin-right: -150px;
+		background-color: $secondary-transparence ;
+		float: right;
+
+		.container {
+			transform: rotate(-$deg + deg);
+			height: 100%;
+			text-align: right;
+			padding-right: 5%;
+			float: right;
+			margin-right: 180px;
+			ul{
+				list-style: none;
+				margin-top: 170px;
+				li.event{
+					margin-top: 6%;
+					font-size: 1vw;
+					.label {
+						font-size: 0.9vw;
+						font-weight: 600;
+						text-transform: uppercase;
+					}
+					h2{
+						line-height: normal;
+						font-size: 2.6vw;
+						font-weight: 500;
+						color: white
+					}
+				}
+			}
+		}
+	}
+  @include only-phone {
+    height: $min-banner-height;
+  }
+}

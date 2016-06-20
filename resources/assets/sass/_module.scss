@@ -78,7 +78,7 @@ section.pre-footer {
 	}
 }
 
-/* Header Last Results*/
+/* Last Results*/
 #widget-last-results {
 	margin: 0 auto;
 	text-align: center;
@@ -89,6 +89,9 @@ section.pre-footer {
 	.results {
 		font-weight: bold;
 		text-transform: uppercase;
+	}
+	@include only-phone {
+		width: 175px;
 	}
 }
 

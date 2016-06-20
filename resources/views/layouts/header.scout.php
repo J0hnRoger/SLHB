@@ -1,6 +1,6 @@
-  <header class="mdl-layout__header mdl-layout__header--scroll">
+  <header class="mdl-layout__header--scroll">
     <div class="mdl-layout__header-row">
-      <div class="mdl-layout-title mdl-cell--2-col">
+      <div class="mdl-layout-title mdl-cell--2-col mdl-cell--1-col-phone">
         <img class="logo" src="{{ $logoUrl }}" alt="">
       </div>
       <div class="mdl-layout-spacer"></div>
@@ -37,12 +37,16 @@
           <img class="avatar avatar-65 photo"  src="<?php echo get_cupp_meta($currentUser->ID, 'thumbnail'); ?>" alt="" />
         </div>
         @else
-        <?php
-            echo "<a href=\"" . $login_url. "/cms/wp-login.php?redirect_to=". $login_url ."\"> Cliquez ici </a>  pour vous connecter"; ?>
+         <a id="login-link" href="{{$login_url}}/cms/wp-login.php?redirect_to={{ $login_url }}">
+            <i class="fa fa-sign-in"></i>
+        </a>
+        <div id="login" class="mdl-tooltip mdl-tooltip--large" for="login-link">
+          Connectez-vous avec votre compte SLHB
+        </div>
         @endif
       </div>
     </div>
-    <div id="menu" class="mdl-layout__header-row">
+     <div id="menu" class="mdl-layout__header-row mdl-layout--large-screen-only">
       <nav class="mdl-navigation mdl-layout--large-screen-only">
       @foreach((array)$headerMenu as $key => $menuItem)
         <a class="mdl-navigation__link" href="{{$menuItem->url}}">{{$menuItem->title}}</a>

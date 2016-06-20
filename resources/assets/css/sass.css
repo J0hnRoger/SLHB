@@ -1,4 +1,10 @@
 @charset "UTF-8";
+/**
+ * COLORS
+ */
+/**
+ * BREAKPOINTS
+ */
 body {
   font-family: "Roboto"; }
 
@@ -50,80 +56,6 @@ h2 {
 
 [ng\:cloak], [ng-cloak], .ng-cloak {
   display: none !important; }
-
-header {
-  background-color: white !important; }
-  header .mdl-layout__header-row {
-    height: 140px;
-    color: #1d3d86;
-    padding-left: 140px; }
-    header .mdl-layout__header-row .mdl-layout-title .logo {
-      max-height: 100px; }
-    header .mdl-layout__header-row .mdl-layout-title h1 {
-      display: inline;
-      font-size: 35px;
-      font-weight: 600; }
-    header .mdl-layout__header-row .mdl-layout-title h4 {
-      margin: 0;
-      font-size: 20px;
-      line-height: 20px; }
-    header .mdl-layout__header-row nav {
-      margin: 0 auto !important; }
-      header .mdl-layout__header-row nav .mdl-navigation__link {
-        font-size: 16px;
-        font-weight: 400; }
-        header .mdl-layout__header-row nav .mdl-navigation__link:hover {
-          text-decoration: underline; }
-    header .mdl-layout__header-row #login a {
-      margin-right: 5px; }
-  header #menu {
-    height: 60px;
-    background-color: #1d3d86; }
-  header #min-login-menu {
-    color: white;
-    margin-right: 3%; }
-    header #min-login-menu img {
-      -webkit-border-radius: 35px;
-      -moz-border-radius: 35px;
-      border-radius: 35px;
-      width: 35px;
-      height: 35px; }
-
-#banner {
-  height: 463px;
-  width: 100%;
-  margin: 0px;
-  overflow: hidden; }
-  #banner .overlay {
-    height: 160%;
-    width: 40%;
-    transform: rotate(25deg);
-    margin-top: -85px;
-    margin-right: -150px;
-    background-color: rgba(29, 65, 135, 0.55);
-    float: right; }
-    #banner .overlay .container {
-      transform: rotate(-25deg);
-      height: 100%;
-      text-align: right;
-      padding-right: 5%;
-      float: right;
-      margin-right: 180px; }
-      #banner .overlay .container ul {
-        list-style: none;
-        margin-top: 170px; }
-        #banner .overlay .container ul li.event {
-          margin-top: 6%;
-          font-size: 1vw; }
-          #banner .overlay .container ul li.event .label {
-            font-size: 0.9vw;
-            font-weight: 600;
-            text-transform: uppercase; }
-          #banner .overlay .container ul li.event h2 {
-            line-height: normal;
-            font-size: 2.6vw;
-            font-weight: 500;
-            color: white; }
 
 main#content {
   /* Responsive Phone */
@@ -243,7 +175,7 @@ section.pre-footer {
   border-radius: 48px;
   float: right; }
 
-/* Header Last Results*/
+/* Last Results*/
 #widget-last-results {
   margin: 0 auto;
   text-align: center; }
@@ -253,6 +185,9 @@ section.pre-footer {
   #widget-last-results .results {
     font-weight: bold;
     text-transform: uppercase; }
+  @media (max-width: 320px) {
+    #widget-last-results {
+      width: 175px; } }
 
 /* Partner */
 ul.partners li {
@@ -278,6 +213,109 @@ ul.all-teams li {
     color: white;
     font-size: 25px;
     text-decoration: none; }
+
+/**
+ * Header & Menu
+ */
+header {
+  background-color: white !important; }
+  header .mdl-layout__header-row {
+    height: 140px;
+    color: #1d3d86;
+    padding-left: 140px; }
+    header .mdl-layout__header-row .mdl-layout-title .logo {
+      max-height: 100px; }
+      @media (max-width: 320px) {
+        header .mdl-layout__header-row .mdl-layout-title .logo {
+          max-height: 50px; } }
+    header .mdl-layout__header-row .mdl-layout-title h1 {
+      display: inline;
+      font-size: 35px;
+      font-weight: 600; }
+    header .mdl-layout__header-row .mdl-layout-title h4 {
+      margin: 0;
+      font-size: 20px;
+      line-height: 20px; }
+    header .mdl-layout__header-row nav {
+      margin: 0 auto !important; }
+      header .mdl-layout__header-row nav .mdl-navigation__link {
+        font-size: 16px;
+        font-weight: 400; }
+        header .mdl-layout__header-row nav .mdl-navigation__link:hover {
+          text-decoration: underline; }
+    header .mdl-layout__header-row #login i {
+      -webkit-border-radius: 40px;
+      -moz-border-radius: 40px;
+      border-radius: 40px;
+      width: 40px;
+      height: 40px;
+      text-align: center;
+      line-height: 40px;
+      font-size: 15px;
+      color: white;
+      background-color: #1d3d86; }
+    header .mdl-layout__header-row #login a {
+      margin-right: 5px; }
+    @media (max-width: 320px) {
+      header .mdl-layout__header-row {
+        padding-left: 20px; } }
+  header #menu {
+    height: 60px;
+    background-color: #1d3d86; }
+  header #min-login-menu {
+    color: white;
+    margin-right: 3%; }
+    header #min-login-menu img {
+      -webkit-border-radius: 35px;
+      -moz-border-radius: 35px;
+      border-radius: 35px;
+      width: 35px;
+      height: 35px; }
+  @media (max-width: 320px) {
+    header {
+      height: 280px; } }
+
+/**
+ * Banner
+ */
+#banner {
+  height: 463px;
+  width: 100%;
+  margin: 0px;
+  overflow: hidden; }
+  #banner .overlay {
+    height: 160%;
+    width: 40%;
+    transform: rotate(25deg);
+    margin-top: -85px;
+    margin-right: -150px;
+    background-color: rgba(29, 65, 135, 0.55);
+    float: right; }
+    #banner .overlay .container {
+      transform: rotate(-25deg);
+      height: 100%;
+      text-align: right;
+      padding-right: 5%;
+      float: right;
+      margin-right: 180px; }
+      #banner .overlay .container ul {
+        list-style: none;
+        margin-top: 170px; }
+        #banner .overlay .container ul li.event {
+          margin-top: 6%;
+          font-size: 1vw; }
+          #banner .overlay .container ul li.event .label {
+            font-size: 0.9vw;
+            font-weight: 600;
+            text-transform: uppercase; }
+          #banner .overlay .container ul li.event h2 {
+            line-height: normal;
+            font-size: 2.6vw;
+            font-weight: 500;
+            color: white; }
+  @media (max-width: 320px) {
+    #banner {
+      height: 150px; } }
 
 /*Agenda*/
 /*Calendario*/
@@ -997,13 +1035,13 @@ div.event-details {
       display: inline-block;
       vertical-align: middle;
       height: 34px; }
-  @media (max-width: 640px) {
+  @media (max-width: 320px) {
     .actualites .actualite {
       width: 490px; }
       .actualites .actualite > img {
         width: 200px;
         height: auto; } }
-  @media (max-width: 604px) {
+  @media (min-width: 768px) and (max-width: 1023px) {
     .actualites .actualite {
       width: inherit; }
       .actualites .actualite > img {
