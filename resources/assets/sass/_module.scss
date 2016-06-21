@@ -69,13 +69,28 @@ section.pre-footer {
 			font-weight: 200;
 			text-decoration: none;
 		}
+		@include only-phone {
+			h5 {
+				font-size: 13px;
+			}
+			a { font-size: 11px;}
+		}
 	}
-
-	img.avatar {
+	div.avatar {
 		height: 83px;
+		width: 83px;
 		border-radius: 48px;
 		float: right;
+		overflow: hidden;
+
+		@include only-phone {
+			height: 63px;
+			width: 63px;
+			border-radius: 48px;
+
+		}
 	}
+
 }
 
 /* Last Results*/
@@ -91,6 +106,7 @@ section.pre-footer {
 		text-transform: uppercase;
 	}
 	@include only-phone {
+		display: none;
 		width: 175px;
 	}
 }

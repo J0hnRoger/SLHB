@@ -55,17 +55,23 @@ header {
 			}
 
 		#login {
-      i {
-        @include roundedImg(40px);
-        text-align: center;
-        line-height: 40px;
-        font-size: 15px;
-        color:$primary;
-        background-color: $secondary;
-      }
-      a {
-          margin-right: 5px;
-      }
+			#login-link {
+				color: $secondary;
+	      i {
+	        @include roundedImg(40px);
+	        text-align: center;
+	        line-height: 40px;
+	        font-size: 15px;
+	        color:$primary;
+	        background-color: $secondary;
+					@include only-phone {
+						float: right;
+					}
+	      }
+	      span {
+	          margin-left: 10px;
+	      }
+			}
 		}
     @include only-phone {
       padding-left: $min-padding-logo;

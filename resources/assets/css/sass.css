@@ -169,11 +169,23 @@ section.pre-footer {
     color: inherit;
     font-weight: 200;
     text-decoration: none; }
+  @media (max-width: 320px) {
+    #login .user-information h5 {
+      font-size: 13px; }
+    #login .user-information a {
+      font-size: 11px; } }
 
-#login img.avatar {
+#login div.avatar {
   height: 83px;
+  width: 83px;
   border-radius: 48px;
-  float: right; }
+  float: right;
+  overflow: hidden; }
+  @media (max-width: 320px) {
+    #login div.avatar {
+      height: 63px;
+      width: 63px;
+      border-radius: 48px; } }
 
 /* Last Results*/
 #widget-last-results {
@@ -187,6 +199,7 @@ section.pre-footer {
     text-transform: uppercase; }
   @media (max-width: 320px) {
     #widget-last-results {
+      display: none;
       width: 175px; } }
 
 /* Partner */
@@ -243,19 +256,24 @@ header {
         font-weight: 400; }
         header .mdl-layout__header-row nav .mdl-navigation__link:hover {
           text-decoration: underline; }
-    header .mdl-layout__header-row #login i {
-      -webkit-border-radius: 40px;
-      -moz-border-radius: 40px;
-      border-radius: 40px;
-      width: 40px;
-      height: 40px;
-      text-align: center;
-      line-height: 40px;
-      font-size: 15px;
-      color: white;
-      background-color: #1d3d86; }
-    header .mdl-layout__header-row #login a {
-      margin-right: 5px; }
+    header .mdl-layout__header-row #login #login-link {
+      color: #1d3d86; }
+      header .mdl-layout__header-row #login #login-link i {
+        -webkit-border-radius: 40px;
+        -moz-border-radius: 40px;
+        border-radius: 40px;
+        width: 40px;
+        height: 40px;
+        text-align: center;
+        line-height: 40px;
+        font-size: 15px;
+        color: white;
+        background-color: #1d3d86; }
+        @media (max-width: 320px) {
+          header .mdl-layout__header-row #login #login-link i {
+            float: right; } }
+      header .mdl-layout__header-row #login #login-link span {
+        margin-left: 10px; }
     @media (max-width: 320px) {
       header .mdl-layout__header-row {
         padding-left: 20px; } }
@@ -1231,3 +1249,23 @@ main#content .details-team {
     margin-top: 25px; }
   main#content .details-team .the-crew {
     width: 100%; }
+
+/*Presential module*/
+#presential md-toast {
+  display: none; }
+
+@media (max-width: 320px) {
+  #presential .mdl-switch__label {
+    display: none; }
+  #presential md-toast {
+    display: block;
+    width: 110%; }
+    #presential md-toast.md-bottom {
+      position: absolute;
+      left: 50%;
+      margin-left: -100px;
+      bottom: -40px;
+      text-align: center; }
+    #presential md-toast .md-toast-content {
+      min-height: 30px;
+      padding: 3px; } }

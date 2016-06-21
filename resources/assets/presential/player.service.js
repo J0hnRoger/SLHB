@@ -21,7 +21,7 @@ function PlayersService($q, $http) {
         'userId' : userId
       })
     ).then(function (data){
-      console.log(data);
+      defer.resolve(data);
     });
     return defer.promise;
   }

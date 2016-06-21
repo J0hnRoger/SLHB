@@ -146,7 +146,6 @@ class UserModel {
       if (empty($profilePicture)){
         $profilePicture = themosis_assets().'/images/slhb-default-avatar.png';
       }
-
       $player->profilePicture = $profilePicture;
 
       $player->positions =  count($player->positions) > 0
