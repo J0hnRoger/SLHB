@@ -115,14 +115,33 @@ class UserModel {
               ? $player->teams[0]
               : [];
 
-      $player->is_present = get_user_meta($player->ID, 'is_present');
-      $player->is_present = ( count($player->is_present) > 0
-                                && !is_array($player->is_present)[0] )
-                            ? $player->is_present[0]
-                            : 0;
+      //Presential management : when updated by user profile page : not present ->
+      //Array
+      // (
+      //     [0] => Array
+      //         (
+      //         )
+      //
+      // )
+      //  - present :
+      //  Array
+      // (
+      //     [0] => 0
+      // )
+
+      $is_present = get_user_meta($player->ID, 'is_present');
+
+      if (isset($is_present)){
+        if (is_array($is_present[0]))
+        {
+          $player->is_present = 0;
+        }
+        else { //Updated by the custom control in home, so 1 or 0
+          $player->is_present = $is_present[0];
+        }
+      }
 
       $player->positions = get_user_meta($player->ID, 'slhb_positions');
-
       $profilePicture = get_cupp_meta($player->ID, 'thumbnail');
       if (empty($profilePicture)){
         $profilePicture = themosis_assets().'/images/slhb-default-avatar.png';
