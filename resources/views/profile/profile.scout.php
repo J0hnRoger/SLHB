@@ -54,7 +54,21 @@ for each players : Array
               <h1>{{$next_match->match_team_dom}} - {{$next_match->match_team_ext}}</h1>
               <span>Date du rendez-vous : 18h</span>
             </div>
-
+            <!-- NgMaterial -->
+            <md-card>
+              <md-card-title>
+                <md-card-title-media>
+                  <div class="md-media-sm card-media" layout layout-align="center center" >
+                    <md-icon md-svg-icon="person" style="color:grey"></md-icon>
+                  </div>
+                </md-card-title-media>
+                <md-card-title-text>
+                  <span class="md-headline">{{name}}</span>
+                  <span class="md-subhead description">Ipsum lorem caveat emptor...</span>
+                </md-card-title-text>
+              </md-card-title>
+            </md-card>
+            <!-- NgMaterial End-->
             <ul class="mdl-list players-list">
               @foreach($next_match->players as $key => $player)
               <li class="mdl-list__item">

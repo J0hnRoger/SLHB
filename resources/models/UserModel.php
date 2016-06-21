@@ -127,8 +127,7 @@ class UserModel {
       //  Array
       // (
       //     [0] => 0
-      // )
-
+      // ) but in our control : present : Array( [0] => 1) and not present : Array ([0] => 0)
       $is_present = get_user_meta($player->ID, 'is_present');
 
       if (isset($is_present)){
