@@ -173,7 +173,9 @@ class UserModel {
         $matchs = [];
         for ($i=0; $i < count($player->teams); $i++) {
           $nextMatch = MatchModel::getFullNextMatchForTeam($player->teams[$i]);
-          if (MatchModel::containsPlayer($nextMatch, $player->ID))
+
+          if (isset($nextMatch)
+              && MatchModel::containsPlayer($nextMatch, $player->ID))
             $matchs[] = $nextMatch;
         }
         if (count($matchs) > 0) {
