@@ -13,6 +13,12 @@ class UserModel {
       return $users;
     }
 
+    public static function getCurrentUser(){
+      $user = User::current();
+      UserModel::SetProfilePhoto($user);
+      return $user;
+    }
+
     public static function getCurrentPlayer(){
       $user = User::current();
 
@@ -171,8 +177,9 @@ class UserModel {
             $matchs[] = $nextMatch;
         }
         if (count($matchs) > 0) {
-          MatchModel::SortMatchsByDescendingDate($matchs);
-          $player->nextMatch = $matchs[0];
+          $sortedMatchs = MatchModel::SortMatchsByDescendingDate($matchs);
+
+          $player->nextMatch = $sortedMatchs[0];
         }
       }
     }

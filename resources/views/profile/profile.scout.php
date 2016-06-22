@@ -27,7 +27,7 @@ for each players : Array
 <div class="mdl-grid">
   <aside class="mdl-cell mdl-cell--4-col">
     <h2>Mon profil</h2>
-    <div class="avatar" style="background:url( {{$currentPlayer->profilePicture }}) center / cover">
+    <div class="avatar" style="background:url( {{ $currentPlayer->profilePicture }}) center / cover">
     </div>
     <div class="infos">
   <h4>{{$currentPlayer->user_nicename}}</h4>
@@ -46,41 +46,38 @@ for each players : Array
         <md-tab-label>
           Prochains Matchs
         </md-tab-label>
-        <md-tab-body class="match-list">
+        <md-tab-body>
           @if (!isset($currentPlayer->nextMatch) || count($currentPlayer->nextMatch->players) == 0)
           <h5>La liste de gladiateurs morts de faim n'est pas encore sortie.</h5>
           @else
             <div class="match-header">
-
-              <h1>{{$currentPlayer->nextMatch->match_team_dom}} - {{$currentPlayer->nextMatch->match_team_ext}}</h1>
-              <span>Date du rendez-vous : 18h</span>
+              <h1>{{$currentPlayer->nextMatch->match_team_dom}} VS {{$currentPlayer->nextMatch->match_team_ext}}</h1>
+              <span>Date du rendez-vous : {{$currentPlayer->nextMatch->match_team_time}}</span>
+              <md-subheader class="md-primary">Date du match : {{$currentPlayer->nextMatch->match_real_time}}</md-subheader>
             </div>
+            <md-list class="players-list">
+            @foreach($currentPlayer->nextMatch->players as $key => $player)
             <!-- NgMaterial -->
-            <md-card>
-              <md-card-title>
-                <md-card-title-media>
-                  <div class="md-media-sm card-media" layout layout-align="center center" >
-                    <md-icon md-svg-icon="person" style="color:grey"></md-icon>
-                  </div>
-                </md-card-title-media>
-                <md-card-title-text>
-                  <span class="md-headline">Test</span>
-                  <span class="md-subhead description">Ipsum lorem caveat emptor...</span>
-                </md-card-title-text>
-              </md-card-title>
-            </md-card>
-            <!-- NgMaterial End-->
-            <ul class="mdl-list players-list">
-              @foreach($currentPlayer->nextMatch->players as $key => $player)
-              <li class="mdl-list__item">
-                <span class="mdl-list__item-primary-content">
-                {{ get_avatar($player['ID'], 32) }}
+           <md-divider></md-divider>
+           <md-list-item ng-click="" class="noright">
+             <img alt="{{ $player['user_nicename'] }}" ng-src="{{ $player['profilePicture'] or 'default' }}" class="md-avatar" />
+             <div class="md-list-item-text">
                 {{ $player['user_nicename'] }}
-                </span>
-              </li>
-              @endforeach
-            </ul>
-            @endif
+              @if($player['positions'] != '')
+              <div class="position-container">
+                 @foreach($player['positions'] as $key => $pos)
+                   <span class="label-pills ">{{ $pos }}</span>
+                 @endforeach
+              </div>
+               @endif
+             </div>
+             <md-checkbox class="md-secondary" ng-model="$player.selected"></md-checkbox>
+           </md-list-item>
+            @endforeach
+          </md-list>
+
+            <!-- NgMaterial End-->
+        @endif
 
         </md-tab-body>
       </md-tab>

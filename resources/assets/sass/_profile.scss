@@ -1,3 +1,5 @@
+$profileImgSize : 135px;
+$player-pills-color : #E91E63;
 #profile {
   .mdl-grid {
     padding: 0;
@@ -10,8 +12,8 @@
         text-align: center;
       }
       .avatar {
-        height: 85px;
-        width: 85px
+        @include roundedImg($profileImgSize)
+        margin: 20px auto;
       }
       .infos {
         text-align: center;
@@ -31,14 +33,13 @@
           font-size: 30px;
         }
       }
-      ul.players-list {
-        width: 60%;
-        margin: 0 auto;
-        li {
-          img {
-            @include roundedImg(32px);
-          }
+      //TeamSheet
+      .players-list {
+        .label-pills {
+          background-color: $player-pills-color;
         }
       }
+
+    }
+
   }
-}

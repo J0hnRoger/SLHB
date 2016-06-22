@@ -87,8 +87,18 @@ header {
 	#min-login-menu {
 		color:$primary;
 		margin-right: 3%;
-		img {
-		 @include	roundedImg(35px);
+
+		button#login-menu {
+			margin-top: 9px;
+		}
+		.avatar {
+			float:right;
+			@include roundedImg(43px);
+			@include only-phone {
+				height: 63px;
+				width: 63px;
+				border-radius: 48px;
+			}
 		}
 	}
   @include only-phone {

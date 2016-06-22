@@ -266,12 +266,14 @@ class MatchModel {
       return false;
     }
 
+    //Todo - compare date instead of strings
+    public static function CompareTwoString($a,  $b){
+      return strcmp($a->match_date, $b->match_date);
+    }
+
     public static function SortMatchsByDescendingDate($matchs)
     {
-      function cmp($a, $b)
-      {
-          return strcmp($a->match_date, $b->match_date);
-      }
-      $matchs = usort($matchs, "cmp");
+      usort($matchs, ["MatchModel", "CompareTwoString"]);
+      return $matchs;
     }
 }

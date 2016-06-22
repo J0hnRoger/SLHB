@@ -176,15 +176,12 @@ section.pre-footer {
       font-size: 11px; } }
 
 #login .avatar {
-  float: right; }
-
-.avatar {
   height: 83px;
   width: 83px;
   border-radius: 48px;
   overflow: hidden; }
   @media (max-width: 320px) {
-    .avatar {
+    #login .avatar {
       height: 63px;
       width: 63px;
       border-radius: 48px; } }
@@ -285,12 +282,20 @@ header {
   header #min-login-menu {
     color: white;
     margin-right: 3%; }
-    header #min-login-menu img {
-      -webkit-border-radius: 35px;
-      -moz-border-radius: 35px;
-      border-radius: 35px;
-      width: 35px;
-      height: 35px; }
+    header #min-login-menu button#login-menu {
+      margin-top: 9px; }
+    header #min-login-menu .avatar {
+      float: right;
+      -webkit-border-radius: 43px;
+      -moz-border-radius: 43px;
+      border-radius: 43px;
+      width: 43px;
+      height: 43px; }
+      @media (max-width: 320px) {
+        header #min-login-menu .avatar {
+          height: 63px;
+          width: 63px;
+          border-radius: 48px; } }
   @media (max-width: 320px) {
     header {
       height: 280px; } }
@@ -1207,8 +1212,12 @@ main#content .details-actualite {
     #profile .mdl-grid aside h2 {
       text-align: center; }
     #profile .mdl-grid aside .avatar {
-      height: 85px;
-      width: 85px; }
+      -webkit-border-radius: 135px;
+      -moz-border-radius: 135px;
+      border-radius: 135px;
+      width: 135px;
+      height: 135px;
+      margin: 20px auto; }
     #profile .mdl-grid aside .infos {
       text-align: center; }
   #profile .mdl-grid .match-header {
@@ -1220,15 +1229,8 @@ main#content .details-actualite {
       margin: 0;
       color: #1d3d86;
       font-size: 30px; }
-  #profile .mdl-grid ul.players-list {
-    width: 60%;
-    margin: 0 auto; }
-    #profile .mdl-grid ul.players-list li img {
-      -webkit-border-radius: 32px;
-      -moz-border-radius: 32px;
-      border-radius: 32px;
-      width: 32px;
-      height: 32px; }
+  #profile .mdl-grid .players-list .label-pills {
+    background-color: #E91E63; }
 
 main#content .details-team {
   width: 660px;

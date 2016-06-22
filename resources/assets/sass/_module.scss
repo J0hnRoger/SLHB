@@ -52,9 +52,7 @@ section.pre-footer {
 }
 
 /* Login Section */
-
 #login {
-
 	.user-information {
 		padding-top: 10px;
 		h5 {
@@ -77,21 +75,18 @@ section.pre-footer {
 		}
 	}
 	.avatar {
-		float: right;
+		height: 83px;
+		width: 83px;
+		border-radius: 48px;
+		overflow: hidden;
+		@include only-phone {
+			height: 63px;
+			width: 63px;
+			border-radius: 48px;
+		}
 	}
 }
 
-.avatar {
-	height: 83px;
-	width: 83px;
-	border-radius: 48px;
-	overflow: hidden;
-	@include only-phone {
-		height: 63px;
-		width: 63px;
-		border-radius: 48px;
-	}
-}
 /* Last Results*/
 #widget-last-results {
 	margin: 0 auto;

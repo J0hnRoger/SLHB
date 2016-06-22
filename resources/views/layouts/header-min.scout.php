@@ -16,7 +16,8 @@
           <li class="mdl-menu__item"><a href="/my-profile">Accéder à votre compte</a></li>
           <li class="mdl-menu__item"><a href="<?php echo wp_logout_url(); ?>">Se déconnecter</a></li>
         </ul>
-        <?php echo get_avatar( $currentUser->user_email, 35); ?>
+        <div class="avatar" style="background:url( {{ $currentUser->profilePicture }}) center / cover">
+        </div>
       </div>
     @endif
   </div>
