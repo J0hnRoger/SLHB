@@ -27,11 +27,12 @@ for each players : Array
 <div class="mdl-grid">
   <aside class="mdl-cell mdl-cell--4-col">
     <h2>Mon profil</h2>
-  {{ get_avatar($current_user->ID, 128) }}
+    <div class="avatar" style="background:url( {{$currentPlayer->profilePicture }}) center / cover">
+    </div>
     <div class="infos">
-  <h4>{{$current_user->user_nicename}}</h4>
-    @if($current_user->positions != '')
-      @foreach($current_user->positions as $key => $pos)
+  <h4>{{$currentPlayer->user_nicename}}</h4>
+    @if($currentPlayer->positions != '')
+      @foreach($currentPlayer->positions as $key => $pos)
         <span class="label-pills">{{ $pos }}</span>
       @endforeach
     @endif
@@ -46,12 +47,12 @@ for each players : Array
           Prochains Matchs
         </md-tab-label>
         <md-tab-body class="match-list">
-          @if (!isset($next_match) || count( $next_match->players) == 0)
+          @if (!isset($currentPlayer->nextMatch) || count($currentPlayer->nextMatch->players) == 0)
           <h5>La liste de gladiateurs morts de faim n'est pas encore sortie.</h5>
           @else
             <div class="match-header">
-              <h2>{{$next_match->match_date}} - {{$next_match->time}}</h2>
-              <h1>{{$next_match->match_team_dom}} - {{$next_match->match_team_ext}}</h1>
+
+              <h1>{{$currentPlayer->nextMatch->match_team_dom}} - {{$currentPlayer->nextMatch->match_team_ext}}</h1>
               <span>Date du rendez-vous : 18h</span>
             </div>
             <!-- NgMaterial -->
@@ -63,14 +64,14 @@ for each players : Array
                   </div>
                 </md-card-title-media>
                 <md-card-title-text>
-                  <span class="md-headline">{{name}}</span>
+                  <span class="md-headline">Test</span>
                   <span class="md-subhead description">Ipsum lorem caveat emptor...</span>
                 </md-card-title-text>
               </md-card-title>
             </md-card>
             <!-- NgMaterial End-->
             <ul class="mdl-list players-list">
-              @foreach($next_match->players as $key => $player)
+              @foreach($currentPlayer->nextMatch->players as $key => $player)
               <li class="mdl-list__item">
                 <span class="mdl-list__item-primary-content">
                 {{ get_avatar($player['ID'], 32) }}

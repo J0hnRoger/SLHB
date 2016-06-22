@@ -175,14 +175,16 @@ section.pre-footer {
     #login .user-information a {
       font-size: 11px; } }
 
-#login div.avatar {
+#login .avatar {
+  float: right; }
+
+.avatar {
   height: 83px;
   width: 83px;
   border-radius: 48px;
-  float: right;
   overflow: hidden; }
   @media (max-width: 320px) {
-    #login div.avatar {
+    .avatar {
       height: 63px;
       width: 63px;
       border-radius: 48px; } }
@@ -1204,14 +1206,9 @@ main#content .details-actualite {
     padding: 15px; }
     #profile .mdl-grid aside h2 {
       text-align: center; }
-    #profile .mdl-grid aside img {
-      -webkit-border-radius: 155px;
-      -moz-border-radius: 155px;
-      border-radius: 155px;
-      width: 155px;
-      height: 155px;
-      display: block;
-      margin: 20px auto; }
+    #profile .mdl-grid aside .avatar {
+      height: 85px;
+      width: 85px; }
     #profile .mdl-grid aside .infos {
       text-align: center; }
   #profile .mdl-grid .match-header {

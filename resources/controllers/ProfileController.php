@@ -8,18 +8,10 @@ class ProfileController extends BaseController
         return "<h1> Access Denied - Merci de vous authentifier avant d'accéder à cette page </h1>";
 
       $currentPlayer = UserModel::getCurrentPlayer();
-
-      if (isset($currentPlayer->teams)){
-        $matchs = [];
-        foreach ($currentPlayer->teams as $teamName) {
-          array_push($matchs, MatchModel::getFullNextMatchForTeam($teamName));
-        }
-      }
-
+      UserModel::LoadNextMatch($currentPlayer);
       return  View::make('profile.profile')->with(array(
         'home_banner' =>  themosis_assets() . "/images/_Profil_Header01.jpg",
-        'current_user' => $currentPlayer,
-        'next_match' => MatchModel::getFullNextMatch()
+        'currentPlayer' => $currentPlayer
       ));
     }
 }

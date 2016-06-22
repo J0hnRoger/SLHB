@@ -16,8 +16,12 @@ class UserModel {
     public static function getCurrentPlayer(){
       $user = User::current();
 
-      if (!UserModel::hasTheRole($user->ID, 'slhb_player'))
+      if (!UserModel::hasTheRole($user->ID, 'slhb_player')) {
+        $user->isPlayer = false;
         return $user;
+      }
+      $user->isPlayer = true;
+
       return UserModel::bindPlayerMeta($user);
     }
 
@@ -131,7 +135,8 @@ class UserModel {
       $is_present = get_user_meta($player->ID, 'is_present');
 
       if (isset($is_present)){
-        if (is_array($is_present[0]))
+
+        if (count($is_present) == 0 || is_array($is_present[0]))
         {
           $player->is_present = 0;
         }
@@ -141,19 +146,35 @@ class UserModel {
       }
 
       $player->positions = get_user_meta($player->ID, 'slhb_positions');
-      $profilePicture = get_cupp_meta($player->ID, 'thumbnail');
-      if (empty($profilePicture)){
-        $profilePicture = themosis_assets().'/images/slhb-default-avatar.png';
-      }
-      $player->profilePicture = $profilePicture;
+      UserModel::SetProfilePhoto($player);
 
       $player->positions =  count($player->positions) > 0
                             ? $player->positions[0]
                             : [];
-
-      if (count($player->teams) > 0)
-        $player->nextMatch = MatchModel::getFullNextMatchForTeam($player->teams[0]);
-
       return $player;
     }
+
+    public static function SetProfilePhoto($user){
+      $profilePicture = get_cupp_meta($user->ID, 'thumbnail');
+      if (empty($profilePicture)){
+        $profilePicture = themosis_assets().'/images/slhb-default-avatar.png';
+      }
+      $user->profilePicture = $profilePicture;
+    }
+
+    public static function LoadNextMatch($player) {
+      if (count($player->teams) > 0) {
+        $matchs = [];
+        for ($i=0; $i < count($player->teams); $i++) {
+          $nextMatch = MatchModel::getFullNextMatchForTeam($player->teams[$i]);
+          if (MatchModel::containsPlayer($nextMatch, $player->ID))
+            $matchs[] = $nextMatch;
+        }
+        if (count($matchs) > 0) {
+          MatchModel::SortMatchsByDescendingDate($matchs);
+          $player->nextMatch = $matchs[0];
+        }
+      }
+    }
+
 }

@@ -13,7 +13,12 @@ class HomeController extends BaseController
             return $data;
         });
 
+        $currentPlayer = UserModel::getCurrentPlayer();
+        if ($currentPlayer->isPlayer)
+          UserModel::LoadNextMatch($currentPlayer);
+
         return View::make('home.home-content')->with(array(
+            'currentPlayer' => $currentPlayer,
             'actus' => PostModel::all(),
             'last_match' => MatchModel::getLastResult(10),
             'next_match' => MatchModel::getNextMatchs(2),

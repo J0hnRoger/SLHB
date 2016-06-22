@@ -21,20 +21,20 @@
         <div class="mdl-cell mdl-cell--6-col mdl-cell--3-col-phone user-information">
           <h5>Bonjour {{ $currentUser->user_login }}</h5>
           <a href="/my-profile">Accéder à votre compte </a>
-          @if(UserModel::hasTheRole($currentUser->ID, 'slhb_player'))
-            @if (!empty($currentUser->nextMatch))
+          @if($currentPlayer->isPlayer)
+            @if (!empty($currentPlayer->nextMatch))
           <a href="/my-profile"><div id="ttPlay" class="animated bounceIn icon material-icons">announcement</div></a>
           <div id="play" class="mdl-tooltip mdl-tooltip--large" for="ttPlay">
-            Tu joues le {{$currentUser->nextMatch->match_date}} contre {{ $currentUser->nextMatch->match_team_ext }}!
+            Tu joues le {{$currentPlayer->nextMatch->match_date}} contre {{ $currentPlayer->nextMatch->match_team_ext }}!
           </div>
             @endif
           <div id="presential" ng-app="presential">
-            <is-present init="{{ $currentUser->is_present }}"></is-present>
+            <is-present init="{{ $currentPlayer->is_present }}"></is-present>
           </div>
           @endif
         </div>
         <div class="photo mdl-cell mdl-cell--4-col mdl-cell--1-col-phone">
-          <div class="avatar" style="background:url( {{$currentUser->profilePicture }}) center / cover">
+          <div class="avatar" style="background:url( {{ $currentUser->profilePicture }}) center / cover">
           </div>
         </div>
         @else

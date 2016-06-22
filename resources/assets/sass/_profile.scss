@@ -9,10 +9,9 @@
       h2 {
         text-align: center;
       }
-      img {
-        @include roundedImg(155px);
-        display: block;
-        margin: 20px auto;
+      .avatar {
+        height: 85px;
+        width: 85px
       }
       .infos {
         text-align: center;
