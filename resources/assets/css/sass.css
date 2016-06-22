@@ -1,4 +1,7 @@
 @charset "UTF-8";
+.mdl-layout {
+  overflow: visible; }
+
 /**
  * COLORS
  */
@@ -58,6 +61,7 @@ h2 {
   display: none !important; }
 
 main#content {
+  overflow: visible;
   /* Responsive Phone */
   /*Responsive - Large Screen*/ }
   main#content h1 {
