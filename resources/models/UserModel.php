@@ -169,7 +169,8 @@ class UserModel {
     }
 
     public static function LoadNextMatch($player) {
-      if (count($player->teams) > 0) {
+      if (isset($player->teams)
+        && count($player->teams) > 0) {
         $matchs = [];
         for ($i=0; $i < count($player->teams); $i++) {
           $nextMatch = MatchModel::getFullNextMatchForTeam($player->teams[$i]);
@@ -185,5 +186,4 @@ class UserModel {
         }
       }
     }
-
 }

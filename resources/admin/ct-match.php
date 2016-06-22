@@ -27,14 +27,14 @@ $match = PostType::make('slhb_match', 'Les matchs', 'match')->set(array(
 
 $propertiesRendezvous = [
             'features'  => ['title' => 'Heure du rendez-vous'],
-            'atts'      => array_merge(['class' => 'large-text'], ['class' => 'simple-text'], ['data-field' => 'text']),
+            'attrs'      => array_merge(['class' => 'large-text'], ['class' => 'simple-text'], ['data-field' => 'text'], ['primaryColor' => '#1d3d86']),
             'name'      => 'match_team_time',
             'internal'  => 'match_team_time'
         ];
 
 $propertiesMatchTime = [
             'features'  => ['title' => 'Heure du match'],
-            'atts'      => array_merge(['class' => 'large-text'], ['class' => 'simple-text'], ['data-field' => 'text']),
+            'attrs'      => array_merge(['class' => 'large-text'], ['class' => 'simple-text'], ['data-field' => 'text']),
             'name'      => 'match_real_time',
             'internal'  => 'match_real_time'
         ];

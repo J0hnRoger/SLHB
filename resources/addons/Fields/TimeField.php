@@ -35,7 +35,7 @@
        */
       public function metabox()
       {
-        return $this->view->make('fields.timeField', ['field' => $this, 'name' => "John"])->render();
+        return $this->view->make('fields.timeField', ['field' => $this])->render();
       }
       /**
        * Handle the field HTML code for the Settings API output.

@@ -9,6 +9,7 @@ class ProfileController extends BaseController
 
       $currentPlayer = UserModel::getCurrentPlayer();
       UserModel::LoadNextMatch($currentPlayer);
+      
       return  View::make('profile.profile')->with(array(
         'home_banner' =>  themosis_assets() . "/images/_Profil_Header01.jpg",
         'currentPlayer' => $currentPlayer
