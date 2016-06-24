@@ -23,7 +23,7 @@
     <link rel="stylesheet" href="/content/themes/SLHB//resources/assets/css/styles.css">
     <!-- endinject -->
 </head>
-<body>
+<body ng-app="appHand">
 <div class="mdl-layout mdl-js-layout mdl-grid--no-spacing">
 	@section('header')
 		@include('layouts.header-min')
@@ -58,6 +58,9 @@
 		<script src="/content/themes/SLHB//resources/assets/angular-messages/angular-messages.js"></script>
 		<script src="/content/themes/SLHB//resources/assets/angular-route/angular-route.js"></script>
 		<script src="/content/themes/SLHB//resources/assets/angular-sanitize/angular-sanitize.js"></script>
+		<script src="/content/themes/SLHB//resources/assets/ngAppHand/core/appHand.core.js"></script>
+		<script src="/content/themes/SLHB//resources/assets/ngAppHand/core/uniqId.factory.js"></script>
+		<script src="/content/themes/SLHB//resources/assets/ngAppHand/appHand.module.js"></script>
 		<script src="/content/themes/SLHB//resources/assets/calendar/calendar.module.js"></script>
 		<script src="/content/themes/SLHB//resources/assets/calendar/agenda.controller.js"></script>
 		<script src="/content/themes/SLHB//resources/assets/doc-ready/doc-ready.js"></script>

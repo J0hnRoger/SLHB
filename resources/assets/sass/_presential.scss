@@ -1,26 +1,28 @@
 /*Presential module*/
-#presential {
-  md-toast {
-    display: none;
+md-toast {
+  display: none;
+}
+@include phone {
+  md-toast{
+    display: block;
   }
-	@include only-phone {
+}
+
+.presential {
+
+	@include phone {
 		.mdl-switch__label {
 			display: none;
 		}
+
     md-toast{
       display: block;
-      width: 110%;
-      &.md-bottom {
-        position: absolute;
-        left:50%;
-        margin-left: -100px;
-        bottom:-40px;
-        text-align: center;
-      }
-
+    
       .md-toast-content {
-        min-height: 30px;
+        min-height: 38px;
         padding: 3px;
+        font-size: 0.9em;
+        line-height: 0.9em;
       }
     }
 	}

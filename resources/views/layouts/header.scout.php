@@ -3,8 +3,7 @@
       <div class="mdl-layout-title mdl-cell--2-col mdl-cell--1-col-phone">
         <img class="logo" src="{{ $logoUrl }}" alt="">
       </div>
-      <div class="mdl-layout-spacer"></div>
-      <div id="widget-last-results" class="mdl-cell--3-col">
+      <div id="widget-last-results" class="mdl-cell--3-col mdl-cell--2-col-phone">
         <h3>Derniers résultats</h3>
           @if(isset($last_match))
           <span class="results">{{$last_match->match_team_dom}}
@@ -15,38 +14,39 @@
             <span class="results">L'important, c'est de participer...</span>
             @endif
       </div>
-      <div class="mdl-layout-spacer"></div>
-      <div id="login" class="mdl-cell mdl-cell--4-col mdl-grid">
         @if($currentUser->user_login != false )
-        <div class="mdl-cell mdl-cell--6-col mdl-cell--3-col-phone user-information">
-          <h5>Bonjour {{ $currentUser->user_login }}</h5>
-          <a href="/my-profile">Accéder à votre compte </a>
-          @if($currentPlayer->isPlayer)
-            @if (!empty($currentPlayer->nextMatch))
-          <a href="/my-profile"><div id="ttPlay" class="animated bounceIn icon material-icons">announcement</div></a>
-          <div id="play" class="mdl-tooltip mdl-tooltip--large" for="ttPlay">
-            Tu joues le {{$currentPlayer->nextMatch->match_date}} contre {{ $currentPlayer->nextMatch->match_team_ext }}!
-          </div>
+        <div id="login" class="login mdl-cell mdl-cell--6-col mdl-cell--hide-phone mdl-grid">
+          <div class="mdl-cell mdl-cell--8-col mdl-cell--2-col-phone user-information">
+            <h5>Bonjour {{ $currentUser->user_login }}</h5>
+            <a href="/my-profile">Accéder à votre compte </a>
+            @if($currentPlayer->isPlayer)
+              @if (!empty($currentPlayer->nextMatch))
+            <a href="/my-profile"><div id="ttPlay" class="animated bounceIn icon material-icons">announcement</div></a>
+            <div id="play" class="mdl-tooltip mdl-tooltip--large" for="ttPlay">
+              Tu joues le {{$currentPlayer->nextMatch->match_date}} contre {{ $currentPlayer->nextMatch->match_team_ext }}!
+            </div>
+              @endif
+            <div  ng-app="presential" class="presential">
+              <is-present init="{{ $currentPlayer->is_present }}"></is-present>
+            </div>
             @endif
-          <div id="presential" ng-app="presential">
-            <is-present init="{{ $currentPlayer->is_present }}"></is-present>
           </div>
-          @endif
-        </div>
-        <div class="photo mdl-cell mdl-cell--4-col mdl-cell--1-col-phone">
-          <div class="avatar" style="background:url( {{ $currentUser->profilePicture }}) center / cover">
+          <div class="photo mdl-cell mdl-cell--4-col mdl-cell--1-col-phone">
+            <div class="avatar" style="background:url( {{ $currentUser->profilePicture }}) center / cover">
+            </div>
           </div>
         </div>
         @else
-         <a id="login-link" class="mdl-cell--3-col-phone " href="{{$login_url}}/cms/wp-login.php?redirect_to={{ $login_url }}">
-            <i class="fa fa-sign-in"></i><span class="mdl-layout--large-screen-only">Connectez-vous avec votre compte SLHB</span>
-        </a>
-        <div id="login-popin" class="mdl-tooltip mdl-tooltip--large mdl-layout--small-screen-only" for="login-link">
-          Connectez-vous avec votre compte SLHB
+        <div id="login" class="mdl-cell mdl-cell--4-col mdl-cell--1-col-phone mdl-grid">
+          <a id="login-link" class="mdl-cell--3-col-phone " href="{{$login_url}}/cms/wp-login.php?redirect_to={{ $login_url }}">
+             <i class="fa fa-sign-in"></i><span class="mdl-cell--hide-phone">Connectez-vous avec votre compte SLHB</span>
+         </a>
+         <div id="login-popin" class="mdl-tooltip mdl-tooltip--large mdl-layout--small-screen-only" for="login-link">
+           Connectez-vous avec votre compte SLHB
+         </div>
         </div>
-        @endif
+      @endif
       </div>
-    </div>
      <div id="menu" class="mdl-layout__header-row mdl-layout--large-screen-only">
       <nav class="mdl-navigation mdl-layout--large-screen-only">
       @foreach((array)$headerMenu as $key => $menuItem)
@@ -54,6 +54,30 @@
       @endforeach
       </nav>
     </div>
+    @if($currentUser->user_login != false )
+  <div class="placeholder mdl-cell--hide-tablet	mdl-cell--hide-desktop">
+      <div id="phone-login" class="animated slideInLeft phone-login mdl-grid">
+          <div class="user-information">
+            <h5>Bonjour {{ $currentUser->user_login }}</h5>
+            <a href="/my-profile">Accéder à votre compte </a>
+            @if($currentPlayer->isPlayer)
+              @if (!empty($currentPlayer->nextMatch))
+            <a href="/my-profile"><div id="ttPlay" class="animated bounceIn icon material-icons">announcement</div></a>
+            <div id="play" class="mdl-tooltip mdl-tooltip--large" for="ttPlay">
+              Tu joues le {{$currentPlayer->nextMatch->match_date}} contre {{ $currentPlayer->nextMatch->match_team_ext }}!
+            </div>
+              @endif
+            <div class="presential">
+              <is-present init="{{ $currentPlayer->is_present }}"></is-present>
+            </div>
+            @endif
+          </div>
+          <div class="trap-avatar" style="background:url( {{ $currentUser->profilePicture }}) center / cover">
+          </div>
+      </div>
+
+    </div>
+    @endif
       <div id="banner" class="mdl-cell mdl-cell--12-col" style="background : url(<?php echo $home_banner ?>) top / cover;">
         <div class="overlay">
           <div class="container">

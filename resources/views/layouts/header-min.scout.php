@@ -17,6 +17,7 @@
           <li class="mdl-menu__item"><a href="<?php echo wp_logout_url(); ?>">Se déconnecter</a></li>
         </ul>
         <div class="avatar" style="background:url( {{ $currentUser->profilePicture }}) center / cover">
+
         </div>
       </div>
     @endif

@@ -8,6 +8,9 @@
 /**
  * BREAKPOINTS
  */
+/*
+  Display {numPerRow} elements by row, with a margin-right of {margin} in percent
+ */
 body {
   font-family: "Roboto"; }
 
@@ -69,13 +72,12 @@ main#content {
     font-size: 22px;
     text-transform: uppercase;
     font-weight: 500; }
-  @media (min-width: 320px) and (max-width: 767px) {
+  @media (max-width: 767px) {
     main#content {
       margin: 0;
       margin-left: 0px; } }
   @media (min-width: 1024px) {
     main#content {
-      width: 1280px;
       margin: 0 auto; } }
 
 section#bottom-banner {
@@ -106,7 +108,7 @@ section#bottom-banner {
     width: 25%; }
     section#bottom-banner #banner-image img {
       width: 100%; }
-  @media (min-width: 320px) and (max-width: 767px) {
+  @media (max-width: 767px) {
     section#bottom-banner {
       padding: 0px;
       margin: 0; }
@@ -162,21 +164,21 @@ section.pre-footer {
     line-height: 25px; }
 
 /* Login Section */
-#login .user-information {
+.user-information {
   padding-top: 10px; }
-  #login .user-information h5 {
+  .user-information h5 {
     font-size: 15px;
     font-weight: 600;
     margin: 0; }
-  #login .user-information a {
+  .user-information a {
     font-size: 15px;
     color: inherit;
     font-weight: 200;
     text-decoration: none; }
-  @media (max-width: 320px) {
-    #login .user-information h5 {
+  @media (max-width: 767px) {
+    .user-information h5 {
       font-size: 13px; }
-    #login .user-information a {
+    .user-information a {
       font-size: 11px; } }
 
 #login .avatar {
@@ -184,26 +186,11 @@ section.pre-footer {
   width: 83px;
   border-radius: 48px;
   overflow: hidden; }
-  @media (max-width: 320px) {
+  @media (max-width: 767px) {
     #login .avatar {
       height: 63px;
       width: 63px;
       border-radius: 48px; } }
-
-/* Last Results*/
-#widget-last-results {
-  margin: 0 auto;
-  text-align: center; }
-  #widget-last-results h3 {
-    font-size: 16px;
-    margin: 0; }
-  #widget-last-results .results {
-    font-weight: bold;
-    text-transform: uppercase; }
-  @media (max-width: 320px) {
-    #widget-last-results {
-      display: none;
-      width: 175px; } }
 
 /* Partner */
 ul.partners li {
@@ -241,9 +228,9 @@ header {
     padding-left: 140px; }
     header .mdl-layout__header-row .mdl-layout-title .logo {
       max-height: 100px; }
-      @media (max-width: 320px) {
+      @media (max-width: 767px) {
         header .mdl-layout__header-row .mdl-layout-title .logo {
-          max-height: 50px; } }
+          max-height: 40px; } }
     header .mdl-layout__header-row .mdl-layout-title h1 {
       display: inline;
       font-size: 35px;
@@ -259,9 +246,9 @@ header {
         font-weight: 400; }
         header .mdl-layout__header-row nav .mdl-navigation__link:hover {
           text-decoration: underline; }
-    header .mdl-layout__header-row #login #login-link {
+    header .mdl-layout__header-row .login #login-link {
       color: #1d3d86; }
-      header .mdl-layout__header-row #login #login-link i {
+      header .mdl-layout__header-row .login #login-link i {
         -webkit-border-radius: 40px;
         -moz-border-radius: 40px;
         border-radius: 40px;
@@ -272,12 +259,12 @@ header {
         font-size: 15px;
         color: white;
         background-color: #1d3d86; }
-        @media (max-width: 320px) {
-          header .mdl-layout__header-row #login #login-link i {
+        @media (max-width: 767px) {
+          header .mdl-layout__header-row .login #login-link i {
             float: right; } }
-      header .mdl-layout__header-row #login #login-link span {
+      header .mdl-layout__header-row .login #login-link span {
         margin-left: 10px; }
-    @media (max-width: 320px) {
+    @media (max-width: 767px) {
       header .mdl-layout__header-row {
         padding-left: 20px; } }
   header #menu {
@@ -290,19 +277,35 @@ header {
       margin-top: 9px; }
     header #min-login-menu .avatar {
       float: right;
-      -webkit-border-radius: 43px;
-      -moz-border-radius: 43px;
-      border-radius: 43px;
-      width: 43px;
-      height: 43px; }
-      @media (max-width: 320px) {
+      -webkit-border-radius: 100%;
+      -moz-border-radius: 100%;
+      border-radius: 100%;
+      width: 100%;
+      height: 100%; }
+      @media (max-width: 767px) {
         header #min-login-menu .avatar {
-          height: 63px;
-          width: 63px;
-          border-radius: 48px; } }
-  @media (max-width: 320px) {
+          height: 100%;
+          width: 100%;
+          border-radius: 100%; } }
+  @media (max-width: 767px) {
     header {
       height: 280px; } }
+
+.placeholder {
+  min-height: 54px; }
+
+.phone-login {
+  height: 94px;
+  box-shadow: 0px -2px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+  padding: 0;
+  margin: 0;
+  width: 100%; }
+  .phone-login .user-information {
+    width: 60%; }
+  .phone-login .trap-avatar {
+    width: 40%;
+    -webkit-clip-path: polygon(15% 0, 100% 0, 100% 100%, 0% 100%);
+    clip-path: polygon(15% 0, 100% 0, 100% 100%, 0% 100%); }
 
 /**
  * Banner
@@ -342,7 +345,7 @@ header {
             font-size: 2.6vw;
             font-weight: 500;
             color: white; }
-  @media (max-width: 320px) {
+  @media (max-width: 767px) {
     #banner {
       height: 150px; } }
 
@@ -1064,7 +1067,7 @@ div.event-details {
       display: inline-block;
       vertical-align: middle;
       height: 34px; }
-  @media (max-width: 320px) {
+  @media (max-width: 767px) {
     .actualites .actualite {
       width: 490px; }
       .actualites .actualite > img {
@@ -1254,21 +1257,31 @@ main#content .details-team {
     width: 100%; }
 
 /*Presential module*/
-#presential md-toast {
+md-toast {
   display: none; }
 
-@media (max-width: 320px) {
-  #presential .mdl-switch__label {
+@media (max-width: 767px) {
+  md-toast {
+    display: block; } }
+
+@media (max-width: 767px) {
+  .presential .mdl-switch__label {
     display: none; }
-  #presential md-toast {
-    display: block;
-    width: 110%; }
-    #presential md-toast.md-bottom {
-      position: absolute;
-      left: 50%;
-      margin-left: -100px;
-      bottom: -40px;
-      text-align: center; }
-    #presential md-toast .md-toast-content {
-      min-height: 30px;
-      padding: 3px; } }
+  .presential md-toast {
+    display: block; }
+    .presential md-toast .md-toast-content {
+      min-height: 38px;
+      padding: 3px;
+      font-size: 0.9em;
+      line-height: 0.9em; } }
+
+/* Last Results Widget - Home Header*/
+#widget-last-results {
+  margin: 0 auto;
+  text-align: center; }
+  #widget-last-results h3 {
+    font-size: 16px;
+    margin: 0; }
+  #widget-last-results .results {
+    font-weight: bold;
+    text-transform: uppercase; }

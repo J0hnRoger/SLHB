@@ -41,13 +41,7 @@ $phone-width: 320px;
 }
 
 @mixin phone {
-  @media (min-width: #{$phone-width}) and (max-width: #{$tablet-width - 1px}) {
-    @content;
-  }
-}
-
-@mixin only-phone {
-  @media (max-width: #{$phone-width}) {
+  @media (max-width: #{$tablet-width - 1px}) {
     @content;
   }
 }
@@ -125,5 +119,35 @@ $phone-width: 320px;
     content: "";
     display: table;
     clear: both;
+  }
+}
+
+/*
+  Display {numPerRow} elements by row, with a margin-right of {margin} in percent
+ */
+@mixin rowMachine($numPerRow, $margin) {
+  width: ((100% - (($numPerRow - 1) * $margin)) / $numPerRow);
+  &:nth-child(n) {
+    margin-bottom: $margin;
+    margin-right: $margin;
+  }
+  &:nth-child(#{$numPerRow}n) {
+    margin-right: 0;
+    margin-bottom: 0;
+  }
+}
+
+@mixin centerer($horizontal: true, $vertical: true) {
+  position: absolute;
+  @if ($horizontal and $vertical) {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  } @else if ($horizontal) {
+    left: 50%;
+    transform: translate(-50%, 0);
+  } @else if ($vertical) {
+    top: 50%;
+    transform: translate(0, -50%);
   }
 }

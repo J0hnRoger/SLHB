@@ -23,7 +23,6 @@ main#content{
 	}
 	/*Responsive - Large Screen*/
 	@include desktop {
-		width: 1280px;
 		margin: 0 auto;
 	}
 }

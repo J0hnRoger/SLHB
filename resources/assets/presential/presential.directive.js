@@ -18,16 +18,17 @@ function isPresent() {
   };
 
   return directive;
-
 }
 
-IsPresentCtrl.$inject = ['$element', 'PlayersService', '$mdToast'];
-function IsPresentCtrl($element, PlayersService, $mdToast) {
+IsPresentCtrl.$inject = ['$element', 'PlayersService', '$mdToast', 'uniqIdFactory'];
+function IsPresentCtrl($element, PlayersService, $mdToast, uniqIdFactory) {
   var vm = this;
 
   vm.isPresent = (parseInt(vm.init) == 0) ? false : true;
   if (vm.isPresent)
     $element.find('#presential-switch').click();
+
+  vm.uniqId = uniqIdFactory.getUniqId();
 
   vm.label = ((vm.isPresent) ? "Présent" : "Absent" );
 
@@ -38,7 +39,8 @@ function IsPresentCtrl($element, PlayersService, $mdToast) {
         $mdToast.show(
          $mdToast.simple()
            .textContent(vm.label + ' à l\'entrainement')
-           .hideDelay(2500)
+           .hideDelay(1500)
+
          );
       })
 
