@@ -65,6 +65,7 @@ h2 {
 
 main#content {
   overflow: visible;
+  padding: 5px;
   /* Responsive Phone */
   /*Responsive - Large Screen*/ }
   main#content h1 {
@@ -222,6 +223,10 @@ ul.all-teams li {
  */
 header {
   background-color: white !important; }
+  header:after {
+    content: "";
+    display: table;
+    clear: both; }
   header .mdl-layout__header-row {
     height: 140px;
     color: #1d3d86;
@@ -287,12 +292,13 @@ header {
           height: 100%;
           width: 100%;
           border-radius: 100%; } }
-  @media (max-width: 767px) {
-    header {
-      height: 280px; } }
 
 .placeholder {
   min-height: 54px; }
+  .placeholder:after {
+    content: "";
+    display: table;
+    clear: both; }
 
 .phone-login {
   height: 94px;
@@ -350,7 +356,7 @@ header {
     #banner {
       height: 150px; }
       #banner .overlay {
-        height: 135%;
+        height: 142%;
         width: 50%;
         transform: rotate(25deg);
         margin-top: -14px;
@@ -367,7 +373,7 @@ header {
             margin-top: 0px;
             padding: 15px 5px; }
             #banner .overlay .container ul li.event {
-              margin-top: 28%;
+              margin-top: 20%;
               font-size: 1em;
               color: white; }
               #banner .overlay .container ul li.event .label {
@@ -1098,10 +1104,16 @@ div.event-details {
       height: 34px; }
   @media (max-width: 767px) {
     .actualites .actualite {
-      width: 490px; }
+      width: 80%;
+      margin: 10%;
+      padding: 5px;
+      height: auto; }
       .actualites .actualite > img {
         width: 200px;
-        height: auto; } }
+        height: auto; }
+      .actualites .actualite-content {
+        margin: 5px;
+        width: 100%; } }
   @media (min-width: 768px) and (max-width: 1023px) {
     .actualites .actualite {
       width: inherit; }

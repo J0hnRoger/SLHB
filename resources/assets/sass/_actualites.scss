@@ -33,8 +33,15 @@ $subInfoColor : #767676;
     }
 
     @include phone {
-      width: 490px;
+      width: 80%;
+      margin: 10%;
+      padding: 5px;
+      height: auto;
       & > img { width: 200px;height: auto;}
+      &-content{
+        margin: 5px;
+        width: 100%;
+      }
     }
 
     @include tablet {

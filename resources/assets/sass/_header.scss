@@ -15,6 +15,7 @@ $min-padding-logo : 20px;
 
 header {
 	background-color: $primary !important;
+	@include clearfix;
 
 	.mdl-layout__header-row
 	{
@@ -101,12 +102,9 @@ header {
 			}
 		}
 	}
-  @include phone {
-    height: $min-header-height;
-  }
 }
 
-.placeholder {min-height: 54px;}
+.placeholder {min-height: 54px;@include clearfix;}
 
 .phone-login{
 	height: 94px;
@@ -172,10 +170,11 @@ header {
 			}
 		}
 	}
+
   @include phone {
     height: $min-banner-height;
 		.overlay {
-			height: 135%;
+			height: 142%;
 	    width: 50%;
 	    transform: rotate(25deg);
 	    margin-top: -14px;
@@ -189,11 +188,12 @@ header {
 				padding-right: 5%;
 				float: right;
 				margin-right: 25px;
+
 				ul{
 					margin-top: 0px;
 					padding: 15px 5px;
 					li.event{
-						margin-top:28%;
+						margin-top:20%;
 						font-size: 1em;
 						color: $primary;
 						.label {
