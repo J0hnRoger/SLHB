@@ -37,7 +37,7 @@
           </div>
         </div>
         @else
-        <div id="login" class="mdl-cell mdl-cell--4-col mdl-cell--1-col-phone mdl-grid">
+        <div id="login" class="login mdl-cell mdl-cell--4-col mdl-cell--1-col-phone mdl-grid">
           <a id="login-link" class="mdl-cell--3-col-phone " href="{{$login_url}}/cms/wp-login.php?redirect_to={{ $login_url }}">
              <i class="fa fa-sign-in"></i><span class="mdl-cell--hide-phone">Connectez-vous avec votre compte SLHB</span>
          </a>

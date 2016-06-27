@@ -88,15 +88,5 @@
 		<script src="/content/themes/SLHB/resources/assets/presential/player.service.js"></script>
 		<script src="/content/themes/SLHB/resources/assets/presential/presential.directive.js"></script>
 		<!-- endinject -->
-
-		  <script>
-		    angular.module('demoApp', ['ngMaterial'])
-					.controller('DemoController', DemoController)
-
-			function DemoController (){
-
-			}
-
-			</script>
 </body>
 </html>

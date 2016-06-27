@@ -39,7 +39,7 @@ for each players : Array
     </div>
   </aside>
 
-  <div class="mdl-cell mdl-cell--8-col" ng-app="demoApp" ng-controller="DemoController">
+  <div class="mdl-cell mdl-cell--8-col" >
     <md-tabs md-selected="selectedIndex" md-dynamic-height>
       <img ng-src="img/angular.png" class="centered">
       <md-tab>
