@@ -301,7 +301,8 @@ header {
   margin: 0;
   width: 100%; }
   .phone-login .user-information {
-    width: 60%; }
+    width: 60%;
+    padding: 5%; }
   .phone-login .trap-avatar {
     width: 40%;
     -webkit-clip-path: polygon(15% 0, 100% 0, 100% 100%, 0% 100%);
@@ -347,7 +348,35 @@ header {
             color: white; }
   @media (max-width: 767px) {
     #banner {
-      height: 150px; } }
+      height: 150px; }
+      #banner .overlay {
+        height: 135%;
+        width: 50%;
+        transform: rotate(25deg);
+        margin-top: -14px;
+        margin-right: -23px;
+        float: right; }
+        #banner .overlay .container {
+          transform: rotate(-25deg);
+          height: 100%;
+          text-align: right;
+          padding-right: 5%;
+          float: right;
+          margin-right: 25px; }
+          #banner .overlay .container ul {
+            margin-top: 0px;
+            padding: 15px 5px; }
+            #banner .overlay .container ul li.event {
+              margin-top: 28%;
+              font-size: 1em;
+              color: white; }
+              #banner .overlay .container ul li.event .label {
+                font-size: 1em;
+                font-weight: 600; }
+              #banner .overlay .container ul li.event h2 {
+                line-height: 1em;
+                font-size: 1em;
+                font-weight: 500; } }
 
 /*Agenda*/
 /*Calendario*/
