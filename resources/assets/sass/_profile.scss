@@ -18,6 +18,9 @@ $player-pills-color : #E91E63;
       .infos {
         text-align: center;
       }
+      @include phone {
+        width: 100%;
+      }
     }
 
     // Match Composition panel
