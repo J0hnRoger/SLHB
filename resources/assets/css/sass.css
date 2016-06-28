@@ -1107,7 +1107,8 @@ div.event-details {
       width: 80%;
       margin: 10%;
       padding: 5px;
-      height: auto; }
+      height: auto;
+      text-align: center; }
       .actualites .actualite > img {
         width: 200px;
         height: auto; }

@@ -37,7 +37,11 @@ $subInfoColor : #767676;
       margin: 10%;
       padding: 5px;
       height: auto;
-      & > img { width: 200px;height: auto;}
+      text-align: center;
+      & > img {
+        width: 200px;
+        height: auto;
+      }
       &-content{
         margin: 5px;
         width: 100%;
