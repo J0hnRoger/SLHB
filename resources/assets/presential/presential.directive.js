@@ -39,12 +39,9 @@ function IsPresentCtrl($element, PlayersService, $mdToast, uniqIdFactory) {
         $mdToast.show(
          $mdToast.simple()
            .textContent(vm.label + ' à l\'entrainement')
+           .parent("#phone-login")
            .hideDelay(1500)
-
          );
       })
-
   }
-
-
 }

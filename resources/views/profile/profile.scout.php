@@ -1,26 +1,3 @@
-<?php
-/*
-  Use $current_user variable for retrieve informations of the current user
-for each players : Array
-  (
-      [ID] => 5
-      [user_login] => guillaume
-      [user_pass] => $P$BZYgCdcGX.kFTwbHcRgHt6hlIY4EOE/
-      [user_nicename] => guillaume
-      [user_email] => guillaume@example.com
-      [user_url] =>
-      [user_registered] => 2016-04-20 15:05:25
-      [user_activation_key] =>
-      [user_status] => 0
-      [display_name] => guillaume
-      [teams] => Array
-          (
-              [0] => SLHB 1
-          )
-  )
-*/
-?>
-
 @extends('layouts.main')
 @section('main-wrapper')
 <main id="profile" class="mdl-layout__content">
