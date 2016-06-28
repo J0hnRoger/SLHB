@@ -1,5 +1,9 @@
 'use strict';
 
+angular.module('appHand')
+  .requires.push('team-builder');
+
+
 angular
   .module('team-builder', ['ngRoute', 'ngSanitize'])
   .config(function($interpolateProvider, $routeProvider){
