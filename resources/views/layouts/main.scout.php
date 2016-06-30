@@ -37,11 +37,11 @@
 	@show
 
 	@section('bottom-banner')
-  <section id="bottom-banner" class="mdl-layout--large-screen-only">
+  <section id="bottom-banner" class="">
 		@include('layouts.bottom-banner')
 	</section>
 	@show
-  <footer class="mdl-layout--large-screen-only">
+  <footer class="">
   @include('layouts.footer')
 	</footer>
   @include('layouts.credits')

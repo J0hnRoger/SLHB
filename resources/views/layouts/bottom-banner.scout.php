@@ -5,21 +5,16 @@
   <li>
     <a href="{{$facebookUrl}}" target="_blank">
       <img src="{{$logoFb}}" alt="" />
-      <div class="mdl-layout--large-screen-only">Suivez nous sur Facebook
-      Et découvrez toute notre actualité</div>
+        <div class="">Suivez nous sur Facebook</div>
     </a>
   </li>
   <li>
     <a href="{{$gmapUrl}}" target="_blank">
       <img src="{{$logoGMap}}" alt="" />
-      <div class="mdl-layout--large-screen-only">Trouvez-nous facilement
-      Plan détaillé et informations utiles</div>
+      <div>Trouvez-nous facilement. <span class="mdl-layout--large-screen-only">Plan détaillé et informations utiles</span></div>
     </a>
   </li>
 </ul>
 <div id="banner-image" class="mdl-layout--large-screen-only">
   <!-- <img src="{{$footerImage}}" alt="" /> -->
-</div>
-<div id="banner-image" class="mdl-layout--small-screen-only">
-  <!-- <img src="{{ $logoUrl}}" alt="" /> -->
 </div>
