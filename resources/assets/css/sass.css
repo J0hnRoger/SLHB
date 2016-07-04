@@ -722,6 +722,7 @@ header {
   min-height: 85vh; }
 
 .agenda {
+  width: 1024px;
   min-height: 85vh;
   color: #8a8c96;
   margin: 0;

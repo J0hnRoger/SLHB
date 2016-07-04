@@ -1,5 +1,8 @@
 'use strict';
 
+angular.module('appHand')
+  .requires.push('calendar');
+
 angular
   .module('calendar', ['ngRoute', 'ngSanitize'])
   .config(function($interpolateProvider, $routeProvider){
