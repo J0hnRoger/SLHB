@@ -21,9 +21,10 @@ main#content{
 		margin:0;
 		margin-left:0px;
 	}
-	/*Responsive - Large Screen*/
 	@include desktop {
+	/*Responsive - Large Screen*/
 		margin: 0 auto;
+		min-width: 90%;
 	}
 }
 

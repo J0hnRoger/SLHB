@@ -66,8 +66,7 @@ h2 {
 main#content {
   overflow: visible;
   padding: 5px;
-  /* Responsive Phone */
-  /*Responsive - Large Screen*/ }
+  /* Responsive Phone */ }
   main#content h1 {
     color: #1d3d86;
     font-size: 22px;
@@ -79,7 +78,9 @@ main#content {
       margin-left: 0px; } }
   @media (min-width: 1024px) {
     main#content {
-      margin: 0 auto; } }
+      /*Responsive - Large Screen*/
+      margin: 0 auto;
+      min-width: 90%; } }
 
 section#bottom-banner {
   position: relative;
