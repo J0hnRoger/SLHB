@@ -397,10 +397,15 @@ $orange: #f88c4b;
 	}
 }
 
+
 /* SLHB Agenda */
-.slhb-calendar { margin: 0 auto; min-height: 85vh;}
+.slhb-calendar {
+	overflow: hidden;
+	min-height: 85vh;
+}
 .agenda {
-  width: 1024px;
+	position: relative;
+	width: 960px;
 	min-height: 85vh;
 	color: $soft_grey;
 	margin:0;
@@ -409,6 +414,7 @@ $orange: #f88c4b;
 	.left-column h1 { text-align: center;}
 
 	/* Calendar */
+
 	.fc-calendar .fc-row > div {
 		padding: 0;
 	}
@@ -456,7 +462,7 @@ $orange: #f88c4b;
 
 /*--- Event Details*/
 div.event-details {
-	width: 100%;
+	// width: 100%;
 	min-height: 85vh;
 	padding: 0;
 	margin: 0;

@@ -4,7 +4,7 @@ angular.module('appHand')
   .requires.push('calendar');
 
 angular
-  .module('calendar', ['ngRoute', 'ngSanitize'])
+  .module('calendar', ['ngRoute', 'ngSanitize',  'ngAnimate'])
   .config(function($interpolateProvider, $routeProvider){
     //Scoot Template has reserved the double curly brace, so we change the Angular markup
     $interpolateProvider.startSymbol('{[').endSymbol(']}');
