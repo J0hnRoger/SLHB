@@ -398,15 +398,25 @@ $orange: #f88c4b;
 }
 
 /* SLHB Agenda */
-.slhb-calendar { margin: 0 auto; min-height: 85vh;}
+.slhb-calendar {
+	margin: 0 5px;
+	min-height: 85vh;
+}
 .agenda {
-  width: 1024px;
 	min-height: 85vh;
 	color: $soft_grey;
 	margin:0;
 	padding: 0;
 
-	.left-column h1 { text-align: center;}
+	.left-column {
+		width: 35%;
+		margin: 0;
+		background-color: rgb(246, 246, 246);
+		h1 { text-align: center;}
+		@include phone {
+			width: 100%;
+		}
+	}
 
 	/* Calendar */
 	.fc-calendar .fc-row > div {
@@ -425,7 +435,7 @@ $orange: #f88c4b;
 		color: $secondary;
 		background-color: white;
 	}
-	h6 { line-height: 42px; font-size: 20px; text-align: center;}
+	h6 { line-height: 80px; margin: 0; font-size: 20px; text-align: center;}
 	.month-name {color : $secondary;}
 	ul.events {
 		margin: 0;
