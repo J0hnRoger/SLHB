@@ -18,14 +18,15 @@ function formatedDate($date){
 
 //Allow Contributors to Add Media
 if ( current_user_can('contributor') && !current_user_can('upload_files') )
-add_action('admin_init', 'allow_contributor_uploads');
+add_action('admin_init', 'upgrade_contributor_roles');
 
-function allow_contributor_uploads() {
-     $contributor = get_role('contributor');
-     $contributor->add_cap('upload_files');
+function upgrade_contributor_roles() {
+   $contributor = get_role('contributor');
+   $contributor->add_cap('upload_files');
+   $contributor->add_cap( 'edit_published_posts' );
 }
 
-//Disable admin Bar for players
+//Disable admin Bar for no contributors
 if (!current_user_can('edit_posts')) {
 	add_filter('show_admin_bar', '__return_false');
 }
@@ -70,3 +71,16 @@ function can_access_to_wpadmin($user){
 }
 
 add_action('admin_init', 'redirect_user_on_role');
+
+// remove unwanted dashboard widgets for relevant users
+function remove_dashboard_widgets() {
+    $user = wp_get_current_user();
+    if ( ! $user->has_cap( 'manage_options' ) ) {
+        remove_meta_box( 'dashboard_recent_comments', 'dashboard', 'normal' );
+        remove_meta_box( 'dashboard_incoming_links', 'dashboard', 'normal' );
+        remove_meta_box( 'dashboard_quick_press', 'dashboard', 'side' );
+        remove_meta_box( 'dashboard_primary', 'dashboard', 'side' );
+        remove_meta_box( 'dashboard_secondary', 'dashboard', 'side' );
+    }
+}
+add_action( 'wp_dashboard_setup', 'remove_dashboard_widgets' );
