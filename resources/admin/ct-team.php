@@ -4,7 +4,7 @@ $team = PostType::make('slhb_team', 'Les équipes', 'équipe')->set(array(
 
     'public'        => true,
     'menu_position' => 20,
-    'supports'      => array('title', 'editor'),
+    'supports'      => array('title', 'editor', 'revisions'),
     'rewrite'       => false,
     'query_var'     => false,
     'show_in_rest'  => true,

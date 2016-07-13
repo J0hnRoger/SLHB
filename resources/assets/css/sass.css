@@ -79,8 +79,7 @@ main#content {
   @media (min-width: 1024px) {
     main#content {
       /*Responsive - Large Screen*/
-      margin: 0 auto;
-      min-width: 90%; } }
+      margin: 0 auto; } }
 
 section#bottom-banner {
   position: relative;
@@ -723,6 +722,9 @@ header {
   min-height: 85vh; }
 
 .agenda {
+  overflow: hidden;
+  position: relative;
+  width: 960px;
   min-height: 85vh;
   color: #8a8c96;
   margin: 0;
@@ -787,7 +789,6 @@ header {
 
 /*--- Event Details*/
 div.event-details {
-  width: 100%;
   min-height: 85vh;
   padding: 0;
   margin: 0;
