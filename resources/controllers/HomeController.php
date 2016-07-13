@@ -19,7 +19,7 @@ class HomeController extends BaseController
 
         return View::make('home.home-content')->with(array(
             'currentPlayer' => $currentPlayer,
-            'actus' => PostModel::all(),
+            'actus' => PostModel::getLastPosts(4),
             'last_match' => MatchModel::getLastResult(10),
             'next_match' => MatchModel::getNextMatchs(2),
             'home_banner' =>  themosis_assets() . "/images/banner.jpg",

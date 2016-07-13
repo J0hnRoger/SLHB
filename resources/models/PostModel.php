@@ -20,10 +20,14 @@ class PostModel {
 
     public static function getLastPosts($limit)
     {
+
         $query = new WP_Query(array(
             'post_type'         => 'post',
             'posts_per_page'    => $limit,
             'post_status'       => 'publish',
+            'order'             => 'ASC',
+            'meta_key'          => 'eventDate',
+            'orderby'           => 'meta_value'
         ));
         return $query->get_posts();
     }
