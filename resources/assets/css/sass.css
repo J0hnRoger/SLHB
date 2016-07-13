@@ -719,10 +719,11 @@ header {
 
 /* SLHB Agenda */
 .slhb-calendar {
-  overflow: hidden;
+  margin: 0 5px;
   min-height: 85vh; }
 
 .agenda {
+  overflow: hidden;
   position: relative;
   width: 960px;
   min-height: 85vh;
@@ -731,8 +732,15 @@ header {
   padding: 0;
   /* Calendar */
   /* Events Lists*/ }
-  .agenda .left-column h1 {
-    text-align: center; }
+  .agenda .left-column {
+    width: 35%;
+    margin: 0;
+    background-color: #f6f6f6; }
+    .agenda .left-column h1 {
+      text-align: center; }
+    @media (max-width: 767px) {
+      .agenda .left-column {
+        width: 100%; } }
   .agenda .fc-calendar .fc-row > div {
     padding: 0; }
   .agenda .count {
@@ -746,7 +754,8 @@ header {
     color: #1d3d86;
     background-color: white; }
   .agenda h6 {
-    line-height: 42px;
+    line-height: 80px;
+    margin: 0;
     font-size: 20px;
     text-align: center; }
   .agenda .month-name {
