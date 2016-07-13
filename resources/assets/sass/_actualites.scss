@@ -8,30 +8,29 @@ $subInfoColor : #767676;
 
   .actualite {
     float: left;
-    margin: 20px 40px;
-    width: 560px;
+    margin: 0 25px 20px 20px;
+    width: 430px;
     height: 250px;
     overflow: hidden;
     @extend %cf;
 
     & > img{
-      width: 270px;
+      width: 200px;
       height: auto;
       margin: 0;
     }
     &-content{
-      margin: 20px;
-      width: 250px;
+      margin: 0 0 0 20px;
+      width: 210px;
       float: right;
+
     }
+
     a {
       @include read-more;
     }
 
     /* Responsive rules */
-    @include tablet {
-
-    }
 
     @include phone {
       width: 80%;
@@ -50,14 +49,27 @@ $subInfoColor : #767676;
     }
 
     @include tablet {
-      width: inherit;
-
-      & > img {float: left;}
+      width: 560px;
+      & > img {
+        width: 240px;
+      }
       &-content{
-        margin: 20px;
-        width: 100%;
+        width: 290px;
       }
     }
+  }
+
+  @include tablet {
+    margin: 0 auto;
+    width: 700px;
+    &-content{
+      margin: 20px;
+    }
+  }
+
+  @include desktop {
+    margin: 0 auto;
+    width: 960px;
   }
 }
 
