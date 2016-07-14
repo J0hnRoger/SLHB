@@ -29,7 +29,15 @@ class PostModel {
             'meta_key'          => 'eventDate',
             'orderby'           => 'meta_value'
         ));
-        return $query->get_posts();
+        $posts = $query->get_posts();
+
+        foreach ($posts as $key => $post) {
+          $postId = $post->ID;
+          $post->eventDate = Meta::get($postId, 'eventDate');
+          $post->isEvent = Meta::get($postId, 'isEvent');
+          $post->post_excerpt =  wp_trim_words($post->post_content, 35);
+        }
+        return $posts;
     }
 
     public static function getEventPosts($limit)

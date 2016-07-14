@@ -42,7 +42,7 @@
 			<div class="sub-infos">{{ $actu->formated_modified_date }}</div>
 		</header>
 		<section>
-			{{ $actu->post_content }}
+			{{ the_content() }}
 		</section>
 		<div class="fb-share-button"
 			data-href="{{ get_permalink() }}"

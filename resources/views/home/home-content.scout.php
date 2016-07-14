@@ -17,7 +17,7 @@
 		<div class="actualite-content">
 			<h2 >{{$actu->post_title}}</h2>
 			<div class="excerpt">
-				{{ wp_trim_words( $actu->post_content, 30) }}
+				{{ $actu->post_excerpt }}
 			</div>
 			<a href="  {{ get_permalink($actu->ID) }}" class="read-more" ><span>Lire la suite</span> <i class="material-icons">add_circle</i></a>
 		</div>
