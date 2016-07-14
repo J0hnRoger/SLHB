@@ -28,8 +28,13 @@ $infos = Metabox::make('Informations sur l\'équipe', $team->get('name'))->set(a
       'Excellence Région',
       'Honneur Région',
       'Pré-Région',
-      'Deuxième division'
+      'Deuxième division',
+      'Région',
+      'Poule Haute Departementale',
+      'Poule Basse Departementale',
+      'Départementale',
+      'Honneur départementale'
   ]
-], ['title' => 'Quelle division? ']),
+], ['title' => 'Quelle division?']),
   Field::collection('gallery')
 ));

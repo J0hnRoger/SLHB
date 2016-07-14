@@ -4,7 +4,6 @@
  * application.php - Write your custom code below.
  */
 
-
 function formatedDate($date){
   setlocale (LC_TIME, 'fr_FR.utf8','fra');
   $date = DateTime::createFromFormat("Y-m-d", $date);
