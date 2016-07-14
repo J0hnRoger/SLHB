@@ -6,9 +6,21 @@
 $deg : 25;
 $header-title-font-size : 22px;
 
+//On phone, there are white space at the top, we force Wp Admin bar to stay at the toUpperCase
+//... check in php if the user is logged
+
+// @media screen and (max-width: 600px) {
+// 	html {
+// 		margin-top: 0!important;
+// 	}
+// 	.mdl-layout__container {
+// 		margin-top: 46px
+// 	}
+// }
+
 main#content{
 	overflow: visible;
-	min-width: 90%; 
+	min-width: 90%;
 	padding: 5px;
 	h1 {
 		color : $secondary;

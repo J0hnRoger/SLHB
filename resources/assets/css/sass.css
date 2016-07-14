@@ -723,9 +723,9 @@ header {
   min-height: 85vh; }
 
 .agenda {
+  margin: 0 auto;
   overflow: hidden;
   position: relative;
-  width: 960px;
   min-height: 85vh;
   color: #8a8c96;
   margin: 0;
@@ -733,18 +733,14 @@ header {
   /* Calendar */
   /* Events Lists*/ }
   .agenda .left-column {
-    width: 35%;
     margin: 0;
     background-color: #f6f6f6; }
     .agenda .left-column h1 {
       text-align: center; }
-    @media (max-width: 767px) {
-      .agenda .left-column {
-        width: 100%; } }
   .agenda .fc-calendar .fc-row > div {
     padding: 0; }
   .agenda .count {
-    position: absolute;
+    float: right;
     margin: 15px 10px;
     font-weight: lighter;
     font-style: normal;

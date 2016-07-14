@@ -11,11 +11,11 @@
 </style>
 
 <div class="agenda mdl-grid" ng-app="calendar" ng-controller="AgendaCtrl as vm">
-  <div class="left-column mdl-shadow--8dp mdl-cell mdl-cell--5-col" >
+  <div class="left-column mdl-shadow--8dp mdl-cell mdl-cell--5-col mdl-cell--12-col-phone" >
     <h1>{{ Loop::Title()}}</h1>
     <slhb-calendar/>
   </div>
-  <div class="slhb-calendar mdl-shadow--8dp mdl-cell mdl-cell--7-col" ng-view>
+  <div class="slhb-calendar mdl-shadow--8dp mdl-cell mdl-cell--7-col mdl-cell--12-col-phone" ng-view>
   </div>
 </div>
 

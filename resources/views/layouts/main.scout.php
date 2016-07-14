@@ -51,6 +51,7 @@
     <!-- inject:js -->
 		<script src="/content/themes/SLHB//resources/assets/jquery/dist/jquery.js"></script>
 		<script src="/content/themes/SLHB//resources/assets/moment/moment.js"></script>
+		<script src="/content/themes/SLHB//resources/assets/moment/moment.local.fr.js"></script>
 		<script src="/content/themes/SLHB//resources/assets/angular/angular.js"></script>
 		<script src="/content/themes/SLHB//resources/assets/angular-animate/angular-animate.js"></script>
 		<script src="/content/themes/SLHB//resources/assets/angular-aria/angular-aria.js"></script>
@@ -88,5 +89,6 @@
 		<script src="/content/themes/SLHB/resources/assets/presential/player.service.js"></script>
 		<script src="/content/themes/SLHB/resources/assets/presential/presential.directive.js"></script>
 		<!-- endinject -->
+
 </body>
 </html>

@@ -404,22 +404,18 @@ $orange: #f88c4b;
 	min-height: 85vh;
 }
 .agenda {
+	margin: 0 auto;
 	overflow: hidden;
 	position: relative;
-	width: 960px;
 	min-height: 85vh;
 	color: $soft_grey;
 	margin:0;
 	padding: 0;
 
 	.left-column {
-		width: 35%;
 		margin: 0;
 		background-color: rgb(246, 246, 246);
 		h1 { text-align: center;}
-		@include phone {
-			width: 100%;
-		}
 	}
 
 	/* Calendar */
@@ -430,7 +426,7 @@ $orange: #f88c4b;
 
 	/* Events Lists*/
 	.count {
-		position: absolute;
+		float: right;
 		margin: 15px 10px;
 		font-weight: lighter;
 		font-style: normal;
@@ -471,7 +467,6 @@ $orange: #f88c4b;
 
 /*--- Event Details*/
 div.event-details {
-	// width: 100%;
 	min-height: 85vh;
 	padding: 0;
 	margin: 0;
