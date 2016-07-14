@@ -55,7 +55,6 @@ class PostModel {
           $eventId = $event->ID;
           $event->eventDate = Meta::get($eventId, 'eventDate');
           $event->isEvent = Meta::get($eventId, 'isEvent');
-          //array_push($filledMatchs, $match);
         }
         return $events;
     }
