@@ -399,10 +399,7 @@ $orange: #f88c4b;
 
 
 /* SLHB Agenda */
-.slhb-calendar {
-	margin: 0 5px;
-	min-height: 85vh;
-}
+
 .agenda {
 	margin: 0 auto;
 	overflow: hidden;
@@ -418,16 +415,9 @@ $orange: #f88c4b;
 		h1 { text-align: center;}
 	}
 
-	/* Calendar */
-
-	.fc-calendar .fc-row > div {
-		padding: 0;
-	}
-
-	/* Events Lists*/
-	.count {
-		float: right;
-		margin: 15px 10px;
+	#btn-navigation {
+		position: absolute;
+		margin: 15px 35px;
 		font-weight: lighter;
 		font-style: normal;
 		right: 5px;
@@ -436,6 +426,18 @@ $orange: #f88c4b;
 		color: $secondary;
 		background-color: white;
 	}
+
+	.slhb-calendar {
+		margin: 0 5px;
+		min-height: 85vh;
+	}
+	/* Calendar */
+
+	.fc-calendar .fc-row > div {
+		padding: 0;
+	}
+
+	/* Events Lists*/
 	h6 { line-height: 80px; margin: 0; font-size: 20px; text-align: center;}
 	.month-name {color : $secondary;}
 	ul.events {

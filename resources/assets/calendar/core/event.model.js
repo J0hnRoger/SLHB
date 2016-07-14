@@ -10,8 +10,6 @@ function Event() {
       this[prop] = eventObject[prop];
 
     this.ID = eventObject.id;
-    moment.locale('fr');
-    console.log(moment(1316116057189).fromNow());
 
     this.date = moment(eventObject.event_date);
     this.title = eventObject.title.rendered;

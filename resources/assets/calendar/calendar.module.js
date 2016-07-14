@@ -20,4 +20,6 @@ angular
          controller: 'EventListCtrl',
          controllerAs : 'vm'
        });
+
+
 });
