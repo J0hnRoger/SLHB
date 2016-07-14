@@ -47,7 +47,7 @@ function only_admins_login_area( $redirect_to, $request, $user ) {
 
 add_filter( 'login_redirect', 'only_admins_login_area', 10, 3 );
 
-//... and hide wp-admin for those
+//... and hide wp-admin for those who can' access
 function redirect_user_on_role()
 {
     $current_user = User::current();
@@ -71,7 +71,6 @@ function can_access_to_wpadmin($user){
 }
 
 add_action('admin_init', 'redirect_user_on_role');
-
 // remove unwanted dashboard widgets for relevant users
 function remove_dashboard_widgets() {
     $user = wp_get_current_user();
@@ -81,6 +80,9 @@ function remove_dashboard_widgets() {
         remove_meta_box( 'dashboard_quick_press', 'dashboard', 'side' );
         remove_meta_box( 'dashboard_primary', 'dashboard', 'side' );
         remove_meta_box( 'dashboard_secondary', 'dashboard', 'side' );
+        remove_meta_box( 'dashboard_right_now', 'dashboard', 'side' );
+        remove_meta_box( 'dashboard_activity', 'dashboard', 'side' );
+
     }
 }
-add_action( 'wp_dashboard_setup', 'remove_dashboard_widgets' );
+add_action( 'admin_init', 'remove_dashboard_widgets' );
