@@ -25,7 +25,7 @@ class PostModel {
             'post_type'         => 'post',
             'posts_per_page'    => $limit,
             'post_status'       => 'publish',
-            'order'             => 'ASC',
+            'order'             => 'DESC',
             'meta_key'          => 'eventDate',
             'orderby'           => 'meta_value'
         ));
@@ -35,7 +35,7 @@ class PostModel {
           $postId = $post->ID;
           $post->eventDate = Meta::get($postId, 'eventDate');
           $post->isEvent = Meta::get($postId, 'isEvent');
-          $post->post_excerpt =  wp_trim_words($post->post_content, 35);
+          $post->post_excerpt =  wp_trim_words($post->post_content, 25);
         }
         return $posts;
     }
