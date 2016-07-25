@@ -16,7 +16,6 @@ class NextMatch_Widget extends WP_Widget
         $match = MatchModel::getFullNextMatchForTeam($instance['teamName']);
         echo "<h5>Prochain match</h6>" . "<h1>". $match->match_team_dom." contre ". $match->match_team_ext . " " . $match->lieu . "</h1>";
       }
-
     }
 
     /**
@@ -25,7 +24,7 @@ class NextMatch_Widget extends WP_Widget
 	 * @param array $instance The widget options
 	 */
 	public function form( $instance ) {
-    $teamName = ! empty( $instance['teamName'] ) ? $instance['teamName'] : "";
+        $teamName = ! empty( $instance['teamName'] ) ? $instance['teamName'] : "";
 		?>
 		<p>
 		<label for="<?php echo esc_attr( $this->get_field_id( 'teamName' ) ); ?>"><?php _e( esc_attr( 'Nom de l\'équipe:' ) ); ?></label>
