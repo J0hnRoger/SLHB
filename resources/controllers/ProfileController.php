@@ -9,11 +9,16 @@ class ProfileController extends BaseController
 
       $currentPlayer = UserModel::getCurrentPlayer();
       UserModel::LoadNextMatch($currentPlayer);
-      
-      return  View::make('profile.profile')->with(array(
-        'home_banner' =>  themosis_assets() . "/images/_Profil_Header01.jpg",
-        'currentPlayer' => $currentPlayer
-      ));
+      if ($currentPlayer->isPlayer)
+        return  View::make('profile.player-profile')->with(array(
+          'home_banner' =>  themosis_assets() . "/images/_Profil_Header01.jpg",
+          'currentPlayer' => $currentPlayer
+        ));
+      else
+        return  View::make('profile.coach-profile')->with(array(
+          'home_banner' =>  themosis_assets() . "/images/_Profil_Header01.jpg",
+          'currentCoach' => $currentPlayer
+        ));
     }
 }
 

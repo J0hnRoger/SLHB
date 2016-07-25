@@ -22,13 +22,20 @@ class UserModel {
     public static function getCurrentPlayer(){
       $user = User::current();
 
-      if (!UserModel::hasTheRole($user->ID, 'slhb_player')) {
-        $user->isPlayer = false;
-        return $user;
+      if (UserModel::hasTheRole($user->ID, 'slhb_player')) {
+        $user->isPlayer = true;
+        UserModel::bindPlayerMeta($user);
       }
-      $user->isPlayer = true;
+      if (UserModel::hasTheRole($user->ID, 'slhb_coach'))
+      {
+        $user->isCoach = true;
+      }
+      if (UserModel::hasTheRole($user->ID, 'slhb_direction'))
+      {
+          $user->isDirection = true;
+      }
 
-      return UserModel::bindPlayerMeta($user);
+      return $user;
     }
 
     public static function hasTheRole($id, $slhb_role){
