@@ -8,7 +8,7 @@
     </div>
     <div class="infos">
   <h4>{{$currentCoach->user_nicename}}</h4>
-    @if($currentCoach->positions != '')
+    @if($currentCoach->teams != '')
       @foreach($currentCoach->positions as $key => $pos)
         <span class="label-pills">{{ $pos }}</span>
       @endforeach

@@ -19,15 +19,15 @@
           <div class="mdl-cell mdl-cell--8-col mdl-cell--2-col-phone user-information">
             <h5>Bonjour {{ $currentUser->user_login }}</h5>
             <a href="/my-profile">Accéder à votre compte </a>
-            @if($currentPlayer->isPlayer)
-              @if (!empty($currentPlayer->nextMatch))
+            @if($currentUser->isPlayer)
+              @if (!empty($currentUser->nextMatch))
             <a href="/my-profile"><div id="ttPlay" class="animated bounceIn icon material-icons">announcement</div></a>
             <div id="play" class="mdl-tooltip mdl-tooltip--large" for="ttPlay">
-              Tu joues le {{$currentPlayer->nextMatch->match_date}} contre {{ $currentPlayer->nextMatch->match_team_ext }}!
+              Tu joues le {{$currentUser->nextMatch->match_date}} contre {{ $currentUser->nextMatch->match_team_ext }}!
             </div>
               @endif
             <div  ng-app="presential" class="presential">
-              <is-present init="{{ $currentPlayer->is_present }}"></is-present>
+              <is-present init="{{ $currentUser->is_present }}"></is-present>
             </div>
             @endif
           </div>
@@ -60,15 +60,15 @@
           <div class="user-information">
             <h5>Bonjour {{ $currentUser->user_login }}</h5>
             <a href="/my-profile">Accéder à votre compte </a>
-            @if($currentPlayer->isPlayer)
-              @if (!empty($currentPlayer->nextMatch))
+            @if($currentUser->isPlayer)
+              @if (!empty($currentUser->nextMatch))
             <a href="/my-profile"><div id="ttPlay" class="animated bounceIn icon material-icons">announcement</div></a>
             <div id="play" class="mdl-tooltip mdl-tooltip--large" for="ttPlay">
-              Tu joues le {{$currentPlayer->nextMatch->match_date}} contre {{ $currentPlayer->nextMatch->match_team_ext }}!
+              Tu joues le {{$currentUser->nextMatch->match_date}} contre {{ $currentUser->nextMatch->match_team_ext }}!
             </div>
               @endif
             <div class="presential">
-              <is-present init="{{ $currentPlayer->is_present }}"></is-present>
+              <is-present init="{{ $currentUser->is_present }}"></is-present>
             </div>
             @endif
           </div>
