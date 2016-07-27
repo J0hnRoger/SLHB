@@ -344,7 +344,8 @@ header {
         margin-top: 170px; }
         #banner .overlay .container ul li.event {
           margin-top: 6%;
-          font-size: 1vw; }
+          font-size: 1vw;
+          color: white; }
           #banner .overlay .container ul li.event .label {
             font-size: 0.9vw;
             font-weight: 600;
