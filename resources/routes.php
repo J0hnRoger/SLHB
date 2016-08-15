@@ -43,10 +43,6 @@ Route::get('template', array('infos-pratiques-template', 'uses' => 'InfosPratiqu
 /* Page Team Builder */
 Route::get('template', array('team-sheet-builder-template', 'uses' => 'TeamSheetBuilderController@index'));
 
-/* Page Médiathèque */
-
-/* Page Contacts */
-
 /* Page Boutique */
 Route::get('page', ['boutique-officielle', function()
 {

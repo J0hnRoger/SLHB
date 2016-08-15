@@ -7,7 +7,7 @@ class ProfileController extends BaseController
       if (!UserModel::hasTheRole(User::current()->ID, 'slhb_player') && !UserModel::hasTheRole(User::current()->ID, 'slhb_coach'))
         return "<h1> Access Denied - Merci de vous authentifier avant d'accéder à cette page </h1>";
 
-      $currentUser = UserModel::getCurrentPlayer();
+      $currentUser = UserModel::getCurrentUser();
       UserModel::LoadNextMatch($currentUser);
       if ($currentUser->isPlayer)
         return  View::make('profile.player-profile')->with(array(

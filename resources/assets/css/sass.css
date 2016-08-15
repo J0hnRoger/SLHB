@@ -1303,6 +1303,14 @@ main#content .details-actualite {
   #profile .mdl-grid .players-list .label-pills {
     background-color: #E91E63; }
 
+#profile.coach-profile .mdl-grid aside .avatar {
+  -webkit-border-radius: 75px;
+  -moz-border-radius: 75px;
+  border-radius: 75px;
+  width: 75px;
+  height: 75px;
+  margin: 20px auto; }
+
 main#content .details-team {
   width: 660px;
   padding: 20px;

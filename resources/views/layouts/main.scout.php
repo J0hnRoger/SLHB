@@ -88,6 +88,7 @@
 		<script src="/content/themes/SLHB/resources/assets/presential/presential.module.js"></script>
 		<script src="/content/themes/SLHB/resources/assets/presential/player.service.js"></script>
 		<script src="/content/themes/SLHB/resources/assets/presential/presential.directive.js"></script>
+		<script src="/content/themes/SLHB/resources/assets/team-builder/dist/team-builder-min.js"></script>
 		<!-- endinject -->
 
 </body>

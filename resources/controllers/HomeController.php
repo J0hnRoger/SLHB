@@ -13,7 +13,7 @@ class HomeController extends BaseController
             return $data;
         });
 
-        $currentUser = UserModel::getCurrentPlayer();
+        $currentUser = UserModel::getCurrentUser();
 
         $viewParams = array(
             'actus' => PostModel::getLastPosts(4),
@@ -23,16 +23,11 @@ class HomeController extends BaseController
             'login_url' =>  home_url(),
             'actu_default_image' => themosis_assets() . '/images/_Actu_270x250.jpg',
             'currentUser' => $currentUser,
-            'url' => ( $currentUser->isCoach ) ? '/coach-profile' : '/player-profile'
         );
-
-        if ($currentUser->isPlayer) {
+        if ($currentUser->isPlayer || $currentUser->isCoach) {
             UserModel::LoadNextMatch($currentUser);
-            return View::make('home.home-content')->with($viewParams);
         }
-        else if ($currentUser->isCoach) {
-            return View::make('home.home-content')->with($viewParams);
-        }
+        return View::make('home.home-content')->with($viewParams);
     }
 
     public function getSingleActualite()

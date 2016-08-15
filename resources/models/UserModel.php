@@ -16,25 +16,18 @@ class UserModel {
     public static function getCurrentUser(){
       $user = User::current();
       UserModel::SetProfilePhoto($user);
-      return $user;
-    }
-
-    public static function getCurrentPlayer(){
-      $user = User::current();
-
-      if (UserModel::hasTheRole($user->ID, 'slhb_player')) {
-        $user->isPlayer = true;
-        UserModel::bindPlayerMeta($user);
-      }
-      if (UserModel::hasTheRole($user->ID, 'slhb_coach'))
-      {
-        $user->isCoach = true;
-      }
-      if (UserModel::hasTheRole($user->ID, 'slhb_direction'))
-      {
-          $user->isDirection = true;
-      }
-
+        if (UserModel::hasTheRole($user->ID, 'slhb_player')) {
+            $user->isPlayer = true;
+            UserModel::bindPlayerMeta($user);
+        }
+        if (UserModel::hasTheRole($user->ID, 'slhb_coach'))
+        {
+            $user->isCoach = true;
+        }
+        if (UserModel::hasTheRole($user->ID, 'slhb_direction'))
+        {
+            $user->isDirection = true;
+        }
       return $user;
     }
 

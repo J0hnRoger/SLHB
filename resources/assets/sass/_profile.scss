@@ -1,4 +1,5 @@
 $profileImgSize : 135px;
+$coachProfileImgSize : 75px;
 $player-pills-color : #E91E63;
 #profile {
   .mdl-grid {
@@ -12,7 +13,7 @@ $player-pills-color : #E91E63;
         text-align: center;
       }
       .avatar {
-        @include roundedImg($profileImgSize)
+        @include roundedImg($profileImgSize);
         margin: 20px auto;
       }
       .infos {
@@ -42,7 +43,16 @@ $player-pills-color : #E91E63;
           background-color: $player-pills-color;
         }
       }
-
     }
-
   }
+
+#profile.coach-profile {
+  .mdl-grid {
+    aside{
+      .avatar {
+      @include roundedImg($coachProfileImgSize);
+        margin: 20px auto;
+      }
+    }
+  }
+}

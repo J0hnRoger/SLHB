@@ -8,6 +8,8 @@ var series = require('stream-series');
 var gutil = require( 'gulp-util' );
 var ftp = require( 'vinyl-ftp' );
 var argv = require('yargs').argv
+var concat = require('gulp-concat');
+var del = require('del');
 
 var THEME_NAME = "SLHB";
 
@@ -66,6 +68,18 @@ gulp.task('styles', function() {
         .pipe(gulp.dest('./resources/assets/css/'));
 });
 
+// Copy all custom app files to the deployment folder
+gulp.task('teambuilder' , function () {
+    var dest = './resources/assets/team-builder/dist/';
+    var appJs =  ['./resources/assets/team-builder/**/*.module.js', './resources/assets/team-builder/**/*.js'];
+    del.sync('./resources/assets/team-builder/dist/team-builder-min.js');
+
+    gulp.src(appJs)
+        .pipe(concat('team-builder-min.js'))
+        // Wrap the app.js for loaded after the sharepoint scripts
+        .pipe(gulp.dest(dest));
+});
+
 gulp.task('browser-sync', function() {
     var files = [
         './resources/**/*.php',
@@ -77,6 +91,6 @@ gulp.task('browser-sync', function() {
     });
 });
 
-gulp.task('default', ['browser-sync'], function(){
-  gulp.watch('./resources/assets/sass/*.scss',['styles']);
+gulp.task('default', ['teambuilder', 'browser-sync'], function(){
+  gulp.watch('./resources/assets/sass/*.scss',['teambuilder', 'styles']);
 });
