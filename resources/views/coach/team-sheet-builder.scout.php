@@ -16,7 +16,7 @@
              <span class="label-pills" ng-repeat="position in player.data.positions"> {[position]}</span>
            </div>
            <md-checkbox class="md-secondary" ng-click="vm.playersFactory.addPlayer(player)"></md-checkbox>
-        </md-list-item>
+        </md-list-item> 
       </md-list>
       </div>
     </div>
