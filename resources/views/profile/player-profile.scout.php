@@ -1,8 +1,8 @@
 @extends('layouts.main')
 @section('main-wrapper')
-<main id="profile" class="mdl-layout__content">
+<main id="profile" class="">
 <div class="mdl-grid">
-  <aside class="mdl-cell mdl-cell--4-col">
+  <aside class="mdl-cell mdl-cell--4-col profile-column">
     <h2>Mon profil</h2>
     <div class="avatar" style="background:url( {{ $currentPlayer->profilePicture }}) center / cover">
     </div>
@@ -48,7 +48,6 @@
               </div>
                @endif
              </div>
-             <md-checkbox class="md-secondary" ng-model="$player.selected"></md-checkbox>
            </md-list-item>
             @endforeach
           </md-list>

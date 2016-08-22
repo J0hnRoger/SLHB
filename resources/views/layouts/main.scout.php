@@ -17,7 +17,8 @@
     <link rel="stylesheet" href="/content/themes/SLHB//resources/assets/angular-material/angular-material.css">
     <link rel="stylesheet" href="/content/themes/SLHB//resources/assets/getmdl-select/getmdl-select.min.css">
     <link rel="stylesheet" href="/content/themes/SLHB//resources/assets/material-design-lite/material.min.css">
-		<link rel="stylesheet" href="/content/themes/SLHB//resources/assets/css/animate.css">
+    <link rel="stylesheet" href="/content/themes/SLHB//resources/assets/sass/sass.css">
+    <link rel="stylesheet" href="/content/themes/SLHB//resources/assets/css/animate.css">
     <link rel="stylesheet" href="/content/themes/SLHB//resources/assets/css/font-awesome.min.css">
     <link rel="stylesheet" href="/content/themes/SLHB//resources/assets/css/sass.css">
     <link rel="stylesheet" href="/content/themes/SLHB//resources/assets/css/styles.css">
@@ -50,8 +51,6 @@
     <!-- Ne pas supprimer les marqueurs suivants ! Sinon Bower sera perdu -->
     <!-- inject:js -->
 		<script src="/content/themes/SLHB//resources/assets/jquery/dist/jquery.js"></script>
-		<script src="/content/themes/SLHB//resources/assets/moment/moment.js"></script>
-		<script src="/content/themes/SLHB//resources/assets/moment/moment.local.fr.js"></script>
 		<script src="/content/themes/SLHB//resources/assets/angular/angular.js"></script>
 		<script src="/content/themes/SLHB//resources/assets/angular-animate/angular-animate.js"></script>
 		<script src="/content/themes/SLHB//resources/assets/angular-aria/angular-aria.js"></script>
@@ -59,20 +58,7 @@
 		<script src="/content/themes/SLHB//resources/assets/angular-messages/angular-messages.js"></script>
 		<script src="/content/themes/SLHB//resources/assets/angular-route/angular-route.js"></script>
 		<script src="/content/themes/SLHB//resources/assets/angular-sanitize/angular-sanitize.js"></script>
-		<script src="/content/themes/SLHB//resources/assets/ngAppHand/core/appHand.core.js"></script>
-		<script src="/content/themes/SLHB//resources/assets/ngAppHand/core/uniqId.factory.js"></script>
-		<script src="/content/themes/SLHB//resources/assets/ngAppHand/appHand.module.js"></script>
-		<script src="/content/themes/SLHB//resources/assets/calendar/calendar.module.js"></script>
-		<script src="/content/themes/SLHB//resources/assets/calendar/agenda.controller.js"></script>
-		<script src="/content/themes/SLHB//resources/assets/calendar/calendar.directive.js"></script>
-		<script src="/content/themes/SLHB//resources/assets/calendar/event-details/event-details.controller.js"></script>
-		<script src="/content/themes/SLHB//resources/assets/calendar/core/calendar.service.js"></script>
-		<script src="/content/themes/SLHB//resources/assets/calendar/core/day.model.js"></script>
-		<script src="/content/themes/SLHB//resources/assets/calendar/core/event.model.js"></script>
-		<script src="/content/themes/SLHB//resources/assets/calendar/core/events.factory.js"></script>
-		<script src="/content/themes/SLHB//resources/assets/calendar/events-list/events-list.controller.js"></script>
 		<script src="/content/themes/SLHB//resources/assets/doc-ready/doc-ready.js"></script>
-		<script src="/content/themes/SLHB//resources/assets/team-builder/team-builder.module.js"></script>
 		<script src="/content/themes/SLHB//resources/assets/eventEmitter/EventEmitter.js"></script>
 		<script src="/content/themes/SLHB//resources/assets/eventie/eventie.js"></script>
 		<script src="/content/themes/SLHB//resources/assets/fizzy-ui-utils/utils.js"></script>
@@ -81,14 +67,26 @@
 		<script src="/content/themes/SLHB//resources/assets/getmdl-select/getmdl-select.min.js"></script>
 		<script src="/content/themes/SLHB//resources/assets/matches-selector/matches-selector.js"></script>
 		<script src="/content/themes/SLHB//resources/assets/material-design-lite/material.min.js"></script>
-		<script src="/content/themes/SLHB//resources/assets/team-builder/match.model.js"></script>
-		<script src="/content/themes/SLHB//resources/assets/team-builder/matchs.factory.js"></script>
-		<script src="/content/themes/SLHB//resources/assets/team-builder/players.factory.js"></script>
-		<script src="/content/themes/SLHB//resources/assets/team-builder/team-builder.controller.js"></script>
-		<script src="/content/themes/SLHB/resources/assets/presential/presential.module.js"></script>
-		<script src="/content/themes/SLHB/resources/assets/presential/player.service.js"></script>
-		<script src="/content/themes/SLHB/resources/assets/presential/presential.directive.js"></script>
-		<script src="/content/themes/SLHB/resources/assets/team-builder/dist/team-builder-min.js"></script>
+		<script src="/content/themes/SLHB//resources/assets/moment/moment.js"></script>
+		<script src="/content/themes/SLHB//resources/assets/moment/moment.local.fr.js"></script>
+
+		<script src="/content/themes/SLHB//resources/assets/ngAppHand/appHand.module.js"></script>
+		<script src="/content/themes/SLHB//resources/assets/calendar/calendar.module.js"></script>
+		<script src="/content/themes/SLHB//resources/assets/presential/presential.module.js"></script>
+
+		<script src="/content/themes/SLHB//resources/assets/calendar/agenda.controller.js"></script>
+		<script src="/content/themes/SLHB//resources/assets/calendar/calendar.directive.js"></script>
+		<script src="/content/themes/SLHB//resources/assets/presential/player.service.js"></script>
+		<script src="/content/themes/SLHB//resources/assets/presential/presential.directive.js"></script>
+		<script src="/content/themes/SLHB//resources/assets/calendar/core/calendar.service.js"></script>
+		<script src="/content/themes/SLHB//resources/assets/calendar/core/day.model.js"></script>
+		<script src="/content/themes/SLHB//resources/assets/calendar/core/event.model.js"></script>
+		<script src="/content/themes/SLHB//resources/assets/calendar/core/events.factory.js"></script>
+		<script src="/content/themes/SLHB//resources/assets/calendar/event-details/event-details.controller.js"></script>
+		<script src="/content/themes/SLHB//resources/assets/calendar/events-list/events-list.controller.js"></script>
+		<script src="/content/themes/SLHB//resources/assets/ngAppHand/core/appHand.core.js"></script>
+		<script src="/content/themes/SLHB//resources/assets/ngAppHand/core/uniqId.factory.js"></script>
+		<script src="/content/themes/SLHB//resources/assets/team-builder/dist/team-builder-min.js"></script>
 		<!-- endinject -->
 
 </body>

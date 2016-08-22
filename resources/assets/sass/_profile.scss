@@ -4,8 +4,7 @@ $player-pills-color : #E91E63;
 #profile {
   .mdl-grid {
     padding: 0;
-
-    aside{
+    aside.profile-column {
       @include box_shadow(1);
       margin: 0;
       padding: 15px;
@@ -48,7 +47,7 @@ $player-pills-color : #E91E63;
 
 #profile.coach-profile {
   .mdl-grid {
-    aside{
+    aside.profile-column{
       .avatar {
       @include roundedImg($coachProfileImgSize);
         margin: 20px auto;

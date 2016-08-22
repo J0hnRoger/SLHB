@@ -2,7 +2,7 @@
 @section('main-wrapper')
 <main id="profile" class="mdl-layout__content coach-profile">
 <div class="mdl-grid">
-  <aside class="mdl-cell mdl-cell--2-col">
+  <aside class="mdl-cell mdl-cell--2-col profile-column">
     <h2>Mon profil</h2>
     <div class="avatar" style="background:url( {{ $currentCoach->profilePicture }}) center / cover">
     </div>

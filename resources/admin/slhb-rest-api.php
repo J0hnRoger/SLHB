@@ -10,12 +10,12 @@
  function my_rest_prepare_post( $data, $post, $request ) {
  	$_data = $data->data;
  	$_data['event_date'] = Meta::get($post->ID, 'eventDate');
-  $_data['end_time'] = Meta::get($post->ID, 'eventStartTime');
-  $_data['start_time'] = Meta::get($post->ID, 'eventEndTime');
+    $_data['end_time'] = Meta::get($post->ID, 'eventStartTime');
+    $_data['start_time'] = Meta::get($post->ID, 'eventEndTime');
 
-  $_data['featured_image'] = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'single-post-thumbnail' );
+    $_data['featured_image'] = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'single-post-thumbnail' );
 
-  $_data['post_gallery'] = PostModel::getPostImagesUrl($post->ID);
+    $_data['post_gallery'] = PostModel::getPostImagesUrl($post->ID);
 
  	$data->data = $_data;
  	return $data;
@@ -30,12 +30,16 @@ function custom_rest_user_query( $prepared_args, $request = null ) {
   return $prepared_args;
 }
 
+
+/*-----------------------------------------------------------------------*/
+// Players REST API
+/*-----------------------------------------------------------------------*/
 add_action( 'rest_api_init', function () {
     register_rest_route( 'slhb/v1', '/get-players-by-team', array(
         'methods' => 'GET',
         'callback' => 'get_players_by_team',
     ) );
-} );
+});
 
 // Return all players by team
 function get_players_by_team(WP_REST_Request $request) {
@@ -44,40 +48,46 @@ function get_players_by_team(WP_REST_Request $request) {
   return $players;
 }
 
-
-// Update only the slhb_players metadata
-// @match_id - The ID of the match team sheet
-// @slhb_players - an array of plyer's IDs
-add_action( 'rest_api_init', 'dt_register_updateTeamPlayer_hooks' );
-function dt_register_updateTeamPlayer_hooks() {
-    register_rest_route( 'slhb/v1', '/set-players-by-team', array(
-        'methods' => 'POST',
-        'callback' => 'set_players_by_team',
+/*-----------------------------------------------------------------------*/
+// Teams REST API
+/*-----------------------------------------------------------------------*/
+add_action( 'rest_api_init', function () {
+    register_rest_route( 'slhb/v1', '/get-teams-by-coach', array(
+        'methods' => 'GET',
+        'callback' => 'get_teams_by_coach_id',
     ) );
-}
+} );
 
-//Update the meta field of the current match
-function set_players_by_team() {
-    $jsonData = json_decode(file_get_contents('php://input'), true);
-    $return = array();
+// Return all players by team
+function get_teams_by_coach_id(WP_REST_Request $request) {
+  $coachId = $request->get_param( 'coach_id' );
 
-    if (!isset($jsonData['match_id']) || !(isset($jsonData['slhb_players'])))
-      return new WP_Error( 'cant-update', __( 'Il n\'y a pas de propriete match_id ou slhb_player dans les datas', 'text-domain'), array( 'status' => 500 ) );
+  $coach = new CoachModel($coachId);
 
-    $match_id    = $jsonData['match_id'];
-    $slhb_players    = $jsonData['slhb_players'];
-
-    update_post_meta($match_id, 'slhb_players', $slhb_players);
-
-    $return[] = 'match players list updated: '.$match_id;
-
-    $response = new WP_REST_Response( $return , 200);
-    return $response;
+  return $coach->trainedTeams;
 }
 
 /*-----------------------------------------------------------------------*/
 // Match REST API
 /*-----------------------------------------------------------------------*/
+add_action( 'rest_api_init', function () {
+    register_rest_route( 'slhb/v1', '/get-next-match-for-team', array(
+        'methods' => 'GET',
+        'callback' => 'get_next_match_for_team',
+    ) );
+} );
+
+function get_next_match_for_team(WP_REST_Request $request) {
+  $teamName = $request->get_param( 'team_name' );
+
+  if ($teamName == null)
+    throw new Exception("GET parameter 'team_name' is not defined");
+
+  $nextMatch = MatchModel::getFullNextMatchForTeam($teamName);
+
+  return $nextMatch;
+}
+
 add_action( 'rest_api_init', 'dt_register_team_hook' );
 function dt_register_team_hook() {
     register_rest_field(
@@ -98,6 +108,37 @@ function dt_register_team_hook() {
             },
         )
     );
+}
+
+// Update only the slhb_players and slhb_coach metadata
+// @match_id - The ID of the match team sheet
+// @slhb_players - an array of player's IDs
+// @slhb_coachs - an array of coach's IDs
+add_action( 'rest_api_init', 'dt_register_updateTeamPlayer_hooks' );
+function dt_register_updateTeamPlayer_hooks() {
+    register_rest_route( 'slhb/v1', '/save_match', array(
+        'methods' => 'POST',
+        'callback' => 'save_match',
+    ));
+}
+function save_match() {
+    $jsonData = json_decode(file_get_contents('php://input'), true);
+    $return = array();
+
+    if (!isset($jsonData['match_id']) || !(isset($jsonData['slhb_players'])))
+      return new WP_Error( 'cant-update', __( 'Il n\'y a pas de propriete match_id ou slhb_player dans les datas', 'text-domain'), array( 'status' => 500 ) );
+
+    $match_id    = $jsonData['match_id'];
+    $slhb_players    = $jsonData['slhb_players'];
+    $slhb_coach    = $jsonData['slhb_coachs'];
+
+    update_post_meta($match_id, 'slhb_players', $slhb_players);
+    update_post_meta($match_id, 'slhb_coachs', $slhb_coach);
+
+    $return[] = 'match players list updated: '.$match_id;
+
+    $response = new WP_REST_Response( $return , 200);
+    return $response;
 }
 
 add_action( 'rest_api_init', 'set_presential' );
@@ -128,6 +169,9 @@ function set_presential_for_current_user() {
     return $response;
 }
 
+/**
+ * Ajoute le champ slhb_players au CT slhb_match
+ */
 add_action( 'rest_api_init', 'dt_register_players_hook' );
 function dt_register_players_hook() {
     register_rest_field(

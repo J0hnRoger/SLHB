@@ -11,7 +11,6 @@
 
 @import 'header';
 @import 'agenda';
-@import 'team_builder';
 @import 'actualites';
 @import 'contact';
 @import 'organigram';
@@ -20,4 +19,8 @@
 @import 'presential';
 @import 'lastresults';
 @import 'material_btn';
-@import 'teams-list';
+
+@import 'team-builder' ;
+@import 'player-pickers' ;
+@import 'teams-list' ;
+@import 'team-sheet' ;

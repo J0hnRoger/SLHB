@@ -4,6 +4,15 @@ class ProfileController extends BaseController
 {
     public function index()
     {
+      // admin/application.php or inside any controllers or route closure.
+      add_filter('themosisGlobalObject', function($data)
+      {
+          $user = User::current();
+          // Add your data.
+          $data['userId'] = $user->ID;
+          return $data;
+      });
+
       if (!UserModel::hasTheRole(User::current()->ID, 'slhb_player') && !UserModel::hasTheRole(User::current()->ID, 'slhb_coach'))
         return "<h1> Access Denied - Merci de vous authentifier avant d'accéder à cette page </h1>";
 

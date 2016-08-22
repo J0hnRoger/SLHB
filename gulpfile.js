@@ -80,17 +80,19 @@ gulp.task('teambuilder' , function () {
         .pipe(gulp.dest(dest));
 });
 
-gulp.task('browser-sync', function() {
+gulp.task('browser-sync' , function() {
     var files = [
         './resources/**/*.php',
         './resources/assets/**/*.js',
-        './resources/assets/**/*.css'
+        './resources/assets/**/*.css',
+        './resources/assets/**/*.html'
     ];
     browserSync.init(files, {
         proxy : 'slhb.dev'
     });
 });
 
-gulp.task('default', ['teambuilder', 'browser-sync'], function(){
-  gulp.watch('./resources/assets/sass/*.scss',['teambuilder', 'styles']);
+gulp.task('default', ['browser-sync'], function(){
+  gulp.watch('./resources/assets/team-builder/**/*.js', ['teambuilder']);
+  gulp.watch('./resources/assets/sass/*.scss',['styles']);
 });

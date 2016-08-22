@@ -7,7 +7,6 @@ $blue: #1ab3ec;
 $purple : #bb68e3;
 $orange: #f88c4b;
 
-
 /*Calendario*/
 .fc-calendar-container {
 	position: relative;
@@ -445,7 +444,6 @@ $orange: #f88c4b;
 		padding: 0;
 		line-height: 30px;
 		li {
-			@include light-border
 			height: 80px;
 			padding:30px;
 			.descr {

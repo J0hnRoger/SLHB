@@ -45,12 +45,11 @@ class TeamModel {
       return $teamNames;
     }
 
-    //TODO - replace 's' search params by the post_title attr
     public static function getTeam($name){
       $args = array(
           'post_type'         => 'slhb_team',
           'post_status'       => 'publish',
-          's' => $name
+          'title' => $name
       );
 
       $query = new WP_Query($args);

@@ -193,6 +193,7 @@ class MatchModel {
 
         $matchs = $query->get_posts();
         if (count($matchs) == 1) {
+          
           $match = $matchs[0];
           $matchId = $match->ID;
 
@@ -210,7 +211,7 @@ class MatchModel {
           {
             foreach($players[0] as $key => $player)
             {
-              $match->players[] = $player['data'];
+              $match->players[] = $player;
             }
           }
           return $match;
