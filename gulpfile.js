@@ -10,6 +10,7 @@ var ftp = require( 'vinyl-ftp' );
 var argv = require('yargs').argv
 var concat = require('gulp-concat');
 var del = require('del');
+var ftpJson = require("../../../../ftp-conf.json");
 
 var THEME_NAME = "SLHB";
 
@@ -22,6 +23,14 @@ var remoteFolder = '/www/htdocs/content/themes/SLHB'
 
 // helper function to build an FTP connection based on our configuration
 function getFtpConnection(username, password) {
+    if (username == undefined || password == undefined)
+    {
+        username = ftpJson.ftpUser;
+        password = ftpJson.ftpPassword;
+    }
+
+    gutil.log(gutil.colors.magenta('Connexion FTP : ', username, ' password : ', password ));
+
     return ftp.create({
         host: host,
         port: port,
