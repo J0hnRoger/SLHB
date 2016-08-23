@@ -60,16 +60,17 @@ if ($userId != "")
                 'Vice-Président' => 'Vice-Président',
                 'Secrétaire' => 'Secrétaire',
                 'Secrétaire Adjoint' => 'Secrétaire Adjoint',
-                'Trésorière' => 'Trésorière',
+                'Trésorier' => 'Trésorier',
                 'Trésorier Adjoint' => 'Trésorier Adjoint',
-                'Responsable Bar' => 'Responsable Bar',
-                'Correspondant Jeune' => 'Correspondant Jeune',
-                'Correspondant Arbitrage' => 'Correspondant Arbitrage',
-                'Correspondant Animation' => 'Correspondant Animation',
-                'Correspondant Matériel' => 'Correspondant Matériel',
-                'Adjoint' => 'Adjoint',
-                'Responsable Planning' => 'Responsable Planning',
-                'Responsable Communication' => 'Responsable Communication'
+                'Correspondant loisirs' => 'Correspondant loisirs',
+                'Correspondant arbitrage' => 'Correspondant arbitrage',
+                'Correspondant technique' => 'Correspondant technique',
+                'Responsable bar' => 'Responsable Bar',
+                'Responsable jeunes' => 'Responsable jeunes',
+                'Planning bar et arbitrage' => 'Planning bar et arbitrage',
+                'Responsable animation' => 'Responsable animation',
+                'Responsable matériel' => 'Responsable matériel',
+                'Membre' => 'Membre',
             ]
         ], ['title' => 'Responsabilité dans le club :'])
     ]);

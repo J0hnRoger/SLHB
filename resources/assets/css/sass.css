@@ -3,7 +3,7 @@
   overflow: visible; }
 
 /**
- * COLORS 
+ * COLORS
  */
 /**
  * BREAKPOINTS
@@ -1008,7 +1008,7 @@ main#content .details-actualite {
     .the-crew ul li {
       float: left;
       margin: 25px 20px;
-      width: 288px; }
+      width: 390px; }
       .the-crew ul li img {
         float: left;
         -webkit-border-radius: 85px;

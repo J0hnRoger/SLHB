@@ -19,7 +19,7 @@ class HomeController extends BaseController
             'actus' => PostModel::getLastPosts(4),
             'last_match' => MatchModel::getLastResult(10),
             'next_match' => MatchModel::getNextMatchs(2),
-            'home_banner' =>  themosis_assets() . "/images/banner.jpg",
+            'home_banner' =>  themosis_assets() . "/images/_Accueil_Header01.jpg",
             'login_url' =>  home_url(),
             'actu_default_image' => themosis_assets() . '/images/_Actu_270x250.jpg',
             'currentUser' => $currentUser,
