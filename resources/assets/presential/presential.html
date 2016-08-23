@@ -1,4 +1,5 @@
-<label class="mdl-switch mdl-js-switch mdl-js-ripple-effect" for="presential-switch-{{vm.uniqId}}">
-  <input type="checkbox" id="presential-switch-{{vm.uniqId}}" class="mdl-switch__input" ng-model="vm.isPresent" ng-change="vm.changeLabel()">
-  <span class="mdl-switch__label"> <b>{{ vm.label }}</b> à l'entrainement!</span> 
-</label>
+<md-switch ng-model="vm.isPresent" ng-change="vm.changeLabel()" aria-label="">
+    <b>{{ vm.label }}</b> à l'entrainement
+</md-switch>
+
+<h5 class="partners">{{ vm.partners }} {{vm.partners > 1 ? "Spartiates" : "Spartiate"}} à l'entrainement</h5>

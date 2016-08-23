@@ -31,7 +31,7 @@
 
   <div style="clear:both"></div>
 	@section('main-wrapper')
-  <main id="content" class="mdl-layout__content">
+  <main id="content" class="">
       @yield('main')
   </main>
 	@show

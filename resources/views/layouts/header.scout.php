@@ -29,7 +29,7 @@
             </div>
               @endif
             <div  ng-app="presential" class="presential">
-              <is-present init="{{ $currentUser->is_present }}"></is-present>
+              <is-present init="{{ $currentUser->is_present }}" parent-container="#login"></is-present>
             </div>
             @endif
           </div>
@@ -70,14 +70,13 @@
             </div>
               @endif
             <div class="presential">
-              <is-present init="{{ $currentUser->is_present }}"></is-present>
+              <is-present init="{{ $currentUser->is_present }}" parent-container="#phone-login"></is-present>
             </div>
             @endif
           </div>
           <div class="trap-avatar" style="background:url( {{ $currentUser->profilePicture }}) center / cover">
           </div>
       </div>
-
     </div>
     @endif
       <div id="banner" class="mdl-cell mdl-cell--12-col" style="background : url(<?php echo $home_banner ?>) top / cover;">

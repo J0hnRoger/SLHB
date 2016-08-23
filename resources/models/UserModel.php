@@ -31,6 +31,11 @@ class UserModel {
       return $user;
     }
 
+    public static function getUserById($id){
+      $user = get_user_by('ID', $id);
+      return $user;
+    }
+
     public static function hasTheRole($id, $slhb_role){
       $meta = get_user_meta($id, 'slhb_role')
         ?get_user_meta($id, 'slhb_role')[0]

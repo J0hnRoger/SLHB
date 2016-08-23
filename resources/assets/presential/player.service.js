@@ -7,8 +7,12 @@ angular
 PlayersService.$inject = ['$q', '$http'];
 function PlayersService($q, $http) {
   var url = '/wp-json/slhb/v1/set-presential';
+  var getUrl = '/wp-json/slhb/v1/get-presential';
+  var partners = null;
+
   var service = {
     setPresential : SetPresential,
+    getPresentials : GetPresentials
   };
 
   return service;
@@ -26,4 +30,18 @@ function PlayersService($q, $http) {
     return defer.promise;
   }
 
+  function GetPresentials(userId) {
+      var defer = $q.defer();
+      if (partners != null) {
+        defer.resolve(partners);
+      }
+      else {
+      $http.get(getUrl + '?userId=' + userId)
+        .then(function (data){
+          partners = data.data; 
+          defer.resolve(partners);
+        });
+      }
+      return defer.promise;
+    }
 }

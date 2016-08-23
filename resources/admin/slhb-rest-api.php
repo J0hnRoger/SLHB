@@ -169,6 +169,32 @@ function set_presential_for_current_user() {
     return $response;
 }
 
+
+add_action( 'rest_api_init', 'get_presential' );
+function get_presential() {
+    register_rest_route( 'slhb/v1', '/get-presential', array(
+        'methods' => 'GET',
+        'callback' => 'get_presential_for_current_user',
+    ) );
+}
+
+function get_presential_for_current_user(WP_REST_Request $request) {
+    $userId = $request->get_param( 'userId' );
+    $teams = get_user_meta($userId, 'slhb_teams')[0];
+    
+    $colleagues = [];
+    foreach ($teams as $key => $team) {
+        $colleagues = array_merge($colleagues, UserModel::getPlayersByTeam($team));
+    }
+    $colleagues = array_unique($colleagues, SORT_REGULAR);
+    $participants = 0;
+    foreach ($colleagues as $key => $player) {
+        if($player->is_present)
+            $participants++;
+    }
+    return $participants;
+}
+
 /**
  * Ajoute le champ slhb_players au CT slhb_match
  */

@@ -6,7 +6,7 @@
 
 @section('main')
 <h1>Actualités</h1>
-<div class="actualites">
+<div class="actualites clearfix">
 @foreach($actus as $i => $actu)
 	<article class="actualite">
 		@if (has_post_thumbnail($actu->ID))
