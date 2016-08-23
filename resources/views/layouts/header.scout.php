@@ -18,11 +18,10 @@
         <div id="login" class="login mdl-cell mdl-cell--6-col mdl-cell--hide-phone mdl-grid">
           <div class="mdl-cell mdl-cell--8-col mdl-cell--2-col-phone user-information">
             <h5>Bonjour {{ $currentUser->user_login }}</h5>
-             @if($currentUser->isCoach)
+             @if($currentUser->isCoach || $currentUser->isPlayer)
               <a href="/my-profile">Accéder à votre compte </a>
              @endif
              @if($currentUser->isPlayer)
-              <a href="/my-profile">Accéder à votre compte </a>
               @if (!empty($currentUser->nextMatch))
             <a href="/my-profile"><div id="ttPlay" class="animated bounceIn icon material-icons">announcement</div></a>
             <div id="play" class="mdl-tooltip mdl-tooltip--large" for="ttPlay">
