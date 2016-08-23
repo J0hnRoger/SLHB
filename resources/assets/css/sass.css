@@ -198,11 +198,18 @@ section.pre-footer {
 /* Partner */
 ul.partners li {
   display: inline-block;
-  height: 100px;
-  margin: 0 40px; }
+  margin: 0 40px;
+  height: 100px; }
   ul.partners li img {
-    width: 80px;
+    width: 150px;
     height: auto; }
+
+@media (max-width: 767px) {
+  ul.partners li {
+    height: inherit;
+    margin-top: 20px; }
+    ul.partners li img {
+      width: 250px; } }
 
 /* Archive Teams */
 ul.all-teams li {

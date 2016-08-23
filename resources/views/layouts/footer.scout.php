@@ -9,7 +9,8 @@ $images = Option::get("section-slhb-options", "logos");
 <ul class="partners">
   @foreach($images as $i => $image)
   <li>
-    <?php echo wp_get_attachment_image( $image );  ?>
+
+    <?php echo wp_get_attachment_image( $image , [889, 392] );  ?>
   </li>
   @endforeach
 @else
