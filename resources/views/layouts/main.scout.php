@@ -25,7 +25,7 @@
 </head>
 <body ng-app="appHand">
 <div class="mdl-layout mdl-js-layout mdl-grid--no-spacing">
-	@section('header')
+	@section('header') 
 		@include('layouts.header-min')
 	@show
 

@@ -7,6 +7,24 @@ $blue: #1ab3ec;
 $purple : #bb68e3;
 $orange: #f88c4b;
 
+/* Animation */
+.fade.ng-enter {
+  transition:0.5s linear all;
+  opacity:0;
+}
+
+.fade.ng-enter.ng-enter-active {
+  opacity:1;
+}
+
+ul.events > li.ng-enter { animation: flipInX 0.3s both ease-in; z-index: 8888; }
+ul.events > li.ng-leave { animation: flipOutX 0.3s both ease-in; z-index: 9999; }
+ul.events > li.ng-enter-stagger {
+	/* this will have a 100ms delay between each successive leave animation */
+	-webkit-transition-delay: 1s;
+	transition-delay: 1s;
+}
+
 /*Calendario*/
 .fc-calendar-container {
 	position: relative;
@@ -403,16 +421,23 @@ $orange: #f88c4b;
 	margin: 0 auto;
 	overflow: hidden;
 	position: relative;
-	min-height: 85vh;
 	color: $soft_grey;
 	margin:0;
 	padding: 0;
 
 	.left-column {
+		float: left;
+		width: 375px;
 		margin: 0;
 		background-color: rgb(246, 246, 246);
 		h1 { text-align: center;}
 	}
+	.center-column {
+		float: left;
+		width: 639px;
+		margin: 0;
+	} 
+
 
 	#btn-navigation {
 		position: absolute;
@@ -424,11 +449,6 @@ $orange: #f88c4b;
 		font-size: 20px;
 		color: $secondary;
 		background-color: white;
-	}
-
-	.slhb-calendar {
-		margin: 0 5px;
-		min-height: 85vh;
 	}
 	/* Calendar */
 

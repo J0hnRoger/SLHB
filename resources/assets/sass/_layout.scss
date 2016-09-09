@@ -33,9 +33,9 @@ main#content{
 		margin:0;
 		margin-left:0px;
 	}
-	@include desktop {
-	/*Responsive - Large Screen*/
-		margin: 0 auto;
+	@include desktop { 
+		margin:0 auto;
+		width: 1024px
 	}
 }
 

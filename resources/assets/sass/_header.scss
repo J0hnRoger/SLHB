@@ -74,9 +74,9 @@ header {
 	      }
 			}
 		}
-    @include phone {
-      padding-left: $min-padding-logo;
-    }
+		@include phone {
+		padding-left: $min-padding-logo;
+		}
 	}
 
 	#menu {
@@ -113,12 +113,16 @@ header {
 	margin: 0;
 	width: 100%;
 	.user-information {
-		width: 60%;
+		width: 65%;
 		padding: 5%;
 	}
 
+	.match-flag { 
+		margin-right: 5px;
+	}
+
 	.trap-avatar {
-		width: 40%;
+		width: 35%;
 		-webkit-clip-path: polygon(15% 0, 100% 0, 100% 100%, 0% 100%);
 		clip-path: polygon(15% 0, 100% 0, 100% 100%, 0% 100%);
 	}

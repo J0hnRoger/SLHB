@@ -78,8 +78,8 @@ main#content {
       margin-left: 0px; } }
   @media (min-width: 1024px) {
     main#content {
-      /*Responsive - Large Screen*/
-      margin: 0 auto; } }
+      margin: 0 auto;
+      width: 1024px; } }
 
 section#bottom-banner {
   position: relative;
@@ -315,10 +315,12 @@ header {
   margin: 0;
   width: 100%; }
   .phone-login .user-information {
-    width: 60%;
+    width: 65%;
     padding: 5%; }
+  .phone-login .match-flag {
+    margin-right: 5px; }
   .phone-login .trap-avatar {
-    width: 40%;
+    width: 35%;
     -webkit-clip-path: polygon(15% 0, 100% 0, 100% 100%, 0% 100%);
     clip-path: polygon(15% 0, 100% 0, 100% 100%, 0% 100%); }
 
@@ -394,6 +396,27 @@ header {
                 font-weight: 500; } }
 
 /*Agenda*/
+/* Animation */
+.fade.ng-enter {
+  transition: 0.5s linear all;
+  opacity: 0; }
+
+.fade.ng-enter.ng-enter-active {
+  opacity: 1; }
+
+ul.events > li.ng-enter {
+  animation: flipInX 0.3s both ease-in;
+  z-index: 8888; }
+
+ul.events > li.ng-leave {
+  animation: flipOutX 0.3s both ease-in;
+  z-index: 9999; }
+
+ul.events > li.ng-enter-stagger {
+  /* this will have a 100ms delay between each successive leave animation */
+  -webkit-transition-delay: 1s;
+  transition-delay: 1s; }
+
 /*Calendario*/
 .fc-calendar-container {
   position: relative;
@@ -729,17 +752,22 @@ header {
   margin: 0 auto;
   overflow: hidden;
   position: relative;
-  min-height: 85vh;
   color: #8a8c96;
   margin: 0;
   padding: 0;
   /* Calendar */
   /* Events Lists*/ }
   .agenda .left-column {
+    float: left;
+    width: 375px;
     margin: 0;
     background-color: #f6f6f6; }
     .agenda .left-column h1 {
       text-align: center; }
+  .agenda .center-column {
+    float: left;
+    width: 639px;
+    margin: 0; }
   .agenda #btn-navigation {
     position: absolute;
     margin: 15px 35px;
@@ -750,9 +778,6 @@ header {
     font-size: 20px;
     color: #1d3d86;
     background-color: white; }
-  .agenda .slhb-calendar {
-    margin: 0 5px;
-    min-height: 85vh; }
   .agenda .fc-calendar .fc-row > div {
     padding: 0; }
   .agenda h6 {

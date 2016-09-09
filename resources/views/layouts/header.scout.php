@@ -64,7 +64,11 @@
             <a href="/my-profile">Accéder à votre compte </a>
             @if($currentUser->isPlayer)
               @if (!empty($currentUser->nextMatch))
-            <a href="/my-profile"><div id="ttPlay" class="animated bounceIn icon material-icons">announcement</div></a>
+            <a href="/my-profile">
+              <div id="ttPlay" class="animated bounceIn icons material-icons match-flag ">
+                <i class="fa fa-exclamation-circle" aria-hidden="true"></i>
+              </div>
+            </a>
             <div id="play" class="mdl-tooltip mdl-tooltip--large" for="ttPlay">
               Tu joues le {{$currentUser->nextMatch->match_date}} contre {{ $currentUser->nextMatch->match_team_ext }}!
             </div>
