@@ -87,6 +87,14 @@ class UserModel {
       return $players;
     }
 
+    public static function getPlayersByPresential()
+    {
+      $allPlayers = UserModel::getPlayers();
+      return array_filter($allPlayers, function ($player) {
+        return ($player->is_present);
+      });
+    }
+
     public static function getPlayersByTeam($teamName)
     {
       $allPlayers = UserModel::getPlayers();

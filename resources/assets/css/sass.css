@@ -1100,6 +1100,9 @@ main#content .details-actualite {
   height: 75px;
   margin: 20px auto; }
 
+#profile.coach-profile .mdl-grid aside.profile-column .player-presents {
+  margin: 25px 0; }
+
 main#content .details-team {
   width: 660px;
   padding: 20px;

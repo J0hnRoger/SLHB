@@ -52,6 +52,10 @@ $player-pills-color : #E91E63;
       @include roundedImg($coachProfileImgSize);
         margin: 20px auto;
       }
+
+      .player-presents{ 
+        margin: 25px 0;
+      }
     }
   }
 }

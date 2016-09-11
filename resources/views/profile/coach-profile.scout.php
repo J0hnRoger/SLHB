@@ -4,15 +4,23 @@
 <div class="mdl-grid">
   <aside class="mdl-cell mdl-cell--2-col profile-column">
     <h2>Mon profil</h2>
-    <div class="avatar" style="background:url( {{ $currentCoach->profilePicture }}) center / cover">
+    <div class="avatar" style="background:url( {{ $currentCoach->user->profilePicture }}) center / cover">
     </div>
-    <div class="infos">
-  <h4>{{$currentCoach->user_nicename}}</h4>
-    @if($currentCoach->teams != '')
-      @foreach($currentCoach->teams as $key => $team)
+    <div class="infos"> 
+  <h4>{{$currentCoach->user->display_name}}</h4>
+    @if($currentCoach->trainedTeamsNames != '')
+      @foreach($currentCoach->trainedTeamsNames[0] as $key => $team)
         <span class="label-pills">{{ $team }}</span>
       @endforeach
     @endif
+    </div>
+    <div class="player-presents">
+      Joueurs présents à l'entrainement : <span class="label-pills">{{ count($playersPresents)}} </span>
+      <ul>
+      @foreach($playersPresents as $key => $player)
+        <li>{{ $player->display_name }}</span>
+      @endforeach
+      </ul>
     </div>
   </aside>
 
