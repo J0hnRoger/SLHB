@@ -11,11 +11,9 @@ class CoachModel {
     if (!UserModel::hasTheRole($this->user->ID, 'slhb_coach'))
       throw new Exception("The user is not a coach");
 
-
     $this->trainedTeamsNames = get_user_meta($this->user->ID, 'slhb_trained_teams');
-    for ($i=0; $i < count($this->trainedTeamsNames); $i++) {
-      $this->trainedTeams[] = TeamModel::getTeam($this->trainedTeamsNames[0][$i])[0];
+      for ($i=0; $i < count($this->trainedTeamsNames); $i++) {
+        $this->trainedTeams[] = TeamModel::getTeam($this->trainedTeamsNames[0][$i])[0];
+      }
     }
-  }
-
 }

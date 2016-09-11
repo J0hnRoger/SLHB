@@ -7,7 +7,7 @@
     <div class="avatar" style="background:url( {{ $currentPlayer->profilePicture }}) center / cover">
     </div>
     <div class="infos">
-  <h4>{{$currentPlayer->user_nicename}}</h4>
+    <h4>{{$currentPlayer->user_nicename}}</h4>
     @if($currentPlayer->positions != '')
       @foreach($currentPlayer->positions as $key => $pos)
         <span class="label-pills">{{ $pos }}</span>
@@ -24,38 +24,14 @@
           Prochains Matchs
         </md-tab-label>
         <md-tab-body>
-          @if (!isset($currentPlayer->nextMatch) || count($currentPlayer->nextMatch->players) == 0)
-          <h5>La liste de gladiateurs morts de faim n'est pas encore sortie.</h5>
-          @else
-            <div class="match-header">
-              <h1>{{$currentPlayer->nextMatch->match_team_dom}} VS {{$currentPlayer->nextMatch->match_team_ext}}</h1>
-              <span>Date du rendez-vous : {{$currentPlayer->nextMatch->match_team_time}}</span>
-              <md-subheader class="md-primary">Date du match : {{$currentPlayer->nextMatch->match_real_time}}</md-subheader>
-            </div>
-            <md-list class="players-list">
-            @foreach($currentPlayer->nextMatch->players as $key => $player)
-            <!-- NgMaterial -->
-           <md-divider></md-divider>
-           <md-list-item ng-click="" class="noright">
-             <img alt="{{ $player['user_nicename'] }}" ng-src="{{ $player['profilePicture'] or 'default' }}" class="md-avatar" />
-             <div class="md-list-item-text">
-                {{ $player['user_nicename'] }}
-              @if($player['positions'] != '')
-              <div class="position-container">
-                 @foreach($player['positions'] as $key => $pos)
-                   <span class="label-pills ">{{ $pos }}</span>
-                 @endforeach
-              </div>
-               @endif
-             </div>
-           </md-list-item>
-            @endforeach
-          </md-list>
+        @if (!isset($currentPlayer->nextMatch) || count($currentPlayer->nextMatch->players) == 0)
+        <h5>La liste de gladiateurs morts de faim n'est pas encore sortie.</h5>
+        @else
+         <player-team-sheet>
+        </player-team-sheet>
+      @endif
 
-            <!-- NgMaterial End-->
-        @endif
-
-        </md-tab-body>
+      </md-tab-body>
       </md-tab>
       <md-tab>
         <md-tab-label>

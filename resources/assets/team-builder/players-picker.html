@@ -10,7 +10,7 @@
         <li ng-repeat="player in $ctrl.pool" class="clearfix">
             <div class="avatar" style="background:url( {{player.profilePicture}}) center / cover">
             </div>
-            <div>{{player.user_nicename}}</div> 
+            <div>{{player.display_name}}</div>
             <ul class="positions"> 
                 <li ng-repeat="position in player.positions" class="label {{position}}">{{position}}</li>
             </ul>

@@ -29,6 +29,29 @@ angular
 
 	angular
 		.module('team-builder')
+		.component('playerTeamSheet', {
+			template : '<div class="convoc"> <match-details ng-hide="$ctrl.noMatch" match="$ctrl.match"></match-details><team-sheet team-sheet="$ctrl.match.teamSheet" edit="false"></team-sheet></div>',
+			bindings : {
+			},
+			controller : function (MatchesFactory) {
+        var $ctrl = this;
+        MatchesFactory.getNextMatch("SLHB 1")
+          .then(function(wpMatch){
+            $ctrl.match = wpMatch;
+            $ctrl.noMatch = false;
+          },
+          function(){
+            $ctrl.noMatch = true;
+          });
+			}
+		});
+})();
+
+(function() {
+	'use strict';
+
+	angular
+		.module('team-builder')
 		.component('playersPicker', {
 			templateUrl : '/content/themes/SLHB/resources/assets/team-builder/players-picker.html',
 			bindings : {
@@ -150,7 +173,11 @@ function TeamBuilderCtrl(PlayersFactory, MatchsFactory, $location) {
 			templateUrl : '/content/themes/SLHB/resources/assets/team-builder/team-sheet.html',
 			bindings : {
 				teamSheet : '<',
-				onPlayerClicked : '&'
+				onPlayerClicked : '&',
+				edit : '@'
+			},
+			controller : function () {
+					this.showControls = this.edit == 'true';
 			}
 		});
 })();

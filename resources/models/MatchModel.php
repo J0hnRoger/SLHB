@@ -182,7 +182,7 @@ class MatchModel {
               array
               (
                 'key'     => 'match_date',
-                'value'   => date("Y-m-d"),
+                'value'   => date("Y-m-d", strtotime("-1 day")),
                 'type'    => 'DATE', // TRIED: DATE, SIGNED, NUMBER
                 'compare' => '>'
               )
@@ -217,46 +217,7 @@ class MatchModel {
           return $match;
         }
     }
-
-    // public static function getNextMatchForPlayer($playerId){
-    //   $query = new WP_Query(array(
-    //       'post_type'       => 'slhb_match',
-    //       'posts_per_page'  => 1,
-    //       'post_status'     => 'publish',
-    //       'meta_query'   => array
-    //       (
-    //         array
-    //         (
-    //           'key'     => 'match_date',
-    //           'value'   => date("Y-m-d"),
-    //           'type'    => 'DATE', // TRIED: DATE, SIGNED, NUMBER
-    //           'compare' => '>'
-    //         )
-    //       ),
-    //       'orderby'         => 'match_date',
-    //       'order'           => 'ASC'
-    //   ));
-    //
-    //   $matchs = $query->get_posts();
-    //   if (count($matchs) == 1) {
-    //     $match = $matchs[0];
-    //     $matchId = $match->ID;
-    //     $match->match_date = Meta::get($matchId, 'match_date');
-    //     $match->match_team_ext = Meta::get($matchId, 'match_team_ext');
-    //
-    //     $players = get_post_meta($matchId, 'slhb_players');
-    //
-    //     if (count($players) > 0)
-    //     {
-    //       foreach($players[0] as $key => $player)
-    //       {
-    //         $match->players[] = $player['data'];
-    //       }
-    //     }
-    //   }
-    //   return $matchs;
-    // }
-
+    
     public static function containsPlayer ($team, $playerId)
     {
       for ($i=0; $i < count($team->players); $i++)

@@ -7,7 +7,11 @@
 			templateUrl : '/content/themes/SLHB/resources/assets/team-builder/team-sheet.html',
 			bindings : {
 				teamSheet : '<',
-				onPlayerClicked : '&'
+				onPlayerClicked : '&',
+				edit : '@'
+			},
+			controller : function () {
+					this.showControls = this.edit == 'true';
 			}
 		});
 })();
