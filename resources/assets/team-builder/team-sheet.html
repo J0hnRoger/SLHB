@@ -3,7 +3,7 @@
 <h6>Feuille de match</h6>
 </header>
 	 <ul class="players-list">
-        <li ng-repeat="player in $ctrl.teamSheet" class="clearfix">
+        <li ng-repeat="player in $ctrl.teamSheet" ng-class="{ me : ($ctrl.currentUserId == player.ID) }" class="clearfix" >
           <div class="avatar" style="background:url( {{player.profilePicture}}) center / cover">
             </div>
             <div>{{player.display_name}}</div>

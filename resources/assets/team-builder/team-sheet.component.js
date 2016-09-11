@@ -10,8 +10,9 @@
 				onPlayerClicked : '&',
 				edit : '@'
 			},
-			controller : function () {
+			controller : function (slhbThemosis) {
 					this.showControls = this.edit == 'true';
+					this.currentUserId = slhbThemosis.userId;
 			}
 		});
 })();

@@ -1407,6 +1407,9 @@ main#content .details-team {
   padding: 10px;
   margin-right: 15px; }
 
+.team-sheet .players-list li.me {
+  background-color: rgba(138, 194, 73, 0.2); }
+
 /**
  * Player convocation - mobile first
  **/
