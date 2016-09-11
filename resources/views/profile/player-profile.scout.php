@@ -7,7 +7,7 @@
     <div class="avatar" style="background:url( {{ $currentPlayer->profilePicture }}) center / cover">
     </div>
     <div class="infos">
-    <h4>{{$currentPlayer->user_nicename}}</h4>
+    <h4>{{$currentPlayer->display_name}}</h4>
     @if($currentPlayer->positions != '')
       @foreach($currentPlayer->positions as $key => $pos)
         <span class="label-pills">{{ $pos }}</span>
