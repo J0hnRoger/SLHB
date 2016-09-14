@@ -1031,31 +1031,32 @@ main#content .details-actualite {
 /*
   Organigramme component
  */
-.the-crew {
+div {
+  padding: 0;
   width: 80%;
   margin: 0 auto; }
-  .the-crew ul {
-    padding: 0; }
-    .the-crew ul li {
-      float: left;
-      margin: 25px 20px;
-      width: 390px; }
-      .the-crew ul li img {
-        float: left;
-        -webkit-border-radius: 85px;
-        -moz-border-radius: 85px;
-        border-radius: 85px;
-        width: 85px;
-        height: 85px; }
-      .the-crew ul li p {
-        margin: 0;
-        float: left;
-        margin-left: 25px;
-        color: #1d3d86; }
-    .the-crew ul:after {
-      content: "";
-      display: table;
-      clear: both; }
+
+.the-crew__item {
+  float: left;
+  margin: 25px 20px;
+  width: 390px; }
+  .the-crew__item img {
+    float: left;
+    -webkit-border-radius: 85px;
+    -moz-border-radius: 85px;
+    border-radius: 85px;
+    width: 85px;
+    height: 85px; }
+  .the-crew__item p {
+    margin: 0;
+    float: left;
+    margin-left: 25px;
+    color: #1d3d86; }
+
+.the-crew:after {
+  content: "";
+  display: table;
+  clear: both; }
 
 .after-trombi {
   margin: 25px 0; }

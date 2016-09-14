@@ -18,10 +18,9 @@
     </article>
     <h2>Entraineur :</h2>
 
-  <div class="the-crew animated bounceIn">
-    <ul>
+    <ul class="the-crew animated bounceIn">
     @foreach($coaches as $coach)
-    <li>
+    <li class="the-crew__item">
       <img src="{{ $coach->profilePicture  }}" alt="" />
       <p>
         <b>{{ $coach->display_name }}</b>
@@ -31,7 +30,6 @@
     </li>
     @endforeach
   </ul>
-  </div>
 
   <div id="widget-next-match">
     <h3>Prochain match</h3>
