@@ -153,23 +153,27 @@ header {
 			padding-right: 5%;
 			float: right;
 			margin-right: 180px;
+			font-size: 20px;
+
 			ul{
 				list-style: none;
 				margin-top: 170px;
 				li.event{
 					margin-top: 6%;
-					font-size: 1vw;
 				  	color: $primary;
 				  .label {
-						font-size: 0.9vw;
+					  	font-size: 1em;
 						font-weight: 600;
 						text-transform: uppercase;
 					}
 					h2{
+						font-size: 3.6em;
 						line-height: normal;
-						font-size: 2.6vw;
 						font-weight: 500;
 						color: white
+					}
+					.date {
+						font-size: 1.5em;
 					}
 				}
 			}
@@ -180,11 +184,11 @@ header {
     height: $min-banner-height;
 		.overlay {
 			height: 142%;
-	    width: 50%;
-	    transform: rotate(25deg);
-	    margin-top: -14px;
-	    margin-right: -23px;
-	    float: right;
+			width: 50%;
+			transform: rotate(25deg);
+			margin-top: -14px;
+			margin-right: -23px;
+			float: right;
 
 			.container {
 				transform: rotate(-$deg + deg);
@@ -199,16 +203,18 @@ header {
 					padding: 15px 5px;
 					li.event{
 						margin-top:20%;
-						font-size: 1em;
 						color: $primary;
 						.label {
-							font-size: 1em;
+							font-size: 0.7em;
 							font-weight: 600;
 						}
 						h2{
 							line-height: 1em;
-							font-size: 1em;
 							font-weight: 500;
+							font-size: 1.4em;
+						}
+						.date {
+							font-size: 1em;
 						}
 					}
 				}

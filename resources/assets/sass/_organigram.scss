@@ -3,28 +3,38 @@
  */
 
 //Blocks
-div {
-  padding: 0;
-  width: 80%;
-  margin:0 auto;
-}
 
 .the-crew {
+  padding: 0;
   &__item {
     float: left;
     margin: 25px 20px;
-    width: 390px; 
-    img {
-      float: left;
-      @include roundedImg(85px)
-    }
-    p {
-      margin: 0;
-      float: left;
-      margin-left: 25px;
-      color : $secondary;
+    width: 285px;
+
+    @include phone {
+      margin: 15px 0px;
+      width: 350px;
     }
   }
+
+  &__avatar {
+      float: left;
+      @include roundedImg(85px);
+      @include phone {
+        @include roundedImg(65px);
+      }
+      @include clearfix
+      
+    }
+    
+    &__infos {
+      margin: 0 15px;
+      float: left;
+      color : $secondary;
+      @include clearfix
+      
+    }
+    
   @include clearfix
 }
 

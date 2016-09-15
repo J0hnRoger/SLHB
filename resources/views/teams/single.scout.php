@@ -3,9 +3,6 @@
   Use $team variable for retrieve informations on the current team
 */
 ?>
-
-
-
 @extends('layouts.main')
 
 @section('main')
@@ -20,13 +17,13 @@
 
     <ul class="the-crew animated bounceIn">
     @foreach($coaches as $coach)
-    <li class="the-crew__item">
-      <img src="{{ $coach->profilePicture  }}" alt="" />
-      <p>
-        <b>{{ $coach->display_name }}</b>
-        <p>{{ $coach->user_email }}</p>
-        <p>Tel : {{ $coach->phone }}</p>
-      </p>
+    <li class="the-crew__item"> 
+      <img class="the-crew__avatar" src="{{ $coach->profilePicture  }}" alt="" />
+      <div class="the-crew__infos">
+        <div>{{ $coach->display_name }}</div>
+        <div>{{ $coach->user_email }}</div>
+        <div>Tel : {{ $coach->phone }}</div>
+      </div>
     </li>
     @endforeach
   </ul>

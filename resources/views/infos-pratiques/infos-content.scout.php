@@ -78,28 +78,28 @@
   <script src="https://maps.googleapis.com/maps/api/js?callback=initMap&key=AIzaSyDZUvW8KAVHSOGek443WxSheEIgOiAkUKQ" async defer></script>
 
 <h1>Le bureau</h1>
+
 <div class="the-crew">
   <p>
     Le bureau est composé de {{ count($direction_members) }} membres.
   </p>
-  <ul>
+  <ul class="animated bounceIn">
     @foreach($direction_members as $key => $member)
-      <li>
-        <div>
-          <img src="{{ $member->profilePicture  }}" alt="" />
-          <p>
-            {{ $member->responsibility}} : <b>{{ $member->display_name }}</b>
-            <p>{{ $member->user_email }}</p>
-            <p>Tel : {{ $member->phone }}</p>
-          </p>
-        </div>
-      </li>
+    <li class="the-crew__item"> 
+      <img class="the-crew__avatar" src="{{ $member->profilePicture  }}" alt="" />
+      <div class="the-crew__infos">
+        {{ $member->responsibility}}
+        <div>{{ $member->display_name }}</div>
+        <div>{{ $member->user_email }}</div>
+        <div>Tel : {{ $member->phone }}</div>
+      </div>
+    </li>
     @endforeach
   </ul>
-  <div class="after-trombi">
+</div>
+<div class="after-trombi">
     {{$infos_after_trombi}}
     @endloop
 
     @stop
   </div>
-</div>

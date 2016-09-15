@@ -50,6 +50,7 @@ if ($userId != "")
           ['title' => 'Postes joués :']),
       ]);
   }
+  
   // Display Responsibility Field only if the user is in the direction
   if(UserModel::hasTheRole($userId, 'slhb_direction'))
   {

@@ -144,7 +144,7 @@ section.pre-footer {
 #widget-next-match {
   text-align: center;
   padding: 10px;
-  font-size: 1.5vw; }
+  font-size: 16px; }
   #widget-next-match h3 {
     margin: 0; }
   #widget-next-match .next-match {
@@ -346,23 +346,25 @@ header {
       text-align: right;
       padding-right: 5%;
       float: right;
-      margin-right: 180px; }
+      margin-right: 180px;
+      font-size: 20px; }
       #banner .overlay .container ul {
         list-style: none;
         margin-top: 170px; }
         #banner .overlay .container ul li.event {
           margin-top: 6%;
-          font-size: 1vw;
           color: white; }
           #banner .overlay .container ul li.event .label {
-            font-size: 0.9vw;
+            font-size: 1em;
             font-weight: 600;
             text-transform: uppercase; }
           #banner .overlay .container ul li.event h2 {
+            font-size: 3.6em;
             line-height: normal;
-            font-size: 2.6vw;
             font-weight: 500;
             color: white; }
+          #banner .overlay .container ul li.event .date {
+            font-size: 1.5em; }
   @media (max-width: 767px) {
     #banner {
       height: 150px; }
@@ -385,15 +387,16 @@ header {
             padding: 15px 5px; }
             #banner .overlay .container ul li.event {
               margin-top: 20%;
-              font-size: 1em;
               color: white; }
               #banner .overlay .container ul li.event .label {
-                font-size: 1em;
+                font-size: 0.7em;
                 font-weight: 600; }
               #banner .overlay .container ul li.event h2 {
                 line-height: 1em;
-                font-size: 1em;
-                font-weight: 500; } }
+                font-weight: 500;
+                font-size: 1.4em; }
+              #banner .overlay .container ul li.event .date {
+                font-size: 1em; } }
 
 /*Agenda*/
 /* Animation */
@@ -1031,32 +1034,46 @@ main#content .details-actualite {
 /*
   Organigramme component
  */
-div {
-  padding: 0;
-  width: 80%;
-  margin: 0 auto; }
-
-.the-crew__item {
-  float: left;
-  margin: 25px 20px;
-  width: 390px; }
-  .the-crew__item img {
+.the-crew {
+  padding: 0; }
+  .the-crew__item {
+    float: left;
+    margin: 25px 20px;
+    width: 285px; }
+    @media (max-width: 767px) {
+      .the-crew__item {
+        margin: 15px 0px;
+        width: 350px; } }
+  .the-crew__avatar {
     float: left;
     -webkit-border-radius: 85px;
     -moz-border-radius: 85px;
     border-radius: 85px;
     width: 85px;
     height: 85px; }
-  .the-crew__item p {
-    margin: 0;
+    @media (max-width: 767px) {
+      .the-crew__avatar {
+        -webkit-border-radius: 65px;
+        -moz-border-radius: 65px;
+        border-radius: 65px;
+        width: 65px;
+        height: 65px; } }
+    .the-crew__avatar:after {
+      content: "";
+      display: table;
+      clear: both; }
+  .the-crew__infos {
+    margin: 0 15px;
     float: left;
-    margin-left: 25px;
     color: #1d3d86; }
-
-.the-crew:after {
-  content: "";
-  display: table;
-  clear: both; }
+    .the-crew__infos:after {
+      content: "";
+      display: table;
+      clear: both; }
+  .the-crew:after {
+    content: "";
+    display: table;
+    clear: both; }
 
 .after-trombi {
   margin: 25px 0; }
@@ -1105,7 +1122,6 @@ div {
   margin: 25px 0; }
 
 main#content .details-team {
-  width: 660px;
   padding: 20px;
   margin: 0 auto; }
   main#content .details-team header h1 {
