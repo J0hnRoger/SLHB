@@ -242,7 +242,8 @@ function Match() {
     for(var prop in data)
      this[prop] = data[prop];
     this.teamSheet = this.players;
-      
+    this.friendlyMatchDate = moment(this.match_date);
+    
     this.place = data.lieu == "activate" ? 'Domicile' : 'Exterieur';
   };
 
