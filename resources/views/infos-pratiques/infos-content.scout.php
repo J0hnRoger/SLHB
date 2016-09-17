@@ -15,12 +15,23 @@
     height: 400px;
     background-color: #CCC;
     float: left;
-
   }
+
   #pano {
     width: 30%;
     height: 400px;
   }
+
+  @media (max-width: 767px) {
+    #map {
+      width: 100%;
+    }
+    #pano {
+    width: 100%;
+    height: 400px;
+  }
+  }
+
 
 </style>
  <div id="map"></div>
