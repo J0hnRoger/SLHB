@@ -58,20 +58,20 @@ header {
 		.login {
 			#login-link {
 				color: $secondary;
-	      i {
-	        @include roundedImg(40px);
-	        text-align: center;
-	        line-height: 40px;
-	        font-size: 15px;
-	        color:$primary;
-	        background-color: $secondary;
-					@include phone {
-						float: right;
-					}
-	      }
-	      span {
-	          margin-left: 10px;
-	      }
+				i {
+					@include roundedImg(40px);
+					text-align: center;
+					line-height: 40px;
+					font-size: 15px;
+					color:$primary;
+					background-color: $secondary;
+							@include phone {
+								float: right;
+							}
+				}
+				span {
+					margin-left: 10px;
+				}
 			}
 		}
 		@include phone {
@@ -84,20 +84,20 @@ header {
 		background-color: $secondary;
 	}
 
-	#min-login-menu {
+	.min-login-menu {
 		color:$primary;
-		margin-right: 3%;
-
-		button#login-menu {
-			margin-top: 9px;
+		width: 90px;
+		float:right;
+		
+		&__btns {
+			margin-top: 4px;
+			float:left;
 		}
 		.avatar {
 			float:right;
-			@include roundedImg(100%);
+			@include roundedImg(45px);
 			@include phone {
-				height: 100%;
-				width: 100%;
-				border-radius: 100%;
+				@include roundedImg(45px);
 			}
 		}
 	}
