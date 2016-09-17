@@ -417,6 +417,10 @@ header {
   width: 50px;
   margin-right: 10px; }
 
+.mdl-layout__drawer .mdl-navigation .mdl-navigation__link.mdl-navigation__disconnect {
+  background-color: #1d3d86;
+  color: white; }
+
 /*Agenda*/
 /* Animation */
 .fade.ng-enter {

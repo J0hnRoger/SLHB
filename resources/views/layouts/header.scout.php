@@ -127,5 +127,6 @@
       @foreach((array)$headerMenu as $key => $menuItem)
         <a class="mdl-navigation__link" href="{{$menuItem->url}}">{{$menuItem->title}}</a>
       @endforeach
+      <a class="mdl-navigation__link mdl-navigation__disconnect" href="<?php echo wp_logout_url(); ?>">Se déconnecter</a>
     </nav>
   </div>

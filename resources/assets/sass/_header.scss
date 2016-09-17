@@ -239,3 +239,8 @@ header {
 	width: 50px;
 	margin-right: 10px;	
 }
+
+.mdl-layout__drawer .mdl-navigation .mdl-navigation__link.mdl-navigation__disconnect {
+	background-color: $secondary;
+	color: white;
+}
