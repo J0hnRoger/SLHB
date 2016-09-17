@@ -119,7 +119,10 @@
       </div>
   </header>
   <div class="mdl-layout__drawer mdl-layout--small-screen-only">
-    <span class="mdl-layout-title">{{ get_bloginfo('name') }}</span>
+    <span class="mdl-layout-title phone-menu"> 
+      <img class="phone-menu__logo-phone" src="{{ $logoUrl }}" alt="">
+      {{ get_bloginfo('name') }}
+    </span>
     <nav class="mdl-navigation">
       @foreach((array)$headerMenu as $key => $menuItem)
         <a class="mdl-navigation__link" href="{{$menuItem->url}}">{{$menuItem->title}}</a>
