@@ -25,7 +25,7 @@ function AgendaCtrl($scope, $window, $location, $timeout, EventsFactory, calenda
    $scope.$on('$routeChangeSuccess', function(event, next, current) {
      if ($window.location.hash == '#/') {
        vm.direction = "right";
-       vm.btnAnimation = "";
+       vm.btnAnimation = "hide";
      }
      else {
        vm.direction = "left";
