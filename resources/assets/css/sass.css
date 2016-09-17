@@ -777,6 +777,9 @@ ul.events > li.ng-enter-stagger {
     @media (max-width: 767px) {
       .agenda .left-column {
         width: 310px; } }
+    @media (max-width: 767px) {
+      .agenda .left-column.phone-calendar {
+        display: none; } }
   .agenda .center-column {
     float: left;
     width: 639px;

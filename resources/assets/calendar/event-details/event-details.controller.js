@@ -10,5 +10,4 @@ function EventCtrl(eventsFactory, $routeParams) {
   eventsFactory.getEvent($routeParams.id).then(function (ev){
       vm.event = ev; 
   })
-
 }

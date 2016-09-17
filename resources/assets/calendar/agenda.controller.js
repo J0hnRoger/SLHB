@@ -26,9 +26,11 @@ function AgendaCtrl($scope, $window, $location, $timeout, EventsFactory, calenda
      if ($window.location.hash == '#/') {
        vm.direction = "right";
        vm.btnAnimation = "hide";
+       vm.phoneCalendarClass = ""
      }
      else {
        vm.direction = "left";
+       vm.phoneCalendarClass = "phone-calendar"
        vm.btnAnimation = "material--arrow";
      }
    });

@@ -8,7 +8,7 @@
       <span></span>
     </div>
   </nav>
-  <div class="left-column mdl-shadow--8dp mdl-cell mdl-cell--5-col mdl-cell--12-col-phone" >
+  <div class="left-column mdl-shadow--8dp mdl-cell mdl-cell--5-col mdl-cell--12-col-phone {[ vm.phoneCalendarClass ]}" >
     <h1>{{ Loop::Title()}}</h1>
     <slhb-calendar/>
   </div>

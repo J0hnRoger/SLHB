@@ -434,6 +434,12 @@ ul.events > li.ng-enter-stagger {
 		@include phone {
 			width: 310px;
 		}
+
+		&.phone-calendar {
+			@include phone {
+				display: none;	
+			}
+		}
 	}
 
 	.center-column {
@@ -444,7 +450,6 @@ ul.events > li.ng-enter-stagger {
 			width: 310px;
 		}
 	} 
-
 
 	#btn-navigation {
 		position: absolute;
