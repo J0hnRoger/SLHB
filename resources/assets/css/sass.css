@@ -1327,32 +1327,11 @@ main#content .details-team {
     text-transform: uppercase;
     color: #ffffff;
     padding: 5px;
-    border-radius: 4px;
-    margin-left: 15px; }
-  .team-builder .place {
-    background-color: white;
-    border: 1px solid #534d51;
-    color: #534d51;
-    font-weight: 500; }
-  .team-builder > header {
-    margin-left: 200px;
-    color: #534d51;
-    padding: 33px; }
-    .team-builder > header .affiche {
-      font-weight: bold;
-      margin-bottom: 15px; }
-      .team-builder > header .affiche .date {
-        padding: 7px 12px;
-        margin-right: 10px;
-        border-radius: 18px;
-        color: #ffffff;
-        background-color: #6fcadc; }
-      .team-builder > header .affiche i {
-        margin-right: 5px; }
-    .team-builder > header aside {
-      width: 250px; }
-    .team-builder > header .players-picker {
-      width: 650px; }
+    border-radius: 4px; }
+  .team-builder > header aside {
+    width: 250px; }
+  .team-builder > header .players-picker {
+    width: 650px; }
   .team-builder .column {
     border-top: 1px solid #f0f0f0;
     float: left;
@@ -1372,6 +1351,39 @@ main#content .details-team {
     border-top: 1px solid #f0f0f0;
     text-align: right;
     padding: 15px; }
+
+.match-details {
+  color: #534d51;
+  padding: 33px; }
+  .match-details .affiche {
+    font-weight: bold;
+    margin-bottom: 15px;
+    text-align: center; }
+    .match-details .affiche .date {
+      padding: 7px 12px;
+      margin-right: 10px;
+      border-radius: 18px;
+      color: #ffffff;
+      background-color: #6fcadc; }
+    .match-details .affiche i {
+      margin-right: 5px; }
+  .match-details .label {
+    display: inline-block;
+    font-size: 12px;
+    background-color: #f0f0f0;
+    text-transform: uppercase;
+    color: #ffffff;
+    padding: 5px;
+    border-radius: 4px; }
+  .match-details .place {
+    background-color: white;
+    border: 1px solid #534d51;
+    color: #534d51;
+    font-weight: 500; }
+
+.match-details__teams {
+  margin: 20px 0;
+  font-size: 20px; }
 
 /*
  * Team Builder : Players picker component 

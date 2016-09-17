@@ -28,34 +28,10 @@ $selected: #f6f7f9;
         color: #ffffff;
         padding: 5px;
         border-radius: 4px;
-        margin-left: 15px;
-    }
-    .place {
-        background-color: white;
-        border: 1px solid $fontColor;
-        color:$fontColor;
-        font-weight: 500;
     }
 
     & > header {
-        margin-left: 200px;
-        color: $fontColor;
-        padding:33px;
-
-        .affiche {
-            font-weight: bold;
-            margin-bottom: 15px;
-            .date {
-                padding: 7px 12px;
-                margin-right: 10px;
-                border-radius: 18px;
-                color : #ffffff;
-                background-color: $date;
-            }
-            i{
-                margin-right: 5px;
-            }
-        }
+      
         aside{
             width: 250px;
         }
@@ -90,4 +66,47 @@ $selected: #f6f7f9;
         padding: 15px;
     }
 
+}
+
+.match-details {
+    color: $fontColor;
+    padding:33px;
+
+    .affiche {
+        font-weight: bold;
+        margin-bottom: 15px;
+        text-align: center;
+        .date {
+            padding: 7px 12px;
+            margin-right: 10px;
+            border-radius: 18px;
+            color : #ffffff;
+            background-color: $date;
+        }
+        i{
+            margin-right: 5px;
+        }
+    }
+
+    .label{
+        display: inline-block;
+        font-size: 12px;
+        background-color: $outline;
+        text-transform: uppercase;
+        color: #ffffff;
+        padding: 5px;
+        border-radius: 4px;
+    }
+
+    .place {
+        background-color: white;
+        border: 1px solid $fontColor;
+        color:$fontColor;
+        font-weight: 500;
+    }
+}
+
+.match-details__teams {
+    margin: 20px 0;
+    font-size: 20px;
 }
