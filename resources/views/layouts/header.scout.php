@@ -23,7 +23,7 @@
       </div>
         @if($currentUser->user_login != false )
         <div id="login" class="login mdl-cell mdl-cell--6-col mdl-cell--hide-phone mdl-grid">
-          <div class="mdl-cell mdl-cell--8-col mdl-cell--2-col-phone user-information">
+          <div class="user-information">
             <h5>Bonjour {{ $currentUser->user_login }}</h5>
              @if($currentUser->isCoach || $currentUser->isPlayer)
               <a href="/my-profile">Accéder à votre compte </a>
@@ -40,7 +40,7 @@
             </div>
             @endif
           </div>
-          <div class="photo mdl-cell mdl-cell--4-col mdl-cell--1-col-phone">
+          <div class="photo mdl-cell mdl-cell--1-col-phone">
             <div class="avatar" style="background:url( {{ $currentUser->profilePicture }}) center / cover">
             </div>
           </div>
