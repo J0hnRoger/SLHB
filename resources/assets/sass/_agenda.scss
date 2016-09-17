@@ -431,11 +431,18 @@ ul.events > li.ng-enter-stagger {
 		margin: 0;
 		background-color: rgb(246, 246, 246);
 		h1 { text-align: center;}
+		@include phone {
+			width: 310px;
+		}
 	}
+
 	.center-column {
 		float: left;
 		width: 639px;
 		margin: 0;
+		@include phone {
+			width: 310px;
+		}
 	} 
 
 
@@ -508,6 +515,9 @@ div.event-details {
 				font-weight: 300!important;
 				display: inline-block;
 				width: 100%;
+			}
+			@include phone {
+				width: 75%;
 			}
 		}
 	}

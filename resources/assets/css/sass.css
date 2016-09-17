@@ -774,10 +774,16 @@ ul.events > li.ng-enter-stagger {
     background-color: #f6f6f6; }
     .agenda .left-column h1 {
       text-align: center; }
+    @media (max-width: 767px) {
+      .agenda .left-column {
+        width: 310px; } }
   .agenda .center-column {
     float: left;
     width: 639px;
     margin: 0; }
+    @media (max-width: 767px) {
+      .agenda .center-column {
+        width: 310px; } }
   .agenda #btn-navigation {
     position: absolute;
     margin: 15px 35px;
@@ -811,14 +817,23 @@ ul.events > li.ng-enter-stagger {
         width: 55%;
         min-width: 150px;
         border-right: solid 2px #1ab3ec; }
+        @media (max-width: 767px) {
+          .agenda ul.events li .descr.purple {
+            width: 100%; } }
       .agenda ul.events li .descr.orange {
         width: 55%;
         min-width: 150px;
         border-right: solid 2px #bb68e3; }
+        @media (max-width: 767px) {
+          .agenda ul.events li .descr.orange {
+            width: 100%; } }
       .agenda ul.events li .descr.blue {
         width: 55%;
         min-width: 150px;
         border-right: solid 2px #f88c4b; }
+        @media (max-width: 767px) {
+          .agenda ul.events li .descr.blue {
+            width: 100%; } }
 
 /*--- Event Details*/
 div.event-details {
@@ -843,6 +858,9 @@ div.event-details {
         font-weight: 300 !important;
         display: inline-block;
         width: 100%; }
+      @media (max-width: 767px) {
+        div.event-details .cover .header-content {
+          width: 75%; } }
   div.event-details .carousel {
     position: relative;
     margin: 0;
