@@ -84,7 +84,6 @@ header {
 		background-color: $secondary;
 	}
 
-	//Mini Header
 	#min-login-menu {
 		color:$primary;
 		margin-right: 3%;
@@ -182,43 +181,50 @@ header {
 
   @include phone {
     height: $min-banner-height;
-		.overlay {
-			height: 142%;
-			width: 50%;
-			transform: rotate(25deg);
-			margin-top: -14px;
-			margin-right: -23px;
+	.overlay {
+		height: 142%;
+		width: 50%;
+		transform: rotate(25deg);
+		margin-top: -14px;
+		margin-right: -23px;
+		float: right;
+
+		.container {
+			transform: rotate(-$deg + deg);
+			height: 100%;
+			text-align: right;
+			padding-right: 5%;
 			float: right;
+			margin-right: 25px;
 
-			.container {
-				transform: rotate(-$deg + deg);
-				height: 100%;
-				text-align: right;
-				padding-right: 5%;
-				float: right;
-				margin-right: 25px;
-
-				ul{
-					margin-top: 0px;
-					padding: 15px 5px;
-					li.event{
-						margin-top:20%;
-						color: $primary;
-						.label {
-							font-size: 0.7em;
-							font-weight: 600;
-						}
-						h2{
-							line-height: 1em;
-							font-weight: 500;
-							font-size: 1.4em;
-						}
-						.date {
-							font-size: 1em;
-						}
+			ul{
+				margin-top: 0px;
+				padding: 15px 5px;
+				li.event{
+					margin-top:20%;
+					color: $primary;
+					.label {
+						font-size: 0.7em;
+						font-weight: 600;
+					}
+					h2{
+						line-height: 1em;
+						font-weight: 500;
+						font-size: 1.4em;
+					}
+					.date {
+						font-size: 1em;
 					}
 				}
 			}
 		}
+	}
   }
+}
+
+//Mini Header
+@include phone{
+	.mdl-layout__drawer-button {
+		color: white;
+	}
 }

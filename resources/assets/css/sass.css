@@ -398,6 +398,10 @@ header {
               #banner .overlay .container ul li.event .date {
                 font-size: 1em; } }
 
+@media (max-width: 767px) {
+  .mdl-layout__drawer-button {
+    color: white; } }
+
 /*Agenda*/
 /* Animation */
 .fade.ng-enter {
@@ -1120,6 +1124,11 @@ main#content .details-actualite {
 
 #profile.coach-profile .mdl-grid aside.profile-column .player-presents {
   margin: 25px 0; }
+
+#profile.coach-profile:after {
+  content: "";
+  display: table;
+  clear: both; }
 
 main#content .details-team {
   padding: 20px;

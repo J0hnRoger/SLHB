@@ -58,4 +58,9 @@ $player-pills-color : #E91E63;
       }
     }
   }
+  &:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
 }

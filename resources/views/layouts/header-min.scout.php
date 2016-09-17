@@ -1,4 +1,4 @@
-<header class="mdl-layout__header mdl-layout__header--scroll">
+<header class="mini-header mdl-layout__header--scroll">
   <div id="menu" class="mdl-layout__header-row">
     <a href="<?php echo esc_url( home_url( '/' ) ); ?>"><img src="{{ $logoMinUrl }}" alt="slhb" /></a>
     <nav class="mdl-navigation mdl-layout--large-screen-only">
@@ -7,7 +7,7 @@
     @endforeach
     </nav>
       @if($currentUser->user_login != false )
-      <div id="min-login-menu">
+      <div id="min-login-menu"> 
         <button id="login-menu" class="mdl-button mdl-js-button mdl-button--icon">
           <i class="material-icons">more_vert</i>
         </button>
@@ -17,7 +17,7 @@
           <li class="mdl-menu__item"><a href="<?php echo wp_logout_url(); ?>">Se déconnecter</a></li>
         </ul>
         <div class="avatar" style="background:url( {{ $currentUser->profilePicture }}) center / cover">
-
+ 
         </div>
       </div>
     @endif
