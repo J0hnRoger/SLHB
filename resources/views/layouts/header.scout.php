@@ -1,3 +1,10 @@
+  <style>
+  /** Hack - change color of the md hamburger on home **/
+  .mdl-layout__drawer-button {
+    color : grey;   
+  } 
+  </style>
+  
   <header class="mdl-layout__header--scroll">
     <div class="mdl-layout__header-row">
       <div class="mdl-layout-title mdl-cell--2-col mdl-cell--1-col-phone">

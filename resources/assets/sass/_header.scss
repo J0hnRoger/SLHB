@@ -103,6 +103,14 @@ header {
 	}
 }
 
+.mini-header {
+	&__logo {
+		@include phone {
+			margin: 0 auto;
+		}
+	}
+}
+
 .placeholder {min-height: 54px;@include clearfix;}
 
 .phone-login{
@@ -220,11 +228,4 @@ header {
 		}
 	}
   }
-}
-
-//Mini Header
-@include phone{
-	.mdl-layout__drawer-button {
-		color: white;
-	}
 }

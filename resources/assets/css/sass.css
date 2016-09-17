@@ -47,6 +47,9 @@ ul {
 .centring {
   margin: 0 auto; }
 
+.mdl-layout__drawer-button {
+  color: white; }
+
 h2 {
   font-size: 20px;
   line-height: 24px;
@@ -301,6 +304,10 @@ header {
           width: 100%;
           border-radius: 100%; } }
 
+@media (max-width: 767px) {
+  .mini-header__logo {
+    margin: 0 auto; } }
+
 .placeholder {
   min-height: 54px; }
   .placeholder:after {
@@ -397,10 +404,6 @@ header {
                 font-size: 1.4em; }
               #banner .overlay .container ul li.event .date {
                 font-size: 1em; } }
-
-@media (max-width: 767px) {
-  .mdl-layout__drawer-button {
-    color: white; } }
 
 /*Agenda*/
 /* Animation */

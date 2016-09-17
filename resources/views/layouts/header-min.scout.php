@@ -1,6 +1,6 @@
 <header class="mini-header mdl-layout__header--scroll">
   <div id="menu" class="mdl-layout__header-row">
-    <a href="<?php echo esc_url( home_url( '/' ) ); ?>"><img src="{{ $logoMinUrl }}" alt="slhb" /></a>
+    <a class="mini-header__logo" href="<?php echo esc_url( home_url( '/' ) ); ?>"><img src="{{ $logoMinUrl }}" alt="slhb" /></a>
     <nav class="mdl-navigation mdl-layout--large-screen-only">
     @foreach((array)$headerMenu as $key => $menuItem)
       <a class="mdl-navigation__link" href="{{$menuItem->url}}">{{$menuItem->title}}</a>
