@@ -85,7 +85,7 @@
   </p>
   <ul class="animated bounceIn">
     @foreach($direction_members as $key => $member)
-    <li class="the-crew__item"> 
+    <li class="the-crew__item">
       <img class="the-crew__avatar" src="{{ $member->profilePicture  }}" alt="" />
       <div class="the-crew__infos">
         {{ $member->responsibility}}
@@ -96,10 +96,12 @@
     </li>
     @endforeach
   </ul>
+
 </div>
 <div class="after-trombi">
     {{$infos_after_trombi}}
     @endloop
 
     @stop
+
   </div>

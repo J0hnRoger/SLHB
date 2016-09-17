@@ -1,6 +1,6 @@
 @extends('layouts.main')
 @section('main-wrapper')
-<main id="profile" class="mdl-layout__content coach-profile">
+<main id="profile" class="coach-profile">
 <div class="mdl-grid">
   <aside class="mdl-cell mdl-cell--2-col profile-column">
     <h2>Mon profil</h2>
