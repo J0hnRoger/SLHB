@@ -7,17 +7,18 @@
     @endforeach
     </nav>
       @if($currentUser->user_login != false )
-      <div id="min-login-menu"> 
-        <button id="login-menu" class="mdl-button mdl-js-button mdl-button--icon">
-          <i class="material-icons">more_vert</i>
-        </button>
-        <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect"
-            for="login-menu">
-          <li class="mdl-menu__item"><a href="/my-profile">Accéder à votre compte</a></li>
-          <li class="mdl-menu__item"><a href="<?php echo wp_logout_url(); ?>">Se déconnecter</a></li>
-        </ul>
+      <div id="min-login-menu" class="min-login-menu"> 
+        <div class="min-login-menu__btns">
+          <button id="login-menu" class="mdl-button mdl-js-button mdl-button--icon">
+            <i class="material-icons">more_vert</i>
+          </button>
+          <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect"
+              for="login-menu">
+            <li class="mdl-menu__item"><a href="/my-profile">Accéder à votre compte</a></li>
+            <li class="mdl-menu__item"><a href="<?php echo wp_logout_url(); ?>">Se déconnecter</a></li>
+          </ul>
+        </div>
         <div class="avatar" style="background:url( {{ $currentUser->profilePicture }}) center / cover">
- 
         </div>
       </div>
     @endif
