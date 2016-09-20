@@ -87,7 +87,7 @@
 		<script src="/content/themes/SLHB//resources/assets/ngAppHand/core/uniqId.factory.js"></script>
 		<script src="/content/themes/SLHB//resources/assets/ngAppHand/core/appHand.constants.js"></script>
 		<script src="/content/themes/SLHB//resources/assets/team-builder/dist/team-builder-min.js"></script>
+		<script src="/content/themes/SLHB//resources/assets/week-planner/dist/week-planner-min.js"></script>
 		<!-- endinject -->
-
 </body>
 </html>

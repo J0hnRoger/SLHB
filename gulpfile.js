@@ -89,6 +89,20 @@ gulp.task('teambuilder' , function () {
         .pipe(gulp.dest(dest));
 });
 
+
+
+// Copy all custom app files to the deployment folder
+gulp.task('weekplanner' , function () {
+    var dest = './resources/assets/week-planner/dist/';
+    var appJs =  ['./resources/assets/week-planner/**/*.module.js', './resources/assets/week-planner/**/*.js'];
+    del.sync('./resources/assets/week-planner/dist/week-planner-min.js');
+
+    gulp.src(appJs)
+        .pipe(concat('week-planner-min.js'))
+        // Wrap the app.js for loaded after the sharepoint scripts
+        .pipe(gulp.dest(dest));
+});
+
 gulp.task('browser-sync' , function() {
     var files = [
         './resources/**/*.php',

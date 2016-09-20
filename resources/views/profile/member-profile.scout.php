@@ -7,10 +7,12 @@
     <div class="avatar" style="background:url( {{ $currentMember->user->profilePicture }}) center / cover">
     </div>
     <div class="infos">
-    <h4>{{$currentMember->user->display_name}}</h4> 
-    @foreach($currentMember->roles as $key => $responsibility)
-        <span class="label-pills">{{ $responsibility }}</span>
-    @endforeach
+    <h4>{{$currentMember->user->display_name}}</h4>
+    @if($currentMember->roles != '') 
+        @foreach($currentMember->roles as $key => $responsibility)
+            <span class="label-pills">{{ $responsibility }}</span>
+        @endforeach
+    @endif
     </div>
   </aside>
   <div class="mdl-cell mdl-cell--8-col" >
