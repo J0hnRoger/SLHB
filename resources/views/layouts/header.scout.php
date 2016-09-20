@@ -25,9 +25,7 @@
         <div id="login" class="login mdl-cell mdl-cell--6-col mdl-cell--hide-phone mdl-grid">
           <div class="user-information">
             <h5>Bonjour {{ $currentUser->user_login }}</h5>
-             @if($currentUser->isCoach || $currentUser->isPlayer)
               <a href="/my-profile">Accéder à votre compte </a>
-             @endif
              @if($currentUser->isPlayer)
               @if (!empty($currentUser->nextMatch))
             <a href="/my-profile"><div id="ttPlay" class="animated bounceIn icon material-icons">announcement</div></a>

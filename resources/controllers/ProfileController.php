@@ -13,23 +13,30 @@ class ProfileController extends BaseController
           return $data;
       });
 
-      if (!UserModel::hasTheRole(User::current()->ID, 'slhb_player') && !UserModel::hasTheRole(User::current()->ID, 'slhb_coach'))
+      $currentUser = UserModel::getCurrentUser();
+      
+      if (!$currentUser->exists())
         return "<h1> Access Denied - Merci de vous authentifier avant d'accéder à cette page </h1>";
   
-      $currentUser = UserModel::getCurrentUser();
-
       UserModel::LoadNextMatch($currentUser);
       if ($currentUser->isPlayer)
         return  View::make('profile.player-profile')->with(array(
           'home_banner' =>  themosis_assets() . "/images/_Profil_Header01.jpg",
           'currentPlayer' => $currentUser
         ));
-      else {
+      else if ($currentUser->isCoach) {
         $currentCoach = new CoachModel($currentUser->ID);        
         return  View::make('profile.coach-profile')->with(array(
           'home_banner' =>  themosis_assets() . "/images/_Profil_Header01.jpg",
           'currentCoach' => $currentCoach,
           'playersPresents' => UserModel::getPlayersByPresential()
+        ));
+      }
+      else {
+        $currentMember = new MemberModel($currentUser->ID);
+        return  View::make('profile.member-profile')->with(array(
+          'home_banner' =>  themosis_assets() . "/images/_Profil_Header01.jpg",
+          'currentMember' => $currentMember
         ));
       }
     }
