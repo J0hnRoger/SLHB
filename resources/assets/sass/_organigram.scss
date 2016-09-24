@@ -19,7 +19,7 @@
 
   &__avatar {
       float: left;
-      @include roundedImg(85px);
+      @include roundedImg(70px);  
       @include phone {
         @include roundedImg(65px);
       }

@@ -1090,11 +1090,11 @@ main#content .details-actualite {
         width: 350px; } }
   .the-crew__avatar {
     float: left;
-    -webkit-border-radius: 85px;
-    -moz-border-radius: 85px;
-    border-radius: 85px;
-    width: 85px;
-    height: 85px; }
+    -webkit-border-radius: 70px;
+    -moz-border-radius: 70px;
+    border-radius: 70px;
+    width: 70px;
+    height: 70px; }
     @media (max-width: 767px) {
       .the-crew__avatar {
         -webkit-border-radius: 65px;
@@ -1508,3 +1508,19 @@ main#content .details-team {
         margin-top: 10px; }
         .convoc .affiche .place i {
           margin-right: 10px; } }
+
+/* ==|====================
+   Module/WeekPlanner
+   ======================= */
+.week-planner {
+  display: flex;
+  justify-content: space-between; }
+  .week-planner__day-column {
+    width: 200px; }
+  .week-planner__day-header {
+    flex-grow: 1; }
+  .week-planner__day-content {
+    flex-direction: column;
+    flex-wrap: wrap; }
+  .week-planner__hour-block {
+    height: 50px; }
