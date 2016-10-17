@@ -89,8 +89,6 @@ gulp.task('teambuilder' , function () {
         .pipe(gulp.dest(dest));
 });
 
-
-
 // Copy all custom app files to the deployment folder
 gulp.task('weekplanner' , function () {
     var dest = './resources/assets/week-planner/dist/';
@@ -116,6 +114,7 @@ gulp.task('browser-sync' , function() {
 });
 
 gulp.task('default', ['browser-sync'], function(){
+  gulp.watch('./resources/assets/week-planner/**/*.js', ['weekplanner']);
   gulp.watch('./resources/assets/team-builder/**/*.js', ['teambuilder']);
   gulp.watch('./resources/assets/sass/*.scss',['styles']);
 });
