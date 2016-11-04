@@ -8,6 +8,7 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="shortcut icon" href="<?php echo themosis_assets() . "/images/favicon.ico"?>"  />
+	<link rel="alternate" href="http://www.slhb.fr/" hreflang="fr" />
 	<?php wp_head(); ?>
 	@yield('facebook-meta')
 	 <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Roboto:300,400,500,700" type="text/css">
