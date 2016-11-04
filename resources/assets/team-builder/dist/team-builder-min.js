@@ -32,10 +32,11 @@ angular
 		.component('playerTeamSheet', {
 			template : '<div class="convoc"> <match-details ng-hide="$ctrl.noMatch" match="$ctrl.match"></match-details><team-sheet team-sheet="$ctrl.match.teamSheet" edit="false"></team-sheet></div>',
 			bindings : {
+				team : '<'
 			},
 			controller : function (MatchesFactory) {
         var $ctrl = this;
-        MatchesFactory.getNextMatch("SLHB 1")
+        MatchesFactory.getNextMatch("Equipe 1")
           .then(function(wpMatch){
             $ctrl.match = wpMatch;
             $ctrl.noMatch = false;

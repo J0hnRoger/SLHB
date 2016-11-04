@@ -7,6 +7,8 @@
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="description" content="Les news, les matchs,  les résultats du SLHB, club de handball de Chavagnes en Paillers ! ">
+	<meta name="keywords" content="slhb, chavagnes, handball, sport, club">
 	<link rel="shortcut icon" href="<?php echo themosis_assets() . "/images/favicon.ico"?>"  />
 	<link rel="alternate" href="http://www.slhb.fr/" hreflang="fr" />
 	<?php wp_head(); ?>

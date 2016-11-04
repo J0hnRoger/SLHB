@@ -4,6 +4,15 @@ class ProfileController extends BaseController
 {
     public function index()
     {
+      
+
+      $currentUser = UserModel::getCurrentUser();
+      
+      if (!$currentUser->exists())
+        return "<h1> Access Denied - Merci de vous authentifier avant d'accéder à cette page </h1>";
+  
+      UserModel::LoadNextMatch($currentUser);
+
       // admin/application.php or inside any controllers or route closure.
       add_filter('themosisGlobalObject', function($data)
       {
@@ -13,12 +22,6 @@ class ProfileController extends BaseController
           return $data;
       });
 
-      $currentUser = UserModel::getCurrentUser();
-      
-      if (!$currentUser->exists())
-        return "<h1> Access Denied - Merci de vous authentifier avant d'accéder à cette page </h1>";
-  
-      UserModel::LoadNextMatch($currentUser);
       if ($currentUser->isPlayer)
         return  View::make('profile.player-profile')->with(array(
           'home_banner' =>  themosis_assets() . "/images/_Profil_Header01.jpg",

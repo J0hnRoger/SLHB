@@ -27,8 +27,7 @@
         @if (!isset($currentPlayer->nextMatch) || count($currentPlayer->nextMatch->players) == 0)
         <h5>La liste de gladiateurs morts de faim n'est pas encore sortie.</h5>
         @else
-         <player-team-sheet>
-        </player-team-sheet>
+         <player-team-sheet></player-team-sheet>
       @endif
 
       </md-tab-body>
